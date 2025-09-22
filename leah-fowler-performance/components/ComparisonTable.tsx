@@ -7,167 +7,234 @@ import { motion } from 'framer-motion'
 export default function ComparisonTable() {
   const features = [
     {
-      category: 'Training & Coaching',
+      category: 'Training Format',
       items: [
         {
-          feature: 'Group Training Sessions',
-          foundation: true,
-          performance: true,
-          elite: true,
-          youth: true,
+          feature: 'Group Training (Max 6)',
+          pathway: false,
+          flexi: false,
+          semiPrivate: false,
+          smallGroup: true,
+          silver: false,
+          gold: false,
         },
         {
-          feature: '1-to-1 Coaching Sessions',
-          foundation: false,
-          performance: 'Weekly',
-          elite: '2x Weekly',
-          youth: false,
+          feature: '1-to-1 Personal Training',
+          pathway: false,
+          flexi: 'Every 4-6 weeks',
+          semiPrivate: false,
+          smallGroup: false,
+          silver: 'Weekly',
+          gold: '2x Weekly',
         },
         {
-          feature: 'Customised Programming',
-          foundation: false,
-          performance: true,
-          elite: true,
-          youth: true,
+          feature: '2-to-1 Partner Training',
+          pathway: false,
+          flexi: false,
+          semiPrivate: true,
+          smallGroup: false,
+          silver: false,
+          gold: false,
         },
         {
-          feature: 'Trainerize App Access',
-          foundation: true,
-          performance: true,
-          elite: true,
-          youth: true,
+          feature: 'Online Programme',
+          pathway: true,
+          flexi: true,
+          semiPrivate: false,
+          smallGroup: false,
+          silver: false,
+          gold: false,
+        },
+        {
+          feature: 'App-Based Training',
+          pathway: true,
+          flexi: true,
+          semiPrivate: true,
+          smallGroup: false,
+          silver: true,
+          gold: true,
         },
       ],
     },
     {
-      category: 'Support & Accountability',
+      category: 'Programming & Support',
       items: [
         {
+          feature: 'Personalised Programming',
+          pathway: 'Self-paced',
+          flexi: true,
+          semiPrivate: true,
+          smallGroup: 'Group-based',
+          silver: true,
+          gold: 'Advanced',
+        },
+        {
+          feature: 'Nutrition Guidance',
+          pathway: false,
+          flexi: false,
+          semiPrivate: true,
+          smallGroup: false,
+          silver: true,
+          gold: 'Advanced',
+        },
+        {
           feature: 'WhatsApp Support',
-          foundation: false,
-          performance: true,
-          elite: 'Daily',
-          youth: false,
+          pathway: false,
+          flexi: true,
+          semiPrivate: false,
+          smallGroup: false,
+          silver: true,
+          gold: 'Daily',
         },
         {
           feature: 'Progress Reviews',
-          foundation: 'Monthly',
-          performance: 'Monthly',
-          elite: 'Fortnightly',
-          youth: 'Quarterly',
+          pathway: false,
+          flexi: 'Monthly',
+          semiPrivate: 'Monthly',
+          smallGroup: false,
+          silver: 'Monthly',
+          gold: 'Fortnightly',
         },
         {
-          feature: 'Community Access',
-          foundation: true,
-          performance: true,
-          elite: true,
-          youth: true,
-        },
-        {
-          feature: 'Priority Booking',
-          foundation: false,
-          performance: false,
-          elite: true,
-          youth: false,
+          feature: 'Exercise Video Library',
+          pathway: true,
+          flexi: true,
+          semiPrivate: true,
+          smallGroup: true,
+          silver: true,
+          gold: true,
         },
       ],
     },
     {
-      category: 'Nutrition & Lifestyle',
+      category: 'Community & Access',
       items: [
         {
-          feature: 'Nutrition Guidance',
-          foundation: false,
-          performance: true,
-          elite: true,
-          youth: true,
+          feature: 'Private Facebook Group',
+          pathway: false,
+          flexi: false,
+          semiPrivate: true,
+          smallGroup: true,
+          silver: true,
+          gold: true,
         },
         {
-          feature: 'Meal Planning',
-          foundation: false,
-          performance: 'Basic',
-          elite: 'Advanced',
-          youth: 'Growth-focused',
+          feature: 'Community Forum',
+          pathway: true,
+          flexi: false,
+          semiPrivate: false,
+          smallGroup: false,
+          silver: false,
+          gold: false,
         },
         {
-          feature: 'Lifestyle Optimisation',
-          foundation: false,
-          performance: 'Basic',
-          elite: 'Complete',
-          youth: false,
+          feature: 'Monthly Live Q&A',
+          pathway: true,
+          flexi: false,
+          semiPrivate: false,
+          smallGroup: false,
+          silver: false,
+          gold: false,
+        },
+        {
+          feature: 'Priority Scheduling',
+          pathway: false,
+          flexi: false,
+          semiPrivate: false,
+          smallGroup: false,
+          silver: false,
+          gold: true,
+        },
+        {
+          feature: 'Flexible Session Times',
+          pathway: true,
+          flexi: true,
+          semiPrivate: true,
+          smallGroup: 'Fixed times',
+          silver: true,
+          gold: true,
+        },
+      ],
+    },
+    {
+      category: 'Testing & Assessment',
+      items: [
+        {
+          feature: 'Initial Assessment',
+          pathway: false,
+          flexi: true,
+          semiPrivate: true,
+          smallGroup: true,
+          silver: true,
+          gold: true,
+        },
+        {
+          feature: 'Performance Testing',
+          pathway: false,
+          flexi: false,
+          semiPrivate: 'Quarterly',
+          smallGroup: false,
+          silver: 'Quarterly',
+          gold: 'Monthly',
+        },
+        {
+          feature: 'Competition Preparation',
+          pathway: false,
+          flexi: false,
+          semiPrivate: true,
+          smallGroup: false,
+          silver: true,
+          gold: true,
         },
         {
           feature: 'Recovery Protocols',
-          foundation: false,
-          performance: true,
-          elite: true,
-          youth: true,
+          pathway: false,
+          flexi: false,
+          semiPrivate: false,
+          smallGroup: false,
+          silver: false,
+          gold: true,
         },
       ],
     },
     {
-      category: 'Testing & Analysis',
+      category: 'Pricing & Value',
       items: [
         {
-          feature: 'Performance Testing',
-          foundation: false,
-          performance: 'Quarterly',
-          elite: 'Monthly',
-          youth: 'Quarterly',
+          feature: 'Monthly Price',
+          pathway: '£12',
+          flexi: '£80',
+          semiPrivate: '£90/person',
+          smallGroup: '£40/month*',
+          silver: '£140',
+          gold: '£250',
         },
         {
-          feature: 'Body Composition',
-          foundation: false,
-          performance: true,
-          elite: true,
-          youth: false,
+          feature: 'Trial/Guarantee',
+          pathway: '7 days free',
+          flexi: '30-day guarantee',
+          semiPrivate: 'First session £25',
+          smallGroup: 'First session free',
+          silver: '30-day guarantee',
+          gold: '60-day guarantee',
         },
         {
-          feature: 'Competition Prep',
-          foundation: false,
-          performance: true,
-          elite: true,
-          youth: true,
+          feature: 'Ad-hoc Sessions',
+          pathway: false,
+          flexi: false,
+          semiPrivate: '£25/person',
+          smallGroup: false,
+          silver: false,
+          gold: false,
         },
         {
-          feature: 'Video Analysis',
-          foundation: false,
-          performance: false,
-          elite: true,
-          youth: false,
-        },
-      ],
-    },
-    {
-      category: 'Exclusive Benefits',
-      items: [
-        {
-          feature: 'Family Discount',
-          foundation: false,
-          performance: false,
-          elite: '25% off',
-          youth: 'Sibling discount',
-        },
-        {
-          feature: 'VIP Events Access',
-          foundation: false,
-          performance: false,
-          elite: true,
-          youth: false,
-        },
-        {
-          feature: 'Alumni Benefits',
-          foundation: false,
-          performance: false,
-          elite: 'Lifetime',
-          youth: false,
-        },
-        {
-          feature: 'Parent Education',
-          foundation: false,
-          performance: false,
-          elite: false,
-          youth: true,
+          feature: 'Family/Guest Benefits',
+          pathway: false,
+          flexi: false,
+          semiPrivate: 'Partner discount',
+          smallGroup: false,
+          silver: false,
+          gold: 'Guest passes',
         },
       ],
     },
@@ -193,7 +260,7 @@ export default function ComparisonTable() {
       )
     }
     return (
-      <span className="text-sm font-medium text-navy dark:text-gold text-center block">
+      <span className="text-xs font-medium text-navy dark:text-gold text-center block">
         {value}
       </span>
     )
@@ -210,10 +277,13 @@ export default function ComparisonTable() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-navy dark:text-white mb-4">
-            Compare Programme Features
+            Compare Training Packages
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Find the perfect programme for your performance goals
+            Find the perfect training programme for your fitness goals
+          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            *Small Group: £120 for 12 sessions over 3 months = £40/month average
           </p>
         </motion.div>
 
@@ -224,7 +294,7 @@ export default function ComparisonTable() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="overflow-x-auto"
         >
-          <div className="min-w-[800px]">
+          <div className="min-w-[1000px]">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b-2 border-gray-200 dark:border-navy/30">
@@ -232,32 +302,44 @@ export default function ComparisonTable() {
                     Features
                   </th>
                   <th className="p-4 text-center">
-                    <div className="text-navy dark:text-white font-bold">Foundation</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      £197/mo
+                    <div className="text-navy dark:text-white font-bold text-sm">Pathway</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                      £12/mo
+                    </div>
+                  </th>
+                  <th className="p-4 text-center">
+                    <div className="text-navy dark:text-white font-bold text-sm">Flexi</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                      £80/mo
+                    </div>
+                  </th>
+                  <th className="p-4 text-center">
+                    <div className="text-navy dark:text-white font-bold text-sm">Semi-Private</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                      £90/mo
+                    </div>
+                  </th>
+                  <th className="p-4 text-center">
+                    <div className="text-navy dark:text-white font-bold text-sm">Small Group</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                      £120/3mo
                     </div>
                   </th>
                   <th className="p-4 text-center relative">
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="px-3 py-1 rounded-full bg-gold text-navy text-xs font-bold">
-                        MOST POPULAR
+                      <span className="px-2 py-1 rounded-full bg-gold text-navy text-xs font-bold">
+                        POPULAR
                       </span>
                     </div>
-                    <div className="text-navy dark:text-white font-bold mt-4">Performance</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      £497/mo
+                    <div className="text-navy dark:text-white font-bold text-sm mt-4">Silver</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                      £140/mo
                     </div>
                   </th>
                   <th className="p-4 text-center">
-                    <div className="text-navy dark:text-white font-bold">Elite</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      £997/mo
-                    </div>
-                  </th>
-                  <th className="p-4 text-center">
-                    <div className="text-navy dark:text-white font-bold">Youth</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      £297/mo
+                    <div className="text-navy dark:text-white font-bold text-sm">Gold</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                      £250/mo
                     </div>
                   </th>
                 </tr>
@@ -267,7 +349,7 @@ export default function ComparisonTable() {
                   <React.Fragment key={categoryIdx}>
                     <tr className="bg-gray-50 dark:bg-navy/50">
                       <td
-                        colSpan={5}
+                        colSpan={7}
                         className="p-3 font-semibold text-sm uppercase tracking-wider text-gray-600 dark:text-gray-300"
                       >
                         {category.category}
@@ -278,15 +360,17 @@ export default function ComparisonTable() {
                         key={itemIdx}
                         className="border-b border-gray-100 dark:border-navy/20 hover:bg-gray-50 dark:hover:bg-navy/30 transition-colors"
                       >
-                        <td className="p-4 text-gray-700 dark:text-gray-300">
+                        <td className="p-4 text-sm text-gray-700 dark:text-gray-300">
                           {item.feature}
                         </td>
-                        <td className="p-4">{renderValue(item.foundation)}</td>
+                        <td className="p-4">{renderValue(item.pathway)}</td>
+                        <td className="p-4">{renderValue(item.flexi)}</td>
+                        <td className="p-4">{renderValue(item.semiPrivate)}</td>
+                        <td className="p-4">{renderValue(item.smallGroup)}</td>
                         <td className="p-4 bg-gold/5 dark:bg-gold/10">
-                          {renderValue(item.performance)}
+                          {renderValue(item.silver)}
                         </td>
-                        <td className="p-4">{renderValue(item.elite)}</td>
-                        <td className="p-4">{renderValue(item.youth)}</td>
+                        <td className="p-4">{renderValue(item.gold)}</td>
                       </tr>
                     ))}
                   </React.Fragment>
@@ -301,27 +385,17 @@ export default function ComparisonTable() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 p-6 bg-gradient-to-r from-gold/10 to-sage/10 rounded-xl border border-gold/20"
+          className="mt-12 text-center"
         >
-          <div className="flex items-start gap-3">
-            <Star className="h-6 w-6 text-gold flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="font-semibold text-navy dark:text-white mb-2">
-                Not sure which programme is right for you?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Take our free performance assessment to receive a personalised recommendation
-                based on your goals, current fitness level, and lifestyle.
-              </p>
-              <a
-                href="/assessment"
-                className="inline-flex items-center gap-2 text-gold font-semibold hover:text-gold-light transition-colors"
-              >
-                Take the Assessment
-                <span className="text-lg">→</span>
-              </a>
-            </div>
-          </div>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
+            Need help choosing the right package for you?
+          </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-gold-light text-navy font-bold hover:shadow-2xl transition-all duration-300"
+          >
+            Get Personalised Recommendation
+          </a>
         </motion.div>
       </div>
     </section>

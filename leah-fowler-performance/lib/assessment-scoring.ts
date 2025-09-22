@@ -311,13 +311,13 @@ function generatePerformanceLevel(answers: Record<string, unknown>, readinessSco
   const baseline = answers.performance_baseline as string
   
   if (readinessScore >= 80 || baseline === 'excellent') {
-    return 'Elite Performer - Ready for 1% Optimisation'
+    return 'Elite Performer - Ready for Advanced Training'
   } else if (readinessScore >= 60 || baseline === 'good') {
-    return 'High Achiever - Ready for Performance Acceleration'
+    return 'High Achiever - Ready for Strength Transformation'
   } else if (readinessScore >= 40 || baseline === 'average') {
-    return 'Ambitious Professional - Building Performance Foundation'
+    return 'Ambitious Parent - Building Strength Foundation'
   } else {
-    return 'Performance Explorer - Beginning Transformation'
+    return 'Fitness Explorer - Beginning Your Journey'
   }
 }
 
@@ -328,24 +328,24 @@ function generateRecommendations(
 ): { programme: string; investment: string } {
   const programmes = {
     foundation: {
-      name: 'Performance Foundation',
-      description: '12-week small group (max 6) performance fundamentals with weekly check-ins',
-      investment: '£497 per month'
+      name: 'Pathway to Endurance',
+      description: 'Online foundation programme with progressive strength training and video demonstrations',
+      investment: '£12 per month'
     },
     accelerator: {
-      name: 'Performance Plus',
-      description: '6-month hybrid consulting with VO2 Max testing, movement screening, and bi-weekly strategy sessions',
-      investment: '£997 per month'
+      name: 'Silver Package',
+      description: 'Weekly 1:1 personal training with nutrition guidance and monthly progress reviews',
+      investment: '£140 per month'
     },
     elite: {
-      name: 'Executive Performance',
-      description: '12-month complete performance consulting with weekly 1-on-1 sessions, quarterly testing, and 24/7 support',
-      investment: '£1,997 per month'
+      name: 'Gold Package',
+      description: '2x weekly 1:1 sessions with advanced programming and recovery protocols',
+      investment: '£250 per month'
     },
     bespoke: {
-      name: 'Bespoke Performance Partnership',
-      description: 'Full performance team including consultant, nutritionist, and recovery specialist with unlimited access',
-      investment: 'Starting at £2,997 per month'
+      name: 'Semi-Private Coaching',
+      description: '2:1 partner training with personalised programming and nutrition support',
+      investment: '£90 per month per person'
     }
   }
   
@@ -368,15 +368,15 @@ function generateNextSteps(tier: string, urgencyScore: number, commitmentScore: 
   
   // First step is always a strategy session
   if (urgencyScore >= 8) {
-    steps.push('Schedule your Performance Strategy Session within 48 hours')
+    steps.push('Schedule your Free Consultation within 48 hours')
   } else {
-    steps.push('Book your complimentary Performance Strategy Session')
+    steps.push('Book your complimentary Consultation')
   }
   
   // Second step based on tier
   if (tier === 'bespoke' || tier === 'elite') {
     steps.push('Complete comprehensive performance testing (VO2 Max, movement screen, biomarkers)')
-    steps.push('Receive your data-driven Performance Blueprint')
+    steps.push('Receive your personalised Training Programme'
     steps.push('Begin weekly consulting sessions with measurable milestones')
   } else if (tier === 'accelerator') {
     steps.push('Complete baseline performance assessments')
@@ -406,9 +406,9 @@ function generatePersonalMessage(answers: Record<string, unknown>, tier: string,
   if (tier === 'bespoke' || tier === 'elite') {
     message = `As someone who's transformed my own life through performance optimisation, I recognise a kindred spirit. You understand that ${primaryGoal.toLowerCase()} isn't about fitness—it's about becoming unstoppable in every arena of your life. `
   } else if (tier === 'accelerator') {
-    message = `Your assessment shows you're ready for real change. Like me, you've realised that feeling exhausted isn't "just part of life." The Performance Plus programme will help you ${primaryGoal.toLowerCase()} through proven, data-driven methods. `
+    message = `Your assessment shows you're ready for real change. Like me, you've realised that feeling exhausted isn't "just part of life." The Silver programme will help you ${primaryGoal.toLowerCase()} through proven, data-driven methods. `
   } else {
-    message = `Starting your performance journey takes courage. I remember thinking I'd never have energy again after my third child. I was wrong. The Foundation Programme will help you ${primaryGoal.toLowerCase()} step by step. `
+    message = `Starting your fitness journey takes courage. I remember thinking I'd never have energy again after my third child. I was wrong. Our programmes will help you ${primaryGoal.toLowerCase()} step by step. `
   }
   
   // Address their vision
@@ -428,23 +428,23 @@ function generatePersonalMessage(answers: Record<string, unknown>, tier: string,
 
 export function generateDetailedReport(profile: ClientProfile, _answers: Record<string, unknown>): string {
   const sections = [
-    `# Performance Optimisation Assessment Report`,
+    `# Strength & Fitness Assessment Report`,
     ``,
     `## Executive Summary`,
-    `Performance Classification: ${profile.performanceLevel}`,
+    `Fitness Classification: ${profile.performanceLevel}`,
     `Overall Readiness Score: ${profile.readinessScore.toFixed(0)}%`,
     `Investment Readiness: ${profile.commitmentScore}/10`,
     `Recommended Tier: ${profile.tier.charAt(0).toUpperCase() + profile.tier.slice(1)}`,
     ``,
-    `## Performance Strengths`,
+    `## Your Strengths`,
     profile.strengths.map(s => `• ${s}`).join('\n'),
     ``,
-    `## Performance Optimisation Opportunities`,
+    `## Areas for Growth`,
     profile.opportunities.map(o => `• ${o}`).join('\n'),
     ``,
-    `## Primary Performance Targets`,
+    `## Your Primary Goals`,
     `Current Limitation: ${profile.primaryChallenge}`,
-    `Performance Goal: ${profile.primaryGoal}`,
+    `Fitness Goal: ${profile.primaryGoal}`,
     ``,
     `## Recommended Consulting Programme`,
     `${profile.recommendedProgramme}`,
@@ -457,8 +457,8 @@ export function generateDetailedReport(profile: ClientProfile, _answers: Record<
     profile.personalMessage,
     ``,
     `---`,
-    `Leah Fowler Performance Coach`,
-    `Performance Optimisation Consultant`,
+    `Leah Fowler Performance`,
+    `Strength Coach for Parents`,
     `"A strong body makes for a strong person"`
   ]
   

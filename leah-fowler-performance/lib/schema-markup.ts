@@ -50,7 +50,7 @@ export const organizationSchema = {
       "name": "United Kingdom"
     }
   ],
-  "priceRange": "£££",
+  "priceRange": "£12-£250/month",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -84,7 +84,7 @@ export const localBusinessSchema = {
   "description": "Norfolk's specialist mum fitness coach. From exhausted to energised. Smart strength training for busy mums. From postnatal recovery to Spartan races. Get properly strong.",
   "url": "https://leahfowlerperformance.com",
   "telephone": "+44-7XXX-XXXXXX",
-  "priceRange": "£197-£997/month",
+  "priceRange": "£12-£250/month",
   "image": [
     "https://leahfowlerperformance.com/og-image.jpg",
     "https://leahfowlerperformance.com/consultancy-space.jpg",
@@ -221,10 +221,10 @@ export const serviceSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://leahfowlerperformance.com/#foundation-programme",
-    "serviceType": "Foundation Programme",
-    "name": "Foundation Programme - Building Commitment",
-    "description": "For those building their commitment to excellence. Group training with maximum 6 people, Trainerize programming, and monthly progress reviews. Perfect for former athletes returning to training.",
+    "@id": "https://leahfowlerperformance.com/#pathway-programme",
+    "serviceType": "Pathway to Endurance",
+    "name": "Pathway to Endurance - Online Foundation Programme",
+    "description": "Build your fitness foundation with guided online training. Progressive strength training perfect for parents beginning their fitness journey or returning after a break. Self-paced with video demonstrations and community support.",
     "provider": {
       "@type": "Organization",
       "@id": "https://leahfowlerperformance.com/#organization"
@@ -265,18 +265,18 @@ export const serviceSchemas = [
     },
     "offers": {
       "@type": "Offer",
-      "price": "197",
+      "price": "12",
       "priceCurrency": "GBP",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "197",
+        "price": "12",
         "priceCurrency": "GBP",
         "unitText": "MONTH"
       }
     },
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://leahfowlerperformance.com/programmes/foundation",
+      "serviceUrl": "https://leahfowlerperformance.com/programmes/pathway",
       "serviceType": "Online consultancy",
       "availableLanguage": ["en-GB"]
     }
@@ -284,10 +284,10 @@ export const serviceSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://leahfowlerperformance.com/#performance-programme",
-    "serviceType": "Performance Programme",
-    "name": "Performance Programme - For the Seriously Committed",
-    "description": "For the seriously committed athlete or high achiever. Weekly 1:1 coaching, customised programming, nutrition optimisation, and WhatsApp support. Ideal for competition preparation and ambitious goals.",
+    "@id": "https://leahfowlerperformance.com/#silver-programme",
+    "serviceType": "Silver Programme",
+    "name": "Silver - Weekly 1:1 Personal Training",
+    "description": "Premium personal training with comprehensive support. Weekly 1:1 sessions, personalised nutrition guidance, and access to our supportive community. Perfect for parents ready for serious transformation.",
     "provider": {
       "@type": "Organization",
       "@id": "https://leahfowlerperformance.com/#organization"
@@ -298,7 +298,7 @@ export const serviceSchemas = [
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Accelerator Programme Features",
+      "name": "Silver Programme Features",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -328,18 +328,18 @@ export const serviceSchemas = [
     },
     "offers": {
       "@type": "Offer",
-      "price": "497",
+      "price": "140",
       "priceCurrency": "GBP",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "497",
+        "price": "140",
         "priceCurrency": "GBP",
         "unitText": "MONTH"
       }
     },
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://leahfowlerperformance.com/programmes/accelerator",
+      "serviceUrl": "https://leahfowlerperformance.com/programmes/silver",
       "serviceType": "Hybrid consultancy",
       "availableLanguage": ["en-GB"]
     }
@@ -347,10 +347,10 @@ export const serviceSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://leahfowlerperformance.com/#elite-programme",
-    "serviceType": "Elite Programme",
-    "name": "Elite Performance Programme - Pursuing Excellence",
-    "description": "For those pursuing excellence without compromise. 2x weekly sessions, competition and event preparation, full lifestyle optimisation, and priority access. The ultimate commitment to your performance.",
+    "@id": "https://leahfowlerperformance.com/#gold-programme",
+    "serviceType": "Gold Programme",
+    "name": "Gold - Elite Performance Training",
+    "description": "Premium 2x weekly training for accelerated results. Perfect for parents serious about transformation, preparing for events, or wanting rapid results. Includes advanced programming and recovery protocols.",
     "provider": {
       "@type": "Organization",
       "@id": "https://leahfowlerperformance.com/#organization"
@@ -361,7 +361,7 @@ export const serviceSchemas = [
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Elite Programme Features",
+      "name": "Gold Programme Features",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -391,18 +391,18 @@ export const serviceSchemas = [
     },
     "offers": {
       "@type": "Offer",
-      "price": "997",
+      "price": "250",
       "priceCurrency": "GBP",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "997",
+        "price": "250",
         "priceCurrency": "GBP",
         "unitText": "MONTH"
       }
     },
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://leahfowlerperformance.com/programmes/elite",
+      "serviceUrl": "https://leahfowlerperformance.com/programmes/gold",
       "serviceType": "Premium consultancy",
       "availableLanguage": ["en-GB"]
     }
@@ -454,11 +454,11 @@ export const serviceSchemas = [
     },
     "offers": {
       "@type": "Offer",
-      "price": "297",
+      "price": "90",
       "priceCurrency": "GBP",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "297",
+        "price": "90",
         "priceCurrency": "GBP",
         "unitText": "MONTH"
       }
@@ -498,7 +498,7 @@ export const faqSchema = {
       "name": "What investment levels are available for performance programmes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I offer four programme tiers: Foundation (£197/month) for those building commitment, Performance (£497/month) for the seriously committed, Elite (£997/month) for those pursuing excellence, and Youth Development (£297/month) for young athletes aged 8-18."
+        "text": "I offer six training packages: Pathway to Endurance (£12/month) online programme, Flexi Coaching (£80/month) app-based training, Semi-Private (£90/month per person) partner training, Small Group (£120 for 3 months) circuit training, Silver (£140/month) weekly 1:1 coaching - our most popular option, and Gold (£250/month) premium 2x weekly training."
       }
     },
     {
@@ -595,7 +595,7 @@ export const courseSchemas = [
     ],
     "offers": {
       "@type": "Offer",
-      "price": "2997",
+      "price": "120",
       "priceCurrency": "GBP",
       "availability": "https://schema.org/InStock",
       "validFrom": "2024-01-01"
@@ -628,7 +628,7 @@ export const courseSchemas = [
     ],
     "offers": {
       "@type": "Offer",
-      "price": "497",
+      "price": "80",
       "priceCurrency": "GBP",
       "availability": "https://schema.org/InStock"
     }
@@ -645,7 +645,7 @@ export const howToSchema = {
   "estimatedCost": {
     "@type": "MonetaryAmount",
     "currency": "GBP",
-    "value": "39-999"
+    "value": "12-250"
   },
   "supply": [
     {
@@ -792,7 +792,7 @@ export const eventSchema = {
   "offers": {
     "@type": "Offer",
     "url": "https://leahfowlerperformance.com/workshop-registration",
-    "price": "197",
+    "price": "140",
     "priceCurrency": "GBP",
     "availability": "https://schema.org/InStock",
     "validFrom": "2024-01-01T00:00:00+00:00"

@@ -44,24 +44,24 @@ export default function SocialProofNotifications() {
     {
       id: '1',
       type: 'signup',
-      content: 'James from London just started the Elite Programme',
-      subtext: 'Joining 247+ strong mothers',
+      content: 'James from London just started the Gold Package',
+      subtext: 'Joining 500+ strong parents',
       icon: UserCheck,
       color: 'from-purple-600 to-blue-600',
       location: 'London',
       timestamp: '2 minutes ago',
-      programme: 'Elite'
+      programme: 'Gold'
     },
     {
       id: '2',
       type: 'achievement',
-      content: 'Sarah M. achieved 52% productivity increase',
-      subtext: 'After 8 weeks in Acceleration Programme',
+      content: 'Sarah M. achieved 52% strength increase',
+      subtext: 'After 8 weeks with Silver Package',
       icon: Trophy,
       color: 'from-green-600 to-emerald-600',
       location: 'Manchester',
       timestamp: '5 minutes ago',
-      programme: 'Acceleration'
+      programme: 'Silver'
     },
     {
       id: '3',
@@ -105,23 +105,23 @@ export default function SocialProofNotifications() {
       id: '7',
       type: 'achievement',
       content: 'Mark T. achieved fitness breakthrough',
-      subtext: 'After 3 months of Elite coaching',
+      subtext: 'After 3 months with Gold training',
       icon: Award,
       color: 'from-purple-600 to-pink-600',
       location: 'Leeds',
       timestamp: '15 minutes ago',
-      programme: 'Elite'
+      programme: 'Gold'
     },
     {
       id: '8',
       type: 'signup',
       content: 'Mother from London joined',
-      subtext: 'Foundation Programme - Starting today',
+      subtext: 'Pathway to Endurance - Starting today',
       icon: Users,
       color: 'from-blue-600 to-purple-600',
       location: 'London',
       timestamp: '8 minutes ago',
-      programme: 'Foundation'
+      programme: 'Pathway'
     },
     {
       id: '9',
@@ -137,7 +137,7 @@ export default function SocialProofNotifications() {
       id: '10',
       type: 'booking',
       content: 'Mother from Norwich booked consultation',
-      subtext: 'Interested in Elite Programme',
+      subtext: 'Interested in Gold Package',
       icon: Sparkles,
       color: 'from-pink-600 to-purple-600',
       location: 'Cambridge',
@@ -290,7 +290,7 @@ export function ActivityFeed() {
   const recentActivities = [
     {
       user: 'James H.',
-      action: 'started Elite Programme',
+      action: 'started Gold Package',
       time: '2 minutes ago',
       location: 'London',
       avatar: 'JH'

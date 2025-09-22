@@ -2,22 +2,20 @@
 
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { Check, Star, Zap, Crown, ArrowRight, Shield, TrendingUp, Users, Brain, Calendar, Phone, Video, FileText, BarChart, Loader2 } from 'lucide-react'
+import { Check, Star, Zap, Crown, ArrowRight, Shield, TrendingUp, Users, Brain, Calendar, Phone, Video, FileText, BarChart, Loader2, Target, Dumbbell, Activity } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { getStripe } from '@/lib/stripe'
 import { formatPrice } from '@/lib/stripe'
 import { useRouter } from 'next/navigation'
+import { aphroditeFitnessPackages } from '@/content/seo/aphrodite-pricing-content'
 
 interface PricingTier {
   name: string
   slug: string
-  price: {
-    monthly: number
-    quarterly: number
-    annual: number
-  }
+  price: number
   currency: string
   period: string
+  billing: 'monthly' | 'one-time'
   description: string
   badge?: string
   features: {
@@ -29,6 +27,7 @@ interface PricingTier {
   popular: boolean
   color: 'gold' | 'sage' | 'navy'
   icon: React.ReactNode
+  guarantee: string
 }
 
 interface PricingTiersWithStripeProps {
@@ -38,136 +37,135 @@ interface PricingTiersWithStripeProps {
 }
 
 export default function PricingTiersWithStripe({ userId, userEmail, userName }: PricingTiersWithStripeProps) {
-  const [billingPeriod, setBillingPeriod] = React.useState<'monthly' | 'quarterly' | 'annual'>('monthly')
   const [loadingTier, setLoadingTier] = React.useState<string | null>(null)
   const [error, setError] = React.useState<string | null>(null)
   const router = useRouter()
 
+  const getIcon = (color: string) => {
+    switch(color) {
+      case 'gold': return <Crown className="h-6 w-6" />
+      case 'sage': return <Dumbbell className="h-6 w-6" />
+      case 'navy': return <Target className="h-6 w-6" />
+      default: return <Star className="h-6 w-6" />
+    }
+  }
+
+  // Convert packages to tier format
   const tiers: PricingTier[] = [
+    // Pathway to Endurance - Entry Level Online
     {
-      name: 'Foundation',
-      slug: 'foundation',
-      price: {
-        monthly: 197,
-        quarterly: 497,
-        annual: 1970,
-      },
-      currency: '£',
-      period: billingPeriod === 'monthly' ? '/month' : billingPeriod === 'quarterly' ? '/quarter' : '/year',
-      description: 'For those building their commitment to excellence',
-      features: [
-        { text: 'Group Training (max 6 people)', included: true },
-        { text: 'Trainerize App Programming', included: true },
-        { text: 'Monthly Progress Reviews', included: true },
-        { text: 'Access to Exercise Library', included: true },
-        { text: 'Community Support Group', included: true },
-        { text: 'Commitment Tracking Tools', included: true },
-        { text: '1-to-1 Coaching Sessions', included: false },
-        { text: 'Customised Programming', included: false },
-        { text: 'Nutrition Guidance', included: false },
-        { text: 'WhatsApp Support', included: false }
-      ],
-      cta: 'Start Foundation',
+      name: aphroditeFitnessPackages.pathwayToEndurance.name,
+      slug: aphroditeFitnessPackages.pathwayToEndurance.slug,
+      price: aphroditeFitnessPackages.pathwayToEndurance.price,
+      currency: aphroditeFitnessPackages.pathwayToEndurance.currency,
+      period: aphroditeFitnessPackages.pathwayToEndurance.period,
+      billing: 'monthly' as const,
+      description: aphroditeFitnessPackages.pathwayToEndurance.shortDescription,
+      features: aphroditeFitnessPackages.pathwayToEndurance.features.slice(0, 10),
+      cta: aphroditeFitnessPackages.pathwayToEndurance.cta,
       popular: false,
-      color: 'sage',
-      icon: <Zap className="h-6 w-6" />,
+      color: 'navy' as const,
+      icon: getIcon('navy'),
+      guarantee: aphroditeFitnessPackages.pathwayToEndurance.guarantee
     },
+    // Flexi Coaching - Flexible App-Based
     {
-      name: 'Performance',
-      slug: 'performance',
-      price: {
-        monthly: 497,
-        quarterly: 1297,
-        annual: 4970,
-      },
-      currency: '£',
-      period: billingPeriod === 'monthly' ? '/month' : billingPeriod === 'quarterly' ? '/quarter' : '/year',
-      description: 'For the seriously committed athlete or high achiever',
-      badge: 'MOST POPULAR',
-      features: [
-        { text: 'Everything in Foundation, plus:', included: true, highlight: true },
-        { text: 'Weekly 1-to-1 Coaching', included: true },
-        { text: 'Fully Customised Programming', included: true },
-        { text: 'Nutrition Optimisation Plan', included: true },
-        { text: 'WhatsApp Support Access', included: true },
-        { text: 'Competition Preparation', included: true },
-        { text: 'Performance Testing & Metrics', included: true },
-        { text: 'Recovery Protocol Design', included: true },
-        { text: 'Monthly Performance Analysis', included: true },
-        { text: 'Priority Booking Access', included: false }
-      ],
-      cta: 'Commit to Performance',
-      popular: true,
-      color: 'gold',
-      icon: <Star className="h-6 w-6" />,
-    },
-    {
-      name: 'Elite Performance',
-      slug: 'elite',
-      price: {
-        monthly: 997,
-        quarterly: 2497,
-        annual: 9970,
-      },
-      currency: '£',
-      period: billingPeriod === 'monthly' ? '/month' : billingPeriod === 'quarterly' ? '/quarter' : '/year',
-      description: 'For those pursuing excellence without compromise',
-      features: [
-        { text: 'Everything in Performance, plus:', included: true, highlight: true },
-        { text: '2x Weekly Training Sessions', included: true },
-        { text: 'Competition & Event Preparation', included: true },
-        { text: 'Full Lifestyle Optimisation', included: true },
-        { text: 'Daily WhatsApp Check-ins', included: true },
-        { text: 'Quarterly Testing & Assessment', included: true },
-        { text: 'Priority Access to All Services', included: true },
-        { text: 'Family Member Discount (25%)', included: true },
-        { text: 'VIP Events & Masterminds', included: true },
-        { text: 'Lifetime Alumni Benefits', included: true }
-      ],
-      cta: 'Apply for Elite',
+      name: aphroditeFitnessPackages.flexiCoaching.name,
+      slug: aphroditeFitnessPackages.flexiCoaching.slug,
+      price: aphroditeFitnessPackages.flexiCoaching.price,
+      currency: aphroditeFitnessPackages.flexiCoaching.currency,
+      period: aphroditeFitnessPackages.flexiCoaching.period,
+      billing: 'monthly' as const,
+      description: aphroditeFitnessPackages.flexiCoaching.shortDescription,
+      features: aphroditeFitnessPackages.flexiCoaching.features.slice(0, 10),
+      cta: aphroditeFitnessPackages.flexiCoaching.cta,
       popular: false,
-      color: 'navy',
-      icon: <Crown className="h-6 w-6" />,
+      color: 'sage' as const,
+      icon: getIcon('sage'),
+      guarantee: aphroditeFitnessPackages.flexiCoaching.guarantee
     },
+    // Semi-Private - Partner Training
     {
-      name: 'Youth Development',
-      slug: 'youth',
-      price: {
-        monthly: 297,
-        quarterly: 797,
-        annual: 2970,
-      },
-      currency: '£',
-      period: billingPeriod === 'monthly' ? '/month' : billingPeriod === 'quarterly' ? '/quarter' : '/year',
-      description: 'Safe strength training for young athletes (ages 8-18)',
-      badge: 'UNIQUE',
-      features: [
-        { text: 'Age-Appropriate Programming', included: true },
-        { text: 'Sport-Specific Development', included: true },
-        { text: '2x Weekly Group Sessions', included: true },
-        { text: 'Long-Term Athletic Development', included: true },
-        { text: 'Injury Prevention Focus', included: true },
-        { text: 'Parent Education Included', included: true },
-        { text: 'Quarterly Progress Testing', included: true },
-        { text: 'Competition Preparation', included: true },
-        { text: 'Nutritional Guidance for Growth', included: true },
-        { text: 'Sibling Discount Available', included: true }
-      ],
-      cta: 'Develop Young Athletes',
+      name: aphroditeFitnessPackages.semiPrivate.name,
+      slug: aphroditeFitnessPackages.semiPrivate.slug,
+      price: aphroditeFitnessPackages.semiPrivate.price,
+      currency: aphroditeFitnessPackages.semiPrivate.currency,
+      period: aphroditeFitnessPackages.semiPrivate.period,
+      billing: 'monthly' as const,
+      description: aphroditeFitnessPackages.semiPrivate.shortDescription,
+      badge: aphroditeFitnessPackages.semiPrivate.badge,
+      features: aphroditeFitnessPackages.semiPrivate.features.slice(0, 10),
+      cta: aphroditeFitnessPackages.semiPrivate.cta,
       popular: false,
-      color: 'sage',
+      color: 'sage' as const,
+      icon: getIcon('sage'),
+      guarantee: aphroditeFitnessPackages.semiPrivate.guarantee
+    },
+    // Small Group Training
+    {
+      name: aphroditeFitnessPackages.smallGroup.name,
+      slug: aphroditeFitnessPackages.smallGroup.slug,
+      price: aphroditeFitnessPackages.smallGroup.price,
+      currency: aphroditeFitnessPackages.smallGroup.currency,
+      period: ' for ' + aphroditeFitnessPackages.smallGroup.period,
+      billing: 'one-time' as const,
+      description: aphroditeFitnessPackages.smallGroup.shortDescription,
+      features: aphroditeFitnessPackages.smallGroup.features.slice(0, 10),
+      cta: aphroditeFitnessPackages.smallGroup.cta,
+      popular: false,
+      color: 'navy' as const,
       icon: <Users className="h-6 w-6" />,
+      guarantee: aphroditeFitnessPackages.smallGroup.guarantee
+    },
+    // Silver - Most Popular
+    {
+      name: aphroditeFitnessPackages.silver.name,
+      slug: aphroditeFitnessPackages.silver.slug,
+      price: aphroditeFitnessPackages.silver.price,
+      currency: aphroditeFitnessPackages.silver.currency,
+      period: aphroditeFitnessPackages.silver.period,
+      billing: 'monthly' as const,
+      description: aphroditeFitnessPackages.silver.shortDescription,
+      badge: aphroditeFitnessPackages.silver.badge,
+      features: aphroditeFitnessPackages.silver.features.slice(0, 10),
+      cta: aphroditeFitnessPackages.silver.cta,
+      popular: true,
+      color: 'gold' as const,
+      icon: <Star className="h-6 w-6" />,
+      guarantee: aphroditeFitnessPackages.silver.guarantee
+    },
+    // Gold - Premium
+    {
+      name: aphroditeFitnessPackages.gold.name,
+      slug: aphroditeFitnessPackages.gold.slug,
+      price: aphroditeFitnessPackages.gold.price,
+      currency: aphroditeFitnessPackages.gold.currency,
+      period: aphroditeFitnessPackages.gold.period,
+      billing: 'monthly' as const,
+      description: aphroditeFitnessPackages.gold.shortDescription,
+      badge: aphroditeFitnessPackages.gold.badge,
+      features: aphroditeFitnessPackages.gold.features.slice(0, 10),
+      cta: aphroditeFitnessPackages.gold.cta,
+      popular: false,
+      color: 'gold' as const,
+      icon: <Crown className="h-6 w-6" />,
+      guarantee: aphroditeFitnessPackages.gold.guarantee
     }
   ]
 
-  const handleSubscribe = async (tier: string) => {
+  const handleSubscribe = async (tierSlug: string) => {
     try {
-      setLoadingTier(tier)
+      setLoadingTier(tierSlug)
       setError(null)
+
+      const selectedTier = tiers.find(t => t.slug === tierSlug)
+      if (!selectedTier) {
+        throw new Error('Invalid tier selected')
+      }
 
       // If no email is provided, redirect to contact form first
       if (!userEmail) {
-        router.push(`/contact?intent=subscribe&tier=${tier}&period=${billingPeriod}`)
+        router.push(`/contact?intent=subscribe&tier=${tierSlug}`)
         return
       }
 
@@ -178,8 +176,8 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          tier,
-          billingPeriod,
+          tier: tierSlug,
+          billingPeriod: selectedTier.billing,
           userId,
           email: userEmail,
           name: userName,
@@ -213,11 +211,6 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
     }
   }
 
-  const getDiscount = () => {
-    if (billingPeriod === 'quarterly') return '15% savings'
-    if (billingPeriod === 'annual') return '20% savings'
-    return null
-  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -255,60 +248,18 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold font-medium text-sm mb-6">
             <TrendingUp className="h-4 w-4" />
-            Investment in Excellence
+            Transform Your Strength • Transform Your Life
           </span>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-6">
             Choose Your
-            <span className="block text-gradient-gold mt-2">Performance Path</span>
+            <span className="block text-gradient-gold mt-2">Training Journey</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Evidence-based programmes designed for measurable transformation.
-            Join 500+ mothers who've reclaimed their identity and strength.
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Evidence-based strength training for busy parents. From £12/month online programmes
+            to premium 1:1 coaching. Join 500+ parents who've transformed their strength and confidence.
           </p>
-
-          {/* Billing Toggle */}
-          <div className="inline-flex items-center p-1 rounded-full bg-gray-100 dark:bg-navy-dark/50 border border-gray-200 dark:border-gold/20">
-            <button
-              onClick={() => setBillingPeriod('monthly')}
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                billingPeriod === 'monthly'
-                  ? 'bg-white dark:bg-gold text-navy shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-              }`}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setBillingPeriod('quarterly')}
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                billingPeriod === 'quarterly'
-                  ? 'bg-white dark:bg-gold text-navy shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-              }`}
-            >
-              Quarterly
-              <span className="ml-2 text-xs text-gold dark:text-navy font-bold">Save 15%</span>
-            </button>
-            <button
-              onClick={() => setBillingPeriod('annual')}
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                billingPeriod === 'annual'
-                  ? 'bg-white dark:bg-gold text-navy shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-              }`}
-            >
-              Annual
-              <span className="ml-2 text-xs text-gold dark:text-navy font-bold">Save 20%</span>
-            </button>
-          </div>
-
-          {getDiscount() && (
-            <p className="mt-3 text-sm text-green-600 dark:text-green-400 font-medium">
-              {getDiscount()} compared to monthly billing
-            </p>
-          )}
         </motion.div>
 
         {/* Error Message */}
@@ -324,15 +275,14 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {tiers.map((tier) => {
-            const currentPrice = tier.price[billingPeriod]
             const vatInfo = React.useMemo(() => {
-              const subtotal = Math.round(currentPrice / 1.2)
-              const vat = currentPrice - subtotal
+              const subtotal = Math.round(tier.price / 1.2)
+              const vat = tier.price - subtotal
               return { subtotal, vat }
-            }, [currentPrice])
+            }, [tier.price])
 
             return (
               <motion.div
@@ -395,7 +345,7 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
                       <span className={`text-4xl font-bold ${
                         tier.popular ? 'text-navy' : 'text-navy dark:text-white'
                       }`}>
-                        {tier.currency}{currentPrice}
+                        {tier.currency}{tier.price}
                       </span>
                       <span className={`text-lg ${
                         tier.popular ? 'text-navy/70' : 'text-gray-600 dark:text-gray-400'

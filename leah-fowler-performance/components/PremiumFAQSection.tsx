@@ -49,7 +49,7 @@ const faqData = [
   },
   {
     question: "What's included in the initial Performance Diagnostic?",
-    answer: "The Performance Diagnostic includes a comprehensive 60-minute consultation covering all performance domains, baseline biometric testing recommendations, gap analysis against peer benchmarks, prioritised intervention framework, and a detailed three-page report with your personalised 90-day roadmap. This is currently available at £197 (usually £497) with no obligation to continue.",
+    answer: "The initial consultation includes a comprehensive 60-minute assessment covering your fitness goals, current abilities, lifestyle factors, and training history. You'll receive personalised recommendations for the most suitable package, a customised training approach, and clarity on your fitness journey. Book a free consultation with no obligation to continue.",
     category: "programmes"
   },
   {

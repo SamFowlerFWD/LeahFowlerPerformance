@@ -105,8 +105,8 @@ export default function ChatWidget() {
     setTimeout(() => {
       if (userInput.includes('price') || userInput.includes('cost') || userInput.includes('investment')) {
         addBotMessage(
-          "Our programmes start at £297/month for Foundation, with Acceleration at £997/month and Elite at £2,997/month. Each tier is designed for different performance goals. Would you like to discuss which would be best for you?",
-          ['Tell me more about Foundation', 'I\'m interested in Elite', 'Book a consultation']
+          "Our programmes start at £12/month for online training, with options including Flexi Coaching (£80/month), Silver 1:1 training (£140/month - most popular), and premium Gold package (£250/month). Each package is designed for different fitness goals and schedules. Would you like to discuss which would be best for you?",
+          ['Tell me more about Silver', 'I\'m interested in Gold', 'Book a consultation']
         );
       } else if (userInput.includes('time') || userInput.includes('busy') || userInput.includes('schedule')) {
         addBotMessage(

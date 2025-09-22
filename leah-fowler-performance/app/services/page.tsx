@@ -5,12 +5,12 @@ import TrustBar from '@/components/TrustBar'
 import { generateServiceSchema } from '@/lib/schema-markup'
 
 export const metadata: Metadata = {
-  title: 'Services & Pricing | Leah Fowler Performance Coach',
-  description: 'Transform your performance with evidence-based coaching programmes. Foundation, Performance, Elite, and Youth Development packages available. Start your journey today.',
-  keywords: 'performance coaching prices, personal training Norfolk, elite coaching programmes, youth strength training, fitness packages Norwich',
+  title: 'Training Packages & Pricing | Aphrodite Fitness Norfolk',
+  description: 'Transform your strength with evidence-based training programmes. From £12/month online to premium 1:1 coaching. Small groups, flexi training, and personal training available.',
+  keywords: 'personal training Norfolk, small group fitness classes, online fitness programmes, strength training Norwich, parent fitness programmes',
   openGraph: {
-    title: 'Services & Pricing | Leah Fowler Performance',
-    description: 'Evidence-based performance coaching programmes from £197/month. Join 500+ high achievers transforming their lives.',
+    title: 'Training Packages | Aphrodite Fitness Norfolk',
+    description: 'Evidence-based strength training from £12/month. Small groups £120, Personal training from £80/month. Join 500+ parents transforming their strength.',
     url: 'https://leahfowlerperformance.com/services',
     siteName: 'Leah Fowler Performance',
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Transform Your Performance | Services & Pricing',
-    description: 'Evidence-based coaching programmes from £197/month. Start your transformation journey today.',
+    description: 'Strength training packages from £12/month. Small groups, personal training, and online programmes. Start your transformation today.',
     images: ['https://leahfowlerperformance.com/og-services.jpg'],
   },
   alternates: {
@@ -60,13 +60,13 @@ export default function ServicesPage() {
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Investment in
-              <span className="text-gradient-gold"> Excellence</span>
+              Transform Your
+              <span className="text-gradient-gold"> Strength</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Evidence-based programmes designed for measurable results.
-              Choose your path to peak performance.
+              Evidence-based strength training for busy parents.
+              From £12/month online programmes to premium 1:1 coaching.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

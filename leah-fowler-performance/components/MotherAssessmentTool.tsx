@@ -445,8 +445,9 @@ export default function MotherAssessmentTool() {
           readiness_score: overallScore,
           performance_level: overallScore >= 70 ? 'High' : overallScore >= 50 ? 'Moderate' : 'Developing',
           recommended_programme: recommendations.programme,
-          estimated_investment: recommendations.programme === 'Elite' ? '£2,997' : 
-                                 recommendations.programme === 'Acceleration' ? '£997' : '£297',
+          estimated_investment: recommendations.programme === 'Gold' ? '£250/month' :
+                                 recommendations.programme === 'Silver' ? '£140/month' :
+                                 recommendations.programme === 'Flexi' ? '£80/month' : '£12/month',
           consent_given: data.consent,
           consent_timestamp: new Date().toISOString(),
           marketing_consent: data.marketing,

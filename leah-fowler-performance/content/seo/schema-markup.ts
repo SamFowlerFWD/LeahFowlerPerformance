@@ -316,10 +316,10 @@ export const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How much does executive performance coaching cost?",
+      "name": "How much does strength training cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our programmes range from £297 to £2,997 monthly, representing exceptional value compared to traditional executive coaching. With our ROI guarantee and flexible payment plans, the investment typically pays for itself within 60 days."
+        "text": "Our programmes range from £12/month for online training to £250/month for premium Gold packages. We offer options including Small Group (£120 for 3 months), Flexi Coaching (£80/month), Semi-Private (£90/month per person), and our most popular Silver package (£140/month)."
       }
     },
     {

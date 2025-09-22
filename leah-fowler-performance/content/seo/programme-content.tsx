@@ -3,15 +3,15 @@
 
 export const programmeContent = {
   foundation: {
-    id: "foundation-programme",
-    name: "Foundation Programme",
-    price: "£297",
+    id: "pathway-programme",
+    name: "Pathway to Endurance",
+    price: "£12",
     priceUnit: "/month",
-    tagline: "Your Performance Transformation Starts Here",
-    shortDescription: "Build the foundations of sustainable high performance with weekly coaching and proven protocols",
+    tagline: "Build Your Fitness Foundation Online",
+    shortDescription: "Progressive strength training programme perfect for parents beginning their fitness journey",
     
     // SEO-optimized long description
-    longDescription: `Transform your executive performance with our Foundation Programme - the perfect starting point for ambitious professionals ready to unlock their potential. This comprehensive programme combines weekly coaching, personalised strategies, and proven methodologies to deliver measurable results within 90 days.`,
+    longDescription: `Start your fitness journey with our Pathway to Endurance online programme - perfect for busy parents ready to build lasting strength. This self-paced programme provides progressive training plans, video demonstrations, and community support to help you develop a strong foundation.`,
     
     // Core benefits with keywords
     benefits: [
@@ -80,7 +80,7 @@ export const programmeContent = {
     
     // Social proof
     testimonial: {
-      quote: "The Foundation Programme gave me the tools to manage my energy and time effectively. I'm achieving more while working fewer hours.",
+      quote: "Pathway to Endurance gave me the confidence to start strength training from home. Now I'm ready for in-person sessions!",
       author: "David Thompson",
       role: "Operations Director",
       company: "Tech Startup",
@@ -90,8 +90,8 @@ export const programmeContent = {
     // SEO-focused FAQs
     faqs: [
       {
-        question: "Who is the Foundation Programme designed for?",
-        answer: "The Foundation Programme is perfect for ambitious professionals and emerging executives who want to optimise their performance. It's ideal if you're experiencing stress, struggling with work-life balance, or know you have untapped potential."
+        question: "Who is the Pathway to Endurance programme designed for?",
+        answer: "This online programme is perfect for complete beginners or parents returning to fitness after a break. It's ideal if you want to build strength foundations from home with flexibility around your schedule."
       },
       {
         question: "How much time commitment is required?",
@@ -101,19 +101,19 @@ export const programmeContent = {
     
     // Call-to-action variations
     ctas: {
-      primary: "Start Foundation Programme",
+      primary: "Start Pathway Programme",
       secondary: "Book Free Consultation",
       exit: "Save My Spot - Limited Availability"
     }
   },
   
   acceleration: {
-    id: "acceleration-programme",
-    name: "Acceleration Programme",
-    price: "£997",
+    id: "silver-programme",
+    name: "Silver Package",
+    price: "£140",
     priceUnit: "/month",
-    tagline: "Fast-Track to Executive Excellence",
-    shortDescription: "Accelerate your journey to peak performance with premium coaching and comprehensive support",
+    tagline: "Weekly 1:1 Personal Training",
+    shortDescription: "Premium personal training with comprehensive support, nutrition guidance and community access",
     
     longDescription: `Our Acceleration Programme is designed for senior executives committed to rapid transformation. With bi-weekly coaching, in-person strategy sessions, and advanced performance tools, you'll achieve breakthrough results while maintaining sustainable work-life integration.`,
     
@@ -199,8 +199,8 @@ export const programmeContent = {
         answer: "The Acceleration Programme provides intensive support with bi-weekly coaching, quarterly in-person sessions, and priority access. You'll also receive advanced biometric tracking and a complete wellness system including support for your partner."
       },
       {
-        question: "Can I upgrade from the Foundation Programme?",
-        answer: "Yes, you can upgrade at any time. We'll credit your Foundation investment toward the Acceleration Programme and adjust your roadmap for accelerated results."
+        question: "Can I upgrade from the Pathway programme?",
+        answer: "Yes, you can upgrade at any time to any of our in-person training packages. Many clients start online and progress to Silver or Gold packages."
       }
     ],
     
@@ -212,14 +212,14 @@ export const programmeContent = {
   },
   
   elite: {
-    id: "elite-programme",
-    name: "Elite Programme",
-    price: "£2,997",
+    id: "gold-programme",
+    name: "Gold Package",
+    price: "£250",
     priceUnit: "/month",
-    tagline: "Bespoke Performance Partnership for Industry Leaders",
-    shortDescription: "The ultimate executive performance programme with unlimited support and VIP benefits",
+    tagline: "Elite Performance Training",
+    shortDescription: "Premium 2x weekly training for accelerated results with advanced programming and recovery protocols",
     
-    longDescription: `The Elite Programme represents the pinnacle of executive performance coaching. Designed for C-suite executives and industry leaders, this bespoke partnership provides unlimited access to Leah and a complete performance team. With quarterly retreats, 24/7 support, and guaranteed results, you'll achieve transformation beyond traditional coaching.`,
+    longDescription: `The Gold Package delivers premium training for parents serious about transformation. With twice-weekly 1:1 sessions, advanced programming, and comprehensive support, you'll achieve rapid results whether training for events or pursuing peak fitness.`,
     
     benefits: [
       {
@@ -259,7 +259,7 @@ export const programmeContent = {
         keyword: "leadership training"
       },
       {
-        title: "Family Performance Programme",
+        title: "Family Guest Passes",
         description: "Complete optimisation support for your entire family",
         icon: "Home",
         keyword: "family wellness"
@@ -296,7 +296,7 @@ export const programmeContent = {
     },
     
     testimonial: {
-      quote: "The Elite Programme is unlike anything else available. It's not coaching; it's a complete life and business transformation. The retreats alone are worth the investment.",
+      quote: "The Gold package transformed me completely. Training twice a week with Leah prepared me for my first Spartan Race and beyond.",
       author: "James Harrison",
       role: "CEO",
       company: "£50M Tech Company",
@@ -305,19 +305,19 @@ export const programmeContent = {
     
     faqs: [
       {
-        question: "What makes the Elite Programme worth the investment?",
-        answer: "The Elite Programme provides unlimited access to Leah, a complete performance team, quarterly retreats, and guaranteed results. Our Elite members average 500% ROI within six months, with transformation extending to their entire family's wellbeing."
+        question: "What makes the Gold Package worth the investment?",
+        answer: "The Gold Package provides 2x weekly 1:1 training, advanced programming, recovery protocols, and priority scheduling. It's perfect for those wanting rapid transformation or training for specific events."
       },
       {
-        question: "How selective is the Elite Programme?",
-        answer: "We maintain only 10 Elite members at any time to ensure the highest level of service. Acceptance requires an application and mutual fit assessment. We only work with leaders truly committed to world-class performance."
+        question: "Who chooses the Gold Package?",
+        answer: "Gold is chosen by parents training for events like Spartan races, those wanting rapid transformation, or anyone prioritising their health and wanting the best possible support."
       }
     ],
     
     ctas: {
-      primary: "Apply for Elite Programme",
-      secondary: "Book Elite Consultation",
-      exit: "Elite Programme - By Application Only"
+      primary: "Start Gold Training",
+      secondary: "Book Gold Consultation",
+      exit: "Gold Package - Premium Training"
     }
   }
 };
@@ -375,9 +375,9 @@ export const programmeComparison = {
     },
     {
       name: "Investment",
-      foundation: "£297/month",
-      acceleration: "£997/month",
-      elite: "£2,997/month"
+      pathway: "£12/month",
+      silver: "£140/month",
+      gold: "£250/month"
     }
   ]
 };

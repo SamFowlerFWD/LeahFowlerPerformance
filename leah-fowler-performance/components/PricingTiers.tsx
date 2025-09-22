@@ -2,8 +2,9 @@
 
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { Check, Star, Zap, Crown, ArrowRight, Shield, TrendingUp, Users, Brain, Calendar, Phone, Video, FileText, BarChart } from 'lucide-react'
+import { Check, Star, Zap, Crown, ArrowRight, Shield, TrendingUp, Users, Brain, Calendar, Phone, Video, FileText, BarChart, Target, Dumbbell, Activity } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { aphroditeFitnessPackages } from '@/content/seo/aphrodite-pricing-content'
 
 interface PricingTier {
   name: string
@@ -27,112 +28,110 @@ interface PricingTier {
 }
 
 export default function PricingTiers() {
-  const [billingPeriod, setBillingPeriod] = React.useState<'monthly' | 'quarterly'>('monthly')
 
+  const getIcon = (color: string) => {
+    switch(color) {
+      case 'gold': return <Crown className="h-6 w-6" />
+      case 'sage': return <Dumbbell className="h-6 w-6" />
+      case 'navy': return <Target className="h-6 w-6" />
+      default: return <Star className="h-6 w-6" />
+    }
+  }
+
+  // Convert packages to tier format with proper ordering
   const tiers: PricingTier[] = [
+    // Pathway to Endurance - Entry Level Online
     {
-      name: 'Foundation',
-      slug: 'foundation',
-      price: billingPeriod === 'monthly' ? 197 : 497,
-      currency: '£',
-      period: billingPeriod === 'monthly' ? '/month' : '/quarter',
-      description: 'For those building their commitment to excellence',
-      features: [
-        { text: 'Group Training (max 6 people)', included: true },
-        { text: 'Trainerize App Programming', included: true },
-        { text: 'Monthly Progress Reviews', included: true },
-        { text: 'Access to Exercise Library', included: true },
-        { text: 'Community Support Group', included: true },
-        { text: 'Commitment Tracking Tools', included: true },
-        { text: '1-to-1 Coaching Sessions', included: false },
-        { text: 'Customised Programming', included: false },
-        { text: 'Nutrition Guidance', included: false },
-        { text: 'WhatsApp Support', included: false }
-      ],
-      cta: 'Start Foundation',
+      name: aphroditeFitnessPackages.pathwayToEndurance.name,
+      slug: aphroditeFitnessPackages.pathwayToEndurance.slug,
+      price: aphroditeFitnessPackages.pathwayToEndurance.price,
+      currency: aphroditeFitnessPackages.pathwayToEndurance.currency,
+      period: aphroditeFitnessPackages.pathwayToEndurance.period,
+      description: aphroditeFitnessPackages.pathwayToEndurance.shortDescription,
+      features: aphroditeFitnessPackages.pathwayToEndurance.features,
+      cta: aphroditeFitnessPackages.pathwayToEndurance.cta,
       popular: false,
-      color: 'sage',
-      icon: <Zap className="h-6 w-6" />,
-      guarantee: '30-day money-back guarantee'
+      color: 'navy' as 'gold' | 'sage' | 'navy',
+      icon: getIcon('navy'),
+      guarantee: aphroditeFitnessPackages.pathwayToEndurance.guarantee
     },
+    // Flexi Coaching - Flexible App-Based
     {
-      name: 'Performance',
-      slug: 'performance',
-      price: billingPeriod === 'monthly' ? 497 : 1297,
-      currency: '£',
-      period: billingPeriod === 'monthly' ? '/month' : '/quarter',
-      description: 'For the seriously committed athlete or high achiever',
-      badge: 'MOST POPULAR',
-      features: [
-        { text: 'Everything in Foundation, plus:', included: true, highlight: true },
-        { text: 'Weekly 1-to-1 Coaching', included: true },
-        { text: 'Fully Customised Programming', included: true },
-        { text: 'Nutrition Optimisation Plan', included: true },
-        { text: 'WhatsApp Support Access', included: true },
-        { text: 'Competition Preparation', included: true },
-        { text: 'Performance Testing & Metrics', included: true },
-        { text: 'Recovery Protocol Design', included: true },
-        { text: 'Monthly Performance Analysis', included: true },
-        { text: 'Priority Booking Access', included: false }
-      ],
-      cta: 'Commit to Performance',
-      popular: true,
-      color: 'gold',
-      icon: <Star className="h-6 w-6" />,
-      guarantee: '60-day results guarantee',
-      bonus: 'Save £198 with quarterly billing'
-    },
-    {
-      name: 'Elite Performance',
-      slug: 'elite',
-      price: billingPeriod === 'monthly' ? 997 : 2497,
-      currency: '£',
-      period: billingPeriod === 'monthly' ? '/month' : '/quarter',
-      description: 'For those pursuing excellence without compromise',
-      features: [
-        { text: 'Everything in Performance, plus:', included: true, highlight: true },
-        { text: '2x Weekly Training Sessions', included: true },
-        { text: 'Competition & Event Preparation', included: true },
-        { text: 'Full Lifestyle Optimisation', included: true },
-        { text: 'Daily WhatsApp Check-ins', included: true },
-        { text: 'Quarterly Testing & Assessment', included: true },
-        { text: 'Priority Access to All Services', included: true },
-        { text: 'Family Member Discount (25%)', included: true },
-        { text: 'VIP Events & Masterminds', included: true },
-        { text: 'Lifetime Alumni Benefits', included: true }
-      ],
-      cta: 'Apply for Elite',
+      name: aphroditeFitnessPackages.flexiCoaching.name,
+      slug: aphroditeFitnessPackages.flexiCoaching.slug,
+      price: aphroditeFitnessPackages.flexiCoaching.price,
+      currency: aphroditeFitnessPackages.flexiCoaching.currency,
+      period: aphroditeFitnessPackages.flexiCoaching.period,
+      description: aphroditeFitnessPackages.flexiCoaching.shortDescription,
+      features: aphroditeFitnessPackages.flexiCoaching.features,
+      cta: aphroditeFitnessPackages.flexiCoaching.cta,
       popular: false,
-      color: 'navy',
-      icon: <Crown className="h-6 w-6" />,
-      guarantee: '90-day transformation guarantee'
+      color: 'sage' as 'gold' | 'sage' | 'navy',
+      icon: getIcon('sage'),
+      guarantee: aphroditeFitnessPackages.flexiCoaching.guarantee
     },
+    // Semi-Private - Partner Training
     {
-      name: 'Youth Development',
-      slug: 'youth',
-      price: billingPeriod === 'monthly' ? 297 : 797,
-      currency: '£',
-      period: billingPeriod === 'monthly' ? '/month' : '/quarter',
-      description: 'Safe strength training for young athletes (ages 8-18)',
-      badge: 'UNIQUE',
-      features: [
-        { text: 'Age-Appropriate Programming', included: true },
-        { text: 'Sport-Specific Development', included: true },
-        { text: '2x Weekly Group Sessions', included: true },
-        { text: 'Long-Term Athletic Development', included: true },
-        { text: 'Injury Prevention Focus', included: true },
-        { text: 'Parent Education Included', included: true },
-        { text: 'Quarterly Progress Testing', included: true },
-        { text: 'Competition Preparation', included: true },
-        { text: 'Nutritional Guidance for Growth', included: true },
-        { text: 'Sibling Discount Available', included: true }
-      ],
-      cta: 'Develop Young Athletes',
+      name: aphroditeFitnessPackages.semiPrivate.name,
+      slug: aphroditeFitnessPackages.semiPrivate.slug,
+      price: aphroditeFitnessPackages.semiPrivate.price,
+      currency: aphroditeFitnessPackages.semiPrivate.currency,
+      period: aphroditeFitnessPackages.semiPrivate.period,
+      description: aphroditeFitnessPackages.semiPrivate.shortDescription,
+      badge: aphroditeFitnessPackages.semiPrivate.badge,
+      features: aphroditeFitnessPackages.semiPrivate.features,
+      cta: aphroditeFitnessPackages.semiPrivate.cta,
       popular: false,
-      color: 'sage',
+      color: 'sage' as 'gold' | 'sage' | 'navy',
+      icon: getIcon('sage'),
+      guarantee: aphroditeFitnessPackages.semiPrivate.guarantee
+    },
+    // Small Group Training
+    {
+      name: aphroditeFitnessPackages.smallGroup.name,
+      slug: aphroditeFitnessPackages.smallGroup.slug,
+      price: aphroditeFitnessPackages.smallGroup.price,
+      currency: aphroditeFitnessPackages.smallGroup.currency,
+      period: ' for ' + aphroditeFitnessPackages.smallGroup.period,
+      description: aphroditeFitnessPackages.smallGroup.shortDescription,
+      features: aphroditeFitnessPackages.smallGroup.features,
+      cta: aphroditeFitnessPackages.smallGroup.cta,
+      popular: false,
+      color: 'navy' as 'gold' | 'sage' | 'navy',
       icon: <Users className="h-6 w-6" />,
-      guarantee: 'Safe training guarantee',
-      bonus: "Norfolk's only youth strength specialist"
+      guarantee: aphroditeFitnessPackages.smallGroup.guarantee
+    },
+    // Silver - Most Popular
+    {
+      name: aphroditeFitnessPackages.silver.name,
+      slug: aphroditeFitnessPackages.silver.slug,
+      price: aphroditeFitnessPackages.silver.price,
+      currency: aphroditeFitnessPackages.silver.currency,
+      period: aphroditeFitnessPackages.silver.period,
+      description: aphroditeFitnessPackages.silver.shortDescription,
+      badge: aphroditeFitnessPackages.silver.badge,
+      features: aphroditeFitnessPackages.silver.features,
+      cta: aphroditeFitnessPackages.silver.cta,
+      popular: true,
+      color: 'gold' as 'gold' | 'sage' | 'navy',
+      icon: <Star className="h-6 w-6" />,
+      guarantee: aphroditeFitnessPackages.silver.guarantee
+    },
+    // Gold - Premium
+    {
+      name: aphroditeFitnessPackages.gold.name,
+      slug: aphroditeFitnessPackages.gold.slug,
+      price: aphroditeFitnessPackages.gold.price,
+      currency: aphroditeFitnessPackages.gold.currency,
+      period: aphroditeFitnessPackages.gold.period,
+      description: aphroditeFitnessPackages.gold.shortDescription,
+      badge: aphroditeFitnessPackages.gold.badge,
+      features: aphroditeFitnessPackages.gold.features,
+      cta: aphroditeFitnessPackages.gold.cta,
+      popular: false,
+      color: 'gold' as 'gold' | 'sage' | 'navy',
+      icon: <Crown className="h-6 w-6" />,
+      guarantee: aphroditeFitnessPackages.gold.guarantee
     }
   ]
 
@@ -172,43 +171,18 @@ export default function PricingTiers() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold font-medium text-sm mb-6">
             <TrendingUp className="h-4 w-4" />
-            Investment in Excellence
+            Transform Your Strength • Transform Your Life
           </span>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-6">
             Choose Your
-            <span className="block text-gradient-gold mt-2">Performance Path</span>
+            <span className="block text-gradient-gold mt-2">Training Journey</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Evidence-based programmes designed for measurable transformation.
-            Join 500+ mothers who've reclaimed their identity and strength.
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Evidence-based strength training for busy parents. From £12/month online programmes
+            to premium 1:1 coaching. Join 500+ parents who've transformed their strength and confidence.
           </p>
-
-          {/* Billing Toggle */}
-          <div className="inline-flex items-center p-1 rounded-full bg-gray-100 dark:bg-navy-dark/50 border border-gray-200 dark:border-gold/20">
-            <button
-              onClick={() => setBillingPeriod('monthly')}
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                billingPeriod === 'monthly'
-                  ? 'bg-white dark:bg-gold text-navy shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-              }`}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setBillingPeriod('quarterly')}
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                billingPeriod === 'quarterly'
-                  ? 'bg-white dark:bg-gold text-navy shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-              }`}
-            >
-              Quarterly
-              <span className="ml-2 text-xs text-gold dark:text-navy font-bold">Save 15%</span>
-            </button>
-          </div>
         </motion.div>
 
         {/* Pricing Cards */}
@@ -217,7 +191,7 @@ export default function PricingTiers() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {tiers.map((tier, index) => (
             <motion.div
@@ -289,9 +263,9 @@ export default function PricingTiers() {
                     </span>
                   </div>
 
-                  {tier.bonus && billingPeriod === 'quarterly' && (
+                  {tier.badge && tier.badge !== 'MOST POPULAR' && tier.badge !== 'PREMIUM' && (
                     <p className="text-sm font-medium text-green-600 dark:text-green-400">
-                      {tier.bonus}
+                      {tier.badge}
                     </p>
                   )}
                 </div>
@@ -367,7 +341,7 @@ export default function PricingTiers() {
           className="mt-20 p-8 lg:p-12 rounded-3xl bg-gradient-to-br from-navy via-navy-dark to-navy-dark text-white"
         >
           <h3 className="text-3xl font-bold mb-8 text-center">
-            Every Programme Includes
+            Why Choose Aphrodite Fitness
           </h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -375,32 +349,32 @@ export default function PricingTiers() {
               <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center">
                 <Brain className="h-7 w-7 text-gold" />
               </div>
-              <h4 className="font-semibold">Evidence-Based Methods</h4>
-              <p className="text-sm text-white/70">Neuroscience-backed techniques proven to deliver results</p>
+              <h4 className="font-semibold">Mother of 3</h4>
+              <p className="text-sm text-white/70">I understand the unique challenges parents face</p>
             </div>
 
             <div className="flex flex-col items-center text-center space-y-3">
               <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center">
-                <BarChart className="h-7 w-7 text-gold" />
+                <Activity className="h-7 w-7 text-gold" />
               </div>
-              <h4 className="font-semibold">Progress Tracking</h4>
-              <p className="text-sm text-white/70">Real-time metrics to measure your transformation</p>
+              <h4 className="font-semibold">Spartan Athlete</h4>
+              <p className="text-sm text-white/70">Elite performance expertise made accessible</p>
             </div>
 
             <div className="flex flex-col items-center text-center space-y-3">
               <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center">
                 <Users className="h-7 w-7 text-gold" />
               </div>
-              <h4 className="font-semibold">Elite Community</h4>
-              <p className="text-sm text-white/70">Network with 500+ strong mothers</p>
+              <h4 className="font-semibold">500+ Parents Transformed</h4>
+              <p className="text-sm text-white/70">Join a supportive community of strong parents</p>
             </div>
 
             <div className="flex flex-col items-center text-center space-y-3">
               <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center">
                 <Shield className="h-7 w-7 text-gold" />
               </div>
-              <h4 className="font-semibold">Results Guarantee</h4>
-              <p className="text-sm text-white/70">Measurable improvements or your money back</p>
+              <h4 className="font-semibold">Results Guaranteed</h4>
+              <p className="text-sm text-white/70">Real strength gains or your money back</p>
             </div>
           </div>
         </motion.div>

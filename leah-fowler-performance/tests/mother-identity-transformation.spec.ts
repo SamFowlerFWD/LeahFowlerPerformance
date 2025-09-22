@@ -125,9 +125,9 @@ test.describe('Mother Identity Transformation - Comprehensive Test', () => {
 
       // Check for programme titles
       const programmes = [
-        { name: 'Rediscovery Phase', price: '£197' },
-        { name: 'Strength Building', price: '£297' },
-        { name: 'Warrior Mother', price: '£197/monthly' }
+        { name: 'Pathway to Endurance', price: '£12' },
+        { name: 'Silver', price: '£140' },
+        { name: 'Gold', price: '£250' }
       ]
 
       for (const programme of programmes) {
