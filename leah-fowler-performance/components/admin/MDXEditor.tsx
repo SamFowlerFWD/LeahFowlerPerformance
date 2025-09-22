@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useCallback } from 'react'
-import { useEditor, EditorContent, BubbleMenu, FloatingMenu } from '@tiptap/react'
+import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import Link from '@tiptap/extension-link'
 import Image from '@tiptap/extension-image'
@@ -359,34 +359,7 @@ export default function MDXEditor({ content, onChange, placeholder = 'Start writ
         className="prose prose-lg max-w-none p-4 min-h-[500px] focus:outline-none"
       />
 
-      {/* Bubble Menu */}
-      {editor && (
-        <BubbleMenu editor={editor} className="bg-white border border-gray-300 rounded-lg shadow-lg p-1 flex gap-1">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => editor.chain().focus().toggleBold().run()}
-            className={editor.isActive('bold') ? 'bg-gray-200' : ''}
-          >
-            <Bold className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => editor.chain().focus().toggleItalic().run()}
-            className={editor.isActive('italic') ? 'bg-gray-200' : ''}
-          >
-            <Italic className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setLinkDialogOpen(true)}
-          >
-            <Link2 className="h-4 w-4" />
-          </Button>
-        </BubbleMenu>
-      )}
+      {/* Bubble Menu temporarily disabled - not available in current tiptap version */}
 
       {/* Link Dialog */}
       <Dialog open={linkDialogOpen} onOpenChange={setLinkDialogOpen}>

@@ -376,7 +376,7 @@ function generateNextSteps(tier: string, urgencyScore: number, commitmentScore: 
   // Second step based on tier
   if (tier === 'bespoke' || tier === 'elite') {
     steps.push('Complete comprehensive performance testing (VO2 Max, movement screen, biomarkers)')
-    steps.push('Receive your personalised Training Programme'
+    steps.push('Receive your personalised Training Programme')
     steps.push('Begin weekly consulting sessions with measurable milestones')
   } else if (tier === 'accelerator') {
     steps.push('Complete baseline performance assessments')
