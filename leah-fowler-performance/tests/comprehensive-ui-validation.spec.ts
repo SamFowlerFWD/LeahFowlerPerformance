@@ -1,5 +1,8 @@
-import { test, expect, devices } from '@playwright/test';
-import { Page } from '@playwright/test';
+import {
+  test,
+  expect
+} from '@playwright/test';
+ '@playwright/test';
 
 const BASE_URL = 'http://localhost:3006';
 
@@ -399,11 +402,11 @@ test.describe('Comprehensive UI Validation - Leah Fowler Performance', () => {
       // Check for Core Web Vitals
       const webVitals = await page.evaluate(() => {
         return new Promise((resolve) => {
-          let cls = 0;
+          const cls = 0;
           const observer = new PerformanceObserver((list) => {
             for (const entry of list.getEntries()) {
-              if (entry.entryType === 'layout-shift' && !(entry as any).hadRecentInput) {
-                cls += (entry as any).value;
+              if (entry.entryType === 'layout-shift' && !(entry as unknown).hadRecentInput) {
+                cls += (entry as unknown).value;
               }
             }
           });
@@ -417,15 +420,15 @@ test.describe('Comprehensive UI Validation - Leah Fowler Performance', () => {
       });
       
       console.log('Web Vitals:', webVitals);
-      expect((webVitals as any).cls).toBeLessThan(0.1); // Good CLS
+      expect((webVitals as unknown).cls).toBeLessThan(0.1); // Good CLS
     });
 
     test('Animation performance', async ({ page }) => {
       // Monitor animation frame rate
       const fps = await page.evaluate(() => {
         return new Promise((resolve) => {
-          let lastTime = performance.now();
-          let frames = 0;
+          const lastTime = performance.now();
+          const frames = 0;
           let fps = 0;
           
           function measureFPS() {
@@ -615,7 +618,7 @@ test.describe('Comprehensive UI Validation - Leah Fowler Performance', () => {
       const images = page.locator('img');
       const imageCount = await images.count();
       
-      for (let i = 0; i < imageCount; i++) {
+      for (const i = 0; i < imageCount; i++) {
         const img = images.nth(i);
         const alt = await img.getAttribute('alt');
         const ariaLabel = await img.getAttribute('aria-label');
@@ -852,9 +855,9 @@ test.describe('Detailed Performance Analysis', () => {
             resourceCount: performance.getEntriesByType('resource').length,
             
             // Memory (if available)
-            memory: (performance as any).memory ? {
-              usedJSHeapSize: (performance as any).memory.usedJSHeapSize,
-              totalJSHeapSize: (performance as any).memory.totalJSHeapSize
+            memory: (performance as unknown).memory ? {
+              usedJSHeapSize: (performance as unknown).memory.usedJSHeapSize,
+              totalJSHeapSize: (performance as unknown).memory.totalJSHeapSize
             } : null
           });
         }

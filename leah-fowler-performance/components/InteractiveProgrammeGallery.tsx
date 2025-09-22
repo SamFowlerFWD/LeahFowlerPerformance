@@ -9,12 +9,10 @@ import {
   Heart,
   Target,
   ArrowRight,
-  Calendar,
   Clock,
   MapPin,
   ChevronLeft,
   ChevronRight,
-  Play,
   Star
 } from 'lucide-react'
 // Transformation programmes data is defined locally in this component
@@ -194,8 +192,8 @@ export default function InteractiveProgrammeGallery() {
         <motion.div
           animate={{
             x: [0, 100, 0],
-            y: [0, -100, 0],
-          }}
+            y: [0, -100, 0]
+}}
           transition={{
             duration: 20,
             repeat: Infinity,
@@ -336,7 +334,7 @@ export default function InteractiveProgrammeGallery() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">What&apos;s Included:</h4>
                   <ul className="space-y-2">
                     {programmes[currentIndex].features.slice(0, 3).map((feature, idx) => (
                       <motion.li

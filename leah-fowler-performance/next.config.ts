@@ -17,13 +17,6 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   // Enable strict mode for better React optimization
   reactStrictMode: true,
-  // Temporarily disable linting and TypeScript errors during builds
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
 };
 
 export default nextConfig;

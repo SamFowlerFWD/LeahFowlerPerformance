@@ -1033,7 +1033,7 @@ export const emailConfig: EmailConfig = {
 }
 
 // Helper function to personalise emails
-export function personaliseEmail(template: string, data: Record<string, any>): string {
+export function personaliseEmail(template: string, data: Record<string, unknown>): string {
   let personalised = template
 
   // Replace placeholders with actual values

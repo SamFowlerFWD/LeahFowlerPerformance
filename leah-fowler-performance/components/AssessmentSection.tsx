@@ -2,7 +2,11 @@
 
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { ClipboardCheck, TrendingUp, Target, Sparkles } from 'lucide-react'
+import {
+  TrendingUp,
+  Target,
+  Sparkles
+} from 'lucide-react'
 import AssessmentTool from '@/components/AssessmentTool'
 
 export default function AssessmentSection() {
@@ -16,8 +20,8 @@ export default function AssessmentSection() {
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.4, 0.2],
-            x: [0, 50, 0],
-          }}
+            x: [0, 50, 0]
+}}
           transition={{
             duration: 12,
             repeat: Infinity,
@@ -29,8 +33,8 @@ export default function AssessmentSection() {
           animate={{
             scale: [1.1, 1, 1.1],
             opacity: [0.2, 0.4, 0.2],
-            x: [0, -50, 0],
-          }}
+            x: [0, -50, 0]
+}}
           transition={{
             duration: 15,
             repeat: Infinity,
@@ -79,7 +83,7 @@ export default function AssessmentSection() {
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-            This comprehensive assessment determines if you're ready for £5,000+ quarterly 
+            This comprehensive assessment determines if you&apos;re ready for £5,000+ quarterly 
             performance consultancy. Only high-performers with elite commitment qualify.
           </p>
 

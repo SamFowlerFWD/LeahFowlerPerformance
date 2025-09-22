@@ -1,7 +1,10 @@
 "use client"
 
 import * as React from 'react'
-import { Check, X, Star } from 'lucide-react'
+import {
+  Check,
+  X
+} from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function ComparisonTable() {
@@ -16,8 +19,8 @@ export default function ComparisonTable() {
           semiPrivate: false,
           smallGroup: true,
           silver: false,
-          gold: false,
-        },
+          gold: false
+},
         {
           feature: '1-to-1 Personal Training',
           pathway: false,
@@ -25,8 +28,8 @@ export default function ComparisonTable() {
           semiPrivate: false,
           smallGroup: false,
           silver: 'Weekly',
-          gold: '2x Weekly',
-        },
+          gold: '2x Weekly'
+},
         {
           feature: '2-to-1 Partner Training',
           pathway: false,
@@ -34,8 +37,8 @@ export default function ComparisonTable() {
           semiPrivate: true,
           smallGroup: false,
           silver: false,
-          gold: false,
-        },
+          gold: false
+},
         {
           feature: 'Online Programme',
           pathway: true,
@@ -43,8 +46,8 @@ export default function ComparisonTable() {
           semiPrivate: false,
           smallGroup: false,
           silver: false,
-          gold: false,
-        },
+          gold: false
+},
         {
           feature: 'App-Based Training',
           pathway: true,
@@ -52,10 +55,10 @@ export default function ComparisonTable() {
           semiPrivate: true,
           smallGroup: false,
           silver: true,
-          gold: true,
-        },
-      ],
-    },
+          gold: true
+},
+      ]
+},
     {
       category: 'Programming & Support',
       items: [
@@ -66,8 +69,8 @@ export default function ComparisonTable() {
           semiPrivate: true,
           smallGroup: 'Group-based',
           silver: true,
-          gold: 'Advanced',
-        },
+          gold: 'Advanced'
+},
         {
           feature: 'Nutrition Guidance',
           pathway: false,
@@ -75,8 +78,8 @@ export default function ComparisonTable() {
           semiPrivate: true,
           smallGroup: false,
           silver: true,
-          gold: 'Advanced',
-        },
+          gold: 'Advanced'
+},
         {
           feature: 'WhatsApp Support',
           pathway: false,
@@ -84,8 +87,8 @@ export default function ComparisonTable() {
           semiPrivate: false,
           smallGroup: false,
           silver: true,
-          gold: 'Daily',
-        },
+          gold: 'Daily'
+},
         {
           feature: 'Progress Reviews',
           pathway: false,
@@ -93,8 +96,8 @@ export default function ComparisonTable() {
           semiPrivate: 'Monthly',
           smallGroup: false,
           silver: 'Monthly',
-          gold: 'Fortnightly',
-        },
+          gold: 'Fortnightly'
+},
         {
           feature: 'Exercise Video Library',
           pathway: true,
@@ -102,10 +105,10 @@ export default function ComparisonTable() {
           semiPrivate: true,
           smallGroup: true,
           silver: true,
-          gold: true,
-        },
-      ],
-    },
+          gold: true
+},
+      ]
+},
     {
       category: 'Community & Access',
       items: [
@@ -116,8 +119,8 @@ export default function ComparisonTable() {
           semiPrivate: true,
           smallGroup: true,
           silver: true,
-          gold: true,
-        },
+          gold: true
+},
         {
           feature: 'Community Forum',
           pathway: true,
@@ -125,8 +128,8 @@ export default function ComparisonTable() {
           semiPrivate: false,
           smallGroup: false,
           silver: false,
-          gold: false,
-        },
+          gold: false
+},
         {
           feature: 'Monthly Live Q&A',
           pathway: true,
@@ -134,8 +137,8 @@ export default function ComparisonTable() {
           semiPrivate: false,
           smallGroup: false,
           silver: false,
-          gold: false,
-        },
+          gold: false
+},
         {
           feature: 'Priority Scheduling',
           pathway: false,
@@ -143,8 +146,8 @@ export default function ComparisonTable() {
           semiPrivate: false,
           smallGroup: false,
           silver: false,
-          gold: true,
-        },
+          gold: true
+},
         {
           feature: 'Flexible Session Times',
           pathway: true,
@@ -152,10 +155,10 @@ export default function ComparisonTable() {
           semiPrivate: true,
           smallGroup: 'Fixed times',
           silver: true,
-          gold: true,
-        },
-      ],
-    },
+          gold: true
+},
+      ]
+},
     {
       category: 'Testing & Assessment',
       items: [
@@ -166,8 +169,8 @@ export default function ComparisonTable() {
           semiPrivate: true,
           smallGroup: true,
           silver: true,
-          gold: true,
-        },
+          gold: true
+},
         {
           feature: 'Performance Testing',
           pathway: false,
@@ -175,8 +178,8 @@ export default function ComparisonTable() {
           semiPrivate: 'Quarterly',
           smallGroup: false,
           silver: 'Quarterly',
-          gold: 'Monthly',
-        },
+          gold: 'Monthly'
+},
         {
           feature: 'Competition Preparation',
           pathway: false,
@@ -184,8 +187,8 @@ export default function ComparisonTable() {
           semiPrivate: true,
           smallGroup: false,
           silver: true,
-          gold: true,
-        },
+          gold: true
+},
         {
           feature: 'Recovery Protocols',
           pathway: false,
@@ -193,10 +196,10 @@ export default function ComparisonTable() {
           semiPrivate: false,
           smallGroup: false,
           silver: false,
-          gold: true,
-        },
-      ],
-    },
+          gold: true
+},
+      ]
+},
     {
       category: 'Pricing & Value',
       items: [
@@ -207,8 +210,8 @@ export default function ComparisonTable() {
           semiPrivate: '£90/person',
           smallGroup: '£40/month*',
           silver: '£140',
-          gold: '£250',
-        },
+          gold: '£250'
+},
         {
           feature: 'Trial/Guarantee',
           pathway: '7 days free',
@@ -216,8 +219,8 @@ export default function ComparisonTable() {
           semiPrivate: 'First session £25',
           smallGroup: 'First session free',
           silver: '30-day guarantee',
-          gold: '60-day guarantee',
-        },
+          gold: '60-day guarantee'
+},
         {
           feature: 'Ad-hoc Sessions',
           pathway: false,
@@ -225,8 +228,8 @@ export default function ComparisonTable() {
           semiPrivate: '£25/person',
           smallGroup: false,
           silver: false,
-          gold: false,
-        },
+          gold: false
+},
         {
           feature: 'Family/Guest Benefits',
           pathway: false,
@@ -234,10 +237,10 @@ export default function ComparisonTable() {
           semiPrivate: 'Partner discount',
           smallGroup: false,
           silver: false,
-          gold: 'Guest passes',
-        },
-      ],
-    },
+          gold: 'Guest passes'
+},
+      ]
+},
   ]
 
   const renderValue = (value: boolean | string) => {

@@ -4,7 +4,7 @@ import * as React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+ '@/lib/utils'
 
 export default function FloatingElements() {
   const [isWhatsAppHovered, setIsWhatsAppHovered] = React.useState(false)

@@ -590,7 +590,7 @@ export function generatePageSchema(pageType: string, additionalData?: any) {
 }
 
 // Export function to inject schema into page head
-export function injectSchema(schemas: any[]): string {
+export function injectSchema(schemas: unknown[]): string {
   return schemas.map(schema =>
     `<script type="application/ld+json">${JSON.stringify(schema)}</script>`
   ).join('\n')

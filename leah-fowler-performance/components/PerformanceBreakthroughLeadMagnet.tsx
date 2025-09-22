@@ -252,7 +252,7 @@ export default function PerformanceBreakthroughLeadMagnet() {
           className="text-center border-t pt-6"
         >
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            <strong>Join 500+ committed individuals</strong> who've discovered their performance breakthrough
+            <strong>Join 500+ committed individuals</strong> who&apos;ve discovered their performance breakthrough
           </p>
           <div className="flex items-center justify-center mt-2 space-x-1">
             {[...Array(5)].map((_, i) => (

@@ -17,8 +17,8 @@ async function measurePagePerformance(page: Page) {
       loadComplete: navigation.loadEventEnd - navigation.loadEventStart,
       domInteractive: navigation.domInteractive - navigation.fetchStart,
       firstPaint: performance.getEntriesByName('first-paint')[0]?.startTime || 0,
-      firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0,
-    };
+      firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0
+};
   });
   return metrics;
 }
@@ -59,7 +59,7 @@ async function checkAccessibility(page: Page, selector?: string) {
   // Check color contrast (simplified check)
   const lowContrastElements = await element.evaluate((el) => {
     const elements = el.querySelectorAll('*');
-    let lowContrast = 0;
+    const lowContrast = 0;
     
     elements.forEach((elem: Element) => {
       const styles = window.getComputedStyle(elem);
@@ -450,8 +450,8 @@ test.describe('Performance Metrics', () => {
       return new Promise((resolve) => {
         let fcp = 0;
         let lcp = 0;
-        let cls = 0;
-        let fid = 0;
+        const cls = 0;
+        const fid = 0;
         
         // First Contentful Paint
         new PerformanceObserver((list) => {
@@ -468,8 +468,8 @@ test.describe('Performance Metrics', () => {
         // Cumulative Layout Shift
         new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
-            if (!(entry as any).hadRecentInput) {
-              cls += (entry as any).value;
+            if (!(entry as unknown).hadRecentInput) {
+              cls += (entry as unknown).value;
             }
           }
         }).observe({ entryTypes: ['layout-shift'] });
@@ -493,7 +493,7 @@ test.describe('Performance Metrics', () => {
     const images = page.locator('img');
     const imageCount = await images.count();
     
-    for (let i = 0; i < imageCount; i++) {
+    for (const i = 0; i < imageCount; i++) {
       const img = images.nth(i);
       
       // Check for lazy loading

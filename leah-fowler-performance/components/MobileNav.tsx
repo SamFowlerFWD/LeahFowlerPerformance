@@ -7,7 +7,6 @@ import { motion, AnimatePresence, PanInfo } from 'framer-motion'
 import {
   Home,
   Calendar,
-  User,
   MessageCircle,
   Menu,
   X,
@@ -129,7 +128,7 @@ export default function MobileNav() {
     }
   }, [isOpen])
 
-  const handleDragEnd = (event: any, info: PanInfo) => {
+  const handleDragEnd = (event: unknown, info: PanInfo) => {
     // Close menu if dragged more than 100px to the right
     if (info.offset.x > 100) {
       setIsOpen(false)

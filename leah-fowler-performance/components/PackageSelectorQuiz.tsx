@@ -89,7 +89,7 @@ const PackageSelectorQuiz: React.FC = () => {
   const [showResults, setShowResults] = useState(false)
   const [isQuizStarted, setIsQuizStarted] = useState(false)
 
-  const handleAnswer = (questionId: string, value: string, points: any) => {
+  const handleAnswer = (questionId: string, value: string, points: unknown) => {
     setAnswers({ ...answers, [questionId]: value })
 
     // Update scores

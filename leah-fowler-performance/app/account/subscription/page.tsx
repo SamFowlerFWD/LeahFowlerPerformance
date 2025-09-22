@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import {
   CreditCard,
-  Calendar,
   Download,
   AlertCircle,
   CheckCircle,
@@ -14,15 +13,14 @@ import {
   Shield,
   TrendingUp,
   Receipt,
-  Settings,
-  RefreshCw
+  Settings
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { formatPrice } from '@/lib/stripe'
-import { subscriptionQueries, invoiceQueries, paymentMethodQueries } from '@/lib/supabase'
+ '@/lib/supabase'
 import type { Subscription, Invoice, PaymentMethod } from '@/lib/supabase'
 
 export default function SubscriptionDashboard() {
@@ -58,8 +56,8 @@ export default function SubscriptionDashboard() {
         current_period_end: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString(),
         cancel_at_period_end: false,
         created_at: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString(),
-        updated_at: new Date().toISOString(),
-      }
+        updated_at: new Date().toISOString()
+}
       setSubscription(mockSubscription)
 
       const mockInvoices: Invoice[] = [
@@ -81,8 +79,8 @@ export default function SubscriptionDashboard() {
           period_start: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString(),
           period_end: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(),
           paid_at: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString(),
-          created_at: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString(),
-        },
+          created_at: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString()
+},
       ]
       setInvoices(mockInvoices)
 
@@ -99,8 +97,8 @@ export default function SubscriptionDashboard() {
           card_exp_year: 2025,
           is_default: true,
           created_at: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString(),
-          updated_at: new Date().toISOString(),
-        },
+          updated_at: new Date().toISOString()
+},
       ]
       setPaymentMethods(mockPaymentMethods)
     } catch (error) {
@@ -116,8 +114,8 @@ export default function SubscriptionDashboard() {
       const response = await fetch('/api/stripe/portal', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId }),
-      })
+        body: JSON.stringify({ userId })
+})
 
       if (!response.ok) {
         throw new Error('Failed to create portal session')
@@ -153,24 +151,24 @@ export default function SubscriptionDashboard() {
       foundation: {
         name: 'Foundation',
         color: 'text-sage',
-        icon: '⚡',
-      },
+        icon: '⚡'
+},
       performance: {
         name: 'Performance',
         color: 'text-gold',
-        icon: '⭐',
-      },
+        icon: '⭐'
+},
       elite: {
         name: 'Elite Performance',
         color: 'text-navy dark:text-gold',
-        icon: '👑',
-      },
+        icon: '👑'
+},
       youth: {
         name: 'Youth Development',
         color: 'text-sage',
-        icon: '👥',
-      },
-    }
+        icon: '👥'
+}
+}
     return details[tier as keyof typeof details] || details.foundation
   }
 

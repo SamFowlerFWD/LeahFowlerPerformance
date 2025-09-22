@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
-import type { Post, PostFormData } from '@/types/blog'
+ '@/types/blog'
 
 // Initialize Supabase Admin Client
 const supabaseAdmin = createClient(
@@ -121,8 +121,8 @@ export async function POST(request: NextRequest) {
       ...body,
       author_id: author.id,
       published_at: body.status === 'published' ? new Date().toISOString() : null,
-      scheduled_for: body.status === 'scheduled' ? body.scheduled_for : null,
-    }
+      scheduled_for: body.status === 'scheduled' ? body.scheduled_for : null
+}
 
     // Remove tags from post data (handled separately)
     const { tags, ...postWithoutTags } = postData
@@ -144,8 +144,8 @@ export async function POST(request: NextRequest) {
       const postTags = tags.map((tagId: string, index: number) => ({
         post_id: post.id,
         tag_id: tagId,
-        position: index,
-      }))
+        position: index
+}))
 
       const { error: tagsError } = await supabaseAdmin
         .from('post_tags')
@@ -207,8 +207,8 @@ export async function PUT(request: NextRequest) {
     // Prepare update data
     const updateData = {
       ...body,
-      updated_at: new Date().toISOString(),
-    }
+      updated_at: new Date().toISOString()
+}
 
     // Handle status changes
     if (body.status === 'published' && !body.published_at) {
@@ -247,8 +247,8 @@ export async function PUT(request: NextRequest) {
         const postTags = tags.map((tagId: string, index: number) => ({
           post_id: postId,
           tag_id: tagId,
-          position: index,
-        }))
+          position: index
+}))
 
         const { error: tagsError } = await supabaseAdmin
           .from('post_tags')

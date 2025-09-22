@@ -58,7 +58,7 @@ export default function MobileDemoPage() {
                   Meet Your Coach
                 </h2>
                 <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  Mum of 2, Spartan Ultra Finisher, and Norfolk's most trusted family fitness coach
+                  Mum of 2, Spartan Ultra Finisher, and Norfolk&apos;s most trusted family fitness coach
                 </p>
               </div>
               <AboutSection />
@@ -169,7 +169,7 @@ export default function MobileDemoPage() {
                 </details>
                 <details className="group">
                   <summary className="flex justify-between items-center cursor-pointer font-semibold text-slate-900 py-3 border-b">
-                    What if I haven't exercised in years?
+                    What if I haven&apos;t exercised in years?
                     <span className="text-orange-500 group-open:rotate-180 transition-transform">↓</span>
                   </summary>
                   <p className="mt-3 text-slate-600">
@@ -182,7 +182,7 @@ export default function MobileDemoPage() {
                     <span className="text-orange-500 group-open:rotate-180 transition-transform">↓</span>
                   </summary>
                   <p className="mt-3 text-slate-600">
-                    Yes! We have special family packages where additional family members get 50% off. Many families train together on Saturdays - it's our busiest session!
+                    Yes! We have special family packages where additional family members get 50% off. Many families train together on Saturdays - it&apos;s our busiest session!
                   </p>
                 </details>
               </div>
@@ -199,7 +199,7 @@ export default function MobileDemoPage() {
         <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Ready to Join Norfolk's Strongest Family?
+              Ready to Join Norfolk&apos;s Strongest Family?
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               First session free • No contracts • Just results

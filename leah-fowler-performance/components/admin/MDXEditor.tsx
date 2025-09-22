@@ -10,7 +10,6 @@ import { common, createLowlight } from 'lowlight'
 import {
   Bold,
   Italic,
-  Underline,
   Code,
   Link2,
   List,
@@ -22,9 +21,6 @@ import {
   Image as ImageIcon,
   Undo,
   Redo,
-  AlignLeft,
-  AlignCenter,
-  AlignRight,
   Table,
   Youtube,
   FileCode
@@ -37,7 +33,7 @@ import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
+  DialogTitle
 } from '@/components/ui/dialog'
 import { Label } from '@/components/ui/label'
 
@@ -60,33 +56,33 @@ export default function MDXEditor({ content, onChange, placeholder = 'Start writ
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
-        codeBlock: false,
-      }),
+        codeBlock: false
+}),
       Link.configure({
         openOnClick: false,
         HTMLAttributes: {
-          class: 'text-blue-600 hover:text-blue-800 underline',
-        },
-      }),
+          class: 'text-blue-600 hover:text-blue-800 underline'
+}
+}),
       Image.configure({
         HTMLAttributes: {
-          class: 'max-w-full h-auto rounded-lg',
-        },
-      }),
+          class: 'max-w-full h-auto rounded-lg'
+}
+}),
       CodeBlockLowlight.configure({
         lowlight,
         HTMLAttributes: {
-          class: 'bg-gray-900 text-gray-100 rounded-md p-4 font-mono text-sm',
-        },
-      }),
+          class: 'bg-gray-900 text-gray-100 rounded-md p-4 font-mono text-sm'
+}
+}),
     ],
     content,
     onUpdate: ({ editor }) => {
       // Convert to MDX format
       const html = editor.getHTML()
       onChange(html)
-    },
-  })
+    }
+})
 
   const setLink = useCallback(() => {
     if (!editor) return

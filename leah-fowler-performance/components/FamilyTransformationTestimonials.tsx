@@ -1,8 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+importfrom 'next/image'
+import {
+  motion
+} from 'framer-motion'
 import {
   Quote,
   Star,
@@ -13,9 +15,6 @@ import {
   TrendingUp,
   Award,
   Activity,
-  ChevronLeft,
-  ChevronRight,
-  Play,
   CheckCircle
 } from 'lucide-react'
 
@@ -261,8 +260,8 @@ export default function FamilyTransformationTestimonials() {
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
+            rotate: [0, 180, 360]
+}}
           transition={{
             duration: 30,
             repeat: Infinity,
@@ -295,7 +294,7 @@ export default function FamilyTransformationTestimonials() {
             {categories.map((cat) => (
               <motion.button
                 key={cat.id}
-                onClick={() => setSelectedCategory(cat.id as any)}
+                onClick={() => setSelectedCategory(cat.id as unknown)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all ${
                   selectedCategory === cat.id
                     ? 'bg-orange-500 text-white shadow-lg'

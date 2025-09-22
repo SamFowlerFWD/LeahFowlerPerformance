@@ -190,7 +190,7 @@ export async function POST(request: NextRequest) {
           .reduce((obj, key) => {
             obj[key] = updates[key]
             return obj
-          }, {} as Record<string, any>)
+          }, {} as Record<string, unknown>)
 
         if (Object.keys(filteredUpdates).length === 0) {
           return NextResponse.json(
@@ -289,7 +289,7 @@ export async function OPTIONS(request: NextRequest) {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    }
+      'Access-Control-Allow-Headers': 'Content-Type'
+}
   })
 }

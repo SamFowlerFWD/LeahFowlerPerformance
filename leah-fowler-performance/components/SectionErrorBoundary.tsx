@@ -47,7 +47,7 @@ export default class SectionErrorBoundary extends React.Component<Props, State> 
               This section is temporarily unavailable
             </h3>
             <p className="text-gray-600 text-sm">
-              We're working on bringing this content back. Please try refreshing the page.
+              We&apos;re working on bringing this content back. Please try refreshing the page.
             </p>
             <button
               onClick={() => this.setState({ hasError: false })}

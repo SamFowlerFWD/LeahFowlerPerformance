@@ -9,11 +9,8 @@ import {
   Trophy,
   Calendar,
   Heart,
-  Star,
   ArrowRight,
   MessageCircle,
-  Activity,
-  Target,
   Award,
   Clock,
   CheckCircle
@@ -165,14 +162,14 @@ export default function NorfolkCommunitySection() {
         >
           <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-6 py-3 rounded-full font-semibold mb-6">
             <MapPin className="w-5 h-5" />
-            Norfolk's Strongest Community
+            Norfolk&apos;s Strongest Community
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Join Norfolk's Most Supportive
+            Join Norfolk&apos;s Most Supportive
             <span className="block text-orange-500">Fitness Family</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
-            From Dereham to the coast, we're building a community where everyone belongs, everyone improves, and everyone celebrates together
+            From Dereham to the coast, we&apos;re building a community where everyone belongs, everyone improves, and everyone celebrates together
           </p>
         </motion.div>
 
@@ -264,7 +261,7 @@ export default function NorfolkCommunitySection() {
               {['all', 'training', 'race', 'charity'].map((type) => (
                 <button
                   key={type}
-                  onClick={() => setActiveEventType(type as any)}
+                  onClick={() => setActiveEventType(type as unknown)}
                   className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
                     activeEventType === type
                       ? 'bg-orange-500 text-white'
@@ -423,7 +420,7 @@ export default function NorfolkCommunitySection() {
           className="text-center bg-gradient-to-br from-orange-50 to-white rounded-2xl p-12 border-2 border-orange-100"
         >
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Ready to Join Norfolk's Strongest Community?
+            Ready to Join Norfolk&apos;s Strongest Community?
           </h3>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Your first session is free. Come see why hundreds of Norfolk families choose to train with us.

@@ -4,12 +4,10 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   MessageSquare,
-  X,
   Send,
   Phone,
   Clock,
   CheckCircle,
-  User,
   Bot,
   Calendar,
   ChevronDown
@@ -106,7 +104,7 @@ export default function ChatWidget() {
       if (userInput.includes('price') || userInput.includes('cost') || userInput.includes('investment')) {
         addBotMessage(
           "Our programmes start at £12/month for online training, with options including Flexi Coaching (£80/month), Silver 1:1 training (£140/month - most popular), and premium Gold package (£250/month). Each package is designed for different fitness goals and schedules. Would you like to discuss which would be best for you?",
-          ['Tell me more about Silver', 'I\'m interested in Gold', 'Book a consultation']
+          ['Tell me more about Silver', 'I am interested in Gold', 'Book a consultation']
         );
       } else if (userInput.includes('time') || userInput.includes('busy') || userInput.includes('schedule')) {
         addBotMessage(
@@ -116,7 +114,7 @@ export default function ChatWidget() {
       } else if (userInput.includes('results') || userInput.includes('guarantee') || userInput.includes('work')) {
         addBotMessage(
           "Great question! Our clients typically see 47% strength increase and 38% energy gain within 90 days. We're so confident, we offer a 100% success guarantee. Would you like to see specific case studies from mothers like you?",
-          ['Yes, show case studies', 'Tell me about the guarantee', 'I\'m ready to start']
+          ['Yes, show case studies', 'Tell me about the guarantee', 'I am ready to start']
         );
       } else if (userInput.includes('book') || userInput.includes('call') || userInput.includes('consultation')) {
         setCurrentStage('booking');
@@ -179,7 +177,7 @@ export default function ChatWidget() {
                 className="absolute bottom-20 right-0 bg-white rounded-lg shadow-lg p-3 w-64"
               >
                 <p className="text-sm font-medium">Hi! Need help choosing the right programme? 👋</p>
-                <p className="text-xs text-gray-600 mt-1">I'm here to guide you</p>
+                <p className="text-xs text-gray-600 mt-1">I&apos;m here to guide you</p>
               </motion.div>
             )}
           </motion.div>
@@ -204,7 +202,7 @@ export default function ChatWidget() {
                     <AvatarFallback>LF</AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-semibold">Leah's Assistant</p>
+                    <p className="font-semibold">Leah&apos;s Assistant</p>
                     <div className="flex items-center space-x-1 text-xs">
                       <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
                       <span>Online - Responds instantly</span>

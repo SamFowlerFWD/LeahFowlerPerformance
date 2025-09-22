@@ -35,7 +35,7 @@ export default function LeadMagnetDelivery() {
     company: '',
     marketingConsent: false
   })
-  const [error, setError] = React.useState<string>('')
+  const [error, setError] = React.useState('')
   const [deliveredMagnet, setDeliveredMagnet] = React.useState<LeadMagnet | null>(null)
 
   const leadMagnets: LeadMagnet[] = [
@@ -320,7 +320,7 @@ export default function LeadMagnetDelivery() {
                     className="mt-1 h-4 w-4 rounded text-gold focus:ring-gold border-gray-300"
                   />
                   <label htmlFor="marketingConsent" className="text-sm text-gray-600 dark:text-gray-300">
-                    Yes, I'd like to receive weekly performance insights and exclusive offers from Leah Fowler Performance.
+                    Yes, I&apos;d like to receive weekly performance insights and exclusive offers from Leah Fowler Performance.
                     You can unsubscribe at any time.
                   </label>
                 </div>
@@ -496,7 +496,7 @@ export default function LeadMagnetDelivery() {
                   Ready to Transform Your Performance?
                 </h4>
                 <p className="text-white/80 text-sm mb-4">
-                  Join 500+ mothers who've reclaimed their identity
+                  Join 500+ mothers who&apos;ve reclaimed their identity
                 </p>
                 <Button
                   className="w-full py-4 rounded-lg bg-white text-navy hover:bg-gray-100 font-semibold transition-all duration-300"

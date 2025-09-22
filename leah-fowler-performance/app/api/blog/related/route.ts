@@ -38,10 +38,10 @@ export async function GET(request: NextRequest) {
     }
 
     const categoryId = currentPost.category_id
-    const tagIds = currentPost.tags?.map((t: any) => t.tag_id) || []
+    const tagIds = currentPost.tags?.map((t: unknown) => t.tag_id) || []
 
     // Build a query to find related posts
-    let relatedQuery = supabase
+    const relatedQuery = supabase
       .from('posts')
       .select(`
         id,
@@ -290,9 +290,9 @@ export async function GET(request: NextRequest) {
   }
 }
 
-function formatPosts(posts: any[]) {
+function formatPosts(posts: unknown[]) {
   return posts.map(post => ({
     ...post,
-    tags: post.tags?.map((t: any) => t.tag).filter(Boolean) || []
+    tags: post.tags?.map((t: unknown) => t.tag).filter(Boolean) || []
   }))
 }

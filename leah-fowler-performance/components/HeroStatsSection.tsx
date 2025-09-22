@@ -71,7 +71,7 @@ export default function HeroStatsSection() {
           className="text-center"
         >
           <p className="text-sm md:text-base text-white/60 max-w-2xl mx-auto">
-            Smart strength training for busy parents • Norfolk's specialist parent fitness coach
+            Smart strength training for busy parents • Norfolk&apos;s specialist parent fitness coach
           </p>
         </motion.div>
       </div>

@@ -3,10 +3,10 @@
 import * as React from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Quote, Star, Play, ChevronLeft, ChevronRight, Building2, Linkedin, Award } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+ '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
+importfrom 'next/image'
 
 const testimonials = [
   {

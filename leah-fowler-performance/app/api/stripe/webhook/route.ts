@@ -258,7 +258,7 @@ export async function POST(request: NextRequest) {
         if (!paymentMethod.customer) break
 
         const customer = await stripe.customers.retrieve(paymentMethod.customer as string)
-        const userId = (customer as any).metadata?.supabase_user_id
+        const userId = (customer as unknown).metadata?.supabase_user_id
 
         if (userId) {
           await supabaseAdmin

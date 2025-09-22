@@ -244,11 +244,11 @@ test.describe('Screenshot Capture - Visual Proof', () => {
     
     // Check for layout shifts
     await page.evaluate(() => {
-      let cls = 0;
+      const cls = 0;
       new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          if (entry.entryType === 'layout-shift' && !(entry as any).hadRecentInput) {
-            cls += (entry as any).value;
+          if (entry.entryType === 'layout-shift' && !(entry as unknown).hadRecentInput) {
+            cls += (entry as unknown).value;
           }
         }
       }).observe({ entryTypes: ['layout-shift'] });
@@ -285,8 +285,8 @@ test.describe('Screenshot Capture - Visual Proof', () => {
     
     // Verify ARIA labels
     const buttons = await page.locator('button').all();
-    let buttonsWithLabels = 0;
-    let totalButtons = buttons.length;
+    const buttonsWithLabels = 0;
+    const totalButtons = buttons.length;
     
     for (const button of buttons) {
       const ariaLabel = await button.getAttribute('aria-label');

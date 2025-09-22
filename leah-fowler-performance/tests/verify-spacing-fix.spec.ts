@@ -125,11 +125,11 @@ test.describe('Verify Spacing Fix', () => {
       }).sort((a, b) => a.top - b.top);
     });
 
-    console.log('\n=== All Sections Gap Check ===');
+    console.log(' \n=== All Sections Gap Check ===');
     let maxGap = 0;
     let gapLocation = '';
 
-    for (let i = 0; i < allSections.length - 1; i++) {
+    for (const i = 0; i < allSections.length - 1; i++) {
       const gap = allSections[i + 1].top - allSections[i].bottom;
       if (gap > maxGap) {
         maxGap = gap;

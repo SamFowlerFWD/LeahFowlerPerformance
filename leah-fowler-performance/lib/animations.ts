@@ -524,7 +524,7 @@ export const tabContent: Variants = {
 }
 
 // Create animation utility hook
-export const useAnimationVariant = (variant: Variants, custom?: any) => ({
+export const useAnimationVariant = (variant: Variants, custom?: unknown) => ({
   initial: 'hidden',
   animate: 'visible',
   variants: variant,

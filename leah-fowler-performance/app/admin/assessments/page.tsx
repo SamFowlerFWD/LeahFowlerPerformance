@@ -8,10 +8,20 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+ '@/components/ui/tabs'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Textarea } from '@/components/ui/textarea'
-import { AlertCircle, CheckCircle, Download, Filter, Mail, Phone, RefreshCw, Search, TrendingUp, Users, UserCheck, Clock } from 'lucide-react'
+import {
+  Download,
+  Mail,
+  Phone,
+  RefreshCw,
+  Search,
+  TrendingUp,
+  Users,
+  UserCheck,
+  Clock
+} from 'lucide-react'
 import { getAssessmentSubmissions, updateSubmissionStatus, anonymizeSubmission } from '@/lib/api-client'
 import { format } from 'date-fns'
 
@@ -29,7 +39,7 @@ interface AssessmentSubmission {
   status: string
   contacted: boolean
   created_at: string
-  profile: any
+  profile: unknown
 }
 
 interface Statistics {
@@ -45,7 +55,7 @@ export default function AdminAssessmentsPage() {
   const [submissions, setSubmissions] = useState<AssessmentSubmission[]>([])
   const [statistics, setStatistics] = useState<Statistics | null>(null)
   const [loading, setLoading] = useState(true)
-  const [filter, setFilter] = useState<'all' | 'qualified' | 'new' | 'contacted'>('all')
+  const [filter, setFilter] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedSubmission, setSelectedSubmission] = useState<AssessmentSubmission | null>(null)
   const [adminNotes, setAdminNotes] = useState('')
@@ -256,7 +266,7 @@ export default function AdminAssessmentsPage() {
                   />
                 </div>
               </div>
-              <Select value={filter} onValueChange={(value: any) => setFilter(value)}>
+              <Select value={filter} onValueChange={(value: unknown) => setFilter(value)}>
                 <SelectTrigger className="w-40">
                   <SelectValue />
                 </SelectTrigger>

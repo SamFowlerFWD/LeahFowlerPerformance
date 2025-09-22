@@ -22,7 +22,7 @@ export const SpacingShowcase: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 backdrop-blur-premium rounded-premium border border-gray-200">
               <Award className="w-4 h-4 text-gold" />
               <span className="text-sm font-medium text-gray-700">
-                UK's Premier Performance Consultancy
+                UK&apos;s Premier Performance Consultancy
               </span>
             </div>
           </motion.div>
@@ -177,7 +177,7 @@ export const SpacingShowcase: React.FC = () => {
               </div>
 
               <p className="text-2xl md:text-3xl leading-relaxed text-gray-800 mb-space-8">
-                The transformation in our mothers' progress has been remarkable.
+                The transformation in our mothers&apos; progress has been remarkable.
                 Leah's evidence-based approach delivered measurable results within weeks.
               </p>
 

@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Minus, HelpCircle } from 'lucide-react'
 import Script from 'next/script'
-import { seoOptimizedContent } from '@/content/seo/premium-positioning-content'
+ '@/content/seo/premium-positioning-content'
 
 const faqData = [
   {

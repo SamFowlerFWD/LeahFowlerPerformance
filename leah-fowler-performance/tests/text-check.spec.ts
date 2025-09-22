@@ -7,7 +7,7 @@ test('Check if text is rendering on homepage', async ({ page }) => {
   // Wait for initial load
   await page.waitForLoadState('networkidle');
 
-  // Check if page has any visible text
+  // Check if page has unknown visible text
   const bodyText = await page.textContent('body');
   console.log('Body text length:', bodyText?.length || 0);
 

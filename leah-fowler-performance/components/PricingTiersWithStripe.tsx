@@ -2,7 +2,22 @@
 
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { Check, Star, Zap, Crown, ArrowRight, Shield, TrendingUp, Users, Brain, Calendar, Phone, Video, FileText, BarChart, Loader2, Target, Dumbbell, Activity } from 'lucide-react'
+import {
+  Check,
+  Star,
+  Crown,
+  ArrowRight,
+  Shield,
+  TrendingUp,
+  Users,
+  Brain,
+  Calendar,
+  Phone,
+  BarChart,
+  Loader2,
+  Target,
+  Dumbbell
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { getStripe } from '@/lib/stripe'
 import { formatPrice } from '@/lib/stripe'
@@ -173,16 +188,16 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
       const response = await fetch('/api/stripe/checkout', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-        },
+          'Content-Type': 'application/json'
+},
         body: JSON.stringify({
           tier: tierSlug,
           billingPeriod: selectedTier.billing,
           userId,
           email: userEmail,
-          name: userName,
-        }),
-      })
+          name: userName
+})
+})
 
       if (!response.ok) {
         const data = await response.json()
@@ -198,8 +213,8 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
       }
 
       const { error: stripeError } = await stripe.redirectToCheckout({
-        sessionId,
-      })
+        sessionId
+})
 
       if (stripeError) {
         throw stripeError
@@ -210,7 +225,6 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
       setLoadingTier(null)
     }
   }
-
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -258,7 +272,7 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
 
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Evidence-based strength training for busy parents. From £12/month online programmes
-            to premium 1:1 coaching. Join 500+ parents who've transformed their strength and confidence.
+            to premium 1:1 coaching. Join 500+ parents who&apos;ve transformed their strength and confidence.
           </p>
         </motion.div>
 

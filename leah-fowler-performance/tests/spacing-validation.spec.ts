@@ -1,4 +1,7 @@
-import { test, expect, Page } from '@playwright/test';
+import {
+  test,
+  expect
+} from '@playwright/test';
 
 // Test configuration for different breakpoints
 const breakpoints = [
@@ -100,7 +103,7 @@ test.describe('Spacing and Padding Validation', () => {
       test('Section spacing consistency', async ({ page }) => {
         const sectionSpacings: number[] = [];
         
-        for (let i = 0; i < sections.length - 1; i++) {
+        for (const i = 0; i < sections.length - 1; i++) {
           const currentSection = await page.$(`#${sections[i]}`);
           const nextSection = await page.$(`#${sections[i + 1]}`);
           
@@ -304,11 +307,11 @@ test.describe('Spacing and Padding Validation', () => {
       // Measure CLS (Cumulative Layout Shift)
       const cls = await page.evaluate(() => {
         return new Promise<number>((resolve) => {
-          let clsScore = 0;
+          const clsScore = 0;
           const observer = new PerformanceObserver((list) => {
             for (const entry of list.getEntries()) {
-              if ((entry as any).hadRecentInput) continue;
-              clsScore += (entry as any).value;
+              if ((entry as unknown).hadRecentInput) continue;
+              clsScore += (entry as unknown).value;
             }
           });
           observer.observe({ type: 'layout-shift', buffered: true });
@@ -351,7 +354,7 @@ test.describe('Spacing and Padding Validation', () => {
         
         const metrics = await page.evaluate(() => {
           const sections = ['hero', 'assessment', 'programmes', 'testimonials', 'about', 'contact', 'footer'];
-          const sectionMetrics: any = {};
+          const sectionMetrics: unknown = {};
           
           sections.forEach(sectionId => {
             const section = document.getElementById(sectionId);

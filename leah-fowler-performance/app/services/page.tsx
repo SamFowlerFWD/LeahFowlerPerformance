@@ -206,7 +206,7 @@ export default function ServicesPage() {
                 Can I change my programme tier later?
               </summary>
               <p className="mt-4 text-gray-600 dark:text-gray-300">
-                Yes, you can upgrade or downgrade your programme at any time. Changes take effect at the next billing cycle, and we'll prorate any differences in price.
+                Yes, you can upgrade or downgrade your programme at any time. Changes take effect at the next billing cycle, and we&apos;ll prorate any differences in price.
               </p>
             </details>
 
@@ -256,7 +256,7 @@ export default function ServicesPage() {
             Ready to Transform Your Performance?
           </h2>
           <p className="text-xl text-navy/80 mb-8">
-            Join 500+ high achievers who've already started their journey
+            Join 500+ high achievers who&apos;ve already started their journey
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

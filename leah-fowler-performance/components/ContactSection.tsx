@@ -2,19 +2,16 @@
 
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
+import {
+  Phone,
+  Mail,
+  MapPin,
   Calendar,
   Clock,
-  MessageSquare,
-  Send,
   CheckCircle,
   Star,
   Shield,
   Award,
-  Sparkles,
   ArrowRight,
   Video,
   Globe,
@@ -34,8 +31,8 @@ const contactMethods = [
     action: 'Start Your Journey',
     href: '#booking',
     gradient: 'from-gold to-amber-600',
-    popular: true,
-  },
+    popular: true
+},
   {
     icon: Video,
     title: 'Virtual Parent Sessions',
@@ -43,8 +40,8 @@ const contactMethods = [
     action: 'Join From Home',
     href: '#virtual',
     gradient: 'from-pink-500 to-purple-600',
-    popular: false,
-  },
+    popular: false
+},
   {
     icon: Mail,
     title: 'Message Another Parent',
@@ -52,8 +49,8 @@ const contactMethods = [
     action: 'Share Your Story',
     href: 'mailto:leah@leahfowlerperformance.com',
     gradient: 'from-emerald-500 to-teal-600',
-    popular: false,
-  },
+    popular: false
+},
 ]
 
 const timeSlots = [
@@ -74,8 +71,8 @@ export default function ContactSection() {
     biggestChallenge: '',
     programme: '',
     timeSlot: '',
-    mirrorMoment: '',
-  })
+    mirrorMoment: ''
+})
   const [isSubmitted, setIsSubmitted] = React.useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -92,23 +89,23 @@ export default function ContactSection() {
         biggestChallenge: '',
         programme: '',
         timeSlot: '',
-        mirrorMoment: '',
-      })
+        mirrorMoment: ''
+})
     }, 3000)
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
-    })
+      [e.target.name]: e.target.value
+})
   }
 
   const handleSelectChange = (name: string, value: string) => {
     setFormData({
       ...formData,
-      [name]: value,
-    })
+      [name]: value
+})
   }
 
   return (
@@ -119,8 +116,8 @@ export default function ContactSection() {
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.05, 0.1, 0.05],
-          }}
+            opacity: [0.05, 0.1, 0.05]
+}}
           transition={{
             duration: 12,
             repeat: Infinity,
@@ -131,8 +128,8 @@ export default function ContactSection() {
         <motion.div
           animate={{
             scale: [1.1, 1, 1.1],
-            opacity: [0.05, 0.1, 0.05],
-          }}
+            opacity: [0.05, 0.1, 0.05]
+}}
           transition={{
             duration: 15,
             repeat: Infinity,
@@ -173,7 +170,7 @@ export default function ContactSection() {
           
           <p className="text-2xl md:text-3xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
             Your journey back to yourself begins with understanding.
-            Let's talk parent to parent about reclaiming your identity.
+            Let&apos;s talk parent to parent about reclaiming your identity.
           </p>
         </motion.div>
 
@@ -249,7 +246,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg mb-2">Parent Who Understands</h4>
-                      <p className="text-white/70 text-base">From postnatal struggle to Spartan Ultra - I've lived this journey</p>
+                      <p className="text-white/70 text-base">From postnatal struggle to Spartan Ultra - I&apos;ve lived this journey</p>
                     </div>
                   </div>
                   
@@ -269,7 +266,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg mb-2">Community of Warriors</h4>
-                      <p className="text-white/70 text-base">200+ parents supporting each other's journeys</p>
+                      <p className="text-white/70 text-base">200+ parents supporting each other&apos;s journeys</p>
                     </div>
                   </div>
                   
@@ -325,7 +322,7 @@ export default function ContactSection() {
                     Start Your Identity Reclamation
                   </h3>
                   <p className="text-gray-600 text-lg">
-                    Share your story below and I'll reach out parent to parent within 24 hours.
+                    Share your story below and I&apos;ll reach out parent to parent within 24 hours.
                   </p>
                 </div>
 
@@ -414,7 +411,7 @@ export default function ContactSection() {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="lost-identity">Lost sense of self</SelectItem>
-                          <SelectItem value="body-changed">Body doesn't feel mine</SelectItem>
+                          <SelectItem value="body-changed">Body doesn&apos;t feel mine</SelectItem>
                           <SelectItem value="no-time">No time for myself</SelectItem>
                           <SelectItem value="guilt">Constant parent guilt</SelectItem>
                           <SelectItem value="exhausted">Completely exhausted</SelectItem>

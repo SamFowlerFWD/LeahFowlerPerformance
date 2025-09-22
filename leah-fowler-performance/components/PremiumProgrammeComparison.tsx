@@ -10,7 +10,6 @@ import {
   staggerContainer,
   luxuryScale,
   glowPulse,
-  easings,
   viewportSettings
 } from '@/lib/animations'
 
@@ -36,8 +35,8 @@ const programmes = [
       { name: 'Race Preparation', included: false },
     ],
     cta: 'Start Training Today',
-    ideal: 'Perfect for parents starting their fitness journey',
-  },
+    ideal: 'Perfect for parents starting their fitness journey'
+},
   {
     id: 'strength',
     name: 'Strength & Stamina',
@@ -60,8 +59,8 @@ const programmes = [
       { name: 'Race Preparation', included: false },
     ],
     cta: 'Get Stronger Now',
-    ideal: 'Most chosen by parents ready to level up',
-  },
+    ideal: 'Most chosen by parents ready to level up'
+},
   {
     id: 'warrior',
     name: 'Performance Training',
@@ -84,13 +83,13 @@ const programmes = [
       { name: 'Race Preparation', included: true, detail: 'Spartan, OCR, marathons' },
     ],
     cta: 'Train at Elite Level',
-    ideal: 'For parents ready to achieve extraordinary',
-  },
+    ideal: 'For parents ready to achieve extraordinary'
+},
 ]
 
 export default function PremiumProgrammeComparison() {
   const [hoveredProgramme, setHoveredProgramme] = React.useState<string | null>(null)
-  const [selectedProgramme, setSelectedProgramme] = React.useState<string>('performance')
+  const [selectedProgramme, setSelectedProgramme] = React.useState(''performance')
 
   return (
     <motion.section
@@ -118,7 +117,7 @@ export default function PremiumProgrammeComparison() {
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Each programme is designed for parents at different fitness levels.
-            From first press-up to first race, we'll get you properly strong.
+            From first press-up to first race, we&apos;ll get you properly strong.
           </p>
         </motion.div>
 

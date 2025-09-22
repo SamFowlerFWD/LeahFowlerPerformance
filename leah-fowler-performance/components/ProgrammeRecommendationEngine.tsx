@@ -12,24 +12,18 @@ import {
   BarChart3,
   Clock,
   Shield,
-  Heart,
   Brain,
   CheckCircle,
   ArrowRight,
   Star,
   TrendingUp,
-  Smartphone,
-  Video,
   MessageCircle,
-  Award,
-  ChevronLeft,
-  ChevronRight,
   Sparkles
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from './ui/card';
 import { Badge } from './ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+ './ui/tabs';
 import { Progress } from './ui/progress';
 import { cn } from '@/lib/utils';
 
@@ -214,7 +208,7 @@ export default function ProgrammeRecommendationEngine({
   userProfile,
   onSelect
 }: RecommendationEngineProps) {
-  const [selectedProgramme, setSelectedProgramme] = useState<string>('acceleration');
+  const [selectedProgramme, setSelectedProgramme] = useState('acceleration');
   const [comparisonView, setComparisonView] = useState(false);
   const [matchScores, setMatchScores] = useState<Record<string, number>>({});
   const [isCalculating, setIsCalculating] = useState(true);
@@ -232,21 +226,21 @@ export default function ProgrammeRecommendationEngine({
     const scores: Record<string, number> = {};
     
     // Foundation programme matching
-    let foundationScore = 50;
+    const foundationScore = 50;
     if (assessmentScore < 50) foundationScore += 30;
     if (userProfile?.investment_level === 'low') foundationScore += 20;
     if (userProfile?.role_level === 'mother') foundationScore += 15;
     scores.foundation = Math.min(foundationScore, 100);
     
     // Acceleration programme matching
-    let accelerationScore = 60;
+    const accelerationScore = 60;
     if (assessmentScore >= 50 && assessmentScore < 75) accelerationScore += 30;
     if (userProfile?.investment_level === 'moderate') accelerationScore += 20;
     if (['busy-mum', 'working-mum'].includes(userProfile?.role_level || '')) accelerationScore += 15;
     scores.acceleration = Math.min(accelerationScore, 100);
     
     // Elite programme matching
-    let eliteScore = 40;
+    const eliteScore = 40;
     if (assessmentScore >= 75) eliteScore += 35;
     if (userProfile?.investment_level === 'high' || userProfile?.investment_level === 'premium') eliteScore += 25;
     if (['ambitious-mum', 'fitness-focused'].includes(userProfile?.role_level || '')) eliteScore += 20;
@@ -352,7 +346,7 @@ export default function ProgrammeRecommendationEngine({
             
             {/* Key Features */}
             <div className="space-y-2">
-              <h4 className="font-semibold text-sm text-gray-700">What\'s Included:</h4>
+              <h4 className="font-semibold text-sm text-gray-700">What\&apos;s Included:</h4>
               <ul className="space-y-2">
                 {programme.features.slice(0, 5).map((feature, i) => (
                   <li key={i} className="flex items-start space-x-2 text-sm">
@@ -455,7 +449,7 @@ export default function ProgrammeRecommendationEngine({
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold">Your Personalised Programme Recommendations</h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Based on your assessment, we\'ve identified the programmes that will deliver 
+          Based on your assessment, we\&apos;ve identified the programmes that will deliver 
           the best results for your specific needs and goals.
         </p>
         
@@ -598,7 +592,7 @@ export default function ProgrammeRecommendationEngine({
             <Shield className="w-10 h-10 text-green-600 mx-auto" />
             <h3 className="text-xl font-semibold">100% Success Guarantee</h3>
             <p className="text-gray-700 max-w-2xl mx-auto">
-              We\'re so confident in our approach that we guarantee measurable improvements 
+              We\&apos;re so confident in our approach that we guarantee measurable improvements 
               within 30 days or we\'ll work with you for free until you see results.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
@@ -623,7 +617,7 @@ export default function ProgrammeRecommendationEngine({
       <div className="text-center space-y-4 pt-8">
         <h3 className="text-2xl font-bold">Ready to Transform Your Performance?</h3>
         <p className="text-gray-600 max-w-xl mx-auto">
-          Join hundreds of mothers who\'ve already unlocked their strength potential. 
+          Join hundreds of mothers who\&apos;ve already unlocked their strength potential. 
           Your transformation starts with a single decision.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">

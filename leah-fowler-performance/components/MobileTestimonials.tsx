@@ -442,7 +442,7 @@ const MobileTestimonials: React.FC = () => {
             Ready to Write Your Success Story?
           </h3>
           <p className="text-white/70 mb-6">
-            Join hundreds of Norfolk families who've transformed their lives
+            Join hundreds of Norfolk families who&apos;ve transformed their lives
           </p>
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-xl hover:shadow-2xl transition-all inline-flex items-center gap-2">
             <Trophy className="w-5 h-5" />

@@ -161,7 +161,7 @@ export default function ExitIntentPopup() {
                       transition={{ delay: 0.3 }}
                       className="text-4xl font-bold leading-tight"
                     >
-                      Wait! Don't Leave Empty-Handed
+                      Wait! Don&apos;t Leave Empty-Handed
                     </motion.h2>
 
                     <motion.p
@@ -235,7 +235,7 @@ export default function ExitIntentPopup() {
                         Yes! Send Me The Free Guide
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Join 500+ mums who've got properly strong
+                        Join 500+ mums who&apos;ve got properly strong
                       </p>
                     </div>
 

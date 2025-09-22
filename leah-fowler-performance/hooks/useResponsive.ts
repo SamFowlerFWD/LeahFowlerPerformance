@@ -43,7 +43,7 @@ const BREAKPOINTS = {
 } as const
 
 // Debounce function for performance
-function debounce<T extends (...args: any[]) => any>(
+function debounce<T extends (...args: unknown[]) => any>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -94,7 +94,7 @@ export function useResponsive(): ResponsiveState {
     const isTouchDevice =
       'ontouchstart' in window ||
       navigator.maxTouchPoints > 0 ||
-      (navigator as any).msMaxTouchPoints > 0
+      (navigator as unknown).msMaxTouchPoints > 0
 
     // Platform detection
     const userAgent = navigator.userAgent.toLowerCase()

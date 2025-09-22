@@ -176,7 +176,7 @@ test.describe('Mother Identity Transformation - Comprehensive Test', () => {
       ]
 
       // Check for at least 2 testimonials visible
-      let visibleTestimonials = 0
+      const visibleTestimonials = 0
       for (const author of testimonialAuthors) {
         const testimonial = page.locator(`text=/${author}/`).first()
         if (await testimonial.isVisible().catch(() => false)) {
@@ -333,11 +333,11 @@ test.describe('Mother Identity Transformation - Comprehensive Test', () => {
 
       // Check for CLS
       const cls = await page.evaluate(() => {
-        let clsValue = 0
+        const clsValue = 0
         const observer = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
-            if ((entry as any).hadRecentInput) continue
-            clsValue += (entry as any).value
+            if ((entry as unknown).hadRecentInput) continue
+            clsValue += (entry as unknown).value
           }
         })
         observer.observe({ type: 'layout-shift', buffered: true })
@@ -352,7 +352,7 @@ test.describe('Mother Identity Transformation - Comprehensive Test', () => {
       const images = page.locator('img')
       const imageCount = await images.count()
 
-      for (let i = 0; i < Math.min(imageCount, 5); i++) {
+      for (const i = 0; i < Math.min(imageCount, 5); i++) {
         const img = images.nth(i)
         if (await img.isVisible()) {
           const src = await img.getAttribute('src')

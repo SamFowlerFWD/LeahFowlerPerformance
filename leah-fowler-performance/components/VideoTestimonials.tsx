@@ -2,7 +2,14 @@
 
 import * as React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Play, X, Star, TrendingUp, Calendar, Award, ChevronLeft, ChevronRight } from 'lucide-react'
+import {
+  Play,
+  X,
+  Star,
+  Award,
+  ChevronLeft,
+  ChevronRight
+} from 'lucide-react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 
 interface VideoTestimonial {

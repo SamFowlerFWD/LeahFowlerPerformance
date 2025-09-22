@@ -2,13 +2,9 @@
 
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { 
-  CheckCircle, 
-  Zap, 
-  Target, 
-  Trophy, 
-  Users, 
-  Brain,
+import {
+  CheckCircle,
+  Trophy,
   ArrowRight,
   Star,
   Sparkles,
@@ -43,8 +39,8 @@ const programmes = [
     ],
     popular: false,
     badge: null,
-    guarantees: ['30-Day Money Back', 'Lifetime Resources'],
-  },
+    guarantees: ['30-Day Money Back', 'Lifetime Resources']
+},
   {
     title: 'Mother Fitness Excellence',
     subtitle: 'PREMIUM PROGRAMME',
@@ -67,8 +63,8 @@ const programmes = [
     ],
     popular: true,
     badge: 'MOST POPULAR',
-    guarantees: ['Results Guarantee', 'Lifetime Support'],
-  },
+    guarantees: ['Results Guarantee', 'Lifetime Support']
+},
   {
     title: 'Elite Mastery',
     subtitle: 'PLATINUM PROGRAMME',
@@ -92,8 +88,8 @@ const programmes = [
     ],
     popular: false,
     badge: 'LIMITED SPOTS',
-    guarantees: ['200% ROI Guarantee', 'White Glove Service'],
-  },
+    guarantees: ['200% ROI Guarantee', 'White Glove Service']
+},
 ]
 
 export default function ProgrammesSection() {
@@ -133,7 +129,7 @@ export default function ProgrammesSection() {
           </h2>
           
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Join industry leaders who've unlocked their potential with our scientifically-proven 
+            Join industry leaders who&apos;ve unlocked their potential with our scientifically-proven 
             programmes. Every journey includes a complimentary strategy consultation.
           </p>
         </motion.div>

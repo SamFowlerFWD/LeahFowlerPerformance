@@ -156,7 +156,7 @@ const WhyChooseSection: React.FC = () => {
               {Object.entries(trustBuildingContent.transformationStories)
                 .filter(([key]) => key !== 'headline')
                 .map(([key, story], index) => {
-                  const transformationStory = story as any
+                  const transformationStory = story as unknown
                   return (
                     <motion.div
                       key={key}

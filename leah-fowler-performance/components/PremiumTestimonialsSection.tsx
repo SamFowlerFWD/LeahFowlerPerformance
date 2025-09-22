@@ -6,7 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Star, Quote, ChevronLeft, ChevronRight, Award, TrendingUp, Target, Zap } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { PremiumButton } from '@/components/ui/premium-button'
-import { fadeInUp, luxuryScale, staggerContainer, easings } from '@/lib/animations'
+import {
+  easings
+} from '@/lib/animations'
 
 // Mother transformation testimonials - deeply relatable stories
 const testimonials = [
@@ -147,7 +149,7 @@ export default function PremiumTestimonialsSection() {
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Join 500+ busy mothers who've transformed their lives with evidence-based fitness coaching in Norfolk
+            Join 500+ busy mothers who&apos;ve transformed their lives with evidence-based fitness coaching in Norfolk
           </p>
 
           {/* Trust badges */}
@@ -417,7 +419,7 @@ export default function PremiumTestimonialsSection() {
             Ready to Write Your Success Story?
           </h3>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Join hundreds of mothers who've transformed their fitness with Norfolk's premier performance coaching
+            Join hundreds of mothers who&apos;ve transformed their fitness with Norfolk's premier performance coaching
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <PremiumButton

@@ -96,8 +96,8 @@ export interface Post {
   custom_css?: string;
   custom_js?: string;
   video_url?: string;
-  research_data?: Record<string, any>;
-  case_study_results?: Record<string, any>;
+  research_data?: Record<string, unknown>;
+  case_study_results?: Record<string, unknown>;
 
   // Relations
   tags?: Tag[];
@@ -115,7 +115,7 @@ export interface PostRevision {
   title: string;
   content: string;
   excerpt?: string;
-  meta_data?: Record<string, any>;
+  meta_data?: Record<string, unknown>;
   revision_number: number;
   revision_message?: string;
   author_id?: string;
@@ -140,7 +140,7 @@ export interface PostView {
 export interface BlogSettings {
   id: string;
   key: string;
-  value: any;
+  value: unknown;
   created_at: string;
   updated_at: string;
 }
@@ -174,8 +174,8 @@ export interface PostFormData {
   show_related: boolean;
   tags: string[]; // tag IDs
   video_url?: string;
-  research_data?: Record<string, any>;
-  case_study_results?: Record<string, any>;
+  research_data?: Record<string, unknown>;
+  case_study_results?: Record<string, unknown>;
 }
 
 // API response types

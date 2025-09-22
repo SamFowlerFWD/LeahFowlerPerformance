@@ -290,9 +290,9 @@ export async function GET(request: NextRequest) {
       headers: {
         'Content-Type': 'text/markdown',
         'Content-Disposition': 'attachment; filename="Executive-Performance-Protocol.md"',
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-      },
-    })
+        'Cache-Control': 'no-cache, no-store, must-revalidate'
+}
+})
 
   } catch (error) {
     console.error('Download error:', error)
@@ -362,7 +362,7 @@ export async function OPTIONS(request: NextRequest) {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    }
+      'Access-Control-Allow-Headers': 'Content-Type'
+}
   })
 }

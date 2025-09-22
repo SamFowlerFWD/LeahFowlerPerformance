@@ -2,16 +2,14 @@
 
 import * as React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  Star, 
-  Quote, 
-  ChevronLeft, 
-  ChevronRight, 
-  Briefcase,
+import {
+  Star,
+  Quote,
+  ChevronLeft,
+  ChevronRight,
   TrendingUp,
   Award,
   Sparkles,
-  Building,
   BadgeCheck,
   ArrowUpRight
 } from 'lucide-react'
@@ -33,8 +31,8 @@ const testimonials = [
     },
     highlight: '£2.3M revenue increase',
     verified: true,
-    featured: true,
-  },
+    featured: true
+},
   {
     id: 2,
     name: 'Sarah Mitchell',
@@ -50,8 +48,8 @@ const testimonials = [
     },
     highlight: '500% ROI in Year 1',
     verified: true,
-    featured: false,
-  },
+    featured: false
+},
   {
     id: 3,
     name: 'David Thompson',
@@ -67,8 +65,8 @@ const testimonials = [
     },
     highlight: 'Olympic qualification secured',
     verified: true,
-    featured: false,
-  },
+    featured: false
+},
   {
     id: 4,
     name: 'Emma Williams',
@@ -84,8 +82,8 @@ const testimonials = [
     },
     highlight: '3 successful acquisitions',
     verified: true,
-    featured: true,
-  },
+    featured: true
+},
   {
     id: 5,
     name: 'Michael Chen',
@@ -101,8 +99,8 @@ const testimonials = [
     },
     highlight: 'Leading 120+ team',
     verified: true,
-    featured: false,
-  },
+    featured: false
+},
   {
     id: 6,
     name: 'Alexandra Foster',
@@ -118,8 +116,8 @@ const testimonials = [
     },
     highlight: '£50M+ deals closed',
     verified: true,
-    featured: true,
-  },
+    featured: true
+},
 ]
 
 export default function TestimonialsSection() {
@@ -149,8 +147,8 @@ export default function TestimonialsSection() {
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
-          }}
+            opacity: [0.1, 0.2, 0.1]
+}}
           transition={{
             duration: 10,
             repeat: Infinity,
@@ -189,7 +187,7 @@ export default function TestimonialsSection() {
           </h2>
           
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Real stories from industry leaders who've achieved extraordinary 
+            Real stories from industry leaders who&apos;ve achieved extraordinary 
             breakthroughs with our evidence-based performance programmes.
           </p>
         </motion.div>

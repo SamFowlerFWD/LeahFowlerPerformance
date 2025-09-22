@@ -19,7 +19,10 @@ import {
   UserCheck
 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  Avatar,
+  AvatarFallback
+} from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 
 interface Notification {
@@ -27,7 +30,7 @@ interface Notification {
   type: 'signup' | 'achievement' | 'assessment' | 'booking' | 'testimonial' | 'milestone';
   content: string;
   subtext?: string;
-  icon: any;
+  icon: unknown;
   color: string;
   location?: string;
   timestamp: string;

@@ -3,12 +3,35 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
 import {
-  Check, Star, Zap, Crown, ArrowRight, Shield, TrendingUp, Users,
-  Brain, Calendar, Phone, Video, FileText, BarChart, Clock, MapPin,
-  MessageCircle, ChevronRight, Heart, Trophy, Activity, Target, Dumbbell
+  Check,
+  Star,
+  Crown,
+  ArrowRight,
+  Shield,
+  TrendingUp,
+  Users,
+  Brain,
+  Calendar,
+  Phone,
+  FileText,
+  BarChart,
+  MapPin,
+  MessageCircle,
+  ChevronRight,
+  Heart,
+  Trophy,
+  Activity,
+  Target,
+  Dumbbell
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { aphroditeFitnessPackages, socialRuns, locationInfo, packageComparison, pricingMessages, urgencyContent } from '@/content/seo/aphrodite-pricing-content'
+import {
+  aphroditeFitnessPackages,
+  socialRuns,
+  locationInfo,
+  packageComparison,
+  urgencyContent
+} from '@/content/seo/aphrodite-pricing-content'
 
 export default function AphroditePricingTiers() {
   const [selectedCategory, setSelectedCategory] = React.useState<'all' | 'group' | 'personal' | 'online'>('all')
@@ -142,7 +165,7 @@ export default function AphroditePricingTiers() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Evidence-based strength training for busy parents. Join 500+ parents who've
+            Evidence-based strength training for busy parents. Join 500+ parents who&apos;ve
             reclaimed their strength, energy and confidence.
           </p>
 

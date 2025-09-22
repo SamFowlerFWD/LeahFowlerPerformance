@@ -73,7 +73,7 @@ export default function FamilyAthleteDemoPage() {
             Your Journey Starts Today
           </h2>
           <p className="text-xl md:text-2xl mb-12 text-white/90">
-            Join hundreds of Norfolk families who've discovered that fitness is better together.
+            Join hundreds of Norfolk families who&apos;ve discovered that fitness is better together.
             First session free, no contracts, just community.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

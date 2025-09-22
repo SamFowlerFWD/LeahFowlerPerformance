@@ -11,12 +11,9 @@ import {
   ArrowLeft,
   Save,
   Eye,
-  Calendar,
   Image as ImageIcon,
   Tags,
-  Settings,
-  FileText,
-  AlertCircle
+  Settings
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -26,13 +23,13 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
 import { Badge } from '@/components/ui/badge'
 import { Switch } from '@/components/ui/switch'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Alert, AlertDescription } from '@/components/ui/alert'
+ '@/components/ui/tabs'
+ '@/components/ui/alert'
 import MDXEditor from '@/components/admin/MDXEditor'
 import type { PostFormData, Category, Tag, ContentType, PostStatus } from '@/types/blog'
 
@@ -66,7 +63,7 @@ const postSchema = z.object({
   show_toc: z.boolean(),
   show_related: z.boolean(),
   tags: z.array(z.string()),
-  video_url: z.string().url().optional().or(z.literal('')),
+  video_url: z.string().url().optional().or(z.literal(''))
 })
 
 export default function NewPostPage() {
@@ -83,8 +80,8 @@ export default function NewPostPage() {
     handleSubmit,
     watch,
     setValue,
-    formState: { errors },
-  } = useForm<PostFormData>({
+    formState: { errors }
+} = useForm<PostFormData>({
     resolver: zodResolver(postSchema),
     defaultValues: {
       content_type: 'article',
@@ -94,9 +91,9 @@ export default function NewPostPage() {
       allow_comments: true,
       show_toc: true,
       show_related: true,
-      tags: [],
-    },
-  })
+      tags: []
+}
+})
 
   const watchTitle = watch('title')
   const watchStatus = watch('status')
@@ -114,8 +111,8 @@ export default function NewPostPage() {
       const slug = slugify(watchTitle, {
         lower: true,
         strict: true,
-        locale: 'en',
-      })
+        locale: 'en'
+})
       setValue('slug', slug)
     }
   }, [watchTitle, setValue])
@@ -208,8 +205,8 @@ export default function NewPostPage() {
         author_id: authorId,
         meta_keywords: data.meta_keywords || [],
         published_at: data.status === 'published' ? new Date().toISOString() : null,
-        scheduled_for: data.status === 'scheduled' ? data.scheduled_for : null,
-      }
+        scheduled_for: data.status === 'scheduled' ? data.scheduled_for : null
+}
 
       // Insert post
       const { data: post, error: postError } = await supabase
@@ -225,8 +222,8 @@ export default function NewPostPage() {
         const postTags = selectedTags.map((tagId, index) => ({
           post_id: post.id,
           tag_id: tagId,
-          position: index,
-        }))
+          position: index
+}))
 
         const { error: tagsError } = await supabase
           .from('post_tags')
@@ -530,7 +527,7 @@ export default function NewPostPage() {
                     <Label htmlFor="difficulty_level">Difficulty Level</Label>
                     <Select
                       value={watch('difficulty_level')}
-                      onValueChange={(value: any) => setValue('difficulty_level', value)}
+                      onValueChange={(value: unknown) => setValue('difficulty_level', value)}
                     >
                       <SelectTrigger className="mt-1">
                         <SelectValue placeholder="Select difficulty" />

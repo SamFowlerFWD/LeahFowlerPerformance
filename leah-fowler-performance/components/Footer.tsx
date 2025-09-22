@@ -3,26 +3,21 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Twitter, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
   Instagram,
   Facebook,
   Youtube,
   ArrowRight,
-  Send,
   Heart,
   Award,
   Star,
   Shield,
   CheckCircle,
-  Sparkles,
-  Globe,
-  Clock,
-  Calendar,
   BadgeCheck,
   BookOpen,
   Zap
@@ -58,7 +53,7 @@ const footerLinks = {
     { label: 'Our Approach', href: '#about' },
     { label: 'Location: Dereham', href: '#contact' },
     { label: 'Contact Us', href: '#contact' },
-  ],
+  ]
 }
 
 const socialLinks = [
@@ -376,7 +371,7 @@ export default function Footer() {
             <div className="mt-8 text-center">
               <p className="text-white/40 text-xs">
                 Transforming high-achievers into peak performers since 2009 | 
-                Norfolk's premier performance consultancy | 
+                Norfolk&apos;s premier performance consultancy | 
                 Serving clients globally
               </p>
             </div>

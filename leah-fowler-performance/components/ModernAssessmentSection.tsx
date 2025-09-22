@@ -3,7 +3,17 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
-import { Brain, Target, Zap, HeartHandshake, TrendingUp, Users, BarChart3, Shield, ArrowRight, Sparkles, CheckCircle } from 'lucide-react'
+import {
+  Target,
+  Zap,
+  HeartHandshake,
+  Users,
+  BarChart3,
+  Shield,
+  ArrowRight,
+  Sparkles,
+  CheckCircle
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
@@ -68,18 +78,18 @@ export default function ModernAssessmentSection() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <motion.div
           animate={{
-            backgroundPosition: ['0% 0%', '100% 100%'],
-          }}
+            backgroundPosition: ['0% 0%', '100% 100%']
+}}
           transition={{
             duration: 20,
             repeat: Infinity,
-            repeatType: 'reverse',
-          }}
+            repeatType: 'reverse'
+}}
           className="absolute inset-0 opacity-30"
           style={{
             backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%)',
-            backgroundSize: '100% 100%',
-          }}
+            backgroundSize: '100% 100%'
+}}
         />
       </div>
 
@@ -138,13 +148,13 @@ export default function ModernAssessmentSection() {
                 <motion.div
                   className={cn("absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500", area.bgColor)}
                   animate={hoveredCard === index ? {
-                    backgroundPosition: ['0% 0%', '100% 100%'],
-                  } : {}}
+                    backgroundPosition: ['0% 0%', '100% 100%']
+} : {}}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
-                    repeatType: 'reverse',
-                  }}
+                    repeatType: 'reverse'
+}}
                 />
                 
                 {/* Icon with Animation */}
@@ -220,17 +230,17 @@ export default function ModernAssessmentSection() {
           <div className="absolute inset-0">
             <motion.div
               animate={{
-                backgroundPosition: ['0% 0%', '100% 100%'],
-              }}
+                backgroundPosition: ['0% 0%', '100% 100%']
+}}
               transition={{
                 duration: 15,
                 repeat: Infinity,
-                repeatType: 'reverse',
-              }}
+                repeatType: 'reverse'
+}}
               className="absolute inset-0 opacity-10"
               style={{
-                backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(212, 165, 116, 0.3) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(135, 169, 107, 0.3) 0%, transparent 50%)',
-              }}
+                backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(212, 165, 116, 0.3) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(135, 169, 107, 0.3) 0%, transparent 50%)'
+}}
             />
           </div>
 
@@ -320,7 +330,7 @@ export default function ModernAssessmentSection() {
           className="mt-12 text-center"
         >
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Join <span className="font-bold text-gold">2,847</span> parents who've discovered their strength potential this month
+            Join <span className="font-bold text-gold">2,847</span> parents who&apos;ve discovered their strength potential this month
           </p>
         </motion.div>
       </div>

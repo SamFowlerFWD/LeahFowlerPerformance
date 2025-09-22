@@ -10,7 +10,6 @@ import {
   Trash2,
   Eye,
   Search,
-  Filter,
   Calendar,
   Clock,
   ChevronLeft,
@@ -19,7 +18,6 @@ import {
   Video,
   FileSearch,
   BookOpen,
-  Archive,
   Star,
   Lock
 } from 'lucide-react'
@@ -30,7 +28,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
 import {
@@ -39,7 +37,7 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
+  TableRow
 } from '@/components/ui/table'
 import {
   Dialog,
@@ -47,7 +45,7 @@ import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
+  DialogTitle
 } from '@/components/ui/dialog'
 import type { Post, PostStatus, ContentType } from '@/types/blog'
 
@@ -61,14 +59,14 @@ const statusColors: Record<PostStatus, string> = {
   draft: 'bg-gray-100 text-gray-700',
   published: 'bg-green-100 text-green-700',
   scheduled: 'bg-blue-100 text-blue-700',
-  archived: 'bg-yellow-100 text-yellow-700',
+  archived: 'bg-yellow-100 text-yellow-700'
 }
 
 const contentTypeIcons: Record<ContentType, React.ReactNode> = {
   article: <FileText className="h-4 w-4" />,
   case_study: <FileSearch className="h-4 w-4" />,
   research_paper: <BookOpen className="h-4 w-4" />,
-  video_post: <Video className="h-4 w-4" />,
+  video_post: <Video className="h-4 w-4" />
 }
 
 export default function AdminBlogPage() {
@@ -76,8 +74,8 @@ export default function AdminBlogPage() {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
-  const [statusFilter, setStatusFilter] = useState<PostStatus | 'all'>('all')
-  const [typeFilter, setTypeFilter] = useState<ContentType | 'all'>('all')
+  const [statusFilter, setStatusFilter] = useState('all')
+  const [typeFilter, setTypeFilter] = useState('all')
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
@@ -254,7 +252,7 @@ export default function AdminBlogPage() {
               </div>
             </div>
 
-            <Select value={statusFilter} onValueChange={(value: any) => setStatusFilter(value)}>
+            <Select value={statusFilter} onValueChange={(value: unknown) => setStatusFilter(value)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Filter by status" />
               </SelectTrigger>
@@ -267,7 +265,7 @@ export default function AdminBlogPage() {
               </SelectContent>
             </Select>
 
-            <Select value={typeFilter} onValueChange={(value: any) => setTypeFilter(value)}>
+            <Select value={typeFilter} onValueChange={(value: unknown) => setTypeFilter(value)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Filter by type" />
               </SelectTrigger>

@@ -1,4 +1,6 @@
-import { test, expect } from '@playwright/test';
+import {
+  test
+} from '@playwright/test';
 
 test.describe('Spacing Issue Analysis', () => {
   test('analyze empty content gap between 24-35% scroll', async ({ page }) => {
@@ -80,7 +82,7 @@ test.describe('Spacing Issue Analysis', () => {
 
     // Check for gaps between elements
     console.log('\n=== Gap Analysis ===');
-    for (let i = 0; i < visibleElements.length - 1; i++) {
+    for (const i = 0; i < visibleElements.length - 1; i++) {
       const current = visibleElements[i];
       const next = visibleElements[i + 1];
       const gap = next.absoluteTop - current.absoluteBottom;

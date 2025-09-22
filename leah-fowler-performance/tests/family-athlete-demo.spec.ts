@@ -209,7 +209,7 @@ test.describe('Family-Athlete Visual Storytelling Demo', () => {
       const images = page.locator('img')
       const imageCount = await images.count()
 
-      for (let i = 0; i < imageCount; i++) {
+      for (const i = 0; i < imageCount; i++) {
         const img = images.nth(i)
         const isVisible = await img.isVisible()
 

@@ -2,7 +2,18 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronRight, ChevronLeft, Award, Target, Brain, Heart, Zap, Users, BarChart, Clock, AlertCircle, CheckCircle, TrendingUp, Briefcase, Activity } from 'lucide-react'
+import {
+  ChevronRight,
+  ChevronLeft,
+  Award,
+  Target,
+  Brain,
+  Heart,
+  Zap,
+  AlertCircle,
+  CheckCircle,
+  TrendingUp
+} from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -11,8 +22,15 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Badge } from '@/components/ui/badge'
-import { assessmentQuestions, getQuestionsByPhase, AssessmentQuestion, getPhaseInfo } from '@/lib/assessment-questions'
-import { analyzeClientProfile, generateDetailedReport, ClientProfile } from '@/lib/assessment-scoring'
+import {
+  assessmentQuestions,
+  getQuestionsByPhase,
+  AssessmentQuestion
+} from '@/lib/assessment-questions'
+import {
+  analyzeClientProfile,
+  ClientProfile
+} from '@/lib/assessment-scoring'
 
 type Phase = 'intro' | 'discovery' | 'vision' | 'readiness' | 'investment' | 'results'
 
@@ -233,8 +251,8 @@ export default function AssessmentTool() {
       setSubmissionSuccess(true)
       
       // Track conversion if analytics is set up
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'assessment_complete', {
+      if (typeof window !== 'undefined' && (window as unknown).gtag) {
+        (window as unknown).gtag('event', 'assessment_complete', {
           qualified: clientProfile.qualified,
           tier: clientProfile.tier,
           investment_level: clientProfile.investmentLevel
@@ -296,7 +314,7 @@ export default function AssessmentTool() {
             </motion.div>
             <CardTitle className="text-2xl sm:text-3xl text-navy mb-4">Performance Optimisation Assessment</CardTitle>
             <CardDescription className="text-lg max-w-2xl mx-auto">
-              As a mother of three, I discovered that true performance isn't measured in the gym—it's measured in how brilliantly 
+              As a mother of three, I discovered that true performance isn&apos;t measured in the gym&mdash;it's measured in how brilliantly 
               you perform when life demands everything. Let's discover your performance potential together.
             </CardDescription>
           </CardHeader>
@@ -367,7 +385,7 @@ export default function AssessmentTool() {
                   <p className="font-semibold text-blue-900 mb-1">My Promise to You</p>
                   <p className="text-blue-800">
                     When I became a mother, I thought feeling exhausted was just part of life. I was wrong. Through evidence-based 
-                    performance optimisation, I discovered we can have it all—energy, strength, and the capability to excel in every 
+                    performance optimisation, I discovered we can have it all&mdash;energy, strength, and the capability to excel in every 
                     role we play. This assessment identifies exactly where you are and creates your roadmap to peak performance.
                   </p>
                 </div>

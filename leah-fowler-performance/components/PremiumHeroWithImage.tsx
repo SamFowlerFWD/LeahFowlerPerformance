@@ -4,10 +4,17 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion'
-import { Brain, TrendingUp, Shield, Activity, ChevronRight, CheckCircle, Award, Star, Users, ArrowRight, Play, Trophy, Heart } from 'lucide-react'
-import { fitnessHeroContent } from '@/content/seo/fitness-parent-content'
+import {
+  Award,
+  Users,
+  ArrowRight,
+  Play,
+  Trophy,
+  Heart
+} from 'lucide-react'
+ '@/content/seo/fitness-parent-content'
 import { PremiumButton } from '@/components/ui/premium-button'
-import { easings } from '@/lib/animations'
+ '@/lib/animations'
 
 interface HeroImageConfig {
   src: string
@@ -209,7 +216,6 @@ const PremiumHeroWithImage: React.FC = () => {
           </div>
         </motion.div>
       </div>
-
 
       {/* Scroll indicator */}
       <motion.div

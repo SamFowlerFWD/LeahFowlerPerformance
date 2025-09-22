@@ -2,10 +2,14 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence, useMotionValue, useTransform, PanInfo } from 'framer-motion'
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  PanInfo
+} from 'framer-motion'
 import {
   Users,
-  Trophy,
   Clock,
   MapPin,
   ChevronLeft,
@@ -13,11 +17,7 @@ import {
   Star,
   MessageCircle,
   Calendar,
-  Heart,
-  Target,
-  Zap,
-  Award,
-  TrendingUp
+  Target
 } from 'lucide-react'
 
 interface Programme {
@@ -245,8 +245,8 @@ const MobileSwipeableProgrammes: React.FC = () => {
                   className="flex-shrink-0"
                   style={{
                     width: width || '85vw',
-                    x: x,
-                  }}
+                    x: x
+}}
                   drag="x"
                   dragConstraints={{ left: -width * (programmes.length - 1), right: 0 }}
                   dragElastic={0.2}

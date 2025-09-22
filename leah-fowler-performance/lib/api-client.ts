@@ -5,9 +5,9 @@
 export class APIError extends Error {
   code?: string
   status?: number
-  details?: any
+  details?: unknown
 
-  constructor(message: string, code?: string, status?: number, details?: any) {
+  constructor(message: string, code?: string, status?: number, details?: unknown) {
     super(message)
     this.name = 'APIError'
     this.code = code
@@ -21,7 +21,7 @@ interface APIResponse<T = any> {
   data?: T
   error?: string
   code?: string
-  details?: any
+  details?: unknown
 }
 
 /**
@@ -74,12 +74,12 @@ export async function apiRequest<T = any>(
  * Submit assessment with retry logic for resilience
  */
 export async function submitAssessment(
-  data: any,
+  data: unknown,
   maxRetries = 2
 ): Promise<any> {
   let lastError: Error | null = null
   
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+  for (const attempt = 0; attempt <= maxRetries; attempt++) {
     try {
       return await apiRequest('/api/assessment/submit', {
         method: 'POST',
@@ -102,7 +102,7 @@ export async function submitAssessment(
     }
   }
   
-  throw lastError || new APIError('Failed after multiple attempts')
+  throw lastError || new APIError(' Failed after multiple attempts')
 }
 
 /**
@@ -112,7 +112,7 @@ export async function gdprRequest(
   email: string,
   requestType: 'access' | 'portability' | 'deletion' | 'rectification',
   verificationToken?: string,
-  updates?: Record<string, any>
+  updates?: Record<string, unknown>
 ): Promise<any> {
   return apiRequest('/api/assessment/gdpr', {
     method: 'POST',

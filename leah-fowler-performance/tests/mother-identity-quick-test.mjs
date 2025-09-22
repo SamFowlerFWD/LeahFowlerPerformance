@@ -219,7 +219,7 @@ async function runTests() {
         'kids fitness'
       ]
 
-      let foundBannedTerms = []
+      const foundBannedTerms = []
       bannedTerms.forEach(term => {
         if (pageContent.includes(term)) {
           foundBannedTerms.push(term)

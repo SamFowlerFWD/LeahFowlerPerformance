@@ -5,7 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import {
-  ArrowRight,
   MessageCircle,
   Calendar,
   Users,
@@ -15,7 +14,7 @@ import {
   MapPin,
   Clock
 } from 'lucide-react'
-import { fitnessHeroContent } from '@/content/seo/fitness-parent-content'
+ '@/content/seo/fitness-parent-content'
 
 // Mobile-optimized hero configuration
 const mobileBreakpoints = {
@@ -129,7 +128,7 @@ const MobileOptimizedHero: React.FC = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
               <MapPin className="w-4 h-4 text-orange-400" />
-              <span className="text-sm font-medium text-white">Norfolk's Strength Coach for Mums</span>
+              <span className="text-sm font-medium text-white">Norfolk&apos;s Strength Coach for Mums</span>
             </div>
           </motion.div>
 

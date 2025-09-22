@@ -64,7 +64,7 @@ test.describe('Assessment Tool Issues', () => {
     
     // Qualification phase
     console.log('--- QUALIFICATION PHASE ---')
-    for (let i = 0; i < 5; i++) {
+    for (const i = 0; i < 5; i++) {
       const questionText = await page.locator('h3').first().textContent()
       const counterText = await page.locator('text=/Question \\d+ of \\d+/').textContent()
       questionsLog.push({ phase: 'qualification', question: questionText, counter: counterText })

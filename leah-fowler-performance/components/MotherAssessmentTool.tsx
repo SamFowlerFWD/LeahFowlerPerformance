@@ -309,7 +309,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function MotherAssessmentTool() {
   const [currentStep, setCurrentStep] = useState(0);
-  const [assessmentData, setAssessmentData] = useState<Record<string, any>>({});
+  const [assessmentData, setAssessmentData] = useState<Record<string, unknown>>({});
   const [dimensionScores, setDimensionScores] = useState<Record<string, number>>({});
   const [overallScore, setOverallScore] = useState(0);
   const [isCalculating, setIsCalculating] = useState(false);

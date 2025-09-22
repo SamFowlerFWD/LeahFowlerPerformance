@@ -2,27 +2,17 @@
 
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { 
-  Award, 
-  GraduationCap, 
-  Users, 
+import {
+  Award,
+  GraduationCap,
+  Users,
   Target,
   Heart,
   CheckCircle,
-  BookOpen,
   Trophy,
   Star,
-  Briefcase,
-  Globe,
-  TrendingUp,
-  BadgeCheck,
-  Sparkles,
-  Dumbbell,
-  Activity,
-  Brain,
-  Shield
+  Sparkles
 } from 'lucide-react'
-import Image from 'next/image'
 
 const credentials = [
   {
@@ -208,14 +198,14 @@ export default function AboutSection() {
             
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-12">
               From new mum to Ultra athlete, I understand the challenges of balancing family life with fitness goals.
-              I've completed 3 Spartan Ultra Beasts, an Outlaw Triathlon, and coached over 200 families to transform
+              I&apos;ve completed 3 Spartan Ultra Beasts, an Outlaw Triathlon, and coached over 200 families to transform
               their health together. As a mum of two, I prove daily that extraordinary is possible.
             </p>
             
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-16">
-              Whether you're training for your first 5K or your fifth Spartan Race, developing your child's athletic
+              Whether you&apos;re training for your first 5K or your fifth Spartan Race, developing your child&apos;s athletic
               potential, or wanting to get fit as a family, I provide the coaching, community, and accountability you
-              need. From our Dereham base, we're building Norfolk's strongest, most supportive fitness family.
+              need. From our Dereham base, we&apos;re building Norfolk&apos;s strongest, most supportive fitness family.
             </p>
 
             {/* Credentials Grid */}

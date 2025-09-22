@@ -3,11 +3,10 @@
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Trophy, 
-  Target, 
-  Zap, 
-  Users, 
+import {
+  Trophy,
+  Zap,
+  Users,
   ArrowRight,
   CheckCircle,
   Star,
@@ -16,7 +15,10 @@ import {
   MessageSquare
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent
+} from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -93,7 +95,7 @@ function LiveSuccessMetrics() {
     const animateValue = (start: number, end: number, duration: number, setter: (val: number) => void) => {
       const range = end - start;
       const increment = range / (duration / 16);
-      let current = start;
+      const current = start;
       
       const timer = setInterval(() => {
         current += increment;
@@ -134,7 +136,7 @@ function LiveSuccessMetrics() {
           <h2 className="text-3xl font-bold mb-4">Real Results From Real Clients</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Updated in real-time from our client success tracking system. 
-            These aren't promises - they're proven outcomes.
+            These aren&apos;t promises - they're proven outcomes.
           </p>
         </div>
         
@@ -227,7 +229,7 @@ function TestimonialsCarousel() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <Badge className="mb-4">Client Success Stories</Badge>
-          <h2 className="text-3xl font-bold mb-4">Leaders Who've Transformed Their Performance</h2>
+          <h2 className="text-3xl font-bold mb-4">Leaders Who&apos;ve Transformed Their Performance</h2>
         </div>
         
         <div className="max-w-4xl mx-auto">
@@ -316,17 +318,17 @@ export default function PerformanceAcceleratorPage() {
     programmeSelected: false
   });
   
-  const handleAssessmentComplete = (data: any) => {
+  const handleAssessmentComplete = (data: unknown) => {
     setUserProgress(prev => ({ ...prev, assessmentComplete: true }));
     setActiveTab('barriers');
   };
   
-  const handleBarriersComplete = (data: any) => {
+  const handleBarriersComplete = (data: unknown) => {
     setUserProgress(prev => ({ ...prev, barriersIdentified: true }));
     setActiveTab('programmes');
   };
   
-  const handleProgrammeSelect = (programme: any) => {
+  const handleProgrammeSelect = (programme: unknown) => {
     setUserProgress(prev => ({ ...prev, programmeSelected: true }));
     // Scroll to CTA section or open booking modal
   };
@@ -337,13 +339,13 @@ export default function PerformanceAcceleratorPage() {
       <section className="bg-gradient-to-br from-green-600 to-blue-600 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <Badge className="mb-4 bg-white text-gray-900">
-            UK's Premier Performance Optimisation Platform
+            UK&apos;s Premier Performance Optimisation Platform
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Transform Your Executive Performance in 90 Days
           </h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Join 247+ high-performing executives who've unlocked their full potential 
+            Join 247+ high-performing executives who&apos;ve unlocked their full potential 
             with our evidence-based, personalised performance optimisation system.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -474,7 +476,7 @@ export default function PerformanceAcceleratorPage() {
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Limited availability - Only 3 spots remaining this month. 
-            Your transformation can't wait.
+            Your transformation can&apos;t wait.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100">

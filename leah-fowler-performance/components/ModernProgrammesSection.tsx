@@ -3,7 +3,25 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
-import { Rocket, Crown, Users, Sparkles, Clock, Calendar, Video, FileText, MessageSquare, Trophy, Star, ArrowRight, CheckCircle, TrendingUp, Dumbbell, Heart, Brain, Home } from 'lucide-react'
+import {
+  Rocket,
+  Crown,
+  Users,
+  Sparkles,
+  Calendar,
+  Video,
+  FileText,
+  MessageSquare,
+  Trophy,
+  Star,
+  ArrowRight,
+  CheckCircle,
+  TrendingUp,
+  Dumbbell,
+  Heart,
+  Brain,
+  Home
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
@@ -205,8 +223,8 @@ export default function ModernProgrammesSection() {
                 )}
                 style={{
                   transform: selectedProgramme === programme.id ? 'perspective(1000px) rotateY(-5deg)' : '',
-                  transformStyle: 'preserve-3d',
-                }}
+                  transformStyle: 'preserve-3d'
+}}
               >
                 {/* Animated Background Gradient */}
                 <div className={cn(
@@ -220,8 +238,8 @@ export default function ModernProgrammesSection() {
                   <div className="flex items-start justify-between mb-16">
                     <motion.div
                       animate={selectedProgramme === programme.id ? {
-                        rotate: [0, 10, -10, 0],
-                      } : {}}
+                        rotate: [0, 10, -10, 0]
+} : {}}
                       transition={{ duration: 0.5 }}
                       className={cn(
                         "p-6 rounded-2xl bg-gradient-to-br shadow-lg",
@@ -340,12 +358,12 @@ export default function ModernProgrammesSection() {
             <motion.div
               animate={{
                 scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3],
-              }}
+                opacity: [0.3, 0.5, 0.3]
+}}
               transition={{
                 duration: 5,
-                repeat: Infinity,
-              }}
+                repeat: Infinity
+}}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold/20 rounded-full blur-3xl"
             />
           </div>

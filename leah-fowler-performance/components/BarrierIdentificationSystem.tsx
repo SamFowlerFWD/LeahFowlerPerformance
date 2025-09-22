@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState
+} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { createClient } from '@supabase/supabase-js';
 import {
@@ -14,7 +15,6 @@ import {
   RefreshCw,
   ChevronRight,
   CheckCircle2,
-  XCircle,
   AlertTriangle,
   Sparkles,
   Shield,
@@ -26,7 +26,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/
 import { Progress } from './ui/progress';
 import { Badge } from './ui/badge';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
-import { Label } from './ui/label';
+ './ui/label';
 import { cn } from '@/lib/utils';
 
 // Supabase client
@@ -352,7 +352,7 @@ const BARRIER_SOLUTIONS: Record<string, Solution[]> = {
 };
 
 interface BarrierIdentificationSystemProps {
-  onComplete?: (data: any) => void;
+  onComplete?: (data: unknown) => void;
   userEmail?: string;
 }
 
@@ -363,7 +363,7 @@ export default function BarrierIdentificationSystem({
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedBarriers, setSelectedBarriers] = useState<string[]>([]);
   const [barrierSeverity, setBarrierSeverity] = useState<Record<string, number>>({});
-  const [answers, setAnswers] = useState<Record<string, any>>({});
+  const [answers, setAnswers] = useState<Record<string, unknown>>({});
   const [personalizedSolutions, setPersonalizedSolutions] = useState<Solution[]>([]);
   const [showSolutions, setShowSolutions] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -389,7 +389,7 @@ export default function BarrierIdentificationSystem({
     setBarrierSeverity(prev => ({ ...prev, [barrierId]: 3 }));
   };
 
-  const handleAnswer = (questionId: string, value: any, severity?: number) => {
+  const handleAnswer = (questionId: string, value: unknown, severity?: number) => {
     setAnswers(prev => ({ ...prev, [questionId]: value }));
     
     if (severity) {
@@ -705,7 +705,7 @@ export default function BarrierIdentificationSystem({
           <CardHeader className="text-center">
             <CardTitle className="text-3xl">Your Barrier Elimination Plan</CardTitle>
             <CardDescription>
-              Personalised solutions to overcome what\'s been holding you back
+              Personalised solutions to overcome what\&apos;s been holding you back
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">

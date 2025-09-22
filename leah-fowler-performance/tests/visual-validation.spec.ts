@@ -336,13 +336,13 @@ test.describe('Performance Validation', () => {
     // Monitor layout shifts
     const layoutShifts = await page.evaluate(() => {
       return new Promise((resolve) => {
-        let shifts: any[] = [];
+        const shifts: unknown[] = [];
         const observer = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
             if (entry.entryType === 'layout-shift') {
               shifts.push({
-                value: (entry as any).value,
-                hadRecentInput: (entry as any).hadRecentInput
+                value: (entry as unknown).value,
+                hadRecentInput: (entry as unknown).hadRecentInput
               });
             }
           }
@@ -361,7 +361,7 @@ test.describe('Performance Validation', () => {
     console.log('Layout Shifts:', layoutShifts);
     
     // Calculate CLS
-    const cls = (layoutShifts as any[])
+    const cls = (layoutShifts as unknown[])
       .filter(shift => !shift.hadRecentInput)
       .reduce((sum, shift) => sum + shift.value, 0);
     
@@ -380,7 +380,7 @@ test.describe('Performance Validation', () => {
         count: animations.length,
         running: animations.filter(a => a.playState === 'running').length,
         hasGPUAcceleration: animations.some(a => {
-          const target = (a as any).effect?.target;
+          const target = (a as unknown).effect?.target;
           if (!target) return false;
           const transform = window.getComputedStyle(target).transform;
           return transform && transform !== 'none';

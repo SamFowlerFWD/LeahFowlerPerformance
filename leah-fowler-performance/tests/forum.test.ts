@@ -3,7 +3,13 @@
  * Covers all forum functionality including categories, threads, replies, voting, search, tags, and moderation
  */
 
-import { describe, test, expect, beforeAll, afterAll, beforeEach } from '@jest/globals';
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterAll
+} from '@jest/globals';
 import request from 'supertest';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
@@ -42,8 +48,8 @@ async function generateAuthTokens(): Promise<AuthTokens> {
   const { data: userData, error: userError } = await supabase.auth.admin.createUser({
     email: `testuser_${Date.now()}@example.com`,
     password: 'TestPassword123!',
-    email_confirm: true,
-  });
+    email_confirm: true
+});
 
   if (userError) throw new Error(`Failed to create test user: ${userError.message}`);
 
@@ -111,7 +117,7 @@ async function cleanupTestData(tokens: AuthTokens, data: Partial<TestData>) {
 
 describe('Forum System API - Comprehensive Test Suite', () => {
   let authTokens: AuthTokens;
-  let testData: Partial<TestData> = {};
+  const testData: Partial<TestData> = {};
   let supabase: SupabaseClient;
 
   beforeAll(async () => {
@@ -270,7 +276,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
         .expect(200);
 
       expect(response.body.threads).toBeDefined();
-      response.body.threads.forEach((thread: any) => {
+      response.body.threads.forEach((thread: unknown) => {
         expect(thread.category_id).toBe(testData.categoryId);
       });
     });
@@ -293,7 +299,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
         .expect(200);
 
       const popularThreads = popularResponse.body.threads;
-      for (let i = 1; i < popularThreads.length; i++) {
+      for (const i = 1; i < popularThreads.length; i++) {
         expect(popularThreads[i-1].view_count).toBeGreaterThanOrEqual(popularThreads[i].view_count);
       }
     });
@@ -707,7 +713,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
       expect(response.body).toHaveProperty('total_count');
 
       // Should find our test thread
-      const found = response.body.results.some((result: any) =>
+      const found = response.body.results.some((result: unknown) =>
         result.title.toLowerCase().includes('postgresql')
       );
       expect(found).toBe(true);
@@ -736,7 +742,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
         .get(`/api/forum/search?q=test&category=${testData.categoryId}`)
         .expect(200);
 
-      response.body.results.forEach((result: any) => {
+      response.body.results.forEach((result: unknown) => {
         if (result.type === 'thread') {
           expect(result.category_id).toBe(testData.categoryId);
         }
@@ -751,7 +757,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
         .get(`/api/forum/search?q=test&from=${startDate.toISOString()}&to=${new Date().toISOString()}`)
         .expect(200);
 
-      response.body.results.forEach((result: any) => {
+      response.body.results.forEach((result: unknown) => {
         const createdAt = new Date(result.created_at);
         expect(createdAt.getTime()).toBeGreaterThanOrEqual(startDate.getTime());
       });
@@ -817,7 +823,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
       expect(response.body.tags).toBeDefined();
       expect(Array.isArray(response.body.tags)).toBe(true);
 
-      const tag = response.body.tags.find((t: any) => t.id === testData.tagId);
+      const tag = response.body.tags.find((t: unknown) => t.id === testData.tagId);
       expect(tag).toBeDefined();
       expect(tag).toHaveProperty('usage_count');
     });
@@ -849,7 +855,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
       expect(Array.isArray(response.body.suggestions)).toBe(true);
 
       // Should include our javascript tag
-      const found = response.body.suggestions.some((s: any) =>
+      const found = response.body.suggestions.some((s: unknown) =>
         s.name.includes('javascript')
       );
       expect(found).toBe(true);
@@ -921,7 +927,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
       expect(response.body).toHaveProperty('total_count');
 
       // All threads should belong to this user
-      response.body.threads.forEach((thread: any) => {
+      response.body.threads.forEach((thread: unknown) => {
         expect(thread.author_id).toBe(authTokens.userId);
       });
     });
@@ -960,7 +966,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
       expect(Array.isArray(response.body.subscriptions)).toBe(true);
 
       // Should include our subscription
-      const found = response.body.subscriptions.some((sub: any) =>
+      const found = response.body.subscriptions.some((sub: unknown) =>
         sub.thread_id === testData.secondThreadId
       );
       expect(found).toBe(true);
@@ -979,7 +985,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
         .set('Authorization', `Bearer ${authTokens.user}`)
         .expect(200);
 
-      const found = response.body.subscriptions.some((sub: any) =>
+      const found = response.body.subscriptions.some((sub: unknown) =>
         sub.thread_id === testData.secondThreadId
       );
       expect(found).toBe(false);
@@ -1105,7 +1111,7 @@ describe('Forum System API - Comprehensive Test Suite', () => {
     });
 
     test('Should handle XSS attempts in content', async () => {
-      const xssContent = '<script>alert("XSS")</script>Legitimate content';
+      const xssContent = '<script>alert("" XSS"))</script>Legitimate content';
 
       const response = await request(API_URL)
         .post('/api/forum/threads')
@@ -1319,7 +1325,7 @@ export async function cleanupTestUser(userId: string): Promise<void> {
   await supabase.auth.admin.deleteUser(userId);
 }
 
-export function expectValidThread(thread: any): void {
+export function expectValidThread(thread: unknown): void {
   expect(thread).toHaveProperty('id');
   expect(thread).toHaveProperty('title');
   expect(thread).toHaveProperty('content');
@@ -1333,7 +1339,7 @@ export function expectValidThread(thread: any): void {
   expect(thread).toHaveProperty('is_pinned');
 }
 
-export function expectValidReply(reply: any): void {
+export function expectValidReply(reply: unknown): void {
   expect(reply).toHaveProperty('id');
   expect(reply).toHaveProperty('content');
   expect(reply).toHaveProperty('thread_id');
@@ -1343,7 +1349,7 @@ export function expectValidReply(reply: any): void {
   expect(reply).toHaveProperty('is_accepted');
 }
 
-export function expectValidPagination(pagination: any): void {
+export function expectValidPagination(pagination: unknown): void {
   expect(pagination).toHaveProperty('page');
   expect(pagination).toHaveProperty('limit');
   expect(pagination).toHaveProperty('total');

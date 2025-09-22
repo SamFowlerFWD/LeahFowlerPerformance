@@ -9,8 +9,6 @@ import {
   CheckCircle,
   ChevronRight,
   Clock,
-  Users,
-  TrendingUp,
   Award,
   Shield,
   ArrowRight
@@ -113,7 +111,7 @@ const ConsultancyProgrammes: React.FC = () => {
 
                     <div className="space-y-4 mb-6">
                       <h4 className="font-semibold text-gray-900 dark:text-white">
-                        What's Included:
+                        What&apos;s Included:
                       </h4>
                       <ul className="space-y-3">
                         {programme.includes.map((item, index) => (

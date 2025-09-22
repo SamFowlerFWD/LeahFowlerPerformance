@@ -2,7 +2,21 @@
 
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { Check, Star, Zap, Crown, ArrowRight, Shield, TrendingUp, Users, Brain, Calendar, Phone, Video, FileText, BarChart, Target, Dumbbell, Activity } from 'lucide-react'
+import {
+  Check,
+  Star,
+  Crown,
+  ArrowRight,
+  Shield,
+  TrendingUp,
+  Users,
+  Brain,
+  Calendar,
+  Phone,
+  Target,
+  Dumbbell,
+  Activity
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { aphroditeFitnessPackages } from '@/content/seo/aphrodite-pricing-content'
 
@@ -181,7 +195,7 @@ export default function PricingTiers() {
 
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Evidence-based strength training for busy parents. From £12/month online programmes
-            to premium 1:1 coaching. Join 500+ parents who've transformed their strength and confidence.
+            to premium 1:1 coaching. Join 500+ parents who&apos;ve transformed their strength and confidence.
           </p>
         </motion.div>
 

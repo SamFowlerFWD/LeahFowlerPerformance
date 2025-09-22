@@ -1,20 +1,24 @@
 "use client"
 
 import * as React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+importfrom 'next/link'
+importfrom 'next/image'
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
-import { ArrowRight, CheckCircle, Star, Sparkles, TrendingUp, Users, Award, Brain, Play, ChevronDown } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import {
+  ArrowRight,
+  Star,
+  Sparkles,
+  Users,
+  Award,
+  Brain,
+  Play
+} from 'lucide-react'
+ '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { PremiumButton } from '@/components/ui/premium-button'
 import { OptimizedHeroImage } from './OptimizedHeroImage'
 import {
-  fadeInUp,
-  luxuryScale,
-  staggerContainer,
-  glowPulse,
-  easings,
+  easings
 } from '@/lib/animations'
 
 const stats = [
@@ -101,8 +105,8 @@ export default function ModernHeroSection() {
         <motion.div
           className="hidden md:block absolute inset-0"
           animate={shouldReduceMotion ? {} : {
-            scale: [1, 1.05, 1],
-          }}
+            scale: [1, 1.05, 1]
+}}
           transition={{
             duration: 20,
             repeat: Infinity,
@@ -124,8 +128,8 @@ export default function ModernHeroSection() {
         <motion.div
           className="md:hidden absolute inset-0"
           animate={shouldReduceMotion ? {} : {
-            scale: [1, 1.08, 1],
-          }}
+            scale: [1, 1.08, 1]
+}}
           transition={{
             duration: 20,
             repeat: Infinity,
@@ -167,8 +171,8 @@ export default function ModernHeroSection() {
         <motion.div
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            background: `radial-gradient(circle 800px at ${mousePosition.x}px ${mousePosition.y}px, rgba(212, 165, 116, 0.3), transparent)`,
-          }}
+            background: `radial-gradient(circle 800px at ${mousePosition.x}px ${mousePosition.y}px, rgba(212, 165, 116, 0.3), transparent)`
+}}
         />
 
         {/* Premium animated gradient orbs - Respect reduced motion */}
@@ -176,8 +180,8 @@ export default function ModernHeroSection() {
           animate={shouldReduceMotion ? {} : {
             x: [0, 150, 0],
             y: [0, -150, 0],
-            scale: [1, 1.2, 1],
-          }}
+            scale: [1, 1.2, 1]
+}}
           transition={{
             duration: 25,
             repeat: Infinity,
@@ -189,8 +193,8 @@ export default function ModernHeroSection() {
           animate={shouldReduceMotion ? {} : {
             x: [0, -150, 0],
             y: [0, 150, 0],
-            scale: [1, 1.3, 1],
-          }}
+            scale: [1, 1.3, 1]
+}}
           transition={{
             duration: 30,
             repeat: Infinity,
@@ -218,18 +222,18 @@ export default function ModernHeroSection() {
               className="absolute w-1.5 h-1.5 bg-gradient-to-br from-gold to-gold-light rounded-full shadow-[0_0_10px_rgba(212,165,116,0.5)]"
               initial={{
                 x: particle.x,
-                y: particle.y,
-              }}
+                y: particle.y
+}}
               animate={{
                 y: "-20%",
-                x: particle.xEnd,
-              }}
+                x: particle.xEnd
+}}
               transition={{
                 duration: particle.duration,
                 repeat: Infinity,
                 ease: "linear",
-                delay: particle.delay + 0.2,
-              }}
+                delay: particle.delay + 0.2
+}}
             />
           ))}
         </motion.div>
@@ -248,13 +252,13 @@ export default function ModernHeroSection() {
         <motion.div
           className="bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-2xl"
           animate={shouldReduceMotion ? {} : {
-            y: [0, -10, 0],
-          }}
+            y: [0, -10, 0]
+}}
           transition={{
             duration: 6,
             repeat: Infinity,
-            ease: easings.smooth,
-          }}
+            ease: easings.smooth
+}}
         >
           <span className="text-gold text-sm font-bold">Top 1% Consultant</span>
         </motion.div>
@@ -272,13 +276,13 @@ export default function ModernHeroSection() {
         <motion.div
           className="bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-2xl"
           animate={shouldReduceMotion ? {} : {
-            y: [0, 10, 0],
-          }}
+            y: [0, 10, 0]
+}}
           transition={{
             duration: 7,
             repeat: Infinity,
-            ease: easings.smooth,
-          }}
+            ease: easings.smooth
+}}
         >
           <span className="text-sage text-sm font-bold">15 Years Excellence</span>
         </motion.div>
@@ -287,8 +291,8 @@ export default function ModernHeroSection() {
       {/* Main Content with enhanced animations */}
       <motion.div
         style={{
-          y: textY,
-        }}
+          y: textY
+}}
         className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 pt-32 md:pt-36 lg:pt-40 pb-16 md:pb-20 lg:pb-28"
       >
         <div className="max-w-5xl mx-auto text-center">
@@ -306,7 +310,7 @@ export default function ModernHeroSection() {
           >
             <Badge className="px-8 py-4 text-sm font-bold bg-gradient-to-r from-gold/20 to-sage/20 backdrop-blur-xl border-2 border-gold/30 text-white hover:bg-gold/30 hover:border-gold/50 transition-all duration-500 shadow-2xl">
               <Sparkles className="h-5 w-5 text-gold mr-3 animate-pulse" />
-              UK's Premier Performance Consultant • Dereham, Norfolk
+              UK&apos;s Premier Performance Consultant • Dereham, Norfolk
               <Award className="h-5 w-5 text-sage ml-3" />
             </Badge>
           </motion.div>
@@ -405,19 +409,19 @@ export default function ModernHeroSection() {
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"
                   style={{
-                    boxShadow: `0 0 40px rgba(212, 165, 116, 0.3)`,
-                  }}
+                    boxShadow: `0 0 40px rgba(212, 165, 116, 0.3)`
+}}
                 />
                 <motion.div
                   className="relative flex flex-col items-center gap-2 px-6 py-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 group-hover:border-white/20 transition-all duration-500"
                   style={shouldReduceMotion ? {} : {
                     transformStyle: 'preserve-3d',
                     rotateY: smoothMouseX,
-                    rotateX: smoothMouseY,
-                  }}
+                    rotateX: smoothMouseY
+}}
                   whileHover={shouldReduceMotion ? {} : {
-                    boxShadow: '0 20px 40px rgba(212, 165, 116, 0.3)',
-                  }}
+                    boxShadow: '0 20px 40px rgba(212, 165, 116, 0.3)'
+}}
                 >
                   <stat.icon className={`h-8 w-8 ${stat.color} mb-2`} aria-hidden="true" />
                   <motion.span

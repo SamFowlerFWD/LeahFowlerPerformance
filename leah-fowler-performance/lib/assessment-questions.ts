@@ -351,8 +351,8 @@ export function isQualifyingAnswer(_question: AssessmentQuestion, _answer: unkno
 }
 
 export function calculatePhaseScore(questions: AssessmentQuestion[], answers: Record<string, unknown>): number {
-  let totalPoints = 0
-  let maxPoints = 0
+  const totalPoints = 0
+  const maxPoints = 0
   
   questions.forEach(question => {
     if (!question.options) return

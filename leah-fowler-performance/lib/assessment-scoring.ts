@@ -352,7 +352,7 @@ function generateRecommendations(
   const selected = programmes[tier as keyof typeof programmes]
   
   // Add urgency modifier
-  let programme = `${selected.name}: ${selected.description}`
+  const programme = `${selected.name}: ${selected.description}`
   if (urgencyScore >= 8) {
     programme += ' (Immediate start available with fast-track onboarding)'
   }

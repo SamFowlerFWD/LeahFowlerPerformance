@@ -3,7 +3,9 @@
 import * as React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Star, TrendingUp, Award, Users, CheckCircle, Calendar, Target, Zap } from 'lucide-react'
-import { notificationSlide, easings } from '@/lib/animations'
+import {
+  notificationSlide
+} from '@/lib/animations'
 
 interface Notification {
   id: string
@@ -34,8 +36,8 @@ const notifications: Notification[] = [
     iconColor: 'text-gold',
     title: 'Fitness Milestone',
     message: "Sarah: 'Just did 10 proper press-ups!'",
-    timestamp: '5 minutes ago',
-  },
+    timestamp: '5 minutes ago'
+},
   {
     id: '3',
     type: 'testimonial',
@@ -43,8 +45,8 @@ const notifications: Notification[] = [
     iconColor: 'text-gold',
     title: 'Parent Success Story',
     message: '"From zero fitness to Spartan finisher!" - Rachel, 38',
-    timestamp: '12 minutes ago',
-  },
+    timestamp: '12 minutes ago'
+},
   {
     id: '4',
     type: 'milestone',
@@ -52,8 +54,8 @@ const notifications: Notification[] = [
     iconColor: 'text-sage',
     title: 'Community Strong',
     message: '500+ parents training strong this year',
-    timestamp: '15 minutes ago',
-  },
+    timestamp: '15 minutes ago'
+},
   {
     id: '5',
     type: 'joining',
@@ -71,8 +73,8 @@ const notifications: Notification[] = [
     iconColor: 'text-gold',
     title: 'Race Day Victory',
     message: 'Sophie completed first 5K while kids cheered',
-    timestamp: '22 minutes ago',
-  },
+    timestamp: '22 minutes ago'
+},
   {
     id: '7',
     type: 'testimonial',
@@ -80,8 +82,8 @@ const notifications: Notification[] = [
     iconColor: 'text-gold',
     title: "Daughter's Pride",
     message: '"My parent is the strongest!" - Amy\'s daughter',
-    timestamp: '25 minutes ago',
-  },
+    timestamp: '25 minutes ago'
+},
   {
     id: '8',
     type: 'milestone',
@@ -89,8 +91,8 @@ const notifications: Notification[] = [
     iconColor: 'text-sage',
     title: 'Success Rate',
     message: '92% achieve their fitness goals',
-    timestamp: '30 minutes ago',
-  },
+    timestamp: '30 minutes ago'
+},
 ]
 
 export default function PremiumSocialProof() {
@@ -157,16 +159,16 @@ export default function PremiumSocialProof() {
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-gold via-sage to-gold opacity-20 blur-xl"
                 animate={{
-                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                }}
+                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+}}
                 transition={{
                   duration: 5,
                   repeat: Infinity,
-                  ease: 'linear',
-                }}
+                  ease: 'linear'
+}}
                 style={{
-                  backgroundSize: '200% 200%',
-                }}
+                  backgroundSize: '200% 200%'
+}}
               />
 
               <div className="relative bg-white dark:bg-navy-light p-4">
@@ -177,12 +179,12 @@ export default function PremiumSocialProof() {
                       className="w-2 h-2 bg-green-500 rounded-full"
                       animate={{
                         scale: [1, 1.2, 1],
-                        opacity: [1, 0.7, 1],
-                      }}
+                        opacity: [1, 0.7, 1]
+}}
                       transition={{
                         duration: 2,
-                        repeat: Infinity,
-                      }}
+                        repeat: Infinity
+}}
                     />
                     <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
                       Live Update
@@ -290,13 +292,13 @@ export default function PremiumSocialProof() {
           <motion.div
             className="flex items-center justify-center gap-6 text-xs sm:text-sm"
             animate={{
-              x: [-100, 0, 100, 0, -100],
-            }}
+              x: [-100, 0, 100, 0, -100]
+}}
             transition={{
               duration: 30,
               repeat: Infinity,
-              ease: 'linear',
-            }}
+              ease: 'linear'
+}}
           >
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-sage" />

@@ -2,7 +2,15 @@
 
 import * as React from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Trophy, Heart, MapPin, Clock, Star, CheckCircle, Users, Medal, Target, Baby } from 'lucide-react'
+import {
+  Trophy,
+  Heart,
+  MapPin,
+  CheckCircle,
+  Medal,
+  Target,
+  Baby
+} from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 
 // REAL achievements - 100% truthful
@@ -232,7 +240,7 @@ export default function TruthfulTrustSection() {
           className="mt-20 text-center"
         >
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            <strong>The Truth:</strong> I'm not a celebrity trainer or fitness influencer.
+            <strong>The Truth:</strong> I&apos;m not a celebrity trainer or fitness influencer.
             I'm a mum of 3 from Norfolk who got properly strong after having kids and now helps other mums do the same.
             No fake credentials, no made-up statistics - just real fitness for real mums.
           </p>

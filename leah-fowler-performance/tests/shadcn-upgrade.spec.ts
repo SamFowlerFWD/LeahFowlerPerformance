@@ -234,7 +234,7 @@ test.describe('Leah Fowler Performance - Shadcn UI Upgrade', () => {
     // Answer all 8 questions
     const ratings = [8, 7, 6, 9, 7, 8, 6, 7];
     
-    for (let i = 0; i < ratings.length; i++) {
+    for (const i = 0; i < ratings.length; i++) {
       // Select rating by clicking button
       const ratingButton = page.getByRole('button', { name: new RegExp(`Rate ${ratings[i]} out of 10`, 'i') });
       await ratingButton.click();

@@ -87,8 +87,8 @@ test.describe('Mobile Navigation Tests', () => {
         // Simulate swipe to close (swipe right)
         await mobileMenu.dragTo(mobileMenu, {
           sourcePosition: { x: 10, y: 100 },
-          targetPosition: { x: 200, y: 100 },
-        })
+          targetPosition: { x: 200, y: 100 }
+})
 
         await page.waitForTimeout(300)
         await expect(mobileMenu).not.toBeVisible()
@@ -237,8 +237,8 @@ test.describe('Mobile Performance Tests', () => {
             loadComplete: perfData.loadEventEnd - perfData.loadEventStart,
             domInteractive: perfData.domInteractive,
             transferSize: perfData.transferSize,
-            encodedBodySize: perfData.encodedBodySize,
-          })
+            encodedBodySize: perfData.encodedBodySize
+})
         } else {
           window.addEventListener('load', () => {
             const perfData = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
@@ -247,8 +247,8 @@ test.describe('Mobile Performance Tests', () => {
               loadComplete: perfData.loadEventEnd - perfData.loadEventStart,
               domInteractive: perfData.domInteractive,
               transferSize: perfData.transferSize,
-              encodedBodySize: perfData.encodedBodySize,
-            })
+              encodedBodySize: perfData.encodedBodySize
+})
           })
         }
       })
@@ -307,11 +307,11 @@ test.describe('Mobile Performance Tests', () => {
         }).observe({ entryTypes: ['largest-contentful-paint'] })
 
         // Cumulative Layout Shift
-        let cls = 0
+        const cls = 0
         new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
-            if (!(entry as any).hadRecentInput) {
-              cls += (entry as any).value
+            if (!(entry as unknown).hadRecentInput) {
+              cls += (entry as unknown).value
             }
           }
           clsValue = cls
@@ -322,8 +322,8 @@ test.describe('Mobile Performance Tests', () => {
           resolve({
             fcp: fcpValue,
             lcp: lcpValue,
-            cls: clsValue,
-          })
+            cls: clsValue
+})
         }, 5000)
       })
     })
@@ -421,8 +421,8 @@ test.describe('Mobile Touch Interactions', () => {
       // Simulate swipe
       await carousel.dragTo(carousel, {
         sourcePosition: { x: 300, y: 50 },
-        targetPosition: { x: 50, y: 50 },
-      })
+        targetPosition: { x: 50, y: 50 }
+})
 
       await page.waitForTimeout(500)
 
@@ -443,8 +443,8 @@ test.describe('Mobile Touch Interactions', () => {
     // Simulate touch and drag
     await body.dragTo(body, {
       sourcePosition: { x: 180, y: 100 },
-      targetPosition: { x: 180, y: 200 },
-    })
+      targetPosition: { x: 180, y: 200 }
+})
 
     // Check if refresh indicator appears (if implemented)
     const refreshIndicator = page.locator('.pull-refresh')
