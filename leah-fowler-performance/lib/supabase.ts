@@ -180,6 +180,89 @@ export interface GDPRConsentLog {
   created_at: string
 }
 
+// Subscription types
+export interface Subscription {
+  id: string
+  user_id: string
+  stripe_customer_id?: string
+  stripe_subscription_id?: string
+  tier: 'foundation' | 'performance' | 'elite' | 'youth'
+  status: 'active' | 'cancelled' | 'past_due' | 'unpaid' | 'incomplete' | 'incomplete_expired' | 'trialing' | 'paused'
+  billing_period: 'monthly' | 'quarterly' | 'annual'
+  price_gbp: number
+  current_period_start?: string
+  current_period_end?: string
+  cancel_at_period_end: boolean
+  cancelled_at?: string
+  trial_start?: string
+  trial_end?: string
+  metadata?: Record<string, unknown>
+  created_at: string
+  updated_at: string
+}
+
+export interface PaymentMethod {
+  id: string
+  user_id: string
+  stripe_customer_id: string
+  stripe_payment_method_id: string
+  type: string
+  card_brand?: string
+  card_last4?: string
+  card_exp_month?: number
+  card_exp_year?: number
+  is_default: boolean
+  created_at: string
+  updated_at: string
+}
+
+export interface Invoice {
+  id: string
+  user_id: string
+  subscription_id: string
+  stripe_invoice_id: string
+  invoice_number?: string
+  status: 'draft' | 'open' | 'paid' | 'uncollectible' | 'void'
+  amount_paid: number
+  amount_due: number
+  amount_remaining: number
+  subtotal: number
+  tax: number
+  total: number
+  currency: string
+  description?: string
+  period_start?: string
+  period_end?: string
+  due_date?: string
+  paid_at?: string
+  invoice_pdf?: string
+  hosted_invoice_url?: string
+  metadata?: Record<string, unknown>
+  created_at: string
+}
+
+export interface PricingTier {
+  id: string
+  tier: 'foundation' | 'performance' | 'elite' | 'youth'
+  name: string
+  slug: string
+  stripe_price_id_monthly?: string
+  stripe_price_id_quarterly?: string
+  stripe_price_id_annual?: string
+  price_monthly_gbp: number
+  price_quarterly_gbp: number
+  price_annual_gbp: number
+  description?: string
+  features?: string[]
+  badge?: string
+  is_popular: boolean
+  is_active: boolean
+  display_order: number
+  metadata?: Record<string, unknown>
+  created_at: string
+  updated_at: string
+}
+
 // Helper functions for common database operations
 export const profileQueries = {
   getProfile: async (userId: string) => {
@@ -364,8 +447,117 @@ export const assessmentSubmissionQueries = {
   anonymizeSubmission: async (id: string) => {
     const { error } = await supabase
       .rpc('anonymize_assessment_submission', { submission_id: id })
-    
+
     if (error) throw error
     return true
+  }
+}
+
+export const subscriptionQueries = {
+  getActiveSubscription: async (userId: string) => {
+    const { data, error } = await supabase
+      .from('subscriptions')
+      .select('*')
+      .eq('user_id', userId)
+      .eq('status', 'active')
+      .single()
+
+    if (error && error.code !== 'PGRST116') throw error // PGRST116 = no rows
+    return data as Subscription | null
+  },
+
+  getUserSubscriptions: async (userId: string) => {
+    const { data, error } = await supabase
+      .from('subscriptions')
+      .select('*')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false })
+
+    if (error) throw error
+    return data as Subscription[]
+  },
+
+  updateSubscription: async (subscriptionId: string, updates: Partial<Subscription>) => {
+    const { data, error } = await supabase
+      .from('subscriptions')
+      .update(updates)
+      .eq('id', subscriptionId)
+      .single()
+
+    if (error) throw error
+    return data as Subscription
+  }
+}
+
+export const paymentMethodQueries = {
+  getUserPaymentMethods: async (userId: string) => {
+    const { data, error } = await supabase
+      .from('payment_methods')
+      .select('*')
+      .eq('user_id', userId)
+      .order('is_default', { ascending: false })
+
+    if (error) throw error
+    return data as PaymentMethod[]
+  },
+
+  getDefaultPaymentMethod: async (userId: string) => {
+    const { data, error } = await supabase
+      .from('payment_methods')
+      .select('*')
+      .eq('user_id', userId)
+      .eq('is_default', true)
+      .single()
+
+    if (error && error.code !== 'PGRST116') throw error
+    return data as PaymentMethod | null
+  }
+}
+
+export const invoiceQueries = {
+  getUserInvoices: async (userId: string) => {
+    const { data, error } = await supabase
+      .from('invoices')
+      .select('*')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false })
+
+    if (error) throw error
+    return data as Invoice[]
+  },
+
+  getInvoiceById: async (invoiceId: string) => {
+    const { data, error } = await supabase
+      .from('invoices')
+      .select('*')
+      .eq('id', invoiceId)
+      .single()
+
+    if (error) throw error
+    return data as Invoice
+  }
+}
+
+export const pricingTierQueries = {
+  getAllTiers: async () => {
+    const { data, error } = await supabase
+      .from('pricing_tiers')
+      .select('*')
+      .eq('is_active', true)
+      .order('display_order', { ascending: true })
+
+    if (error) throw error
+    return data as PricingTier[]
+  },
+
+  getTierBySlug: async (slug: string) => {
+    const { data, error } = await supabase
+      .from('pricing_tiers')
+      .select('*')
+      .eq('slug', slug)
+      .single()
+
+    if (error) throw error
+    return data as PricingTier
   }
 }

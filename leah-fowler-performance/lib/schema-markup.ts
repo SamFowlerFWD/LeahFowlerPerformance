@@ -877,6 +877,16 @@ export const getAllSchemas = () => {
 };
 
 /**
+ * Generate service schema for services page
+ */
+export const generateServiceSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@graph": serviceSchemas
+  };
+};
+
+/**
  * Get schema for specific page type
  */
 export const getPageSchema = (pageType: string) => {
