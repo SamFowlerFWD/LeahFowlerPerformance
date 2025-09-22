@@ -1,0 +1,68 @@
+{
+  "name": "Leah Fowler Performance - Family Fitness Norfolk",
+  "short_name": "LFP Fitness",
+  "description": "Transform your family's fitness with Norfolk's premier performance coach",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#f59e0b",
+  "categories": ["fitness", "health", "sports", "lifestyle"],
+  "lang": "en-GB",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Free Session",
+      "short_name": "Book",
+      "description": "Book your free fitness assessment",
+      "url": "/booking",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "View Schedule",
+      "short_name": "Schedule",
+      "description": "View class timetable",
+      "url": "/schedule",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "WhatsApp Leah",
+      "short_name": "Chat",
+      "description": "Contact Leah on WhatsApp",
+      "url": "https://wa.me/447123456789",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile-home.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Home Screen"
+    },
+    {
+      "src": "/screenshots/mobile-programmes.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Programmes"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

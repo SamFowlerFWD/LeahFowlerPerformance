@@ -1,0 +1,1470 @@
+@import "tailwindcss";
+@import "./mobile-optimizations.css";
+@import "../styles/animations.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Smooth Scrolling with Header Offset - 2025 Standards */
+html {
+  scroll-behavior: smooth;
+  /* Account for fixed header height + extra breathing room */
+  scroll-padding-top: 140px; /* Mobile: header (80px) + space (60px) */
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 160px; /* Tablet: header (100px) + space (60px) */
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 180px; /* Desktop: header (120px) + space (60px) */
+  }
+}
+
+/* Utility class to hide scrollbars */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4a574, #87a96b);
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c49564, #77995b);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #1a2942;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  border-color: #1a2942;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus Styles for Accessibility */
+*:focus-visible {
+  outline: 2px solid #d4a574;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip to Content Link */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1rem 1.5rem;
+  background: #1a2942;
+  color: white;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-to-content:focus {
+  left: 0;
+  top: 0;
+}
+
+:root {
+  /* ===================================== */
+  /* PREMIUM 8-POINT SPACING SYSTEM */
+  /* Base unit: 8px - All spacing follows this grid */
+  /* ===================================== */
+
+  /* Spacing Tokens - 8-point grid */
+  --space-0: 0px;                /* 0px */
+  --space-1: 0.5rem;            /* 8px */
+  --space-2: 1rem;              /* 16px */
+  --space-3: 1.5rem;            /* 24px */
+  --space-4: 2rem;              /* 32px */
+  --space-5: 2.5rem;            /* 40px */
+  --space-6: 3rem;              /* 48px */
+  --space-7: 3.5rem;            /* 56px */
+  --space-8: 4rem;              /* 64px */
+  --space-9: 4.5rem;            /* 72px */
+  --space-10: 5rem;             /* 80px */
+  --space-11: 5.5rem;           /* 88px */
+  --space-12: 6rem;             /* 96px */
+  --space-13: 6.5rem;           /* 104px */
+  --space-14: 7rem;             /* 112px */
+  --space-15: 7.5rem;           /* 120px */
+  --space-16: 8rem;             /* 128px */
+  --space-18: 9rem;             /* 144px */
+  --space-20: 10rem;            /* 160px */
+  --space-24: 12rem;            /* 192px */
+  --space-28: 14rem;            /* 224px */
+  --space-32: 16rem;            /* 256px */
+  --space-40: 20rem;            /* 320px */
+
+  /* Semantic Spacing Tokens */
+  --space-xs: var(--space-1);      /* 8px */
+  --space-sm: var(--space-2);      /* 16px */
+  --space-md: var(--space-4);      /* 32px */
+  --space-lg: var(--space-6);      /* 48px */
+  --space-xl: var(--space-8);      /* 64px */
+  --space-2xl: var(--space-12);    /* 96px */
+  --space-3xl: var(--space-16);    /* 128px */
+  --space-4xl: var(--space-20);    /* 160px */
+  --space-5xl: var(--space-24);    /* 192px */
+
+  /* Component-Specific Spacing */
+  --space-section-mobile: var(--space-10);     /* 80px */
+  --space-section-tablet: var(--space-16);     /* 128px */
+  --space-section-desktop: var(--space-20);    /* 160px */
+  --space-section-luxury: var(--space-24);     /* 192px */
+
+  --space-card-mobile: var(--space-6);         /* 48px */
+  --space-card-tablet: var(--space-8);         /* 64px */
+  --space-card-desktop: var(--space-10);       /* 80px */
+
+  --space-button-x-mobile: var(--space-4);     /* 32px */
+  --space-button-x-tablet: var(--space-5);     /* 40px */
+  --space-button-x-desktop: var(--space-6);    /* 48px */
+
+  --space-button-y-mobile: var(--space-2);     /* 16px */
+  --space-button-y-tablet: var(--space-3);     /* 24px */
+  --space-button-y-desktop: var(--space-4);    /* 32px */
+
+  /* Gap Utilities */
+  --gap-xs: var(--space-2);        /* 16px */
+  --gap-sm: var(--space-3);        /* 24px */
+  --gap-md: var(--space-4);        /* 32px */
+  --gap-lg: var(--space-6);        /* 48px */
+  --gap-xl: var(--space-8);        /* 64px */
+  --gap-2xl: var(--space-10);      /* 80px */
+  --gap-3xl: var(--space-12);      /* 96px */
+
+  /* Brand Colours */
+  --navy: #1a2942;
+  --navy-light: #2a3952;
+  --navy-dark: #0a1932;
+  --gold: #d4a574;
+  --gold-light: #e4b584;
+  --gold-dark: #c49564;
+  --sage: #87a96b;
+  --sage-light: #97b97b;
+  --sage-dark: #77995b;
+
+  /* Semantic Colours - Using Brand Colors */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #1a2942; /* Navy */
+  --primary-foreground: #ffffff;
+  --secondary: #d4a574; /* Gold */
+  --secondary-foreground: #1a2942;
+  --accent: #87a96b; /* Sage */
+  --accent-foreground: #1a2942;
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+@theme {
+  --color-navy: #1a2942;
+  --color-navy-light: #2a3952;
+  --color-navy-dark: #0a1932;
+  --color-gold: #d4a574;
+  --color-gold-light: #e4b584;
+  --color-gold-dark: #c49564;
+  --color-sage: #87a96b;
+  --color-sage-light: #97b97b;
+  --color-sage-dark: #77995b;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card: #1a2942;
+    --card-foreground: #f9fafb;
+    --popover: #1a2942;
+    --popover-foreground: #f9fafb;
+    --primary: #d4a574;
+    --primary-foreground: #1a2942;
+    --secondary: #87a96b;
+    --secondary-foreground: #1a2942;
+    --accent: #d4a574;
+    --accent-foreground: #1a2942;
+    --muted: #2a3952;
+    --muted-foreground: #9ca3af;
+    --border: #2a3952;
+    --input: #2a3952;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  antialiased: true;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* Premium Section Spacing - 8-Point Grid System */
+section {
+  /* Mobile: Minimum luxury spacing */
+  padding: var(--space-10) var(--space-3); /* 80px vertical, 24px horizontal */
+}
+
+@media (min-width: 640px) {
+  section {
+    /* Small tablets: Increased breathing room */
+    padding: var(--space-12) var(--space-4); /* 96px vertical, 32px horizontal */
+  }
+}
+
+@media (min-width: 768px) {
+  section {
+    /* Tablet: Premium spacing */
+    padding: var(--space-16) var(--space-5); /* 128px vertical, 40px horizontal */
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    /* Desktop: Luxury spacing */
+    padding: var(--space-20) var(--space-6); /* 160px vertical, 48px horizontal */
+  }
+}
+
+@media (min-width: 1280px) {
+  section {
+    /* Large Desktop: Maximum luxury */
+    padding: var(--space-24) var(--space-8); /* 192px vertical, 64px horizontal */
+  }
+}
+
+/* Section with container spacing - Enhanced 2025 Standards */
+.section-padding {
+  /* Mobile: More generous padding */
+  padding: 3.5rem 1.5rem; /* 56px vertical, 24px horizontal */
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 4.5rem 2rem; /* 72px vertical, 32px horizontal */
+  }
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    /* Tablet: Increased spacing */
+    padding: 6rem 2.5rem; /* 96px vertical, 40px horizontal */
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    /* Desktop: Premium spacing */
+    padding: 7rem 3rem; /* 112px vertical, 48px horizontal */
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    /* Large Desktop: Maximum spacing */
+    padding: 7.5rem 3rem; /* 120px vertical, 48px horizontal */
+  }
+}
+
+/* Premium Card Styles - 8-Point Grid System */
+.card-premium {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  /* Mobile: Generous padding */
+  padding: var(--space-6); /* 48px */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+  .card-premium {
+    /* Small tablets: Increased padding */
+    padding: var(--space-7); /* 56px */
+  }
+}
+
+@media (min-width: 768px) {
+  .card-premium {
+    /* Tablets: Premium padding */
+    padding: var(--space-8); /* 64px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-premium {
+    /* Desktop: Luxury padding */
+    padding: var(--space-10); /* 80px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .card-premium {
+    /* Large Desktop: Maximum padding */
+    padding: var(--space-12); /* 96px */
+  }
+}
+
+.card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+/* Premium Button Styles - 8-Point Grid System */
+.btn-premium {
+  /* Mobile: Generous touch targets */
+  padding: var(--space-3) var(--space-6); /* 24px vertical, 48px horizontal */
+  font-weight: 600;
+  border-radius: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .btn-premium {
+    /* Tablet: Increased presence */
+    padding: var(--space-4) var(--space-7); /* 32px vertical, 56px horizontal */
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-premium {
+    /* Desktop: Premium size */
+    padding: var(--space-4) var(--space-8); /* 32px vertical, 64px horizontal */
+  }
+}
+
+@media (min-width: 1280px) {
+  .btn-premium {
+    /* Large Desktop: Maximum impact */
+    padding: var(--space-5) var(--space-10); /* 40px vertical, 80px horizontal */
+  }
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-premium:hover::before {
+  opacity: 1;
+}
+
+/* Custom Utility Classes */
+.text-gradient {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--sage) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--sage) 100%);
+}
+
+.bg-gradient-premium {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+}
+
+.bg-gradient-subtle {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+}
+
+/* Glass Morphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(26, 41, 66, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Premium Shadows */
+.shadow-premium {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.shadow-premium-lg {
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.shadow-premium-xl {
+  box-shadow: 0 35px 60px -15px rgb(0 0 0 / 0.3);
+}
+
+/* Text shadows for depth */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Premium transitions */
+.transition-premium {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+/* Premium border styles */
+.border-gradient {
+  position: relative;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, var(--gold) 0%, var(--sage) 100%) border-box;
+  border: 2px solid transparent;
+}
+
+/* Accessibility helpers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slideInFromTop {
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+.animate-slideInFromBottom {
+  animation: slideInFromBottom 0.5s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Focus visible improvements */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Improved transitions */
+button,
+a,
+input,
+textarea {
+  transition: all 0.2s ease-out;
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--muted) 25%,
+    var(--muted-foreground) 50%,
+    var(--muted) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Premium Container Configuration - Enhanced 2025 Standards */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* Mobile: Minimum 24px to prevent edge touching */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Mobile devices */
+@media (min-width: 375px) {
+  .container {
+    padding-left: 1.75rem; /* 28px */
+    padding-right: 1.75rem;
+  }
+}
+
+/* Small tablets */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    padding-left: 2rem; /* 32px */
+    padding-right: 2rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    /* Tablet: 40px horizontal padding for breathing room */
+    padding-left: 2.5rem; /* 40px */
+    padding-right: 2.5rem;
+  }
+}
+
+/* Small laptops */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    /* Desktop: 48px horizontal padding */
+    padding-left: 3rem; /* 48px */
+    padding-right: 3rem;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding-left: 3.5rem; /* 56px */
+    padding-right: 3.5rem;
+  }
+}
+
+/* Large desktops */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+    padding-left: 4rem; /* 64px */
+    padding-right: 4rem;
+  }
+}
+
+/* XL desktops */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+    padding-left: 5rem; /* 80px */
+    padding-right: 5rem;
+  }
+}
+
+/* Max-width utility classes with proper centering and padding */
+.max-w-7xl {
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem; /* 1152px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem; /* 1024px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem; /* 896px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem; /* 768px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem; /* 672px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.max-w-xl {
+  max-width: 36rem; /* 576px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Responsive padding for max-width utilities */
+@media (min-width: 640px) {
+  .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl,
+  .max-w-3xl, .max-w-2xl, .max-w-xl {
+    padding-left: 1.5rem; /* 24px */
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl,
+  .max-w-3xl, .max-w-2xl, .max-w-xl {
+    padding-left: 2rem; /* 32px */
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl,
+  .max-w-3xl, .max-w-2xl, .max-w-xl {
+    padding-left: 3rem; /* 48px */
+    padding-right: 3rem;
+  }
+}
+
+/* Spacing utilities based on 8px grid */
+.space-section {
+  /* Standard section spacing */
+  margin-top: 3rem; /* 48px mobile */
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .space-section {
+    margin-top: 5rem; /* 80px tablet */
+    margin-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .space-section {
+    margin-top: 7.5rem; /* 120px desktop */
+    margin-bottom: 7.5rem;
+  }
+}
+
+/* Component spacing utilities */
+.component-padding {
+  padding: 1.5rem; /* 24px mobile */
+}
+
+@media (min-width: 768px) {
+  .component-padding {
+    padding: 2rem; /* 32px tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .component-padding {
+    padding: 2.5rem; /* 40px desktop */
+  }
+}
+
+/* Premium section wrapper - ensures consistent spacing */
+.section-premium {
+  /* Mobile: 56px vertical padding */
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .section-premium {
+    /* Small tablets: 72px vertical */
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-premium {
+    /* Tablet: 96px vertical */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-premium {
+    /* Desktop: 112px vertical */
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-premium {
+    /* Large Desktop: 120px vertical */
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+}
+
+/* First section after header needs extra top padding */
+.section-first {
+  /* Account for fixed header */
+  padding-top: 8rem; /* 128px mobile */
+}
+
+@media (min-width: 768px) {
+  .section-first {
+    padding-top: 10rem; /* 160px tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-first {
+    padding-top: 11rem; /* 176px desktop */
+  }
+}
+
+/* ===================================== */
+/* LUXURY SPACING SYSTEM - £997/MONTH FEEL */
+/* Premium 8-Point Grid Implementation */
+/* ===================================== */
+
+/* Luxury Section Spacing - Premium but Reasonable */
+.luxury-section {
+  padding: var(--space-6) var(--space-4); /* 48px vertical, 32px horizontal */
+}
+
+@media (min-width: 640px) {
+  .luxury-section {
+    padding: var(--space-8) var(--space-6); /* 64px vertical, 48px horizontal */
+  }
+}
+
+@media (min-width: 768px) {
+  .luxury-section {
+    padding: var(--space-10) var(--space-8); /* 80px vertical, 64px horizontal */
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-section {
+    padding: var(--space-12) var(--space-10); /* 96px vertical, 80px horizontal */
+  }
+}
+
+@media (min-width: 1280px) {
+  .luxury-section {
+    padding: var(--space-14) var(--space-12); /* 112px vertical, 96px horizontal */
+  }
+}
+
+/* Luxury Card Padding - Spacious & Premium */
+.luxury-card {
+  padding: var(--space-6); /* 48px mobile */
+  border-radius: 1.5rem;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 640px) {
+  .luxury-card {
+    padding: var(--space-8); /* 64px */
+  }
+}
+
+@media (min-width: 768px) {
+  .luxury-card {
+    padding: var(--space-10); /* 80px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-card {
+    padding: var(--space-12); /* 96px */
+  }
+}
+
+/* Luxury Button Sizing - Impossible to Miss */
+.luxury-button {
+  padding: var(--space-4) var(--space-8); /* 32px vertical, 64px horizontal */
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700;
+  border-radius: 1rem;
+  letter-spacing: 0.025em;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@media (min-width: 768px) {
+  .luxury-button {
+    padding: var(--space-5) var(--space-10); /* 40px vertical, 80px horizontal */
+    font-size: 1.25rem; /* 20px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-button {
+    padding: var(--space-6) var(--space-12); /* 48px vertical, 96px horizontal */
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+.luxury-button:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.3);
+}
+
+/* Luxury Gap Utilities - Premium Spacing Between Elements */
+.luxury-gap-sm {
+  gap: var(--space-4); /* 32px */
+}
+
+.luxury-gap-md {
+  gap: var(--space-6); /* 48px */
+}
+
+.luxury-gap-lg {
+  gap: var(--space-8); /* 64px */
+}
+
+.luxury-gap-xl {
+  gap: var(--space-10); /* 80px */
+}
+
+.luxury-gap-2xl {
+  gap: var(--space-12); /* 96px */
+}
+
+/* Luxury Margins - Generous Breathing Room */
+.luxury-mt {
+  margin-top: var(--space-8); /* 64px */
+}
+
+.luxury-mb {
+  margin-bottom: var(--space-8); /* 64px */
+}
+
+.luxury-my {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .luxury-mt {
+    margin-top: var(--space-12); /* 96px */
+  }
+
+  .luxury-mb {
+    margin-bottom: var(--space-12);
+  }
+
+  .luxury-my {
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-12);
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-mt {
+    margin-top: var(--space-16); /* 128px */
+  }
+
+  .luxury-mb {
+    margin-bottom: var(--space-16);
+  }
+
+  .luxury-my {
+    margin-top: var(--space-16);
+    margin-bottom: var(--space-16);
+  }
+}
+
+/* Luxury Typography Spacing */
+.luxury-heading {
+  margin-bottom: 2rem; /* 32px mobile */
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .luxury-heading {
+    margin-bottom: 3rem; /* 48px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-heading {
+    margin-bottom: 4rem; /* 64px */
+  }
+}
+
+.luxury-subheading {
+  margin-bottom: 1.5rem; /* 24px */
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .luxury-subheading {
+    margin-bottom: 2rem; /* 32px */
+  }
+}
+
+.luxury-paragraph {
+  margin-bottom: 2rem; /* 32px */
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .luxury-paragraph {
+    margin-bottom: 2.5rem; /* 40px */
+    line-height: 1.9;
+  }
+}
+
+/* Luxury Container - Maximum Width for Premium Feel */
+.luxury-container {
+  max-width: 90rem; /* 1440px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .luxury-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .luxury-container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .luxury-container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+/* Premium Price Display - Make It Proud */
+.luxury-price {
+  font-size: 3rem; /* 48px */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .luxury-price {
+    font-size: 4rem; /* 64px */
+    margin: 3rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-price {
+    font-size: 5rem; /* 80px */
+    margin: 4rem 0;
+  }
+}
+
+/* Feature List Luxury Spacing */
+.luxury-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px between items */
+}
+
+@media (min-width: 768px) {
+  .luxury-feature-list {
+    gap: 2rem; /* 32px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-feature-list {
+    gap: 2.5rem; /* 40px */
+  }
+}
+
+.luxury-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem; /* 24px between icon and text */
+}
+
+@media (min-width: 768px) {
+  .luxury-feature-item {
+    gap: 2rem; /* 32px */
+  }
+}
+
+/* Luxury Grid Gaps - Premium Spacing */
+.luxury-grid {
+  display: grid;
+  gap: 3rem; /* 48px mobile */
+}
+
+@media (min-width: 768px) {
+  .luxury-grid {
+    gap: 4rem; /* 64px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-grid {
+    gap: 5rem; /* 80px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .luxury-grid {
+    gap: 6rem; /* 96px */
+  }
+}
+
+/* Minimum Touch Target Sizes - Premium UX */
+.luxury-touch-target {
+  min-height: 3.5rem; /* 56px - well above 48px minimum */
+  min-width: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .luxury-touch-target {
+    min-height: 4rem; /* 64px */
+    min-width: 4rem;
+  }
+}
+
+/* Luxury Divider Spacing */
+.luxury-divider {
+  margin: 4rem 0; /* 64px */
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+@media (min-width: 768px) {
+  .luxury-divider {
+    margin: 6rem 0; /* 96px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-divider {
+    margin: 8rem 0; /* 128px */
+  }
+}
+
+/* Badge/Pill Luxury Spacing */
+.luxury-badge {
+  padding: 1rem 2rem; /* 16px vertical, 32px horizontal */
+  font-size: 1rem;
+  border-radius: 9999px;
+}
+
+@media (min-width: 768px) {
+  .luxury-badge {
+    padding: 1.25rem 2.5rem; /* 20px vertical, 40px horizontal */
+    font-size: 1.125rem;
+  }
+}
+
+/* Testimonial Card Luxury Spacing */
+.luxury-testimonial {
+  padding: 3rem; /* 48px */
+  border-radius: 2rem;
+}
+
+@media (min-width: 768px) {
+  .luxury-testimonial {
+    padding: 4rem; /* 64px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-testimonial {
+    padding: 5rem; /* 80px */
+  }
+}
+
+/* CTA Section Luxury Treatment */
+.luxury-cta-section {
+  padding: var(--space-12) var(--space-6); /* 96px vertical, 48px horizontal */
+  border-radius: 2rem;
+}
+
+@media (min-width: 768px) {
+  .luxury-cta-section {
+    padding: var(--space-16) var(--space-8); /* 128px vertical, 64px horizontal */
+    border-radius: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-cta-section {
+    padding: var(--space-20) var(--space-10); /* 160px vertical, 80px horizontal */
+    border-radius: 3rem;
+  }
+}
+
+/* ===================================== */
+/* 8-POINT GRID UTILITY CLASSES */
+/* Quick application of consistent spacing */
+/* ===================================== */
+
+/* Padding Utilities */
+.p-0 { padding: var(--space-0); }
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-5 { padding: var(--space-5); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+.p-10 { padding: var(--space-10); }
+.p-12 { padding: var(--space-12); }
+.p-16 { padding: var(--space-16); }
+.p-20 { padding: var(--space-20); }
+
+/* Padding Y-axis (top/bottom) */
+.py-0 { padding-top: var(--space-0); padding-bottom: var(--space-0); }
+.py-1 { padding-top: var(--space-1); padding-bottom: var(--space-1); }
+.py-2 { padding-top: var(--space-2); padding-bottom: var(--space-2); }
+.py-3 { padding-top: var(--space-3); padding-bottom: var(--space-3); }
+.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+.py-6 { padding-top: var(--space-6); padding-bottom: var(--space-6); }
+.py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+.py-10 { padding-top: var(--space-10); padding-bottom: var(--space-10); }
+.py-12 { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+.py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
+.py-20 { padding-top: var(--space-20); padding-bottom: var(--space-20); }
+.py-24 { padding-top: var(--space-24); padding-bottom: var(--space-24); }
+
+/* Padding X-axis (left/right) */
+.px-0 { padding-left: var(--space-0); padding-right: var(--space-0); }
+.px-1 { padding-left: var(--space-1); padding-right: var(--space-1); }
+.px-2 { padding-left: var(--space-2); padding-right: var(--space-2); }
+.px-3 { padding-left: var(--space-3); padding-right: var(--space-3); }
+.px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }
+.px-6 { padding-left: var(--space-6); padding-right: var(--space-6); }
+.px-8 { padding-left: var(--space-8); padding-right: var(--space-8); }
+.px-10 { padding-left: var(--space-10); padding-right: var(--space-10); }
+.px-12 { padding-left: var(--space-12); padding-right: var(--space-12); }
+
+/* Margin Utilities */
+.m-0 { margin: var(--space-0); }
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-4 { margin: var(--space-4); }
+.m-6 { margin: var(--space-6); }
+.m-8 { margin: var(--space-8); }
+
+/* Margin Y-axis */
+.my-0 { margin-top: var(--space-0); margin-bottom: var(--space-0); }
+.my-2 { margin-top: var(--space-2); margin-bottom: var(--space-2); }
+.my-4 { margin-top: var(--space-4); margin-bottom: var(--space-4); }
+.my-6 { margin-top: var(--space-6); margin-bottom: var(--space-6); }
+.my-8 { margin-top: var(--space-8); margin-bottom: var(--space-8); }
+.my-10 { margin-top: var(--space-10); margin-bottom: var(--space-10); }
+.my-12 { margin-top: var(--space-12); margin-bottom: var(--space-12); }
+.my-16 { margin-top: var(--space-16); margin-bottom: var(--space-16); }
+
+/* Margin Bottom */
+.mb-0 { margin-bottom: var(--space-0); }
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+.mb-10 { margin-bottom: var(--space-10); }
+.mb-12 { margin-bottom: var(--space-12); }
+.mb-16 { margin-bottom: var(--space-16); }
+
+/* Margin Top */
+.mt-0 { margin-top: var(--space-0); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+.mt-10 { margin-top: var(--space-10); }
+.mt-12 { margin-top: var(--space-12); }
+.mt-16 { margin-top: var(--space-16); }
+
+/* Gap Utilities for Flexbox/Grid */
+.gap-0 { gap: var(--space-0); }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+.gap-10 { gap: var(--space-10); }
+.gap-12 { gap: var(--space-12); }
+.gap-16 { gap: var(--space-16); }
+
+/* Space Between (for flex/grid children) */
+.space-y-2 > * + * { margin-top: var(--space-2); }
+.space-y-3 > * + * { margin-top: var(--space-3); }
+.space-y-4 > * + * { margin-top: var(--space-4); }
+.space-y-6 > * + * { margin-top: var(--space-6); }
+.space-y-8 > * + * { margin-top: var(--space-8); }
+.space-y-10 > * + * { margin-top: var(--space-10); }
+.space-y-12 > * + * { margin-top: var(--space-12); }
+
+.space-x-2 > * + * { margin-left: var(--space-2); }
+.space-x-3 > * + * { margin-left: var(--space-3); }
+.space-x-4 > * + * { margin-left: var(--space-4); }
+.space-x-6 > * + * { margin-left: var(--space-6); }
+.space-x-8 > * + * { margin-left: var(--space-8); }
+
+/* Noise background pattern - avoids hydration issues with inline SVG */
+.bg-noise {
+  background-color: transparent;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
+}

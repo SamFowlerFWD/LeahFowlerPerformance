@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+
+# Next.js build outputs
+leah-fowler-performance/.next/
+leah-fowler-performance/out/
+leah-fowler-performance/build/
+
+# Dependencies
+leah-fowler-performance/node_modules/
+
+# Environment variables
+.env
+.env.*
+*.env
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+*.test.js
+*.spec.js
+
+# TypeScript
+*.tsbuildinfo

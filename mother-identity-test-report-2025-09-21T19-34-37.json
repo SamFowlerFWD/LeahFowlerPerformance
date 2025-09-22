@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-09-21T19:34:40.854Z",
+  "url": "http://localhost:3000",
+  "overallPassRate": "32.0",
+  "passedTests": 8,
+  "totalTests": 25,
+  "testResults": {
+    "announcement": {
+      "Contains \"500+ Mothers Reclaimed\"": false,
+      "Contains \"92% Identity Breakthroughs\"": false,
+      "Contains \"Mother of 2\"": false,
+      "Contains \"Ultra Athlete\"": false,
+      "NO \"Executives\" reference": true,
+      "NO \"Success Rate\" (uses Breakthroughs)": true
+    },
+    "hero": {
+      "Badge contains \"Mother of 2\"": true,
+      "Badge contains \"Spartan Ultra Finisher\"": true,
+      "Badge contains \"Identity Coach\"": true,
+      "Headlines mention identity/mother": true
+    },
+    "trust": {
+      "Contains \"Mother of 2 Who Truly Understands\"": false,
+      "Contains \"500+ Mothers Reclaimed\"": false,
+      "Contains \"From Postnatal to Spartan Ultra\"": false
+    },
+    "programmes": {
+      "Has Rediscovery Phase (£197)": false,
+      "Has Strength Building (£297)": false,
+      "Has Warrior Mother (£197/month)": false
+    },
+    "testimonials": {
+      "Has testimonials": false,
+      "Testimonials mention mum/mother": false,
+      "Testimonials mention identity": false
+    },
+    "inappropriate": {
+      "No executive/business references": false
+    },
+    "ukEnglish": {
+      "programme": true,
+      "mum": true,
+      "optimise": false,
+      "realise": false,
+      "behaviour": false
+    }
+  },
+  "screenshots": {
+    "fullPage": "/Users/samfowler/Code/LeahFowlerPerformance-1/test-screenshots-final/01-full-page-2025-09-21T19-34-37.png",
+    "sections": [
+      "/Users/samfowler/Code/LeahFowlerPerformance-1/test-screenshots-final/02-announcement-2025-09-21T19-34-37.png",
+      "/Users/samfowler/Code/LeahFowlerPerformance-1/test-screenshots-final/03-hero-2025-09-21T19-34-37.png",
+      "/Users/samfowler/Code/LeahFowlerPerformance-1/test-screenshots-final/04-programmes-2025-09-21T19-34-37.png"
+    ]
+  },
+  "summary": "68% of tests still failing"
+}

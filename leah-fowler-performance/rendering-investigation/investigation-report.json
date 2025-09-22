@@ -1,0 +1,1528 @@
+{
+  "timestamp": "2025-09-21T06:32:13.188Z",
+  "url": "http://localhost:3000",
+  "pageTitle": "Performance Coach Norfolk | High Achievers & Athletes | Leah Fowler",
+  "consoleLogs": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/main-app.js?v=1758436327103",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/app-pages-internals.js",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/pattern.png",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:3000/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:3000/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/main-app.js?v=1758436327103",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app-pages-internals.js",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "method": "GET"
+    }
+  ],
+  "responseErrors": [
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/main-app.js?v=1758436327103",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app-pages-internals.js",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:3000/pattern.png",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/eaead17c7dbfcd5d-s.p.woff2",
+      "status": 404,
+      "statusText": "Not Found"
+    }
+  ],
+  "visibleTextCount": 412,
+  "sampleVisibleText": [
+    "Skip to main content",
+    "500+ Executives Transformed",
+    "•",
+    "98% Success Rate",
+    "•",
+    "15 Years Excellence",
+    "•",
+    "Book Free Consultation",
+    "LFP",
+    "Leah Fowler Performance"
+  ],
+  "images": [
+    {
+      "src": "http://localhost:3000/_next/image?url=%2Fimages%2Fhero%2Fleah-fowler-performance-coach-norfolk.webp&w=3840&q=95",
+      "alt": "Leah Fowler - Elite Performance Consultant, Norfolk UK",
+      "width": 650,
+      "height": 900,
+      "displayed": true,
+      "loaded": true
+    },
+    {
+      "src": "http://localhost:3000/_next/image?url=%2Fimages%2Ftestimonials%2Fclient-transformation-1.webp&w=3840&q=75",
+      "alt": "James Richardson CEO testimonial for Leah Fowler Performance Coach Norfolk",
+      "width": 42,
+      "height": 64,
+      "displayed": true,
+      "loaded": false
+    },
+    {
+      "src": "http://localhost:3000/_next/image?url=%2Fimages%2Fhero%2Fperformance-consultant-norfolk-uk.webp&w=3840&q=75",
+      "alt": "Leah Fowler Performance Coach video testimonial thumbnail Norfolk UK",
+      "width": 512,
+      "height": 288,
+      "displayed": true,
+      "loaded": false
+    },
+    {
+      "src": "http://localhost:3000/_next/image?url=%2Fimages%2Fabout%2Fspartan-race-achievement-norfolk-coach.webp&w=3840&q=75",
+      "alt": "Spartan Race achievement with Leah Fowler Performance Coach Norfolk",
+      "width": 240,
+      "height": 240,
+      "displayed": true,
+      "loaded": false
+    },
+    {
+      "src": "http://localhost:3000/_next/image?url=%2Fimages%2Fabout%2Foutlaw-triathlon-performance-coach.webp&w=3840&q=75",
+      "alt": "Outlaw Triathlon achievement Leah Fowler Performance Norfolk",
+      "width": 240,
+      "height": 240,
+      "displayed": true,
+      "loaded": false
+    }
+  ],
+  "domAnalysis": {
+    "totalElements": 1939,
+    "bodyChildren": 49,
+    "mainContent": {
+      "tag": "MAIN",
+      "id": "",
+      "className": "min-h-screen",
+      "childCount": 10,
+      "textContent": "Norfolk's Only Evidence-Based Performance ConsultantThe Science of Sustainable Excellence: Where Hig"
+    },
+    "headers": [
+      {
+        "tag": "H1",
+        "text": "The Science of Sustainable Excellence: Where High Performers BecomePeak Performance",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "72px"
+      },
+      {
+        "tag": "H3",
+        "text": "Money-Back Guarantee",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H3",
+        "text": "Certified Excellence",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H3",
+        "text": "500+ Executives",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H3",
+        "text": "90-Day Timeline",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H3",
+        "text": "Money-Back Guarantee",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H3",
+        "text": "Certified Excellence",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H3",
+        "text": "500+ Executives",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H3",
+        "text": "90-Day Timeline",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H2",
+        "text": "Discover YourPerformance DNA",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "60px"
+      },
+      {
+        "tag": "H3",
+        "text": "Mental Resilience",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Focus & Productivity",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Leadership Impact",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Energy Management",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Your Free Assessment Includes:",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "30px"
+      },
+      {
+        "tag": "H2",
+        "text": "Choose YourPerformance Path",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "60px"
+      },
+      {
+        "tag": "H3",
+        "text": "Foundation",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Performance",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Elite",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H2",
+        "text": "Real Results from Real Achievers",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "60px"
+      },
+      {
+        "tag": "H3",
+        "text": "312% Performance ROI in 6 Months",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H4",
+        "text": "Watch How Professionals Transform",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H3",
+        "text": "Ready to Write Your Success Story?",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "30px"
+      },
+      {
+        "tag": "H2",
+        "text": "The Gold Standard inPerformance Consulting",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "60px"
+      },
+      {
+        "tag": "H3",
+        "text": "Certified Excellence",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H4",
+        "text": "ICF PCC",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H4",
+        "text": "NLP Master",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H4",
+        "text": "CIPD L7",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H4",
+        "text": "MSc Psychology",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H3",
+        "text": "Performance That Speaks Volumes",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "30px"
+      },
+      {
+        "tag": "H4",
+        "text": "Identify Your Performance Limiters",
+        "visible": true,
+        "color": "rgb(249, 250, 251)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H4",
+        "text": "Personalised Action Plan",
+        "visible": true,
+        "color": "rgb(249, 250, 251)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H4",
+        "text": "Benchmark Your Commitment",
+        "visible": true,
+        "color": "rgb(249, 250, 251)",
+        "fontSize": "16px"
+      },
+      {
+        "tag": "H3",
+        "text": "Executive Performance Optimisation Guide",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H2",
+        "text": "Leah Fowler",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "96px"
+      },
+      {
+        "tag": "H4",
+        "text": "Certified Personal Trainer",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H4",
+        "text": "Strength & Conditioning",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H4",
+        "text": "Nutrition Coach",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H4",
+        "text": "Behaviour Change",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H3",
+        "text": "Core Expertise",
+        "visible": true,
+        "color": "rgb(212, 165, 116)",
+        "fontSize": "36px"
+      },
+      {
+        "tag": "H2",
+        "text": "Ready toExcel?",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "96px"
+      },
+      {
+        "tag": "H3",
+        "text": "Book Discovery Call",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Virtual Consultation",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Email Enquiry",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "24px"
+      },
+      {
+        "tag": "H3",
+        "text": "Why Industry Leaders Choose Us",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "48px"
+      },
+      {
+        "tag": "H4",
+        "text": "Proven Excellence",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H4",
+        "text": "100% Confidential",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H4",
+        "text": "Global Reach",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H4",
+        "text": "Results Guarantee",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "18px"
+      },
+      {
+        "tag": "H3",
+        "text": "Book Your Complimentary Strategy Session",
+        "visible": true,
+        "color": "rgb(26, 41, 66)",
+        "fontSize": "48px"
+      },
+      {
+        "tag": "H3",
+        "text": "Join 5,000+ High Performers",
+        "visible": true,
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "36px"
+      },
+      {
+        "tag": "H4",
+        "text": "Programmes",
+        "visible": true,
+        "color": "rgb(212, 165, 116)",
+        "fontSize": "14px"
+      },
+      {
+        "tag": "H4",
+        "text": "Services",
+        "visible": true,
+        "color": "rgb(212, 165, 116)",
+        "fontSize": "14px"
+      },
+      {
+        "tag": "H4",
+        "text": "Resources",
+        "visible": true,
+        "color": "rgb(212, 165, 116)",
+        "fontSize": "14px"
+      },
+      {
+        "tag": "H4",
+        "text": "Company",
+        "visible": true,
+        "color": "rgb(212, 165, 116)",
+        "fontSize": "14px"
+      },
+      {
+        "tag": "H4",
+        "text": "Certifications & Memberships",
+        "visible": true,
+        "color": "rgb(212, 165, 116)",
+        "fontSize": "14px"
+      }
+    ],
+    "hiddenElements": [
+      {
+        "tag": "HEAD",
+        "id": "",
+        "className": "",
+        "textSnippet": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@cont"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@cont"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "fixed inset-y-0 right-0 w-full sm:w-80 bg-white/95 dark:bg-navy-dark/95 backdrop-blur-xl z-40 lg:hidden shadow-2xl",
+        "textSnippet": "HomeProgrammesPremium Performance - £350/monthPerf"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 md:hidden relative",
+        "textSnippet": "Risk-FreeMoney-Back Guarantee30-Day ResultsElite S"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "fixed bottom-0 left-0 right-0 z-50 lg:hidden",
+        "textSnippet": "HomeAssessPlans1ChatMenu"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "requestAnimationFrame(function(){$RT=performance.n"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "$RB=[];$RV=function(a){$RT=performance.now();for(v"
+      },
+      {
+        "tag": "TITLE",
+        "id": "",
+        "className": "",
+        "textSnippet": "Performance Coach Norfolk | High Achievers & Athle"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "document.querySelectorAll('body link[rel=\"icon\"], "
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "$RC(\"B:0\",\"S:0\")"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "(self.__next_f=self.__next_f||[]).push([0])"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"7:I[\\\"(app-pages-browser)/."
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"next/dist/lib/metadata/gene"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\",90,1,false]]\\n17:[[\\\"RootL"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"props\\\":{}}\\n49:[]\\n4c:{\\\"n"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"25:[[\\\"$\\\",\\\"title\\\",null,{"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"b:[\\\"$\\\",\\\"html\\\",null,{\\\"l"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"3c:D\\\"$3d\\\"\\n3f:D\\\"$40\\\"\\n3"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"0:{\\\"P\\\":\\\"$1\\\",\\\"b\\\":\\\"dev"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"4b:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"43:{\\\"metadata\\\":[[\\\"$\\\",\\\""
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"57:\\\"$43:metadata\\\"\\n\"])"
+      }
+    ],
+    "zeroSizeElements": [
+      {
+        "tag": "HEAD",
+        "id": "",
+        "className": "",
+        "textSnippet": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@cont"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@cont"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "fixed inset-y-0 right-0 w-full sm:w-80 bg-white/95 dark:bg-navy-dark/95 backdrop-blur-xl z-40 lg:hidden shadow-2xl",
+        "textSnippet": "HomeProgrammesPremium Performance - £350/monthPerf"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "flex flex-col h-full pt-20 pb-6 px-6",
+        "textSnippet": "HomeProgrammesPremium Performance - £350/monthPerf"
+      },
+      {
+        "tag": "NAV",
+        "id": "",
+        "className": "flex-1 space-y-2",
+        "textSnippet": "HomeProgrammesPremium Performance - £350/monthPerf"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "Home"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-3 rounded-lg text-lg font-medium text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Home"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "ProgrammesPremium Performance - £350/monthPerforma"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-3 rounded-lg text-lg font-medium text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Programmes"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "ml-4 mt-2 space-y-1",
+        "textSnippet": "Premium Performance - £350/monthPerformance Essent"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-2 rounded-lg text-sm text-navy/70 dark:text-white/70 hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Premium Performance - £350/month"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-2 rounded-lg text-sm text-navy/70 dark:text-white/70 hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Performance Essentials - £199/month"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-2 rounded-lg text-sm text-navy/70 dark:text-white/70 hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Online Programme - £97/month"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-2 rounded-lg text-sm text-navy/70 dark:text-white/70 hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Small Group Training - £79/month"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "Free Assessment"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-3 rounded-lg text-lg font-medium text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Free Assessment"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "About"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-3 rounded-lg text-lg font-medium text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "About"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "Blog"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-3 rounded-lg text-lg font-medium text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Blog"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "Success Stories"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-3 rounded-lg text-lg font-medium text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Success Stories"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "Contact"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "block px-4 py-3 rounded-lg text-lg font-medium text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300",
+        "textSnippet": "Contact"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "border-t border-gray-200 dark:border-gray-700 pt-6 space-y-4",
+        "textSnippet": "Start Free Assessment"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-primary/90 min-h-[44px] px-6 has-[>svg]:px-5 w-full bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy font-bold py-6 rounded-xl shadow-lg hover:shadow-gold/30 transition-all duration-300",
+        "textSnippet": "Start Free Assessment"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 md:hidden relative",
+        "textSnippet": "Risk-FreeMoney-Back Guarantee30-Day ResultsElite S"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 flex gap-6 px-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory",
+        "textSnippet": "Risk-FreeMoney-Back Guarantee30-Day ResultsElite S"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "flex-shrink-0 w-[280px] snap-center",
+        "textSnippet": "Risk-FreeMoney-Back Guarantee30-Day Results"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gold/20 h-full",
+        "textSnippet": "Risk-FreeMoney-Back Guarantee30-Day Results"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 flex items-center space-x-6",
+        "textSnippet": "Risk-FreeMoney-Back Guarantee30-Day Results"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 flex-1 min-w-0",
+        "textSnippet": "Risk-FreeMoney-Back Guarantee30-Day Results"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-xs font-bold text-gold uppercase tracking-wider",
+        "textSnippet": "Risk-Free"
+      },
+      {
+        "tag": "H3",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-white font-semibold text-base truncate",
+        "textSnippet": "Money-Back Guarantee"
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-white/70 text-sm truncate",
+        "textSnippet": "30-Day Results"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "flex-shrink-0 w-[280px] snap-center",
+        "textSnippet": "Elite StandardCertified ExcellenceICF & CIPD Accre"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gold/20 h-full",
+        "textSnippet": "Elite StandardCertified ExcellenceICF & CIPD Accre"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 flex items-center space-x-6",
+        "textSnippet": "Elite StandardCertified ExcellenceICF & CIPD Accre"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 flex-1 min-w-0",
+        "textSnippet": "Elite StandardCertified ExcellenceICF & CIPD Accre"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-xs font-bold text-gold uppercase tracking-wider",
+        "textSnippet": "Elite Standard"
+      },
+      {
+        "tag": "H3",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-white font-semibold text-base truncate",
+        "textSnippet": "Certified Excellence"
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-white/70 text-sm truncate",
+        "textSnippet": "ICF & CIPD Accredited"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "flex-shrink-0 w-[280px] snap-center",
+        "textSnippet": "Proven Success500+ ExecutivesTransformed"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gold/20 h-full",
+        "textSnippet": "Proven Success500+ ExecutivesTransformed"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 flex items-center space-x-6",
+        "textSnippet": "Proven Success500+ ExecutivesTransformed"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 flex-1 min-w-0",
+        "textSnippet": "Proven Success500+ ExecutivesTransformed"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-xs font-bold text-gold uppercase tracking-wider",
+        "textSnippet": "Proven Success"
+      },
+      {
+        "tag": "H3",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-white font-semibold text-base truncate",
+        "textSnippet": "500+ Executives"
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-white/70 text-sm truncate",
+        "textSnippet": "Transformed"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "flex-shrink-0 w-[280px] snap-center",
+        "textSnippet": "Guaranteed90-Day TimelineMeasurable Results"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-gold/20 h-full",
+        "textSnippet": "Guaranteed90-Day TimelineMeasurable Results"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 flex items-center space-x-6",
+        "textSnippet": "Guaranteed90-Day TimelineMeasurable Results"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 flex-1 min-w-0",
+        "textSnippet": "Guaranteed90-Day TimelineMeasurable Results"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-xs font-bold text-gold uppercase tracking-wider",
+        "textSnippet": "Guaranteed"
+      },
+      {
+        "tag": "H3",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-white font-semibold text-base truncate",
+        "textSnippet": "90-Day Timeline"
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "className": "jsx-4fb23789b5a36db8 text-white/70 text-sm truncate",
+        "textSnippet": "Measurable Results"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "relative z-10 flex items-center justify-center gap-2",
+        "textSnippet": "Start Foundation"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "relative z-10 flex items-center justify-center gap-2",
+        "textSnippet": "Choose Performance"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "relative z-10 flex items-center justify-center gap-2",
+        "textSnippet": "Go Elite"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList"
+      },
+      {
+        "tag": "OPTION",
+        "id": "",
+        "className": "",
+        "textSnippet": "Select your current training level"
+      },
+      {
+        "tag": "OPTION",
+        "id": "",
+        "className": "",
+        "textSnippet": "Not currently training"
+      },
+      {
+        "tag": "OPTION",
+        "id": "",
+        "className": "",
+        "textSnippet": "Returning after a break"
+      },
+      {
+        "tag": "OPTION",
+        "id": "",
+        "className": "",
+        "textSnippet": "Training recreationally (1-2x/week)"
+      },
+      {
+        "tag": "OPTION",
+        "id": "",
+        "className": "",
+        "textSnippet": "Committed trainer (3-4x/week)"
+      },
+      {
+        "tag": "OPTION",
+        "id": "",
+        "className": "",
+        "textSnippet": "Serious athlete (5+x/week)"
+      },
+      {
+        "tag": "OPTION",
+        "id": "",
+        "className": "",
+        "textSnippet": "Competitive athlete"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "fixed bottom-0 left-0 right-0 z-50 lg:hidden",
+        "textSnippet": "HomeAssessPlans1ChatMenu"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "relative",
+        "textSnippet": "HomeAssessPlans1ChatMenu"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "bg-white/95 dark:bg-navy-dark/95 backdrop-blur-xl border-t border-gray-200 dark:border-gray-800 rounded-t-3xl shadow-2xl",
+        "textSnippet": "HomeAssessPlans1ChatMenu"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "relative h-20 px-4",
+        "textSnippet": "HomeAssessPlans1ChatMenu"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "flex items-center justify-around h-full",
+        "textSnippet": "HomeAssessPlans1ChatMenu"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "Home"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "relative flex flex-col items-center justify-center p-2 min-w-[60px]",
+        "textSnippet": "Home"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "text-xs mt-1 text-navy dark:text-white font-semibold",
+        "textSnippet": "Home"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "Assess"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "relative flex flex-col items-center justify-center p-2 min-w-[60px]",
+        "textSnippet": "Assess"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "text-xs mt-1 text-gray-600 dark:text-gray-400",
+        "textSnippet": "Assess"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "Plans"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "relative flex flex-col items-center justify-center p-2 min-w-[60px]",
+        "textSnippet": "Plans"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "text-xs mt-1 text-gray-600 dark:text-gray-400",
+        "textSnippet": "Plans"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "",
+        "textSnippet": "1Chat"
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "className": "relative flex flex-col items-center justify-center p-2 min-w-[60px]",
+        "textSnippet": "1Chat"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "relative",
+        "textSnippet": "1"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center",
+        "textSnippet": "1"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "text-xs mt-1 text-gray-600 dark:text-gray-400",
+        "textSnippet": "Chat"
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "className": "relative flex flex-col items-center justify-center p-2 min-w-[60px]",
+        "textSnippet": "Menu"
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "className": "text-xs mt-1 text-gray-600 dark:text-gray-400",
+        "textSnippet": "Menu"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "requestAnimationFrame(function(){$RT=performance.n"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "$RB=[];$RV=function(a){$RT=performance.now();for(v"
+      },
+      {
+        "tag": "TITLE",
+        "id": "",
+        "className": "",
+        "textSnippet": "Performance Coach Norfolk | High Achievers & Athle"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "document.querySelectorAll('body link[rel=\"icon\"], "
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "$RC(\"B:0\",\"S:0\")"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "(self.__next_f=self.__next_f||[]).push([0])"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"7:I[\\\"(app-pages-browser)/."
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"next/dist/lib/metadata/gene"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\",90,1,false]]\\n17:[[\\\"RootL"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"props\\\":{}}\\n49:[]\\n4c:{\\\"n"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"25:[[\\\"$\\\",\\\"title\\\",null,{"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"b:[\\\"$\\\",\\\"html\\\",null,{\\\"l"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"3c:D\\\"$3d\\\"\\n3f:D\\\"$40\\\"\\n3"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"0:{\\\"P\\\":\\\"$1\\\",\\\"b\\\":\\\"dev"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"4b:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{"
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"43:{\\\"metadata\\\":[[\\\"$\\\",\\\""
+      },
+      {
+        "tag": "SCRIPT",
+        "id": "",
+        "className": "",
+        "textSnippet": "self.__next_f.push([1,\"57:\\\"$43:metadata\\\"\\n\"])"
+      }
+    ]
+  },
+  "stylesAnalysis": {
+    "stylesheetCount": 1,
+    "stylesheets": [
+      {
+        "href": "http://localhost:3000/_next/static/css/app/layout.css?v=1758436327103",
+        "disabled": false,
+        "ruleCount": 408
+      }
+    ],
+    "fontsLoaded": 0,
+    "fontsPending": 0,
+    "fontsFailed": 2,
+    "fonts": [
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "error"
+      },
+      {
+        "family": "Inter Fallback",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "error"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display",
+        "status": "unloaded"
+      },
+      {
+        "family": "Playfair Display Fallback",
+        "status": "unloaded"
+      }
+    ]
+  },
+  "reactAnalysis": {
+    "hasReactRoot": false,
+    "hasNextData": false,
+    "hydrationErrors": [],
+    "reactVersion": null
+  }
+}

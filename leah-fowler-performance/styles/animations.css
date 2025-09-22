@@ -1,0 +1,187 @@
+/* Visual Storytelling Animations */
+
+/* Entrance animations for family-focused content */
+@keyframes heroImagePan {
+  0%, 100% { transform: scale(1.05) translateY(0); }
+  50% { transform: scale(1.08) translateY(-2%); }
+}
+
+@keyframes achievementFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes communityPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Image reveal animations */
+.image-reveal {
+  animation: imageReveal 0.8s ease-out forwards;
+}
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Transformation before/after effect */
+.before-after-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.before-after-slider {
+  animation: beforeAfterSlide 3s ease-in-out infinite;
+}
+
+@keyframes beforeAfterSlide {
+  0%, 20%, 100% { transform: translateX(0); }
+  50%, 70% { transform: translateX(-100%); }
+}
+
+/* Achievement badge animations */
+.achievement-badge {
+  animation: badgeBounce 2s ease-in-out infinite;
+}
+
+@keyframes badgeBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.05); }
+}
+
+/* Family connection lines */
+.connection-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Youth energy burst */
+.energy-burst {
+  animation: burst 1.5s ease-out;
+}
+
+@keyframes burst {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.7; }
+  100% { transform: scale(1.5) rotate(360deg); opacity: 0; }
+}
+
+/* Community map pin drops */
+.pin-drop {
+  animation: pinDrop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes pinDrop {
+  0% { transform: translateY(-100px) scale(0); opacity: 0; }
+  50% { transform: translateY(10px) scale(1.1); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Race finish line tape break */
+.finish-line {
+  animation: tapeBreak 1s ease-out forwards;
+}
+
+@keyframes tapeBreak {
+  0% { clip-path: inset(0 0 0 0); }
+  50% { clip-path: inset(0 45% 0 45%); transform: scale(1.05); }
+  100% { clip-path: inset(0 100% 0 0); transform: scale(1); }
+}
+
+/* Spartan warrior stance */
+.warrior-stance {
+  animation: warriorPose 3s ease-in-out infinite;
+}
+
+@keyframes warriorPose {
+  0%, 100% { transform: translateX(0) scale(1); }
+  25% { transform: translateX(-5px) scale(1.02); }
+  75% { transform: translateX(5px) scale(1.02); }
+}
+
+/* Programme card hover effects */
+.programme-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.programme-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(251, 146, 60, 0.15);
+}
+
+.programme-card:hover .programme-image {
+  transform: scale(1.05);
+}
+
+/* Testimonial carousel transitions */
+.testimonial-enter {
+  animation: testimonialEnter 0.6s ease-out forwards;
+}
+
+@keyframes testimonialEnter {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Success metric counters */
+.metric-counter {
+  animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+  0% { transform: translateY(10px); opacity: 0; }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile-optimized animations */
+@media (max-width: 768px) {
+  @keyframes heroImagePan {
+    0%, 100% { transform: scale(1.02) translateY(0); }
+    50% { transform: scale(1.04) translateY(-1%); }
+  }
+
+  .programme-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  @keyframes achievementFloat {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-5px) rotate(1deg); }
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .programme-card:hover {
+    transform: none;
+  }
+}

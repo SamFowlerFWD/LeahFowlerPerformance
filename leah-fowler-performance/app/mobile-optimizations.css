@@ -1,0 +1,508 @@
+/* Mobile-First Optimizations for Leah Fowler Performance */
+
+/* ==========================================================================
+   Base Mobile Styles
+   ========================================================================== */
+
+/* Viewport height fix for mobile browsers */
+.mobile-viewport {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Touch-friendly tap targets (minimum 48x48px) */
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Improved touch feedback */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Prevent text selection on interactive elements */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ==========================================================================
+   Typography for Mobile
+   ========================================================================== */
+
+/* Responsive font sizes */
+@media (max-width: 640px) {
+  :root {
+    --font-scale: 0.95;
+  }
+
+  h1 {
+    font-size: calc(2.5rem * var(--font-scale));
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: calc(2rem * var(--font-scale));
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: calc(1.5rem * var(--font-scale));
+    line-height: 1.3;
+  }
+
+  h4 {
+    font-size: calc(1.25rem * var(--font-scale));
+    line-height: 1.35;
+  }
+
+  p, .body-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Prevent orphans and improve readability */
+  p {
+    hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* ==========================================================================
+   Mobile Forms
+   ========================================================================== */
+
+/* Touch-friendly form inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+textarea,
+select {
+  min-height: 48px;
+  padding: 12px 16px;
+  font-size: 16px; /* Prevents zoom on iOS */
+  border-radius: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* iOS-specific input fixes */
+@supports (-webkit-touch-callout: none) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Touch-friendly checkboxes and radios */
+input[type="checkbox"],
+input[type="radio"] {
+  min-width: 24px;
+  min-height: 24px;
+  margin: 12px;
+  cursor: pointer;
+}
+
+/* Mobile-optimized buttons */
+.mobile-button {
+  min-height: 48px;
+  min-width: 120px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-button:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   Mobile Navigation
+   ========================================================================== */
+
+/* Bottom navigation bar spacing */
+.with-bottom-nav {
+  padding-bottom: 72px; /* Height of bottom nav + safe area */
+}
+
+/* Safe area padding for notched devices */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-left {
+  padding-left: env(safe-area-inset-left);
+}
+
+.safe-area-right {
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Sticky header with proper z-index */
+.mobile-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ==========================================================================
+   Mobile Scrolling
+   ========================================================================== */
+
+/* Smooth momentum scrolling on iOS */
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+/* Horizontal scroll containers */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll > * {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Scroll indicators */
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.scroll-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background-color: var(--color-gold);
+}
+
+/* ==========================================================================
+   Mobile Cards and Components
+   ========================================================================== */
+
+/* Mobile-optimized cards */
+.mobile-card {
+  border-radius: 16px;
+  padding: 20px;
+  margin: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.mobile-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Swipeable cards */
+.swipeable-container {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  padding: 16px;
+}
+
+.swipeable-card {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Mobile Images and Media
+   ========================================================================== */
+
+/* Responsive images with lazy loading */
+.mobile-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Loading skeleton for images */
+.image-skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ==========================================================================
+   Mobile Performance
+   ========================================================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hardware acceleration for smooth animations */
+.will-transform {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* ==========================================================================
+   Mobile Modals and Overlays
+   ========================================================================== */
+
+/* Full-screen mobile modals */
+.mobile-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Mobile action sheets */
+.action-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: white;
+  border-radius: 24px 24px 0 0;
+  padding: 24px;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease;
+}
+
+/* ==========================================================================
+   Mobile Loading States
+   ========================================================================== */
+
+/* Touch-friendly loading spinner */
+.mobile-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--color-gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pull-to-refresh indicator */
+.pull-refresh {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Mobile Tables
+   ========================================================================== */
+
+/* Responsive tables for mobile */
+@media (max-width: 640px) {
+  .mobile-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-table table {
+    min-width: 100%;
+  }
+
+  /* Convert table to cards on very small screens */
+  .table-to-cards tbody,
+  .table-to-cards tr,
+  .table-to-cards td {
+    display: block;
+  }
+
+  .table-to-cards thead {
+    display: none;
+  }
+
+  .table-to-cards tr {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    padding: 16px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .table-to-cards td {
+    padding: 8px 0;
+    border: none;
+  }
+
+  .table-to-cards td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    margin-right: 8px;
+  }
+}
+
+/* ==========================================================================
+   Mobile Utilities
+   ========================================================================== */
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Show only on mobile */
+.show-mobile {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .show-mobile {
+    display: block !important;
+  }
+}
+
+/* Prevent zoom on input focus (iOS) */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+  }
+}
+
+/* Mobile-first spacing utilities */
+.mobile-spacing {
+  padding: 16px;
+}
+
+@media (min-width: 640px) {
+  .mobile-spacing {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-spacing {
+    padding: 32px;
+  }
+}
+
+/* Accessible focus styles */
+*:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 16px;
+  background: var(--color-gold);
+  color: var(--color-navy);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.skip-to-content:focus {
+  left: 16px;
+  top: 16px;
+}

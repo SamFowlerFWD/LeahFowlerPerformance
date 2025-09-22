@@ -1,0 +1,162 @@
+{
+  "desktop": {
+    "viewportConstraint": {
+      "passed": false,
+      "heroHeight": 768,
+      "windowHeight": 768,
+      "hasScrollbar": true,
+      "message": "Hero height: 768px, Window: 768px, Scrollbar: true"
+    },
+    "visualArtifacts": {
+      "passed": true,
+      "floatingBadges": [],
+      "overflowingElements": []
+    },
+    "heroImage": {
+      "passed": false,
+      "found": false
+    },
+    "contentVisibility": {
+      "passed": true,
+      "headline": {
+        "found": true,
+        "visible": true,
+        "text": "Be the Mum Who Races Them Up the Stairs",
+        "position": {
+          "top": 131.8046875,
+          "bottom": 290.1953125
+        }
+      },
+      "subheading": {
+        "found": true,
+        "visible": true,
+        "text": "Mother of 3 • Norfolk Fitness Coach • Endurance At",
+        "position": {
+          "top": 338.1953125,
+          "bottom": 498.1953125
+        }
+      },
+      "ctaButtons": [
+        {
+          "text": "",
+          "visible": true,
+          "position": {
+            "top": 46,
+            "bottom": 114
+          }
+        },
+        {
+          "text": "Start Training With Me",
+          "visible": true,
+          "position": {
+            "top": 546.1953125,
+            "bottom": 754.1953125
+          }
+        },
+        {
+          "text": "See What Other Mums Achieved",
+          "visible": true,
+          "position": {
+            "top": 546.1953125,
+            "bottom": 754.1953125
+          }
+        },
+        {
+          "text": "Manage Preferences",
+          "visible": true,
+          "position": {
+            "top": 631,
+            "bottom": 685
+          }
+        },
+        {
+          "text": "Reject All",
+          "visible": true,
+          "position": {
+            "top": 631,
+            "bottom": 685
+          }
+        },
+        {
+          "text": "Accept All",
+          "visible": true,
+          "position": {
+            "top": 631,
+            "bottom": 685
+          }
+        }
+      ],
+      "scrollIndicator": {
+        "found": true,
+        "position": {
+          "top": 688.3897094726562,
+          "bottom": 719.6102905273438
+        },
+        "nearBottom": true
+      }
+    },
+    "achievementBadge": {
+      "passed": true,
+      "found": true,
+      "afterHero": true,
+      "position": {
+        "top": 22337.5,
+        "heroBottom": 768
+      },
+      "style": {
+        "position": "static",
+        "zIndex": "auto"
+      }
+    }
+  },
+  "mobile": {
+    "viewportConstraint": {
+      "passed": true,
+      "height": 667,
+      "windowHeight": 667,
+      "fits": true,
+      "hasScrollbar": true
+    },
+    "overflow": {
+      "passed": false,
+      "hasOverflow": true,
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "fixed inset-y-0 right-0 w-full sm:w-80 bg-white/95 dark:bg-navy-dark/95 backdrop-blur-xl z-40 lg:hidden shadow-2xl",
+          "width": 375,
+          "right": 750
+        },
+        {
+          "tag": "DIV",
+          "class": "flex flex-col h-full pt-20 pb-6 px-6",
+          "width": 375,
+          "right": 750
+        },
+        {
+          "tag": "NAV",
+          "class": "flex-1 space-y-2",
+          "width": 279,
+          "right": 702
+        },
+        {
+          "tag": "DIV",
+          "class": "",
+          "width": 279,
+          "right": 702
+        },
+        {
+          "tag": "A",
+          "class": "block px-4 py-3 rounded-lg text-lg font-medium text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300",
+          "width": 279,
+          "right": 702
+        }
+      ]
+    }
+  },
+  "summary": {
+    "passed": 4,
+    "failed": 3,
+    "total": 7
+  }
+}

@@ -1,0 +1,419 @@
+/**
+ * Premium Spacing System for Leah Fowler Performance
+ * Based on 8-point grid for mathematical harmony
+ * Designed to create luxury consultancy feel
+ */
+
+@layer base {
+  :root {
+    /* ===================================
+       Base 8-Point Grid Scale
+       =================================== */
+
+    /* Micro spacing - for fine adjustments */
+    --space-0: 0;
+    --space-0-5: 0.25rem;  /* 4px - sub-grid micro adjustments */
+    --space-1: 0.5rem;     /* 8px - base unit */
+    --space-1-5: 0.75rem;  /* 12px - tight spacing */
+
+    /* Element spacing - within components */
+    --space-2: 1rem;       /* 16px - standard element gap */
+    --space-2-5: 1.25rem;  /* 20px - comfortable element gap */
+    --space-3: 1.5rem;     /* 24px - generous element gap */
+    --space-4: 2rem;       /* 32px - section element spacing */
+
+    /* Component spacing - between components */
+    --space-5: 2.5rem;     /* 40px - standard component gap */
+    --space-6: 3rem;       /* 48px - comfortable component gap */
+    --space-8: 4rem;       /* 64px - generous component gap */
+    --space-10: 5rem;      /* 80px - luxury component gap */
+
+    /* Section spacing - between sections */
+    --space-12: 6rem;      /* 96px - standard section gap */
+    --space-14: 7rem;      /* 112px - comfortable section gap */
+    --space-16: 8rem;      /* 128px - generous section gap */
+    --space-20: 10rem;     /* 160px - luxury section gap */
+    --space-24: 12rem;     /* 192px - premium section gap */
+    --space-32: 16rem;     /* 256px - hero section spacing */
+
+    /* ===================================
+       Semantic Spacing Tokens
+       =================================== */
+
+    /* Section Padding - Premium breathing room */
+    --section-padding-y-mobile: var(--space-12);
+    --section-padding-y-tablet: var(--space-16);
+    --section-padding-y-desktop: var(--space-20);
+    --section-padding-y-luxury: var(--space-24);
+
+    --section-padding-x-mobile: var(--space-4);
+    --section-padding-x-tablet: var(--space-6);
+    --section-padding-x-desktop: var(--space-8);
+    --section-padding-x-luxury: var(--space-16);
+
+    /* Hero Section - Maximum impact */
+    --hero-padding-top-mobile: var(--space-16);
+    --hero-padding-top-tablet: var(--space-20);
+    --hero-padding-top-desktop: var(--space-24);
+    --hero-padding-top-luxury: var(--space-32);
+
+    --hero-padding-bottom-mobile: var(--space-16);
+    --hero-padding-bottom-tablet: var(--space-20);
+    --hero-padding-bottom-desktop: var(--space-24);
+
+    /* Component Internal Spacing */
+    --card-padding-mobile: var(--space-4);
+    --card-padding-tablet: var(--space-6);
+    --card-padding-desktop: var(--space-8);
+    --card-padding-luxury: var(--space-10);
+
+    /* Form Spacing - Premium feel */
+    --form-field-gap: var(--space-3);
+    --form-field-gap-large: var(--space-4);
+    --form-label-gap: var(--space-1-5);
+    --form-section-gap: var(--space-6);
+    --form-section-gap-large: var(--space-8);
+
+    /* Button Spacing - Executive presence */
+    --button-padding-x-small: var(--space-3);
+    --button-padding-x-medium: var(--space-4);
+    --button-padding-x-large: var(--space-6);
+    --button-padding-x-luxury: var(--space-8);
+
+    --button-padding-y-small: var(--space-2);
+    --button-padding-y-medium: var(--space-2-5);
+    --button-padding-y-large: var(--space-3);
+    --button-padding-y-luxury: var(--space-4);
+
+    /* Grid and Layout Gaps */
+    --grid-gap-tight: var(--space-3);
+    --grid-gap-normal: var(--space-4);
+    --grid-gap-comfortable: var(--space-6);
+    --grid-gap-luxury: var(--space-8);
+    --grid-gap-premium: var(--space-10);
+
+    /* Content Spacing - Editorial quality */
+    --content-paragraph-gap: var(--space-4);
+    --content-heading-margin-top: var(--space-8);
+    --content-heading-margin-bottom: var(--space-3);
+    --content-section-gap: var(--space-10);
+
+    /* Testimonial Spacing - Gallery feel */
+    --testimonial-padding: var(--space-8);
+    --testimonial-padding-luxury: var(--space-10);
+    --testimonial-quote-spacing: var(--space-6);
+    --testimonial-author-spacing: var(--space-4);
+
+    /* Visual Rhythm Multipliers */
+    --spacing-scale-mobile: 0.75;
+    --spacing-scale-tablet: 0.85;
+    --spacing-scale-desktop: 1;
+    --spacing-scale-luxury: 1.25;
+
+    /* Golden Ratio Spacing - Mathematical beauty */
+    --golden-ratio: 1.618;
+    --space-golden-xs: calc(var(--space-4) / var(--golden-ratio) / var(--golden-ratio));
+    --space-golden-sm: calc(var(--space-4) / var(--golden-ratio));
+    --space-golden-base: var(--space-4);
+    --space-golden-lg: calc(var(--space-4) * var(--golden-ratio));
+    --space-golden-xl: calc(var(--space-4) * var(--golden-ratio) * var(--golden-ratio));
+  }
+}
+
+/* ===================================
+   Responsive Fluid Spacing
+   =================================== */
+
+@layer utilities {
+  /* Fluid section padding - scales smoothly between breakpoints */
+  .section-padding-y {
+    padding-top: clamp(
+      var(--section-padding-y-mobile),
+      10vw,
+      var(--section-padding-y-desktop)
+    );
+    padding-bottom: clamp(
+      var(--section-padding-y-mobile),
+      10vw,
+      var(--section-padding-y-desktop)
+    );
+  }
+
+  .section-padding-x {
+    padding-left: clamp(
+      var(--section-padding-x-mobile),
+      5vw,
+      var(--section-padding-x-desktop)
+    );
+    padding-right: clamp(
+      var(--section-padding-x-mobile),
+      5vw,
+      var(--section-padding-x-desktop)
+    );
+  }
+
+  /* Hero section special treatment */
+  .hero-padding-y {
+    padding-top: clamp(
+      var(--hero-padding-top-mobile),
+      12vw,
+      var(--hero-padding-top-desktop)
+    );
+    padding-bottom: clamp(
+      var(--hero-padding-bottom-mobile),
+      10vw,
+      var(--hero-padding-bottom-desktop)
+    );
+  }
+
+  /* Premium card padding */
+  .card-padding {
+    padding: clamp(
+      var(--card-padding-mobile),
+      5vw,
+      var(--card-padding-desktop)
+    );
+  }
+
+  /* Luxury card padding - for premium components */
+  .card-padding-luxury {
+    padding: clamp(
+      var(--card-padding-tablet),
+      6vw,
+      var(--card-padding-luxury)
+    );
+  }
+
+  /* Container with premium spacing */
+  .container-premium {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(
+      var(--space-4),
+      5vw,
+      var(--space-8)
+    );
+    padding-right: clamp(
+      var(--space-4),
+      5vw,
+      var(--space-8)
+    );
+  }
+
+  /* Asymmetric padding for visual interest */
+  .padding-asymmetric-top {
+    padding-top: calc(var(--space-16) * 1.25);
+    padding-bottom: var(--space-12);
+  }
+
+  .padding-asymmetric-bottom {
+    padding-top: var(--space-12);
+    padding-bottom: calc(var(--space-16) * 1.25);
+  }
+
+  /* Breathing space utilities */
+  .breathing-tight {
+    padding: var(--space-6);
+  }
+
+  .breathing-normal {
+    padding: var(--space-8);
+  }
+
+  .breathing-comfortable {
+    padding: var(--space-10);
+  }
+
+  .breathing-luxury {
+    padding: var(--space-12);
+  }
+
+  .breathing-premium {
+    padding: var(--space-16);
+  }
+}
+
+/* ===================================
+   Component-Specific Spacing Classes
+   =================================== */
+
+@layer components {
+  /* Premium button spacing */
+  .btn-spacing-small {
+    padding: var(--button-padding-y-small) var(--button-padding-x-small);
+  }
+
+  .btn-spacing-medium {
+    padding: var(--button-padding-y-medium) var(--button-padding-x-medium);
+  }
+
+  .btn-spacing-large {
+    padding: var(--button-padding-y-large) var(--button-padding-x-large);
+  }
+
+  .btn-spacing-luxury {
+    padding: var(--button-padding-y-luxury) var(--button-padding-x-luxury);
+  }
+
+  /* Form field spacing */
+  .form-field-spacing {
+    margin-bottom: var(--form-field-gap);
+  }
+
+  .form-field-spacing-large {
+    margin-bottom: var(--form-field-gap-large);
+  }
+
+  .form-section-spacing {
+    margin-bottom: var(--form-section-gap);
+  }
+
+  /* Grid spacing utilities */
+  .grid-gap-tight {
+    gap: var(--grid-gap-tight);
+  }
+
+  .grid-gap-normal {
+    gap: var(--grid-gap-normal);
+  }
+
+  .grid-gap-comfortable {
+    gap: var(--grid-gap-comfortable);
+  }
+
+  .grid-gap-luxury {
+    gap: var(--grid-gap-luxury);
+  }
+
+  .grid-gap-premium {
+    gap: var(--grid-gap-premium);
+  }
+
+  /* Content spacing */
+  .content-spacing {
+    & > * + * {
+      margin-top: var(--content-paragraph-gap);
+    }
+
+    & > h1,
+    & > h2,
+    & > h3 {
+      margin-top: var(--content-heading-margin-top);
+      margin-bottom: var(--content-heading-margin-bottom);
+    }
+  }
+
+  /* Testimonial spacing */
+  .testimonial-spacing {
+    padding: clamp(
+      var(--space-6),
+      6vw,
+      var(--testimonial-padding)
+    );
+  }
+
+  .testimonial-spacing-luxury {
+    padding: clamp(
+      var(--testimonial-padding),
+      8vw,
+      var(--testimonial-padding-luxury)
+    );
+  }
+}
+
+/* ===================================
+   Performance Optimizations
+   =================================== */
+
+@layer base {
+  /* Contain layout to prevent reflows */
+  .contain-layout {
+    contain: layout;
+  }
+
+  /* GPU acceleration for smooth animations */
+  .gpu-accelerate {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  /* Prevent layout shift on dynamic content */
+  .stable-layout {
+    aspect-ratio: attr(data-aspect-ratio);
+    contain: layout style;
+  }
+}
+
+/* ===================================
+   Media Query Adjustments
+   =================================== */
+
+/* Tablet - Increase spacing slightly */
+@media (min-width: 768px) {
+  :root {
+    --spacing-multiplier: 1.1;
+  }
+}
+
+/* Desktop - Full spacing */
+@media (min-width: 1024px) {
+  :root {
+    --spacing-multiplier: 1.2;
+  }
+}
+
+/* Luxury displays - Maximum spacing */
+@media (min-width: 1440px) {
+  :root {
+    --spacing-multiplier: 1.3;
+  }
+
+  .section-padding-y {
+    padding-top: var(--section-padding-y-luxury);
+    padding-bottom: var(--section-padding-y-luxury);
+  }
+
+  .section-padding-x {
+    padding-left: var(--section-padding-x-luxury);
+    padding-right: var(--section-padding-x-luxury);
+  }
+
+  .hero-padding-y {
+    padding-top: var(--hero-padding-top-luxury);
+    padding-bottom: var(--hero-padding-bottom-desktop);
+  }
+}
+
+/* Ultra-wide displays - Cap maximum spacing */
+@media (min-width: 1920px) {
+  .container-premium {
+    max-width: 1600px;
+  }
+}
+
+/* ===================================
+   Accessibility Considerations
+   =================================== */
+
+/* Ensure touch targets meet WCAG requirements */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Focus indicators with appropriate spacing */
+:focus-visible {
+  outline-offset: var(--space-0-5);
+}
+
+/* ===================================
+   Print Styles - Reduce spacing
+   =================================== */
+
+@media print {
+  :root {
+    --section-padding-y-desktop: var(--space-6);
+    --section-padding-x-desktop: var(--space-4);
+  }
+}

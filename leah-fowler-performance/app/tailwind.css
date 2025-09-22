@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Premium Spacing System */
+@import "../styles/spacing-system.css";
+
+/* Ensure all padding utilities are included */
+@utility px-* {
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
+}
+
+@utility py-* {
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
+}
+
+@utility p-* {
+  padding: var(--spacing);
+}
+
+/* Responsive variants */
+@variant sm {
+  @media (width >= 640px) {
+    &;
+  }
+}
+
+@variant md {
+  @media (width >= 768px) {
+    &;
+  }
+}
+
+@variant lg {
+  @media (width >= 1024px) {
+    &;
+  }
+}
+
+@variant xl {
+  @media (width >= 1280px) {
+    &;
+  }
+}

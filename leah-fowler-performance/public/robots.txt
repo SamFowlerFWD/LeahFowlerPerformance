@@ -1,0 +1,83 @@
+# Robots.txt for Leah Fowler Performance
+# Norfolk's Premier Mother Identity Coach
+# https://leahfowlerperformance.com
+
+User-agent: *
+Allow: /
+Crawl-delay: 0
+
+# Priority pages for mother transformation content
+Allow: /mother-transformation
+Allow: /postnatal-recovery
+Allow: /warrior-mother-programme
+Allow: /testimonials
+Allow: /about
+
+# Block admin and API routes
+Disallow: /admin/
+Disallow: /api/assessment/admin
+Disallow: /_next/
+Disallow: /api/internal/
+
+# Allow important API endpoints for assessments
+Allow: /api/assessment/submit
+Allow: /api/lead-magnet
+Allow: /api/performance-assessment
+
+# Sitemap location
+Sitemap: https://leahfowlerperformance.com/sitemap.xml
+Sitemap: https://leahfowlerperformance.com/sitemap-blog.xml
+Sitemap: https://leahfowlerperformance.com/sitemap-testimonials.xml
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Block unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# ChatGPT and AI crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: CCBot
+Allow: /
+
+# Social media crawlers - Allow for rich previews
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+# Performance and caching
+User-agent: *
+Disallow: /*.json$
+Disallow: /*.xml$
+Allow: /sitemap*.xml$
+Allow: /manifest.json$

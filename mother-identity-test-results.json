@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-09-21T19:09:15.489Z",
+  "url": "http://localhost:3003",
+  "results": {
+    "passed": [
+      "Stat: Mothers Reclaimed",
+      "Stat: Identity Breakthroughs",
+      "Stat: Badge",
+      "Stat: Warrior Community",
+      "UK English: mum",
+      "UK English: programme",
+      "UK English: optimise",
+      "Programme: rediscovery phase",
+      "Programme: strength building",
+      "Programme: warrior mother",
+      "No generic family fitness",
+      "Keyword: identity",
+      "Keyword: reclaim",
+      "Keyword: warrior",
+      "Keyword: transformation",
+      "Keyword: breakthrough"
+    ],
+    "failed": [
+      "No mother-focused headlines"
+    ],
+    "warnings": []
+  },
+  "contentLength": 324214,
+  "verdict": "MOSTLY COMPLETE"
+}
