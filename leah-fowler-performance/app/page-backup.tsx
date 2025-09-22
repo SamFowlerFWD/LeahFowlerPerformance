@@ -5,7 +5,7 @@ import ModernHeader from '@/components/ModernHeader'
 import PremiumHeroWithImage from '@/components/PremiumHeroWithImage'
 import TrustBar from '@/components/TrustBar'
 import ModernAssessmentSection from '@/components/ModernAssessmentSection'
-importfrom '@/components/'
+// import component here if needed
 import PremiumProgrammeComparison from '@/components/PremiumProgrammeComparison'
 import PremiumSocialProof from '@/components/PremiumSocialProof'
 import MobileDock from '@/components/MobileDock'

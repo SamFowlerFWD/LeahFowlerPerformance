@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-importfrom 'next/image'
+import Image from 'next/image'
 import {
   motion
 } from 'framer-motion'

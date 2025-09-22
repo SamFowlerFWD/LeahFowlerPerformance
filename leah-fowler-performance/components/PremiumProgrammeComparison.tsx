@@ -89,7 +89,7 @@ const programmes = [
 
 export default function PremiumProgrammeComparison() {
   const [hoveredProgramme, setHoveredProgramme] = React.useState<string | null>(null)
-  const [selectedProgramme, setSelectedProgramme] = React.useState(''performance')
+  const [selectedProgramme, setSelectedProgramme] = React.useState('performance')
 
   return (
     <motion.section

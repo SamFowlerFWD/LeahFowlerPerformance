@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from 'react'
-importfrom 'next/link'
-importfrom 'next/image'
+import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
 import {
   ArrowRight,
