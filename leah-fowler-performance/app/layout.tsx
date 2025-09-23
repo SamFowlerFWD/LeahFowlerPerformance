@@ -86,7 +86,7 @@ export default function RootLayout({
         <SchemaMarkup />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased font-sans min-h-screen bg-white dark:bg-navy-dark text-gray-900 dark:text-gray-100`}
+        className={`${inter.variable} ${playfair.variable} antialiased font-sans min-h-screen bg-white dark:bg-navy-dark text-gray-900 dark:text-gray-100 overflow-x-hidden`}
       >
         {/* Skip to Content Link for Accessibility */}
         <a href="#main-content" className="skip-to-content">

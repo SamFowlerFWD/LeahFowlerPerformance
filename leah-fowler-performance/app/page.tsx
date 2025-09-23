@@ -23,7 +23,7 @@ import OnlinePackageShowcase from '@/components/OnlinePackageShowcase'
 // Only use dynamic imports for client-only components
 const FloatingElements = dynamic(() => import('@/components/FloatingElements'), { ssr: false })
 const ExitIntentPopup = dynamic(() => import('@/components/ExitIntentPopup'), { ssr: false })
-const ViewportIndicator = dynamic(() => import('@/components/ViewportIndicator'), { ssr: false })
+// const ViewportIndicator = dynamic(() => import('@/components/ViewportIndicator'), { ssr: false })
 
 // Metadata has been moved to layout.tsx since this is now a client component
 
@@ -104,9 +104,6 @@ export default function Home() {
 
       {/* Mobile Navigation Dock */}
       <MobileDock />
-
-      {/* Viewport Position Indicator */}
-      <ViewportIndicator />
     </>
   )
 }

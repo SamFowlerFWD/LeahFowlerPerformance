@@ -4,6 +4,340 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* =====================================================
+   FIX 1: HORIZONTAL SCROLL PREVENTION
+   Prevents overflow on mobile devices
+   ===================================================== */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+/* Ensure main content doesn't overflow */
+main {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Container overflow protection */
+.container,
+[class*="container"] {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   FIX 2: STANDARDIZED SPACING SYSTEM
+   Consistent padding/margin utilities
+   ===================================================== */
+:root {
+  /* Base spacing unit (8px grid) */
+  --spacing-unit: 0.5rem;
+
+  /* Standardized spacing scale */
+  --spacing-xs: calc(var(--spacing-unit) * 1);    /* 8px */
+  --spacing-sm: calc(var(--spacing-unit) * 2);    /* 16px */
+  --spacing-md: calc(var(--spacing-unit) * 3);    /* 24px */
+  --spacing-lg: calc(var(--spacing-unit) * 4);    /* 32px */
+  --spacing-xl: calc(var(--spacing-unit) * 6);    /* 48px */
+  --spacing-2xl: calc(var(--spacing-unit) * 8);   /* 64px */
+  --spacing-3xl: calc(var(--spacing-unit) * 12);  /* 96px */
+
+  /* Component-specific padding */
+  --padding-button: var(--spacing-sm) var(--spacing-lg);
+  --padding-button-mobile: var(--spacing-md) var(--spacing-lg);
+  --padding-card: var(--spacing-lg);
+  --padding-card-mobile: var(--spacing-md);
+  --padding-section: var(--spacing-3xl) var(--spacing-lg);
+  --padding-section-mobile: var(--spacing-2xl) var(--spacing-md);
+}
+
+/* Utility classes for consistent spacing */
+.spacing-xs { padding: var(--spacing-xs); }
+.spacing-sm { padding: var(--spacing-sm); }
+.spacing-md { padding: var(--spacing-md); }
+.spacing-lg { padding: var(--spacing-lg); }
+.spacing-xl { padding: var(--spacing-xl); }
+.spacing-2xl { padding: var(--spacing-2xl); }
+.spacing-3xl { padding: var(--spacing-3xl); }
+
+/* =====================================================
+   FIX 3: Z-INDEX HIERARCHY SYSTEM
+   Prevents overlapping issues
+   ===================================================== */
+:root {
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-notification: 700;
+  --z-tooltip: 800;
+  --z-maximum: 999;
+}
+
+/* Apply z-index hierarchy */
+.z-base { z-index: var(--z-base); }
+.z-dropdown { z-index: var(--z-dropdown); }
+.z-sticky { z-index: var(--z-sticky); }
+.z-fixed { z-index: var(--z-fixed); }
+.z-modal-backdrop { z-index: var(--z-modal-backdrop); }
+.z-modal { z-index: var(--z-modal); }
+.z-popover { z-index: var(--z-popover); }
+.z-notification { z-index: var(--z-notification); }
+.z-tooltip { z-index: var(--z-tooltip); }
+.z-maximum { z-index: var(--z-maximum); }
+
+/* Header specific z-index */
+header,
+[role="banner"] {
+  z-index: var(--z-fixed);
+}
+
+/* Modal and overlay z-index */
+.modal,
+[role="dialog"] {
+  z-index: var(--z-modal);
+}
+
+.modal-backdrop,
+.overlay {
+  z-index: var(--z-modal-backdrop);
+}
+
+/* =====================================================
+   FIX 4: GRID & FLEX ALIGNMENT FIXES
+   Ensures consistent alignment
+   ===================================================== */
+.grid-consistent {
+  display: grid;
+  align-items: start;
+  justify-items: start;
+  gap: var(--spacing-md);
+}
+
+.flex-consistent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Fix common alignment issues */
+.grid,
+[class*="grid-"] {
+  align-items: stretch;
+}
+
+.flex,
+[class*="flex-"] {
+  align-items: center;
+}
+
+/* Ensure consistent gaps */
+.gap-consistent-xs { gap: var(--spacing-xs); }
+.gap-consistent-sm { gap: var(--spacing-sm); }
+.gap-consistent-md { gap: var(--spacing-md); }
+.gap-consistent-lg { gap: var(--spacing-lg); }
+.gap-consistent-xl { gap: var(--spacing-xl); }
+
+/* =====================================================
+   FIX 5: TOUCH TARGET MINIMUM SIZES
+   Ensures 44x44px minimum for accessibility
+   ===================================================== */
+:root {
+  --touch-target-min: 44px;
+}
+
+/* Apply to all interactive elements */
+button,
+a.button,
+a.btn,
+[role="button"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+.interactive {
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+  position: relative;
+}
+
+/* For inline links and small buttons, add invisible touch area */
+a:not(.button):not(.btn),
+button.small,
+.touch-target-small {
+  position: relative;
+}
+
+a:not(.button):not(.btn)::before,
+button.small::before,
+.touch-target-small::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  z-index: -1;
+}
+
+/* Mobile-specific touch target adjustments */
+@media (max-width: 768px) {
+  button,
+  a.button,
+  a.btn,
+  [role="button"] {
+    padding: var(--padding-button-mobile);
+    min-height: var(--touch-target-min);
+  }
+
+  /* Ensure form inputs have adequate touch targets */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+  textarea,
+  select {
+    min-height: var(--touch-target-min) !important;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* =====================================================
+   FIX 6: ENHANCED FOCUS INDICATORS
+   Clear focus states using brand colours
+   ===================================================== */
+:root {
+  --focus-color-primary: #d4a574;  /* Gold */
+  --focus-color-secondary: #87a96b; /* Sage */
+  --focus-outline-width: 3px;
+  --focus-outline-offset: 2px;
+}
+
+/* Remove default outlines */
+*:focus {
+  outline: none;
+}
+
+/* Apply consistent focus indicators */
+*:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color-primary);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: 4px;
+  transition: outline-color 0.2s ease;
+}
+
+/* Alternative focus style for dark backgrounds */
+.dark *:focus-visible,
+[data-theme="dark"] *:focus-visible {
+  outline-color: var(--focus-color-primary);
+}
+
+/* Button-specific focus styles */
+button:focus-visible,
+a.button:focus-visible,
+a.btn:focus-visible,
+[role="button"]:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color-primary);
+  outline-offset: var(--focus-outline-offset);
+  box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.2);
+}
+
+/* Form input focus styles */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color-secondary);
+  outline-offset: 0;
+  border-color: var(--focus-color-secondary);
+  box-shadow: 0 0 0 3px rgba(135, 169, 107, 0.2);
+}
+
+/* Link focus styles */
+a:not(.button):not(.btn):focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color-primary);
+  outline-offset: var(--focus-outline-offset);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* Card and interactive container focus */
+.card:focus-visible,
+[role="article"]:focus-visible,
+.interactive-card:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color-primary);
+  outline-offset: var(--focus-outline-offset);
+  box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.2);
+}
+
+/* =====================================================
+   COMPONENT STANDARDIZATION
+   Ensures consistent padding and alignment
+   ===================================================== */
+
+/* Standardize card padding */
+.card,
+[data-slot="card"],
+div[class*="card"] {
+  padding: var(--padding-card-mobile) !important;
+}
+
+@media (min-width: 640px) {
+  .card,
+  [data-slot="card"],
+  div[class*="card"] {
+    padding: var(--padding-card) !important;
+  }
+}
+
+/* Ensure all grids have alignment */
+.grid,
+[class*="grid-cols"] {
+  align-items: stretch !important;
+}
+
+/* Ensure all flex containers have alignment */
+.flex,
+[class*="flex-"] {
+  align-items: center !important;
+}
+
+/* Fix specific grid issues */
+.grid.items-start {
+  align-items: start !important;
+}
+
+.grid.items-center {
+  align-items: center !important;
+}
+
+.grid.items-end {
+  align-items: end !important;
+}
+
+/* CRITICAL: Force minimum touch target sizes globally */
+input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]) {
+  min-height: 44px !important;
+}
+
+select {
+  min-height: 44px !important;
+}
+
+textarea {
+  min-height: 64px !important;
+}
+
+button,
+a.button,
+a.btn,
+[role="button"] {
+  min-height: 44px !important;
+}
+
 /* Smooth Scrolling with Header Offset - 2025 Standards */
 html {
   scroll-behavior: smooth;
@@ -75,12 +409,7 @@ html {
   }
 }
 
-/* Focus Styles for Accessibility */
-*:focus-visible {
-  outline: 2px solid #d4a574;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
+/* Legacy focus styles - now handled by enhanced system above */
 
 /* Skip to Content Link */
 .skip-to-content {
@@ -697,11 +1026,13 @@ textarea {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background;
+    color: #1a1a1a;
+  }
+
+  .dark body {
+    color: #ffffff;
   }
 }
 

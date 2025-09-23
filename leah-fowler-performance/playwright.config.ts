@@ -6,42 +6,60 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 1,
-  reporter: [['html'], ['list']],
+  reporter: [
+    ['html', { outputFolder: 'playwright-report' }],
+    ['json', { outputFile: 'test-results/ui-ux-report.json' }],
+    ['list']
+  ],
   use: {
-    baseURL: 'http://localhost:3007',
+    baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    headless: false,
+    headless: true,
   },
 
   projects: [
     {
-      name: 'Desktop Chrome',
-      use: { 
+      name: 'mobile-375',
+      use: {
+        ...devices['iPhone 12'],
+        viewport: { width: 375, height: 812 }
+      },
+    },
+    {
+      name: 'tablet-768',
+      use: {
+        ...devices['iPad'],
+        viewport: { width: 768, height: 1024 }
+      },
+    },
+    {
+      name: 'desktop-1024',
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: { width: 1024, height: 768 }
+      },
+    },
+    {
+      name: 'large-1440',
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: { width: 1440, height: 900 }
+      },
+    },
+    {
+      name: 'xlarge-1920',
+      use: {
         ...devices['Desktop Chrome'],
         viewport: { width: 1920, height: 1080 }
-      },
-    },
-    {
-      name: 'Mobile iPhone 14 Pro',
-      use: { 
-        ...devices['iPhone 14 Pro'],
-        viewport: { width: 390, height: 844 }
-      },
-    },
-    {
-      name: 'Tablet iPad',
-      use: { 
-        ...devices['iPad Pro'],
-        viewport: { width: 768, height: 1024 }
       },
     },
   ],
 
   webServer: {
     command: 'npm run dev',
-    url: 'http://localhost:3007',
+    url: 'http://localhost:3000',
     reuseExistingServer: true,
     timeout: 120000,
   },

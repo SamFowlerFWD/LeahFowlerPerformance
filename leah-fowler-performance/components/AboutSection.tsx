@@ -211,7 +211,7 @@ const GlassCard = ({
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-32 sm:py-40 md:py-48 lg:py-56 xl:py-64 bg-gradient-to-br from-navy via-navy/95 to-navy-dark relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-navy via-navy/95 to-navy-dark relative overflow-hidden">
       {/* Premium Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-[0.02]" />
@@ -230,8 +230,8 @@ export default function AboutSection() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 max-w-8xl mx-auto px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24">
-        <div className="grid lg:grid-cols-2 gap-24 lg:gap-32 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 md:gap-20 lg:gap-24 items-center">
           
           {/* Left: Image & Credentials */}
           <motion.div
@@ -302,13 +302,13 @@ export default function AboutSection() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="mt-12 md:mt-16 text-center"
+              className="mt-8 sm:mt-10 md:mt-12 text-center"
             >
               <div className="inline-block">
-                <div className="h-20 flex items-center justify-center text-4xl md:text-5xl font-signature text-gold italic">
+                <div className="h-16 sm:h-20 flex items-center justify-center text-3xl sm:text-4xl md:text-5xl font-signature text-gold italic">
                   Leah Fowler
                 </div>
-                <p className="text-white/60 text-base mt-2">Founder & Lead Coach</p>
+                <p className="text-white/60 text-sm sm:text-base mt-1 sm:mt-2">Founder & Lead Coach</p>
               </div>
             </motion.div>
           </motion.div>
@@ -326,35 +326,37 @@ export default function AboutSection() {
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-gold/20 to-amber-100/20 backdrop-blur-sm border border-gold/30 text-gold-light text-base font-semibold mb-12"
+              className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full bg-gradient-to-r from-gold/20 to-amber-100/20 backdrop-blur-sm border border-gold/30 text-gold-light text-xs sm:text-sm md:text-base font-semibold mb-6 sm:mb-8 md:mb-10"
             >
-              <Sparkles className="h-6 w-6" />
-              YOUR FAMILY FITNESS COACH
-              <Sparkles className="h-6 w-6" />
+              <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="uppercase tracking-wider">YOUR FAMILY FITNESS COACH</span>
+              <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
             </motion.div>
-            
-            <h2 className="text-6xl md:text-7xl lg:text-8xl font-playfair font-bold text-white mb-10 leading-tight">
+
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Leah Fowler
             </h2>
-            
-            <p className="text-3xl md:text-4xl text-orange-500 font-medium mb-10">
+
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl text-orange-500 font-medium mb-6 sm:mb-8 md:mb-10 leading-tight">
               Family Fitness & Athletic Performance Specialist
             </p>
             
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-12">
-              From new mum to Ultra athlete, I understand the challenges of balancing family life with fitness goals.
-              I&apos;ve completed 3 Spartan Ultra Beasts, an Outlaw Triathlon, and coached over 200 families to transform
-              their health together. As a mum of two, I prove daily that extraordinary is possible.
-            </p>
-            
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-16">
-              Whether you&apos;re training for your first 5K or your fifth Spartan Race, developing your child&apos;s athletic
-              potential, or wanting to get fit as a family, I provide the coaching, community, and accountability you
-              need. From our Dereham base, we&apos;re building Norfolk&apos;s strongest, most supportive fitness family.
-            </p>
+            <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-8 sm:mb-10 md:mb-12">
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
+                From new mum to Ultra athlete, I understand the challenges of balancing family life with fitness goals.
+                I&apos;ve completed 3 Spartan Ultra Beasts, an Outlaw Triathlon, and coached over 200 families to transform
+                their health together. As a mum of two, I prove daily that extraordinary is possible.
+              </p>
+
+              <p className="text-sm sm:text-base md:text-lg lg:text-lg text-white/80 leading-relaxed">
+                Whether you&apos;re training for your first 5K or your fifth Spartan Race, developing your child&apos;s athletic
+                potential, or wanting to get fit as a family, I provide the coaching, community, and accountability you
+                need. From our Dereham base, we&apos;re building Norfolk&apos;s strongest, most supportive fitness family.
+              </p>
+            </div>
 
             {/* Credentials Grid */}
-            <div className="grid grid-cols-2 gap-8 md:gap-10 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
               {credentials.map((cred, index) => (
                 <motion.div
                   key={cred.title}
@@ -362,19 +364,19 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-10 hover:bg-white/15 transition-all hover:scale-105 duration-300"
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/15 transition-all hover:scale-105 duration-300"
                 >
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${cred.color} mb-5`}>
-                    <cred.icon className="h-6 w-6 text-white" />
+                  <div className={`inline-flex p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${cred.color} mb-3 sm:mb-4`}>
+                    <cred.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" />
                   </div>
-                  <h4 className="font-bold text-white text-base md:text-lg mb-2">{cred.title}</h4>
-                  <p className="text-white/60 text-sm md:text-base">{cred.subtitle}</p>
+                  <h4 className="font-bold text-white text-sm sm:text-base md:text-lg mb-1 sm:mb-2">{cred.title}</h4>
+                  <p className="text-white/60 text-xs sm:text-sm md:text-base leading-relaxed">{cred.subtitle}</p>
                 </motion.div>
               ))}
             </div>
 
             {/* Stats Bar */}
-            <div className="grid grid-cols-4 gap-8 md:gap-10 p-10 md:p-12 lg:p-14 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-2xl">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-6 md:gap-8 p-6 sm:p-8 md:p-10 lg:p-12 bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/10 shadow-2xl">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -384,9 +386,9 @@ export default function AboutSection() {
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   className="text-center"
                 >
-                  <stat.icon className="h-6 w-6 md:h-8 md:w-8 text-gold mx-auto mb-4" />
-                  <div className="text-3xl md:text-4xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm md:text-base text-white/60">{stat.label}</div>
+                  <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-gold mx-auto mb-2 sm:mb-3" />
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
+                  <div className="text-xs sm:text-sm md:text-base text-white/60">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -394,7 +396,7 @@ export default function AboutSection() {
         </div>
 
         {/* Bottom Section: Expertise & Media */}
-        <div className="mt-32 md:mt-40">
+        <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-32">
           {/* Expertise Areas */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -403,8 +405,8 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-gold mb-12">Core Expertise</h3>
-            <div className="flex flex-wrap justify-center gap-5 md:gap-6 max-w-5xl mx-auto">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold mb-6 sm:mb-8 md:mb-10">Core Expertise</h3>
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 max-w-5xl mx-auto">
               {expertise.map((item, index) => (
                 <motion.span
                   key={item}
@@ -412,9 +414,9 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="inline-flex items-center gap-3 px-6 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-base md:text-lg hover:bg-white/15 transition-colors"
+                  className="inline-flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-xs sm:text-sm md:text-base hover:bg-white/15 transition-colors"
                 >
-                  <CheckCircle className="h-5 w-5 text-sage" />
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-sage" />
                   {item}
                 </motion.span>
               ))}
@@ -429,10 +431,10 @@ export default function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center"
           >
-            <p className="text-white/60 text-base uppercase tracking-wider mb-10">Proud Partners & Achievements</p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 lg:gap-20 opacity-60">
+            <p className="text-white/60 text-xs sm:text-sm md:text-base uppercase tracking-wider mb-6 sm:mb-8">Proud Partners & Achievements</p>
+            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 opacity-60">
               {mediaLogos.map((media) => (
-                <div key={media.name} className="text-white/80 font-bold text-2xl md:text-3xl tracking-wider">
+                <div key={media.name} className="text-white/80 font-bold text-sm sm:text-base md:text-xl lg:text-2xl tracking-wider">
                   {media.placeholder}
                 </div>
               ))}
