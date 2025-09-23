@@ -108,12 +108,6 @@ export default function OnlinePackageShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <Badge className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gold/20 text-gold border-gold/30 text-base font-semibold">
-            <Zap className="h-4 w-4" />
-            MOST POPULAR PROGRAMME
-            <Zap className="h-4 w-4" />
-          </Badge>
-
           <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-navy dark:text-white mb-8 tracking-tight">
             The Online Package
             <span className="block mt-2 bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
@@ -128,8 +122,8 @@ export default function OnlinePackageShowcase() {
 
           {/* Price Highlight */}
           <div className="inline-block bg-gradient-to-r from-gold/10 to-gold/20 dark:from-gold/20 dark:to-gold/30 rounded-3xl p-8 border-2 border-gold/30">
-            <div className="flex items-center justify-center gap-4">
-              <div>
+            <div className="flex items-center justify-center">
+              <div className="text-center">
                 <p className="text-3xl md:text-4xl font-bold text-navy dark:text-white">
                   £100
                   <span className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">/month</span>
@@ -137,11 +131,6 @@ export default function OnlinePackageShowcase() {
                 <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 mt-2">
                   3-month minimum commitment
                 </p>
-              </div>
-              <div className="h-16 w-px bg-gold/30" />
-              <div className="text-left">
-                <p className="text-lg font-semibold text-navy dark:text-white">Total Investment</p>
-                <p className="text-2xl font-bold text-gold">£300</p>
               </div>
             </div>
           </div>
@@ -245,10 +234,10 @@ export default function OnlinePackageShowcase() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mb-20"
+          className="my-24 md:my-32"
         >
           <h3 className="text-3xl md:text-4xl font-bold text-navy dark:text-white text-center mb-12">
-            Your 12-Week Transformation Journey
+            Your 3 Steps to Longevity
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -270,10 +259,7 @@ export default function OnlinePackageShowcase() {
                   <div className="bg-gradient-to-br from-sage to-sage-light p-3 rounded-xl inline-block mb-4">
                     <phase.icon className="h-8 w-8 text-white" />
                   </div>
-                  <p className="text-sm font-semibold text-gold uppercase tracking-wider mb-2">
-                    {phase.week}
-                  </p>
-                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3 mt-4">
                     {phase.title}
                   </h4>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -312,36 +298,6 @@ export default function OnlinePackageShowcase() {
           </div>
         </motion.div>
 
-        {/* Success Metrics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
-        >
-          {[
-            { value: '95%', label: 'Completion Rate', icon: ChartBar },
-            { value: '4.9', label: 'Average Rating', icon: Star },
-            { value: '250+', label: 'Active Members', icon: Users },
-            { value: '12hrs', label: 'Response Time', icon: Clock }
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
-              className="text-center"
-            >
-              <stat.icon className="h-8 w-8 text-gold mx-auto mb-3" />
-              <p className="text-3xl md:text-4xl font-bold text-navy dark:text-white mb-1">
-                {stat.value}
-              </p>
-              <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
 
         {/* Final CTA */}
         <motion.div

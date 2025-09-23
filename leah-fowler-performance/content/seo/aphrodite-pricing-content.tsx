@@ -2,6 +2,63 @@
 // SEO-optimized content for all training packages
 
 export const aphroditeFitnessPackages = {
+  // Online Package - Main Product Offering
+  onlinePackage: {
+    id: "online-package",
+    name: "Online Package",
+    slug: "online-package",
+    price: 100,
+    currency: "£",
+    period: "/month",
+    billing: "monthly",
+    tagline: "Complete Digital Transformation",
+    shortDescription: "Full online coaching with daily accountability and personalised programming",
+    popular: true,
+    color: "gold" as const,
+    badge: "MOST POPULAR • BEST VALUE",
+
+    longDescription: `Transform your life with our comprehensive Online Package - the perfect solution for busy
+    professionals who want expert coaching without the constraints of scheduled sessions. Get daily support,
+    personalised programming, and real accountability that fits around your life, not the other way around.`,
+
+    features: [
+      { text: "Daily accountability check-ins", included: true, highlight: true },
+      { text: "App-based workout tracking", included: true, highlight: true },
+      { text: "Personalised nutrition guidance", included: true, highlight: true },
+      { text: "Weekly video check-ins", included: true },
+      { text: "Goal setting & progression tracking", included: true },
+      { text: "Exercise form video reviews", included: true },
+      { text: "Direct messaging support", included: true },
+      { text: "Community access", included: true },
+      { text: "3-month minimum commitment", included: true },
+      { text: "In-person sessions", included: false }
+    ],
+
+    idealFor: [
+      "Busy professionals needing flexibility",
+      "Parents who can't commit to fixed sessions",
+      "Those wanting daily accountability",
+      "Anyone serious about transformation"
+    ],
+
+    outcomes: [
+      "Build sustainable habits",
+      "Transform your strength and energy",
+      "Achieve work-life-fitness balance",
+      "Join a supportive community"
+    ],
+
+    testimonial: {
+      quote: "The daily check-ins keep me accountable. I've achieved more in 3 months than 3 years on my own!",
+      author: "James P.",
+      role: "CEO & Dad of 2",
+      result: "Lost 15kg, gained confidence"
+    },
+
+    cta: "Start Your Transformation",
+    guarantee: "30-day money-back guarantee"
+  },
+
   // Small Group Training
   smallGroup: {
     id: "small-group-training",
@@ -134,9 +191,9 @@ export const aphroditeFitnessPackages = {
     billing: "monthly",
     tagline: "Weekly 1:1 Personal Training",
     shortDescription: "Premium personal training with comprehensive support",
-    popular: true,
-    color: "gold" as const,
-    badge: "MOST POPULAR",
+    popular: false,
+    color: "sage" as const,
+    badge: "PREMIUM OPTION",
 
     longDescription: `Our Silver package delivers the perfect balance of personal attention and comprehensive
     support. With weekly 1:1 sessions, personalised nutrition guidance, and access to our supportive
@@ -334,6 +391,7 @@ export const packageComparison = {
   features: [
     {
       name: "Training Format",
+      onlinePackage: "Online Coaching",
       smallGroup: "Group (max 6)",
       semiPrivate: "2:1 Personal",
       silver: "1:1 Personal",
@@ -342,6 +400,7 @@ export const packageComparison = {
     },
     {
       name: "Sessions per Week",
+      onlinePackage: "Daily check-ins",
       smallGroup: "1 (scheduled)",
       semiPrivate: "1",
       silver: "1",
@@ -350,6 +409,7 @@ export const packageComparison = {
     },
     {
       name: "Nutrition Guidance",
+      onlinePackage: "Personalised",
       smallGroup: "Basic tips",
       semiPrivate: "Included",
       silver: "Personalised",
@@ -358,6 +418,7 @@ export const packageComparison = {
     },
     {
       name: "Coach Access",
+      onlinePackage: "Daily + video weekly",
       smallGroup: "During sessions",
       semiPrivate: "Weekly",
       silver: "Weekly + support",
@@ -366,6 +427,7 @@ export const packageComparison = {
     },
     {
       name: "Best For",
+      onlinePackage: "Busy professionals",
       smallGroup: "Community & fun",
       semiPrivate: "Partner training",
       silver: "Personalisation",
@@ -374,6 +436,7 @@ export const packageComparison = {
     },
     {
       name: "Investment",
+      onlinePackage: "£100/month",
       smallGroup: "£120 (3 months)",
       semiPrivate: "£90/month",
       silver: "£140/month",

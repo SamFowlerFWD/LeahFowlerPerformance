@@ -73,7 +73,7 @@ export default function AphroditePricingTiers() {
           case 'personal':
             return ['semi-private', 'silver', 'gold'].includes(pkg.slug)
           case 'online':
-            return ['flexi', 'pathway'].includes(pkg.slug)
+            return ['online-package', 'pathway'].includes(pkg.slug)
           default:
             console.warn('Unknown category:', selectedCategory)
             return true // Fallback to showing all packages
@@ -517,8 +517,8 @@ export default function AphroditePricingTiers() {
               <thead className="bg-navy text-white">
                 <tr>
                   <th className="p-4 text-left">Feature</th>
+                  <th className="p-4 text-center">Online Package</th>
                   <th className="p-4 text-center">Small Group</th>
-                  <th className="p-4 text-center">Flexi</th>
                   <th className="p-4 text-center">Semi-Private</th>
                   <th className="p-4 text-center">Silver</th>
                   <th className="p-4 text-center">Gold</th>
@@ -529,8 +529,8 @@ export default function AphroditePricingTiers() {
                 {packageComparison.features.map((feature, idx) => (
                   <tr key={idx} className="border-t border-gray-200 dark:border-navy/30">
                     <td className="p-4 font-medium text-navy dark:text-white">{feature.name}</td>
+                    <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.onlinePackage}</td>
                     <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.smallGroup}</td>
-                    <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.flexi}</td>
                     <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.semiPrivate}</td>
                     <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.silver}</td>
                     <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.gold}</td>

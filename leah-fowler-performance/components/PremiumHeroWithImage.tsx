@@ -179,9 +179,7 @@ const PremiumHeroWithImage: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="text-sm md:text-base lg:text-lg text-white/80 max-w-2xl"
               >
-                <span className="text-white/90">Norfolk Parent Coach</span> • Mother of 3 • Athlete
-                <br className="hidden md:block" />
-                <span className="text-gold font-medium text-xl">Online Package £100/month</span> • App-Based Training • Daily Accountability
+                <span className="text-white/90">Norfolk Strength and Conditioning Coach</span> • Mum of 3 • Online Personal Trainer • Daily Accountability
               </motion.p>
             </div>
 

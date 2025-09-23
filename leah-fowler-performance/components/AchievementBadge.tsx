@@ -7,13 +7,13 @@ import { CheckCircle } from 'lucide-react'
 const AchievementBadge: React.FC = () => {
   return (
     <motion.div
-      className="relative z-10 flex justify-center -mt-12 lg:-mt-16 px-6"
+      className="relative z-10 flex justify-center mt-8 lg:mt-12 px-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1, duration: 0.8, type: "spring" }}
+      transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
     >
       <motion.div
-        className="bg-white/10 backdrop-blur-xl rounded-2xl px-8 py-4 border border-white/20 shadow-2xl"
+        className="bg-white/10 backdrop-blur-xl rounded-2xl px-8 py-4 border-2 border-blue-900/40 shadow-2xl"
         animate={{
           y: [0, -5, 0],
           boxShadow: [

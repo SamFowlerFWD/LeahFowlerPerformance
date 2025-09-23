@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-09-23T18:12:44.198Z",
+  "page": "Home",
+  "totalIssues": 2,
+  "criticalIssues": 2,
+  "majorIssues": 0,
+  "minorIssues": 0,
+  "issues": [
+    {
+      "type": "overlap",
+      "element": "Element 8 and 20",
+      "issue": "Interactive elements overlap by 193x73px",
+      "severity": "critical"
+    },
+    {
+      "type": "overlap",
+      "element": "Element 9 and 20",
+      "issue": "Interactive elements overlap by 193x51px",
+      "severity": "critical"
+    }
+  ]
+}

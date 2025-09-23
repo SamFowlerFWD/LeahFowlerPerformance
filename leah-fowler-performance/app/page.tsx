@@ -6,7 +6,7 @@ import AnnouncementBar from '@/components/AnnouncementBar'
 import ModernHeader from '@/components/ModernHeader'
 import PremiumHeroWithImage from '@/components/PremiumHeroWithImage'
 import AchievementBadge from '@/components/AchievementBadge'
-import TrustBar from '@/components/TrustBar'
+// import TrustBar from '@/components/TrustBar' - Removed per request
 import SimpleApplySection from '@/components/SimpleApplySection'
 import AphroditePricingTiers from '@/components/AphroditePricingTiers'
 import MobileDock from '@/components/MobileDock'
@@ -17,7 +17,7 @@ import AboutSection from '@/components/AboutSection'
 import LeadMagnetDelivery from '@/components/LeadMagnetDelivery'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
-import HeroStatsSection from '@/components/HeroStatsSection'
+// import HeroStatsSection from '@/components/HeroStatsSection' - Removed per request
 import OnlinePackageShowcase from '@/components/OnlinePackageShowcase'
 
 // Only use dynamic imports for client-only components
@@ -49,11 +49,7 @@ export default function Home() {
           <OnlinePackageShowcase />
         </SectionErrorBoundary>
 
-        {/* Hero Stats Section - Value Proposition and Credibility */}
-        <HeroStatsSection />
-
-        {/* Trust Bar - Build immediate credibility */}
-        <TrustBar />
+        {/* Removed HeroStatsSection and TrustBar per request */}
 
         {/* Apply for Coaching Section - Simple CTA */}
         <SectionErrorBoundary sectionName="SimpleApplySection">
