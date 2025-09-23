@@ -28,123 +28,184 @@ import { cn } from '@/lib/utils'
 
 const programmes = [
   {
-    id: 'premium',
-    title: 'Premium Performance Programme',
-    subtitle: 'Complete Physical & Lifestyle Transformation',
-    duration: 'Monthly',
-    price: '£350/month',
+    id: 'online-package',
+    title: 'Online Package',
+    subtitle: 'Expert Online Coaching Programme',
+    duration: '3-Month Commitment',
+    price: '£100/month',
     popular: true,
+    bestValue: true,
     icon: Crown,
     color: 'from-gold to-gold-light',
     bgGradient: 'from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20',
-    description: 'Comprehensive programme combining strength training, conditioning, nutrition planning, and lifestyle optimisation for maximum results',
+    description: 'Our flagship online coaching programme delivering personalised training, daily accountability, and expert guidance through our mobile app. Transform your performance with the flexibility to train anywhere.',
     features: [
-      { icon: Dumbbell, text: '2x weekly sessions (online or in-person)' },
-      { icon: FileText, text: 'Personalised strength & conditioning programme' },
-      { icon: Heart, text: 'Custom nutrition planning' },
-      { icon: Brain, text: 'Sleep & circadian rhythm optimisation' },
-      { icon: MessageSquare, text: 'Daily WhatsApp accountability' },
-      { icon: Trophy, text: 'Monthly progress assessments' }
+      { icon: CheckCircle, text: 'Daily accountability check-ins and support' },
+      { icon: Trophy, text: 'Personalised goal setting and milestones' },
+      { icon: Dumbbell, text: 'App-based exercise and diet tracking' },
+      { icon: Calendar, text: 'Lifestyle-based workout programming' },
+      { icon: MessageSquare, text: 'Weekly one-on-one progress reviews' },
+      { icon: TrendingUp, text: '3-month transformation guarantee' }
     ],
     outcomes: [
-      '30% increase in strength',
-      '50% improvement in energy levels',
-      'Better sleep quality in 2 weeks'
+      'Complete lifestyle transformation',
+      'Sustainable fitness habits',
+      'Measurable performance gains'
     ],
     testimonial: {
-      text: "I've never felt stronger or more energetic. Leah's approach to lifestyle optimisation changed everything.",
-      author: 'David Chen',
-      role: 'Mother of 1'
+      text: "The daily accountability and app tracking made all the difference. I've never been more consistent or seen better results!",
+      author: 'James Patterson',
+      role: 'CEO & Father of Three'
     }
   },
   {
-    id: 'essentials',
-    title: 'Performance Essentials',
-    subtitle: 'Focused Training & Lifestyle Coaching',
-    duration: 'Monthly',
-    price: '£199/month',
+    id: 'pathway',
+    title: 'Pathway to Endurance',
+    subtitle: '16-Week Online Foundation Programme',
+    duration: 'One-off Payment',
+    price: '£48',
     popular: false,
     icon: Rocket,
     color: 'from-sage to-sage-light',
     bgGradient: 'from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20',
-    description: 'Perfect for busy mothers who want expert guidance with flexible scheduling and comprehensive lifestyle support',
+    description: 'Complete 16-week online programme to build your strength and endurance foundation. Perfect for beginners or those returning to fitness.',
     features: [
-      { icon: Video, text: 'Weekly session (online or in-person)' },
-      { icon: FileText, text: 'Custom training programme' },
-      { icon: Heart, text: 'Nutrition guidance & meal plans' },
-      { icon: Brain, text: 'Lifestyle coaching (sleep, stress, habits)' },
-      { icon: MessageSquare, text: 'Bi-weekly check-ins' },
-      { icon: Calendar, text: 'Flexible scheduling' }
+      { icon: Home, text: 'Train from anywhere - home or gym' },
+      { icon: Calendar, text: 'Full 16-week progressive programme' },
+      { icon: Video, text: 'Complete exercise video library' },
+      { icon: Brain, text: 'Lifestyle optimisation guidance' },
+      { icon: Users, text: 'Community support network' },
+      { icon: Trophy, text: 'One-off payment - lifetime access' }
     ],
     outcomes: [
-      '25% strength improvement',
-      'Sustainable habit formation',
-      'Improved work-life balance'
+      'Build fitness foundations',
+      'Improve strength & endurance',
+      'Develop sustainable habits'
     ],
     testimonial: {
-      text: "The perfect balance of support and flexibility. I finally found a sustainable approach to fitness.",
-      author: 'Sarah Williams',
-      role: 'Marketing Director'
+      text: "Perfect starting point! The programme gave me confidence and real results in just 16 weeks.",
+      author: 'Sarah Mitchell',
+      role: 'Professional & Mother'
     }
   },
   {
-    id: 'online',
-    title: 'Online Programme Only',
-    subtitle: 'Self-Paced with Expert Programme Design',
-    duration: 'Monthly',
-    price: '£97/month',
-    popular: false,
-    icon: Home,
-    color: 'from-purple-600 to-indigo-600',
-    bgGradient: 'from-purple-50 to-indigo-50 dark:from-purple-950/20 dark:to-indigo-950/20',
-    description: 'Expertly designed workout programmes delivered monthly with full exercise library access - perfect for self-motivated individuals',
-    features: [
-      { icon: FileText, text: 'Personalised workout programme (NO sessions)' },
-      { icon: Calendar, text: 'Monthly programme updates' },
-      { icon: Video, text: 'Full exercise video library' },
-      { icon: Brain, text: 'Lifestyle optimisation resources' },
-      { icon: Users, text: 'Community support access' },
-      { icon: Trophy, text: 'Progress tracking tools' }
-    ],
-    outcomes: [
-      'Build consistent training habits',
-      'Learn proper form and technique',
-      'Achieve goals at your own pace'
-    ],
-    testimonial: {
-      text: "The programme design is exceptional. Perfect for my busy travel schedule.",
-      author: 'Michael Brown',
-      role: 'Mother of 2'
-    }
-  },
-  {
-    id: 'group',
+    id: 'smallgroup',
     title: 'Small Group Training',
-    subtitle: 'In-Person Group Sessions in Dereham',
-    duration: 'Monthly',
-    price: '£79/month',
+    subtitle: 'Circuit Style Group Sessions',
+    duration: '12 Sessions',
+    price: '£120',
     popular: false,
     icon: Users,
-    color: 'from-blue-600 to-cyan-600',
-    bgGradient: 'from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20',
-    description: 'High-energy small group training sessions (max 4 people) focusing on strength & conditioning - Dereham, Norfolk only',
+    color: 'from-purple-600 to-indigo-600',
+    bgGradient: 'from-purple-50 to-indigo-50 dark:from-purple-950/20 dark:to-indigo-950/20',
+    description: 'High-energy circuit training in small groups of maximum 6 people. Get motivated by training with others whilst receiving personal attention.',
     features: [
-      { icon: Users, text: '2x weekly group sessions (max 4 people)' },
-      { icon: Dumbbell, text: 'Strength & conditioning focus' },
-      { icon: Trophy, text: 'Friendly, motivating environment' },
-      { icon: Calendar, text: 'Fixed schedule times' },
-      { icon: MessageSquare, text: 'Group WhatsApp support' },
-      { icon: Heart, text: 'Basic nutrition guidance included' }
+      { icon: Users, text: 'Maximum 6 people per session' },
+      { icon: Calendar, text: '12 sessions over 3 months' },
+      { icon: Dumbbell, text: 'Circuit style training' },
+      { icon: Trophy, text: 'Group motivation & support' },
+      { icon: MessageSquare, text: 'Personal form correction' },
+      { icon: TrendingUp, text: 'Progressive programming' }
     ],
     outcomes: [
-      'Build strength in supportive environment',
-      'Make fitness friends locally',
-      'Consistent training routine'
+      'Improved fitness levels',
+      'Group accountability',
+      'Cost-effective training'
     ],
     testimonial: {
-      text: "Love the small group energy! Great value and I've made some amazing friends.",
-      author: 'Emma Thompson',
-      role: 'Mother of 4'
+      text: "Love the energy of the small groups! Personal attention with the motivation of training alongside others.",
+      author: 'Mark Davies',
+      role: 'Local Business Owner'
+    }
+  },
+  {
+    id: 'semiprivate',
+    title: 'Semi-Private Coaching',
+    subtitle: '2:1 Partner Training',
+    duration: 'Monthly',
+    price: '£90/month per person',
+    popular: false,
+    icon: Heart,
+    color: 'from-pink-600 to-rose-600',
+    bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/20 dark:to-rose-950/20',
+    description: 'Train with a partner, friend, or family member in exclusive 2:1 sessions. Split the cost whilst enjoying personalised coaching together.',
+    features: [
+      { icon: Users, text: '2:1 exclusive training sessions' },
+      { icon: Heart, text: 'Perfect for couples or friends' },
+      { icon: FileText, text: 'Personalised programme for both' },
+      { icon: Calendar, text: 'Flexible scheduling together' },
+      { icon: MessageSquare, text: 'Partner accountability' },
+      { icon: Trophy, text: 'Shared achievement tracking' }
+    ],
+    outcomes: [
+      'Motivation through partnership',
+      'Cost-effective personal training',
+      'Stronger relationships'
+    ],
+    testimonial: {
+      text: "Training with my partner has been game-changing. We motivate each other and it's more affordable!",
+      author: 'Emma & Tom Wilson',
+      role: 'Working Couple'
+    }
+  },
+  {
+    id: 'silver',
+    title: 'Silver Package',
+    subtitle: 'Weekly 1:1 Personal Training',
+    duration: 'Monthly',
+    price: '£140/month',
+    popular: false,
+    icon: Star,
+    color: 'from-gray-600 to-gray-500',
+    bgGradient: 'from-gray-50 to-slate-50 dark:from-gray-950/20 dark:to-slate-950/20',
+    description: 'Weekly one-to-one personal training sessions with full programme design and lifestyle support. Perfect for steady, consistent progress.',
+    features: [
+      { icon: Dumbbell, text: 'Weekly 1:1 training sessions' },
+      { icon: FileText, text: 'Personalised programme design' },
+      { icon: Brain, text: 'Lifestyle optimisation support' },
+      { icon: Heart, text: 'Nutrition guidance included' },
+      { icon: MessageSquare, text: 'WhatsApp check-ins' },
+      { icon: Calendar, text: 'Flexible session scheduling' }
+    ],
+    outcomes: [
+      'Consistent weekly progress',
+      'Personalised attention',
+      'Sustainable lifestyle changes'
+    ],
+    testimonial: {
+      text: "The weekly sessions keep me accountable and on track. Seeing consistent improvements every month!",
+      author: 'David Harrison',
+      role: 'Executive Professional'
+    }
+  },
+  {
+    id: 'gold',
+    title: 'Gold Elite Package',
+    subtitle: 'Twice-Weekly Elite Training',
+    duration: 'Monthly',
+    price: '£250/month',
+    popular: false,
+    icon: Crown,
+    color: 'from-gold to-gold-light',
+    bgGradient: 'from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20',
+    description: 'Our premium package with twice-weekly 1:1 sessions, comprehensive programme design, nutrition planning, and complete lifestyle optimisation.',
+    features: [
+      { icon: Crown, text: 'Twice-weekly 1:1 sessions' },
+      { icon: FileText, text: 'Advanced programme design' },
+      { icon: Heart, text: 'Full nutrition planning' },
+      { icon: Brain, text: 'Complete lifestyle coaching' },
+      { icon: MessageSquare, text: 'Daily WhatsApp support' },
+      { icon: Trophy, text: 'Priority scheduling & support' }
+    ],
+    outcomes: [
+      'Accelerated results',
+      'Elite-level transformation',
+      'Complete lifestyle overhaul'
+    ],
+    testimonial: {
+      text: "The Gold package has transformed my life. The twice-weekly sessions and daily support are incredible!",
+      author: 'Alexandra Chen',
+      role: 'CEO & Mother'
     }
   }
 ]
@@ -172,24 +233,24 @@ export default function ModernProgrammesSection() {
         >
           <Badge className="inline-flex items-center gap-4 px-10 py-5 mb-16 bg-sage/10 text-sage border-sage/20 text-lg font-medium">
             <Sparkles className="h-4 w-4" />
-            Training Programmes • Online or In-Person
+            Train From Anywhere • Expert Online Coaching
           </Badge>
           
           <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-navy dark:text-white mb-16 tracking-tight">
-            Choose Your
+            Online Coaching
             <span className="block mt-4 bg-gradient-to-r from-gold via-gold-light to-sage bg-clip-text text-transparent">
-              Training Programme
+              That Delivers Results
             </span>
           </h2>
           
           <p className="text-2xl md:text-3xl lg:text-4xl text-gray-600 dark:text-gray-300 max-w-5xl mx-auto leading-relaxed">
-            Expert coaching for strength, conditioning, nutrition, and lifestyle optimisation.
-            Available online or in-person at our Dereham, Norfolk location.
+            Transform your performance with expert online coaching programmes.
+            Train from anywhere with personalised support and proven results.
           </p>
         </motion.div>
 
         {/* Programme Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 md:gap-16 lg:gap-20 xl:gap-16 2xl:gap-20 mb-40 md:mb-48 lg:mb-56 xl:mb-64">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-12 md:gap-16 lg:gap-20 xl:gap-16 2xl:gap-20 mb-40 md:mb-48 lg:mb-56 xl:mb-64">
           {programmes.map((programme, index) => (
             <motion.div
               key={programme.id}
@@ -198,15 +259,28 @@ export default function ModernProgrammesSection() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               onMouseEnter={() => setSelectedProgramme(programme.id)}
               onMouseLeave={() => setSelectedProgramme(null)}
-              className="relative group"
+              className={cn(
+                "relative group",
+                programme.bestValue ? "xl:col-span-2" : "xl:col-span-1"
+              )}
             >
               {/* Popular Badge */}
-              {programme.popular && (
+              {(programme.popular || programme.bestValue) && (
                 <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-10">
-                  <Badge className="bg-gradient-to-r from-gold to-gold-light text-navy font-bold px-8 py-3 shadow-2xl text-base">
-                    <Star className="h-4 w-4 mr-2" />
-                    MOST POPULAR
-                  </Badge>
+                  <div className="flex gap-2">
+                    {programme.bestValue && (
+                      <Badge className="bg-gradient-to-r from-gold to-gold-light text-navy font-bold px-6 py-3 shadow-2xl text-base animate-pulse">
+                        <Trophy className="h-4 w-4 mr-2" />
+                        BEST VALUE
+                      </Badge>
+                    )}
+                    {programme.popular && (
+                      <Badge className="bg-gradient-to-r from-gold to-gold-light text-navy font-bold px-6 py-3 shadow-2xl text-base">
+                        <Star className="h-4 w-4 mr-2" />
+                        MOST POPULAR
+                      </Badge>
+                    )}
+                  </div>
                 </div>
               )}
 
@@ -216,8 +290,10 @@ export default function ModernProgrammesSection() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className={cn(
                   "relative h-full rounded-3xl p-14 md:p-16 lg:p-20 xl:p-16 2xl:p-20 shadow-2xl transition-all duration-500 min-h-[750px] md:min-h-[800px] lg:min-h-[850px] xl:min-h-[900px] 2xl:min-h-[950px]",
-                  programme.popular 
-                    ? "bg-gradient-to-br from-white to-gold/5 dark:from-navy-dark dark:to-gold/10 border-2 border-gold/30" 
+                  programme.bestValue
+                    ? "bg-gradient-to-br from-gold/10 via-white to-gold/10 dark:from-gold/20 dark:via-navy-dark dark:to-gold/20 border-3 border-gold shadow-gold/30 ring-4 ring-gold/20"
+                    : programme.popular
+                    ? "bg-gradient-to-br from-white to-gold/5 dark:from-navy-dark dark:to-gold/10 border-2 border-gold/30"
                     : "bg-white dark:bg-navy-dark border border-gray-200 dark:border-navy/30",
                   selectedProgramme === programme.id && "shadow-2xl"
                 )}
@@ -304,14 +380,16 @@ export default function ModernProgrammesSection() {
                     <Button
                       className={cn(
                         "w-full px-20 py-10 rounded-2xl font-bold text-xl shadow-2xl transition-all duration-300 transform hover:scale-[1.02]",
-                        programme.popular
+                        programme.bestValue
+                          ? "bg-gradient-to-r from-gold via-gold-light to-gold hover:from-gold-light hover:via-gold hover:to-gold-light text-navy shadow-gold/50 animate-pulse hover:animate-none text-2xl py-12"
+                          : programme.popular
                           ? "bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy shadow-gold/30"
                           : "bg-navy hover:bg-navy-dark text-white dark:bg-white dark:text-navy dark:hover:bg-gray-100"
                       )}
                       asChild
                     >
-                      <Link href="/assessment" className="flex items-center justify-center gap-2">
-                        Get Started
+                      <Link href="/apply" className="flex items-center justify-center gap-2">
+                        {programme.bestValue ? "Start Today - £100/month" : "Apply Now"}
                         <ArrowRight className="h-6 w-6" />
                       </Link>
                     </Button>
@@ -334,7 +412,7 @@ export default function ModernProgrammesSection() {
                         ))}
                       </div>
                       <p className="text-sm text-gray-600 dark:text-gray-300 italic mb-2">
-                        "{programme.testimonial.text}"
+                        &quot;{programme.testimonial.text}&quot;
                       </p>
                       <p className="text-xs text-gray-500 dark:text-gray-400">
                         — {programme.testimonial.author}, {programme.testimonial.role}
@@ -370,10 +448,10 @@ export default function ModernProgrammesSection() {
 
           <div className="relative">
             <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-12 tracking-tight">
-              Ready to Transform Your Health & Performance?
+              Ready to Start Your Online Training Journey?
             </h3>
             <p className="text-2xl md:text-3xl lg:text-4xl text-white/80 mb-20 max-w-4xl mx-auto leading-relaxed">
-              Take our free assessment to discover your current fitness level and get personalised programme recommendations
+              Apply for coaching today and discover which programme is perfect for your goals and lifestyle
             </p>
             
             <motion.div
@@ -386,9 +464,9 @@ export default function ModernProgrammesSection() {
                 className="bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy font-bold px-24 py-12 rounded-3xl shadow-2xl hover:shadow-gold/40 transition-all duration-300 text-2xl transform hover:scale-105"
                 asChild
               >
-                <Link href="/assessment" className="flex items-center gap-2">
+                <Link href="/apply" className="flex items-center gap-2">
                   <Calendar className="h-7 w-7" />
-                  Start Free Assessment
+                  Apply for Coaching
                   <ArrowRight className="h-7 w-7" />
                 </Link>
               </Button>
@@ -397,15 +475,15 @@ export default function ModernProgrammesSection() {
             <div className="mt-20 flex flex-col md:flex-row justify-center gap-10 md:gap-16 lg:gap-20 xl:gap-24">
               <div className="text-xl md:text-2xl text-white/80">
                 <CheckCircle className="h-7 w-7 text-gold inline mr-4" />
-                5-minute assessment
+                Quick application
               </div>
               <div className="text-xl md:text-2xl text-white/80">
                 <CheckCircle className="h-7 w-7 text-gold inline mr-4" />
-                No obligation
+                Free consultation
               </div>
               <div className="text-xl md:text-2xl text-white/80">
                 <CheckCircle className="h-7 w-7 text-gold inline mr-4" />
-                Programme recommendations
+                Personalised advice
               </div>
             </div>
           </div>

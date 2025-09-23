@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-09-22T21:06:19.157Z",
+  "project": "ltlbfltlhysjxslusypq",
+  "url": "https://ltlbfltlhysjxslusypq.supabase.co",
+  "results": {
+    "tables": {
+      "total": 36,
+      "existing": 36,
+      "missing": [],
+      "details": {
+        "assessment_submissions": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Assessment & Leads"
+        },
+        "gdpr_consent_log": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Assessment & Leads"
+        },
+        "assessment_admin_log": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Assessment & Leads"
+        },
+        "performance_barriers": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Assessment & Leads"
+        },
+        "programme_recommendations": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Assessment & Leads"
+        },
+        "quick_contact_requests": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Assessment & Leads"
+        },
+        "subscriptions": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Subscriptions & Payments"
+        },
+        "payment_methods": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Subscriptions & Payments"
+        },
+        "invoices": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Subscriptions & Payments"
+        },
+        "subscription_items": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Subscriptions & Payments"
+        },
+        "pricing_tiers": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Subscriptions & Payments"
+        },
+        "webhook_events": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Subscriptions & Payments"
+        },
+        "discount_codes": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Subscriptions & Payments"
+        },
+        "customer_discounts": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Subscriptions & Payments"
+        },
+        "posts": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Content & Blog"
+        },
+        "categories": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Content & Blog"
+        },
+        "tags": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Content & Blog"
+        },
+        "authors": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Content & Blog"
+        },
+        "post_tags": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Content & Blog"
+        },
+        "post_revisions": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Content & Blog"
+        },
+        "post_views": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Content & Blog"
+        },
+        "related_posts": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Content & Blog"
+        },
+        "blog_settings": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Content & Blog"
+        },
+        "user_profiles": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "User Management"
+        },
+        "coaching_sessions": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "User Management"
+        },
+        "performance_metrics": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "User Management"
+        },
+        "lead_magnets": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "User Management"
+        },
+        "lead_magnet_downloads": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "User Management"
+        },
+        "client_success_metrics": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Analytics & Optimization"
+        },
+        "testimonials": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Analytics & Optimization"
+        },
+        "engagement_tracking": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Analytics & Optimization"
+        },
+        "ab_tests": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Analytics & Optimization"
+        },
+        "email_campaigns": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Analytics & Optimization"
+        },
+        "email_subscribers": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Analytics & Optimization"
+        },
+        "wearable_connections": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Analytics & Optimization"
+        },
+        "wearable_data": {
+          "exists": true,
+          "rowCount": 0,
+          "category": "Analytics & Optimization"
+        }
+      }
+    },
+    "rls": {
+      "tested": 5,
+      "protected": 5,
+      "unprotected": [],
+      "details": {
+        "assessment_submissions": {
+          "protected": true,
+          "anonAccess": "Denied",
+          "adminAccess": "Error"
+        },
+        "subscriptions": {
+          "protected": true,
+          "anonAccess": "Denied",
+          "adminAccess": "Error"
+        },
+        "user_profiles": {
+          "protected": true,
+          "anonAccess": "Denied",
+          "adminAccess": "Error"
+        },
+        "coaching_sessions": {
+          "protected": true,
+          "anonAccess": "Denied",
+          "adminAccess": "Error"
+        },
+        "posts": {
+          "protected": true,
+          "anonAccess": "Denied",
+          "adminAccess": "Error"
+        }
+      }
+    },
+    "auth": {
+      "emailAuth": false,
+      "signupEnabled": false,
+      "loginEnabled": false,
+      "passwordReset": true
+    },
+    "functions": {
+      "total": 12,
+      "found": 0
+    },
+    "operations": {
+      "insert": false,
+      "select": false,
+      "update": false,
+      "delete": false
+    },
+    "initialData": {
+      "pricingTiers": 0,
+      "categories": 0,
+      "authors": 0,
+      "leadMagnets": 0,
+      "blogSettings": 0
+    }
+  }
+}

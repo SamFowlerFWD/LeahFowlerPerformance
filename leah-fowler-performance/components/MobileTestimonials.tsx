@@ -302,7 +302,7 @@ const MobileTestimonials: React.FC = () => {
                             <Play className="w-8 h-8" />
                           </button>
                           <span className="absolute bottom-4 left-4 text-white font-semibold">
-                            Watch {testimonial.name}'s Story
+                            Watch {testimonial.name}&apos;s Story
                           </span>
                         </div>
                       ) : (

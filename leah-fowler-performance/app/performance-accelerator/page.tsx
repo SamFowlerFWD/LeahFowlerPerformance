@@ -136,7 +136,7 @@ function LiveSuccessMetrics() {
           <h2 className="text-3xl font-bold mb-4">Real Results From Real Clients</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Updated in real-time from our client success tracking system. 
-            These aren&apos;t promises - they're proven outcomes.
+            These aren&apos;t promises - they&apos;re proven outcomes.
           </p>
         </div>
         
@@ -252,7 +252,7 @@ function TestimonialsCarousel() {
                       </div>
                       
                       <blockquote className="text-lg italic text-gray-700">
-                        "{testimonials[currentIndex].quote}"
+                        &quot;{testimonials[currentIndex].quote}&quot;
                       </blockquote>
                       
                       <div className="pt-4">
@@ -318,17 +318,17 @@ export default function PerformanceAcceleratorPage() {
     programmeSelected: false
   });
   
-  const handleAssessmentComplete = (data: unknown) => {
+  const handleAssessmentComplete = () => {
     setUserProgress(prev => ({ ...prev, assessmentComplete: true }));
     setActiveTab('barriers');
   };
   
-  const handleBarriersComplete = (data: unknown) => {
+  const handleBarriersComplete = () => {
     setUserProgress(prev => ({ ...prev, barriersIdentified: true }));
     setActiveTab('programmes');
   };
   
-  const handleProgrammeSelect = (programme: unknown) => {
+  const handleProgrammeSelect = () => {
     setUserProgress(prev => ({ ...prev, programmeSelected: true }));
     // Scroll to CTA section or open booking modal
   };

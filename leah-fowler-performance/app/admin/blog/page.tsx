@@ -252,7 +252,7 @@ export default function AdminBlogPage() {
               </div>
             </div>
 
-            <Select value={statusFilter} onValueChange={(value: unknown) => setStatusFilter(value)}>
+            <Select value={statusFilter} onValueChange={(value) => setStatusFilter(value as string)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Filter by status" />
               </SelectTrigger>
@@ -265,7 +265,7 @@ export default function AdminBlogPage() {
               </SelectContent>
             </Select>
 
-            <Select value={typeFilter} onValueChange={(value: unknown) => setTypeFilter(value)}>
+            <Select value={typeFilter} onValueChange={(value) => setTypeFilter(value as string)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Filter by type" />
               </SelectTrigger>
@@ -461,7 +461,7 @@ export default function AdminBlogPage() {
           <DialogHeader>
             <DialogTitle>Delete Post</DialogTitle>
             <DialogDescription>
-              Are you sure you want to delete "{postToDelete?.title}"? This action can be reversed from the database but the post will be hidden from the website.
+              Are you sure you want to delete &quot;{postToDelete?.title}&quot;? This action can be reversed from the database but the post will be hidden from the website.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

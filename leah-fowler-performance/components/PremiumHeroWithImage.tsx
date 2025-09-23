@@ -181,7 +181,7 @@ const PremiumHeroWithImage: React.FC = () => {
               >
                 <span className="text-white/90">Norfolk Parent Coach</span> • Mother of 3 • Athlete
                 <br className="hidden md:block" />
-                <span className="text-gold font-medium">From £12/month</span> • 6 Training Options • Free Assessment
+                <span className="text-gold font-medium text-xl">Online Package £100/month</span> • App-Based Training • Daily Accountability
               </motion.p>
             </div>
 
@@ -200,7 +200,7 @@ const PremiumHeroWithImage: React.FC = () => {
                 icon={<ArrowRight className="w-4 h-4" />}
                 className="text-sm"
               >
-                Start Training
+                Start Online Package - £100/month
               </PremiumButton>
 
               <PremiumButton
@@ -210,7 +210,7 @@ const PremiumHeroWithImage: React.FC = () => {
                 iconPosition="left"
                 className="text-sm"
               >
-                Watch Success Stories
+                See How the App Works
               </PremiumButton>
             </motion.div>
           </div>

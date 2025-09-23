@@ -255,7 +255,7 @@ export default function TestimonialsSection() {
                       
                       <blockquote className="flex-1">
                         <p className="text-lg lg:text-xl text-gray-700 leading-relaxed italic">
-                          "{currentTestimonial.content}"
+                          &quot;{currentTestimonial.content}&quot;
                         </p>
                       </blockquote>
                       
@@ -328,7 +328,7 @@ export default function TestimonialsSection() {
               </div>
               
               <p className="text-gray-700 mb-6 line-clamp-3 italic">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </p>
               
               <div className="pt-4 border-t border-gray-100">

@@ -7,19 +7,18 @@ import ModernHeader from '@/components/ModernHeader'
 import PremiumHeroWithImage from '@/components/PremiumHeroWithImage'
 import AchievementBadge from '@/components/AchievementBadge'
 import TrustBar from '@/components/TrustBar'
-import ModernAssessmentSection from '@/components/ModernAssessmentSection'
+import SimpleApplySection from '@/components/SimpleApplySection'
 import AphroditePricingTiers from '@/components/AphroditePricingTiers'
-import PackageSelectorQuiz from '@/components/PackageSelectorQuiz'
 import MobileDock from '@/components/MobileDock'
 import PremiumTestimonialsSection from '@/components/PremiumTestimonialsSection'
 // import TrustSection from '@/components/TrustSection' // REMOVED: Contains false claims - legal liability
 import TruthfulTrustSection from '@/components/TruthfulTrustSection' // TRUTHFUL replacement
 import AboutSection from '@/components/AboutSection'
 import LeadMagnetDelivery from '@/components/LeadMagnetDelivery'
-import PerformanceBreakthroughLeadMagnet from '@/components/PerformanceBreakthroughLeadMagnet'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import HeroStatsSection from '@/components/HeroStatsSection'
+import OnlinePackageShowcase from '@/components/OnlinePackageShowcase'
 
 // Only use dynamic imports for client-only components
 const FloatingElements = dynamic(() => import('@/components/FloatingElements'), { ssr: false })
@@ -45,20 +44,20 @@ export default function Home() {
         {/* Achievement Badge - Positioned below hero */}
         <AchievementBadge />
 
+        {/* FEATURED: Online Package Showcase - Main Product Offering */}
+        <SectionErrorBoundary sectionName="OnlinePackageShowcase">
+          <OnlinePackageShowcase />
+        </SectionErrorBoundary>
+
         {/* Hero Stats Section - Value Proposition and Credibility */}
         <HeroStatsSection />
 
         {/* Trust Bar - Build immediate credibility */}
         <TrustBar />
 
-        {/* Modern Assessment Section with 3D Cards */}
-        <SectionErrorBoundary sectionName="ModernAssessmentSection">
-          <ModernAssessmentSection />
-        </SectionErrorBoundary>
-
-        {/* Package Selector Quiz - Help Parents Find Their Perfect Programme */}
-        <SectionErrorBoundary sectionName="PackageSelectorQuiz">
-          <PackageSelectorQuiz />
+        {/* Apply for Coaching Section - Simple CTA */}
+        <SectionErrorBoundary sectionName="SimpleApplySection">
+          <SimpleApplySection />
         </SectionErrorBoundary>
 
         {/* Aphrodite Fitness Packages - Complete Training Options */}
@@ -73,13 +72,6 @@ export default function Home() {
 
         {/* Trust Building Section - Now 100% Truthful */}
         <TruthfulTrustSection />
-
-        {/* Performance Breakthrough Assessment - Lead Magnet */}
-        <section className="luxury-section bg-gradient-to-b from-white to-gray-50 dark:from-navy-dark dark:to-navy">
-          <div className="container mx-auto">
-            <PerformanceBreakthroughLeadMagnet />
-          </div>
-        </section>
 
         {/* Additional Lead Magnets */}
         <section className="luxury-section bg-gray-50 dark:bg-navy">

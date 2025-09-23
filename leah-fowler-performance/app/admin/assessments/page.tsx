@@ -25,21 +25,28 @@ import {
 import { getAssessmentSubmissions, updateSubmissionStatus, anonymizeSubmission } from '@/lib/api-client'
 import { format } from 'date-fns'
 
-interface AssessmentSubmission {
+// Using AssessmentSubmission type from api-client
+type AssessmentSubmission = {
   id: string
-  name: string
+  createdAt: string
   email: string
-  phone?: string
-  qualified: boolean
-  tier: string
-  investment_level: string
-  readiness_score: number
-  performance_level: string
-  recommended_programme: string
+  name?: string
   status: string
-  contacted: boolean
-  created_at: string
-  profile: unknown
+  qualificationScore: number
+  responses: Record<string, unknown>
+  recommendation: string
+  adminNotes?: string
+  // Additional fields for compatibility
+  phone?: string
+  qualified?: boolean
+  tier?: string
+  investment_level?: string
+  readiness_score?: number
+  performance_level?: string
+  recommended_programme?: string
+  contacted?: boolean
+  created_at?: string
+  profile?: unknown
 }
 
 interface Statistics {
@@ -55,7 +62,7 @@ export default function AdminAssessmentsPage() {
   const [submissions, setSubmissions] = useState<AssessmentSubmission[]>([])
   const [statistics, setStatistics] = useState<Statistics | null>(null)
   const [loading, setLoading] = useState(true)
-  const [filter, setFilter] = useState('all')
+  const [filter, setFilter] = useState<'all' | 'qualified' | 'new' | 'contacted'>('all')
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedSubmission, setSelectedSubmission] = useState<AssessmentSubmission | null>(null)
   const [adminNotes, setAdminNotes] = useState('')
@@ -78,8 +85,11 @@ export default function AdminAssessmentsPage() {
     try {
       setLoading(true)
       const data = await getAssessmentSubmissions(token, filter)
-      setSubmissions(data.data)
-      setStatistics(data.statistics)
+      // The API returns SubmissionsResponse with submissions array
+      setSubmissions(data.submissions || [])
+      // Statistics might need to be fetched separately or calculated
+      // For now, setting to null as the API response doesn't include it
+      setStatistics(null)
     } catch (error) {
       console.error('Failed to load submissions:', error)
     } finally {
@@ -124,15 +134,15 @@ export default function AdminAssessmentsPage() {
   const exportToCSV = () => {
     const headers = ['Name', 'Email', 'Phone', 'Qualified', 'Tier', 'Investment Level', 'Readiness Score', 'Status', 'Date']
     const rows = submissions.map(s => [
-      s.name,
+      s.name || 'N/A',
       s.email,
       s.phone || '',
-      s.qualified ? 'Yes' : 'No',
-      s.tier,
-      s.investment_level,
-      s.readiness_score.toString(),
+      (s.qualified ?? s.qualificationScore > 70) ? 'Yes' : 'No',
+      s.tier || s.recommendation || 'N/A',
+      s.investment_level || 'N/A',
+      (s.readiness_score || s.qualificationScore || 0).toString(),
       s.status,
-      format(new Date(s.created_at), 'yyyy-MM-dd HH:mm')
+      format(new Date(s.created_at || s.createdAt), 'yyyy-MM-dd HH:mm')
     ])
     
     const csv = [headers, ...rows].map(row => row.join(',')).join('\n')
@@ -144,8 +154,8 @@ export default function AdminAssessmentsPage() {
     a.click()
   }
 
-  const filteredSubmissions = submissions.filter(s => 
-    s.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  const filteredSubmissions = submissions.filter(s =>
+    (s.name?.toLowerCase() || '').includes(searchTerm.toLowerCase()) ||
     s.email.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
@@ -266,7 +276,7 @@ export default function AdminAssessmentsPage() {
                   />
                 </div>
               </div>
-              <Select value={filter} onValueChange={(value: unknown) => setFilter(value)}>
+              <Select value={filter} onValueChange={(value) => setFilter(value as 'all' | 'qualified' | 'new' | 'contacted')}>
                 <SelectTrigger className="w-40">
                   <SelectValue />
                 </SelectTrigger>
@@ -297,19 +307,19 @@ export default function AdminAssessmentsPage() {
                 <TableBody>
                   {filteredSubmissions.map((submission) => (
                     <TableRow key={submission.id}>
-                      <TableCell className="font-medium">{submission.name}</TableCell>
+                      <TableCell className="font-medium">{submission.name || 'N/A'}</TableCell>
                       <TableCell>{submission.email}</TableCell>
                       <TableCell>
-                        {submission.qualified ? (
+                        {(submission.qualified ?? submission.qualificationScore > 70) ? (
                           <Badge className="bg-green-100 text-green-800">Yes</Badge>
                         ) : (
                           <Badge variant="secondary">No</Badge>
                         )}
                       </TableCell>
                       <TableCell>
-                        <Badge variant="outline">{submission.tier}</Badge>
+                        <Badge variant="outline">{submission.tier || submission.recommendation || 'N/A'}</Badge>
                       </TableCell>
-                      <TableCell>{submission.readiness_score.toFixed(0)}%</TableCell>
+                      <TableCell>{(submission.readiness_score || submission.qualificationScore || 0).toFixed(0)}%</TableCell>
                       <TableCell>
                         <Badge 
                           variant={submission.status === 'new' ? 'default' : 'secondary'}
@@ -317,7 +327,7 @@ export default function AdminAssessmentsPage() {
                           {submission.status}
                         </Badge>
                       </TableCell>
-                      <TableCell>{format(new Date(submission.created_at), 'MMM d, yyyy')}</TableCell>
+                      <TableCell>{format(new Date(submission.created_at || submission.createdAt), 'MMM d, yyyy')}</TableCell>
                       <TableCell>
                         <div className="flex gap-2">
                           <Dialog>
@@ -334,7 +344,7 @@ export default function AdminAssessmentsPage() {
                               <DialogHeader>
                                 <DialogTitle>Assessment Details</DialogTitle>
                                 <DialogDescription>
-                                  Submission from {submission.name} on {format(new Date(submission.created_at), 'MMMM d, yyyy')}
+                                  Submission from {submission.name || 'Unknown'} on {format(new Date(submission.created_at || submission.createdAt), 'MMMM d, yyyy')}
                                 </DialogDescription>
                               </DialogHeader>
                               

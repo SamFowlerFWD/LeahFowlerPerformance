@@ -64,61 +64,7 @@ export const aphroditeFitnessPackages = {
     guarantee: "First session free trial"
   },
 
-  // Flexi Coaching
-  flexiCoaching: {
-    id: "flexi-coaching",
-    name: "Flexi Coaching",
-    slug: "flexi",
-    price: 80,
-    currency: "£",
-    period: "/month",
-    billing: "monthly",
-    tagline: "Train On Your Schedule",
-    shortDescription: "App-delivered personalised programmes with regular coach check-ins",
-    popular: false,
-    color: "navy" as const,
-
-    longDescription: `Perfect for busy parents who need flexibility. Your personalised programme is delivered
-    via our app, allowing you to train when it suits you. With regular 1:1 coaching sessions and ongoing
-    support, you'll have expert guidance without rigid scheduling constraints.`,
-
-    features: [
-      { text: "Personalised app-based programming", included: true, highlight: true },
-      { text: "Train on your own schedule", included: true },
-      { text: "1:1 coaching sessions every 4-6 weeks", included: true },
-      { text: "Face-to-face or online sessions", included: true },
-      { text: "App subscription included", included: true },
-      { text: "Regular check-ins and reviews", included: true },
-      { text: "Exercise video library", included: true },
-      { text: "Progress tracking tools", included: true },
-      { text: "WhatsApp support", included: true },
-      { text: "Weekly group sessions", included: false }
-    ],
-
-    idealFor: [
-      "Parents with unpredictable schedules",
-      "Self-motivated individuals",
-      "Those who travel frequently",
-      "Parents wanting home workout options"
-    ],
-
-    outcomes: [
-      "Flexibility to train anywhere",
-      "Consistent progress tracking",
-      "Personalised progression",
-      "Sustainable fitness habits"
-    ],
-
-    testimonial: {
-      quote: "Flexi Coaching lets me fit training around my hectic life. The app is brilliant and Leah's check-ins keep me accountable.",
-      author: "James P.",
-      role: "Dad of 3",
-      result: "Fittest I've been since my 20s"
-    },
-
-    cta: "Start Flexi Training",
-    guarantee: "30-day money-back guarantee"
-  },
+  // NOTE: Flexi Coaching programme has been DISCONTINUED
 
   // Semi-Private Coaching
   semiPrivate: {
@@ -291,35 +237,36 @@ export const aphroditeFitnessPackages = {
     guarantee: "60-day results guarantee"
   },
 
-  // Pathway to Endurance
+  // Pathway to Endurance - UPDATED: Now one-off payment
   pathwayToEndurance: {
     id: "pathway-to-endurance",
     name: "Pathway to Endurance",
     slug: "pathway",
-    price: 12,
+    price: 48,
     currency: "£",
-    period: "/month",
-    billing: "monthly",
-    tagline: "Online Foundation Programme",
-    shortDescription: "Build your fitness foundation with guided online training",
+    period: " for 16 weeks",
+    billing: "one-time",
+    tagline: "16-Week Online Foundation Programme",
+    shortDescription: "Complete 16-week online programme to build your fitness foundation",
     popular: false,
     color: "navy" as const,
 
-    longDescription: `Start your fitness journey with our online Pathway to Endurance programme.
-    Designed to build strength and conditioning foundations through progressive training,
-    perfect for parents beginning their fitness journey or returning after a break.`,
+    longDescription: `Transform your fitness foundation with our comprehensive 16-week online programme.
+    For just £48 (one-off payment), you'll receive a complete progressive training system
+    that builds strength, endurance, and confidence. Perfect for busy professionals wanting
+    to train on their own schedule with expert guidance.`,
 
     features: [
-      { text: "Complete online programme", included: true },
+      { text: "Complete 16-week progressive programme", included: true, highlight: true },
+      { text: "One-off payment of just £48", included: true, highlight: true },
+      { text: "Train anywhere, anytime", included: true },
       { text: "Progressive strength training", included: true },
       { text: "Mobility and flexibility work", included: true },
       { text: "Core strengthening focus", included: true },
       { text: "Functional movement patterns", included: true },
-      { text: "Self-paced progression", included: true },
-      { text: "Video demonstrations", included: true },
+      { text: "Full exercise video library", included: true },
       { text: "Community forum access", included: true },
-      { text: "Monthly live Q&A sessions", included: true },
-      { text: "Personal coaching", included: false }
+      { text: "Option to upgrade to coaching", included: true }
     ],
 
     idealFor: [
@@ -343,8 +290,8 @@ export const aphroditeFitnessPackages = {
       result: "Progressed to Silver package"
     },
 
-    cta: "Start Your Pathway",
-    guarantee: "7-day free trial"
+    cta: "Start 16 Weeks - £48",
+    guarantee: "30-day money-back guarantee"
   }
 };
 
@@ -388,7 +335,6 @@ export const packageComparison = {
     {
       name: "Training Format",
       smallGroup: "Group (max 6)",
-      flexi: "App-based",
       semiPrivate: "2:1 Personal",
       silver: "1:1 Personal",
       gold: "1:1 Personal",
@@ -397,7 +343,6 @@ export const packageComparison = {
     {
       name: "Sessions per Week",
       smallGroup: "1 (scheduled)",
-      flexi: "Flexible",
       semiPrivate: "1",
       silver: "1",
       gold: "2",
@@ -406,7 +351,6 @@ export const packageComparison = {
     {
       name: "Nutrition Guidance",
       smallGroup: "Basic tips",
-      flexi: "App guidance",
       semiPrivate: "Included",
       silver: "Personalised",
       gold: "Advanced",
@@ -415,7 +359,6 @@ export const packageComparison = {
     {
       name: "Coach Access",
       smallGroup: "During sessions",
-      flexi: "Monthly check-ins",
       semiPrivate: "Weekly",
       silver: "Weekly + support",
       gold: "2x weekly + daily",
@@ -424,7 +367,6 @@ export const packageComparison = {
     {
       name: "Best For",
       smallGroup: "Community & fun",
-      flexi: "Flexibility",
       semiPrivate: "Partner training",
       silver: "Personalisation",
       gold: "Rapid results",
@@ -433,11 +375,10 @@ export const packageComparison = {
     {
       name: "Investment",
       smallGroup: "£120 (3 months)",
-      flexi: "£80/month",
       semiPrivate: "£90/month",
       silver: "£140/month",
       gold: "£250/month",
-      pathway: "£12/month"
+      pathway: "£48 (16 weeks)"
     }
   ]
 };

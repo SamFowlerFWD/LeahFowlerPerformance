@@ -4,6 +4,54 @@ import { stripe, constructWebhookEvent } from '@/lib/stripe'
 import { createClient } from '@supabase/supabase-js'
 import type Stripe from 'stripe'
 
+// Extended types with fields not in the official Stripe types
+interface ExtendedInvoice {
+  id: string;
+  subscription?: string | null;
+  metadata?: Record<string, string> | null;
+  customer_email?: string | null;
+  number?: string | null;
+  status?: string | null;
+  amount_paid: number;
+  amount_due: number;
+  amount_remaining: number;
+  subtotal: number;
+  tax?: number | null;
+  total: number;
+  currency: string;
+  description?: string | null;
+  invoice_pdf?: string | null;
+  hosted_invoice_url?: string | null;
+  period_start: number;
+  period_end: number;
+  due_date?: number | null;
+  status_transitions?: {
+    paid_at?: number | null;
+  } | null;
+}
+
+interface ExtendedSubscription {
+  id: string;
+  status: string;
+  current_period_start: number;
+  current_period_end: number;
+  cancel_at_period_end: boolean;
+  trial_start?: number | null;
+  trial_end?: number | null;
+  canceled_at?: number | null;
+  items: {
+    data: Array<{
+      id: string;
+      price: {
+        id: string;
+        product: string;
+        unit_amount: number | null;
+      };
+      quantity: number | null;
+    }>;
+  };
+}
+
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
 
 // Create Supabase admin client for webhook processing
@@ -57,9 +105,9 @@ export async function POST(request: NextRequest) {
         const session = event.data.object as Stripe.Checkout.Session
 
         // Get the subscription and customer details
-        const subscription = await stripe.subscriptions.retrieve(
-          session.subscription as string
-        )
+        const subscriptionId = session.subscription as string
+        const subscription = await stripe.subscriptions.retrieve(subscriptionId)
+        const subscriptionData = subscription as unknown as ExtendedSubscription
 
         const customerId = session.customer as string
         const userId = session.client_reference_id || session.metadata?.user_id
@@ -69,7 +117,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Calculate prices in GBP
-        const priceGbp = Math.round((subscription.items.data[0].price.unit_amount || 0) / 100)
+        const priceGbp = Math.round((subscriptionData.items.data[0].price.unit_amount || 0) / 100)
 
         // Create subscription record in database
         await supabaseAdmin
@@ -77,28 +125,28 @@ export async function POST(request: NextRequest) {
           .upsert({
             user_id: userId,
             stripe_customer_id: customerId,
-            stripe_subscription_id: subscription.id,
+            stripe_subscription_id: subscriptionData.id,
             tier: session.metadata?.tier || 'foundation',
-            status: subscription.status,
+            status: subscriptionData.status,
             billing_period: session.metadata?.billing_period || 'monthly',
             price_gbp: priceGbp,
-            current_period_start: new Date(subscription.current_period_start * 1000).toISOString(),
-            current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
-            cancel_at_period_end: subscription.cancel_at_period_end,
-            trial_start: subscription.trial_start ? new Date(subscription.trial_start * 1000).toISOString() : null,
-            trial_end: subscription.trial_end ? new Date(subscription.trial_end * 1000).toISOString() : null,
+            current_period_start: new Date(subscriptionData.current_period_start * 1000).toISOString(),
+            current_period_end: new Date(subscriptionData.current_period_end * 1000).toISOString(),
+            cancel_at_period_end: subscriptionData.cancel_at_period_end,
+            trial_start: subscriptionData.trial_start ? new Date(subscriptionData.trial_start * 1000).toISOString() : null,
+            trial_end: subscriptionData.trial_end ? new Date(subscriptionData.trial_end * 1000).toISOString() : null,
             metadata: {
-              stripe_price_id: subscription.items.data[0].price.id,
-              stripe_product_id: subscription.items.data[0].price.product,
+              stripe_price_id: subscriptionData.items.data[0].price.id,
+              stripe_product_id: subscriptionData.items.data[0].price.product,
             },
           })
 
         // Create subscription items
-        for (const item of subscription.items.data) {
+        for (const item of subscriptionData.items.data) {
           await supabaseAdmin
             .from('subscription_items')
             .upsert({
-              subscription_id: subscription.id,
+              subscription_id: subscriptionData.id,
               stripe_subscription_item_id: item.id,
               stripe_price_id: item.price.id,
               stripe_product_id: item.price.product as string,
@@ -138,7 +186,7 @@ export async function POST(request: NextRequest) {
       }
 
       case 'customer.subscription.updated': {
-        const subscription = event.data.object as Stripe.Subscription
+        const subscription = event.data.object as unknown as ExtendedSubscription
 
         const priceGbp = Math.round((subscription.items.data[0].price.unit_amount || 0) / 100)
 
@@ -161,7 +209,7 @@ export async function POST(request: NextRequest) {
       }
 
       case 'customer.subscription.deleted': {
-        const subscription = event.data.object as Stripe.Subscription
+        const subscription = event.data.object as unknown as ExtendedSubscription
 
         // Mark subscription as cancelled
         await supabaseAdmin
@@ -176,7 +224,7 @@ export async function POST(request: NextRequest) {
       }
 
       case 'invoice.payment_succeeded': {
-        const invoice = event.data.object as Stripe.Invoice
+        const invoice = event.data.object as unknown as ExtendedInvoice
 
         if (!invoice.subscription) break
 
@@ -210,7 +258,7 @@ export async function POST(request: NextRequest) {
       }
 
       case 'invoice.payment_failed': {
-        const invoice = event.data.object as Stripe.Invoice
+        const invoice = event.data.object as unknown as ExtendedInvoice
 
         if (!invoice.subscription) break
 
@@ -258,7 +306,7 @@ export async function POST(request: NextRequest) {
         if (!paymentMethod.customer) break
 
         const customer = await stripe.customers.retrieve(paymentMethod.customer as string)
-        const userId = (customer as unknown).metadata?.supabase_user_id
+        const userId = (customer as Stripe.Customer).metadata?.supabase_user_id
 
         if (userId) {
           await supabaseAdmin

@@ -7,7 +7,7 @@ const submissionSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
   email: z.string().email('Invalid email address'),
   phone: z.string().optional(),
-  answers: z.record(z.any()),
+  answers: z.record(z.string(), z.unknown()),
   profile: z.object({
     qualified: z.boolean(),
     tier: z.enum(['not-qualified', 'developing', 'established', 'elite']),
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           error: 'Validation failed', 
-          details: validationResult.error.errors 
+          details: validationResult.error.issues 
         },
         { status: 400 }
       )

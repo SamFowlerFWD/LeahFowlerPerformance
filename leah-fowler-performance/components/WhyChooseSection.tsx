@@ -200,7 +200,7 @@ const WhyChooseSection: React.FC = () => {
 
                       <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
                         <p className="text-sm italic text-gray-600 dark:text-gray-400">
-                          "{transformationStory.results.qualitative}"
+                          &quot;{transformationStory.results.qualitative}&quot;
                         </p>
                       </div>
                     </motion.div>

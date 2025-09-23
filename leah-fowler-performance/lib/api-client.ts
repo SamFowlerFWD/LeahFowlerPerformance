@@ -16,7 +16,7 @@ export class APIError extends Error {
   }
 }
 
-interface APIResponse<T = any> {
+interface APIResponse<T = unknown> {
   success: boolean
   data?: T
   error?: string
@@ -27,7 +27,7 @@ interface APIResponse<T = any> {
 /**
  * Make a type-safe API request with proper error handling
  */
-export async function apiRequest<T = any>(
+export async function apiRequest<T = unknown>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<T> {
@@ -73,15 +73,22 @@ export async function apiRequest<T = any>(
 /**
  * Submit assessment with retry logic for resilience
  */
+interface AssessmentSubmissionResponse {
+  id: string
+  recommendation: string
+  qualificationScore: number
+  messages?: string[]
+}
+
 export async function submitAssessment(
   data: unknown,
   maxRetries = 2
-): Promise<any> {
+): Promise<AssessmentSubmissionResponse> {
   let lastError: Error | null = null
   
   for (const attempt = 0; attempt <= maxRetries; attempt++) {
     try {
-      return await apiRequest('/api/assessment/submit', {
+      return await apiRequest<AssessmentSubmissionResponse>('/api/assessment/submit', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -108,13 +115,20 @@ export async function submitAssessment(
 /**
  * Handle GDPR data requests
  */
+interface GDPRResponse {
+  success: boolean
+  message: string
+  data?: unknown
+  verificationRequired?: boolean
+}
+
 export async function gdprRequest(
   email: string,
   requestType: 'access' | 'portability' | 'deletion' | 'rectification',
   verificationToken?: string,
   updates?: Record<string, unknown>
-): Promise<any> {
-  return apiRequest('/api/assessment/gdpr', {
+): Promise<GDPRResponse> {
+  return apiRequest<GDPRResponse>('/api/assessment/gdpr', {
     method: 'POST',
     body: JSON.stringify({
       email,
@@ -128,29 +142,53 @@ export async function gdprRequest(
 /**
  * Verify GDPR request token
  */
+interface GDPRVerificationResponse {
+  valid: boolean
+  requestType: string
+}
+
 export async function verifyGDPRToken(
   token: string,
   email: string
-): Promise<{ valid: boolean; requestType: string }> {
-  return apiRequest(`/api/assessment/gdpr/verify?token=${token}&email=${email}`)
+): Promise<GDPRVerificationResponse> {
+  return apiRequest<GDPRVerificationResponse>(`/api/assessment/gdpr/verify?token=${token}&email=${email}`)
 }
 
 /**
  * Admin: Get assessment submissions
  */
+interface AssessmentSubmission {
+  id: string
+  createdAt: string
+  email: string
+  name?: string
+  status: string
+  qualificationScore: number
+  responses: Record<string, unknown>
+  recommendation: string
+  adminNotes?: string
+}
+
+interface SubmissionsResponse {
+  submissions: AssessmentSubmission[]
+  total: number
+  limit: number
+  offset: number
+}
+
 export async function getAssessmentSubmissions(
   authToken: string,
   filter?: 'all' | 'qualified' | 'new' | 'contacted',
   limit = 100,
   offset = 0
-): Promise<any> {
+): Promise<SubmissionsResponse> {
   const params = new URLSearchParams({
     ...(filter && { filter }),
     limit: limit.toString(),
     offset: offset.toString()
   })
 
-  return apiRequest(`/api/assessment/admin?${params}`, {
+  return apiRequest<SubmissionsResponse>(`/api/assessment/admin?${params}`, {
     headers: {
       'Authorization': `Bearer ${authToken}`
     }
@@ -160,13 +198,19 @@ export async function getAssessmentSubmissions(
 /**
  * Admin: Update submission status
  */
+interface UpdateStatusResponse {
+  success: boolean
+  message: string
+  updatedSubmission?: AssessmentSubmission
+}
+
 export async function updateSubmissionStatus(
   authToken: string,
   submissionId: string,
   status: string,
   adminNotes?: string
-): Promise<any> {
-  return apiRequest('/api/assessment/admin', {
+): Promise<UpdateStatusResponse> {
+  return apiRequest<UpdateStatusResponse>('/api/assessment/admin', {
     method: 'PATCH',
     headers: {
       'Authorization': `Bearer ${authToken}`
@@ -182,11 +226,17 @@ export async function updateSubmissionStatus(
 /**
  * Admin: Anonymize submission (GDPR)
  */
+interface AnonymizeResponse {
+  success: boolean
+  message: string
+  anonymizedId?: string
+}
+
 export async function anonymizeSubmission(
   authToken: string,
   submissionId: string
-): Promise<any> {
-  return apiRequest(`/api/assessment/admin?id=${submissionId}`, {
+): Promise<AnonymizeResponse> {
+  return apiRequest<AnonymizeResponse>(`/api/assessment/admin?id=${submissionId}`, {
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${authToken}`

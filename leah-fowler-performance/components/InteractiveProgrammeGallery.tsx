@@ -360,7 +360,7 @@ export default function InteractiveProgrammeGallery() {
                     className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg"
                   >
                     <p className="text-gray-700 italic mb-3">
-                      "{programmes[currentIndex].testimonial.quote}"
+                      &quot;{programmes[currentIndex].testimonial.quote}&quot;
                     </p>
                     <div className="flex justify-between items-center">
                       <span className="font-semibold text-gray-900">

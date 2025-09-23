@@ -41,10 +41,11 @@ const navItems: NavItem[] = [
     label: 'Programmes',
     icon: <Target className="h-5 w-5" />,
     subItems: [
-      { href: '#programmes', label: 'Premium Performance', price: '£350/month' },
-      { href: '#programmes', label: 'Performance Essentials', price: '£199/month' },
-      { href: '#programmes', label: 'Online Programme', price: '£97/month' },
-      { href: '#programmes', label: 'Small Group Training', price: '£79/month' },
+      { href: '#programmes', label: 'Pathway to Endurance', price: '£48 (16 weeks)' },
+      { href: '#programmes', label: 'Small Group Training', price: '£120 (12 sessions)' },
+      { href: '#programmes', label: 'Semi-Private Coaching', price: '£90/month pp' },
+      { href: '#programmes', label: 'Silver Package', price: '£140/month' },
+      { href: '#programmes', label: 'Gold Elite Package', price: '£250/month' },
     ]
   },
   {

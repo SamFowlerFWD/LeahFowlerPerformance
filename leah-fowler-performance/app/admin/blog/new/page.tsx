@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import type { DifficultyLevel } from '@/types/blog'
 import { createClient } from '@supabase/supabase-js'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -527,7 +528,7 @@ export default function NewPostPage() {
                     <Label htmlFor="difficulty_level">Difficulty Level</Label>
                     <Select
                       value={watch('difficulty_level')}
-                      onValueChange={(value: unknown) => setValue('difficulty_level', value)}
+                      onValueChange={(value) => setValue('difficulty_level', value as DifficultyLevel)}
                     >
                       <SelectTrigger className="mt-1">
                         <SelectValue placeholder="Select difficulty" />

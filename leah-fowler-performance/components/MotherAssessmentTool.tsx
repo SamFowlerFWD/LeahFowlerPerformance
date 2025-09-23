@@ -447,7 +447,8 @@ export default function MotherAssessmentTool() {
           recommended_programme: recommendations.programme,
           estimated_investment: recommendations.programme === 'Gold' ? '£250/month' :
                                  recommendations.programme === 'Silver' ? '£140/month' :
-                                 recommendations.programme === 'Flexi' ? '£80/month' : '£12/month',
+                                 recommendations.programme === 'Semi-Private' ? '£90/month per person' :
+                                 recommendations.programme === 'Small Group' ? '£120 for 12 sessions' : '£48 one-off',
           consent_given: data.consent,
           consent_timestamp: new Date().toISOString(),
           marketing_consent: data.marketing,

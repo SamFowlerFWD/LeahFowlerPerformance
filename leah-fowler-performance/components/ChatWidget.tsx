@@ -103,7 +103,7 @@ export default function ChatWidget() {
     setTimeout(() => {
       if (userInput.includes('price') || userInput.includes('cost') || userInput.includes('investment')) {
         addBotMessage(
-          "Our programmes start at £12/month for online training, with options including Flexi Coaching (£80/month), Silver 1:1 training (£140/month - most popular), and premium Gold package (£250/month). Each package is designed for different fitness goals and schedules. Would you like to discuss which would be best for you?",
+          "Our programmes start at £48 for the 16-week Pathway to Endurance online programme. We also offer Small Group Training (£120 for 12 sessions), Semi-Private Coaching (£90/month per person), Silver 1:1 training (£140/month - most popular), and premium Gold Elite package (£250/month). Each package is designed for different fitness goals and schedules. Would you like to discuss which would be best for you?",
           ['Tell me more about Silver', 'I am interested in Gold', 'Book a consultation']
         );
       } else if (userInput.includes('time') || userInput.includes('busy') || userInput.includes('schedule')) {

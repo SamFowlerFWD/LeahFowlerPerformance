@@ -207,7 +207,7 @@ export default function PremiumTestimonialsSection() {
 
                 {/* Quote */}
                 <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-6 italic">
-                  "{testimonials[activeIndex].quote}"
+                  &quot;{testimonials[activeIndex].quote}&quot;
                 </blockquote>
 
                 {/* Results Grid */}
@@ -419,7 +419,7 @@ export default function PremiumTestimonialsSection() {
             Ready to Write Your Success Story?
           </h3>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Join hundreds of mothers who&apos;ve transformed their fitness with Norfolk's premier performance coaching
+            Join hundreds of mothers who&apos;ve transformed their fitness with Norfolk&apos;s premier performance coaching
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <PremiumButton

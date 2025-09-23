@@ -314,8 +314,8 @@ export default function AssessmentTool() {
             </motion.div>
             <CardTitle className="text-2xl sm:text-3xl text-navy mb-4">Performance Optimisation Assessment</CardTitle>
             <CardDescription className="text-lg max-w-2xl mx-auto">
-              As a mother of three, I discovered that true performance isn&apos;t measured in the gym&mdash;it's measured in how brilliantly 
-              you perform when life demands everything. Let's discover your performance potential together.
+              As a mother of three, I discovered that true performance isn&apos;t measured in the gym&mdash;it&apos;s measured in how brilliantly 
+              you perform when life demands everything. Let&apos;s discover your performance potential together.
             </CardDescription>
           </CardHeader>
           

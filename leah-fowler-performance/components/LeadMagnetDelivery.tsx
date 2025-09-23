@@ -388,7 +388,7 @@ export default function LeadMagnetDelivery() {
                   Preparing Your Resource...
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  We're sending your {selectedMagnet.title} to {formData.email}
+                  We&apos;re sending your {selectedMagnet.title} to {formData.email}
                 </p>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-500">
@@ -423,7 +423,7 @@ export default function LeadMagnetDelivery() {
                 Success! Check Your Email
               </h3>
               <p className="text-white/90">
-                We've sent your {deliveredMagnet.title} to {formData.email}
+                We&apos;ve sent your {deliveredMagnet.title} to {formData.email}
               </p>
             </div>
 
@@ -508,7 +508,7 @@ export default function LeadMagnetDelivery() {
 
               {/* Support Note */}
               <p className="text-xs text-center text-gray-500 dark:text-gray-400">
-                Didn't receive the email? Check your spam folder or{' '}
+                Didn&apos;t receive the email? Check your spam folder or{' '}
                 <button className="text-gold underline">contact support</button>
               </p>
             </div>

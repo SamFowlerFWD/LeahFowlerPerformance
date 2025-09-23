@@ -1,0 +1,99 @@
+{
+  "timestamp": "2025-09-22T21:04:59.546Z",
+  "project": "ltlbfltlhysjxslusypq",
+  "results": {
+    "migrations": [
+      {
+        "file": "001_assessment_submissions.sql",
+        "tables": [
+          "assessment_submissions",
+          "gdpr_consent_log",
+          "assessment_admin_log"
+        ],
+        "status": "requires_manual_execution",
+        "message": "Use Supabase Dashboard SQL Editor to execute"
+      },
+      {
+        "file": "001_subscriptions_schema.sql",
+        "tables": [
+          "subscriptions",
+          "payment_methods",
+          "invoices",
+          "subscription_items",
+          "pricing_tiers",
+          "webhook_events",
+          "discount_codes",
+          "customer_discounts"
+        ],
+        "status": "requires_manual_execution",
+        "message": "Use Supabase Dashboard SQL Editor to execute"
+      },
+      {
+        "file": "002_enhanced_conversion_features.sql",
+        "tables": [
+          "performance_barriers",
+          "programme_recommendations",
+          "client_success_metrics",
+          "testimonials",
+          "engagement_tracking",
+          "ab_tests",
+          "quick_contact_requests"
+        ],
+        "status": "requires_manual_execution",
+        "message": "Use Supabase Dashboard SQL Editor to execute"
+      },
+      {
+        "file": "003_blog_schema.sql",
+        "tables": [
+          "categories",
+          "tags",
+          "authors",
+          "posts",
+          "post_tags",
+          "post_revisions",
+          "post_views",
+          "related_posts",
+          "blog_settings"
+        ],
+        "status": "requires_manual_execution",
+        "message": "Use Supabase Dashboard SQL Editor to execute"
+      },
+      {
+        "file": "004_complete_platform_schema.sql",
+        "tables": [
+          "user_profiles",
+          "lead_magnets",
+          "lead_magnet_downloads",
+          "coaching_sessions",
+          "performance_metrics",
+          "email_campaigns",
+          "email_subscribers",
+          "wearable_connections",
+          "wearable_data"
+        ],
+        "status": "requires_manual_execution",
+        "message": "Use Supabase Dashboard SQL Editor to execute"
+      }
+    ],
+    "verification": {
+      "criticalTables": {
+        "expected": 8,
+        "found": 8,
+        "percentage": 100
+      }
+    },
+    "summary": {
+      "totalMigrations": 5,
+      "processedMigrations": 5,
+      "tablesVerified": 8
+    }
+  },
+  "sqlScriptPath": "/Users/samfowler/Code/LeahFowlerPerformance-1/leah-fowler-performance/combined-migrations.sql",
+  "nextSteps": [
+    "Execute combined SQL script in Supabase Dashboard",
+    "Enable Email authentication",
+    "Configure email templates",
+    "Set up storage buckets",
+    "Test authentication flow"
+  ]
+}

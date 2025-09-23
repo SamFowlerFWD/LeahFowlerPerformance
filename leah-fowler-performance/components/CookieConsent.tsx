@@ -105,8 +105,8 @@ export default function CookieConsent() {
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   We use cookies to enhance your experience, analyse site traffic, and for marketing purposes. 
-                  By clicking ""Accept All", you consent to our use of cookies. You can manage your preferences 
-                  by clicking ""Manage Preferences". For more information, please read our{' '}
+                  By clicking &quot;Accept All&quot;, you consent to our use of cookies. You can manage your preferences 
+                  by clicking &quot;Manage Preferences&quot;. For more information, please read our{' '}
                   <a href="/privacy-policy" className="text-gold hover:underline">Privacy Policy</a> and{' '}
                   <a href="/cookie-policy" className="text-gold hover:underline">Cookie Policy</a>.
                 </p>

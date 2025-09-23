@@ -8,7 +8,7 @@ const gdprRequestSchema = z.object({
   email: z.string().email(),
   requestType: z.enum(['access', 'portability', 'deletion', 'rectification']),
   verificationToken: z.string().optional(),
-  updates: z.record(z.any()).optional() // For rectification requests
+  updates: z.record(z.string(), z.unknown()).optional() // For rectification requests
 })
 
 // Generate verification token for GDPR requests
@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           error: 'Invalid request', 
-          details: validationResult.error.errors 
+          details: validationResult.error.issues 
         },
         { status: 400 }
       )

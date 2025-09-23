@@ -67,14 +67,14 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
 
   // Convert packages to tier format
   const tiers: PricingTier[] = [
-    // Pathway to Endurance - Entry Level Online
+    // Pathway to Endurance - 16-Week Online Programme
     {
       name: aphroditeFitnessPackages.pathwayToEndurance.name,
       slug: aphroditeFitnessPackages.pathwayToEndurance.slug,
       price: aphroditeFitnessPackages.pathwayToEndurance.price,
       currency: aphroditeFitnessPackages.pathwayToEndurance.currency,
       period: aphroditeFitnessPackages.pathwayToEndurance.period,
-      billing: 'monthly' as const,
+      billing: aphroditeFitnessPackages.pathwayToEndurance.billing as 'one-time',
       description: aphroditeFitnessPackages.pathwayToEndurance.shortDescription,
       features: aphroditeFitnessPackages.pathwayToEndurance.features.slice(0, 10),
       cta: aphroditeFitnessPackages.pathwayToEndurance.cta,
@@ -82,22 +82,6 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
       color: 'navy' as const,
       icon: getIcon('navy'),
       guarantee: aphroditeFitnessPackages.pathwayToEndurance.guarantee
-    },
-    // Flexi Coaching - Flexible App-Based
-    {
-      name: aphroditeFitnessPackages.flexiCoaching.name,
-      slug: aphroditeFitnessPackages.flexiCoaching.slug,
-      price: aphroditeFitnessPackages.flexiCoaching.price,
-      currency: aphroditeFitnessPackages.flexiCoaching.currency,
-      period: aphroditeFitnessPackages.flexiCoaching.period,
-      billing: 'monthly' as const,
-      description: aphroditeFitnessPackages.flexiCoaching.shortDescription,
-      features: aphroditeFitnessPackages.flexiCoaching.features.slice(0, 10),
-      cta: aphroditeFitnessPackages.flexiCoaching.cta,
-      popular: false,
-      color: 'sage' as const,
-      icon: getIcon('sage'),
-      guarantee: aphroditeFitnessPackages.flexiCoaching.guarantee
     },
     // Semi-Private - Partner Training
     {
@@ -262,7 +246,7 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold font-medium text-sm mb-6">
             <TrendingUp className="h-4 w-4" />
-            Transform Your Strength • Transform Your Life
+            Train From Anywhere • Transform Your Performance
           </span>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-6">
@@ -271,8 +255,8 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
           </h2>
 
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Evidence-based strength training for busy parents. From £12/month online programmes
-            to premium 1:1 coaching. Join 500+ parents who&apos;ve transformed their strength and confidence.
+            Expert online coaching programmes you can do from anywhere. From £48 foundation programmes
+            to premium 1:1 coaching. Join 500+ clients who&apos;ve transformed their strength and performance.
           </p>
         </motion.div>
 
@@ -292,11 +276,10 @@ export default function PricingTiersWithStripe({ userId, userEmail, userName }: 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {tiers.map((tier) => {
-            const vatInfo = React.useMemo(() => {
-              const subtotal = Math.round(tier.price / 1.2)
-              const vat = tier.price - subtotal
-              return { subtotal, vat }
-            }, [tier.price])
+            // Calculate VAT info directly without useMemo (hooks cannot be inside loops)
+            const subtotal = Math.round(tier.price / 1.2)
+            const vat = tier.price - subtotal
+            const vatInfo = { subtotal, vat }
 
             return (
               <motion.div

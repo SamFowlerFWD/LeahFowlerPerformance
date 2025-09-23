@@ -352,7 +352,7 @@ const MobileSwipeableProgrammes: React.FC = () => {
                           ))}
                         </div>
                         <p className="text-sm text-slate-600 italic mb-1">
-                          "{programme.testimonial.quote}"
+                          &quot;{programme.testimonial.quote}&quot;
                         </p>
                         <p className="text-xs text-slate-500">- {programme.testimonial.name}</p>
                       </div>

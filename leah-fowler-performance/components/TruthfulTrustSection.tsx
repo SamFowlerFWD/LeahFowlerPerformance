@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from 'react'
+import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import {
   Trophy,
@@ -150,6 +151,68 @@ export default function TruthfulTrustSection() {
           ))}
         </motion.div>
 
+        {/* Coach Introduction with Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mb-20"
+        >
+          <div className="bg-white dark:bg-navy-dark rounded-3xl p-8 lg:p-12 shadow-xl">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="aspect-[4/3] relative">
+                    <Image
+                      src="/images/leah/leah-trust.webp"
+                      alt="Leah Fowler - Performance Consultant and Mother of 3"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-white/95 dark:bg-navy/95 backdrop-blur-sm rounded-xl p-4">
+                      <p className="text-sm font-bold text-navy dark:text-white">Leah Fowler</p>
+                      <p className="text-xs text-gray-600 dark:text-gray-300">Performance Consultant & Mother of 3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-navy dark:text-white mb-6">
+                  I&apos;m Leah - Your Performance Consultant
+                </h3>
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                  Mother of three, Spartan racer, and living proof that motherhood doesn&apos;t mean sacrificing strength.
+                  I&apos;ve been where you are - exhausted, overwhelmed, wondering if I&apos;d ever feel strong again.
+                </p>
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                  Now I help mothers across Norfolk rediscover their strength, build real fitness, and show their children
+                  what a strong, capable mum looks like. No quick fixes, no unrealistic expectations - just real training
+                  that fits around real life.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Badge className="px-3 py-1 bg-gold/10 text-gold border-gold/20">
+                    <Medal className="h-4 w-4 mr-1" />
+                    Spartan Finisher
+                  </Badge>
+                  <Badge className="px-3 py-1 bg-blue-500/10 text-blue-500 border-blue-500/20">
+                    <Trophy className="h-4 w-4 mr-1" />
+                    Triathlon Competitor
+                  </Badge>
+                  <Badge className="px-3 py-1 bg-pink-500/10 text-pink-500 border-pink-500/20">
+                    <Heart className="h-4 w-4 mr-1" />
+                    Mother of 3
+                  </Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Mother's Journey Timeline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -213,7 +276,7 @@ export default function TruthfulTrustSection() {
                     <CheckCircle className="h-5 w-5 text-gold" />
                     <span className="text-gold font-medium">{testimonial.achievement}</span>
                   </div>
-                  <p className="text-white mb-4 italic">"{testimonial.quote}"</p>
+                  <p className="text-white mb-4 italic">&quot;{testimonial.quote}&quot;</p>
                   <div className="text-sm text-white/80">
                     <span className="font-medium">{testimonial.name}</span>
                     <span className="text-white/60 ml-2">• {testimonial.role}</span>
@@ -241,7 +304,7 @@ export default function TruthfulTrustSection() {
         >
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             <strong>The Truth:</strong> I&apos;m not a celebrity trainer or fitness influencer.
-            I'm a mum of 3 from Norfolk who got properly strong after having kids and now helps other mums do the same.
+            I&apos;m a mum of 3 from Norfolk who got properly strong after having kids and now helps other mums do the same.
             No fake credentials, no made-up statistics - just real fitness for real mums.
           </p>
         </motion.div>

@@ -69,21 +69,6 @@ export default function PricingTiers() {
       icon: getIcon('navy'),
       guarantee: aphroditeFitnessPackages.pathwayToEndurance.guarantee
     },
-    // Flexi Coaching - Flexible App-Based
-    {
-      name: aphroditeFitnessPackages.flexiCoaching.name,
-      slug: aphroditeFitnessPackages.flexiCoaching.slug,
-      price: aphroditeFitnessPackages.flexiCoaching.price,
-      currency: aphroditeFitnessPackages.flexiCoaching.currency,
-      period: aphroditeFitnessPackages.flexiCoaching.period,
-      description: aphroditeFitnessPackages.flexiCoaching.shortDescription,
-      features: aphroditeFitnessPackages.flexiCoaching.features,
-      cta: aphroditeFitnessPackages.flexiCoaching.cta,
-      popular: false,
-      color: 'sage' as 'gold' | 'sage' | 'navy',
-      icon: getIcon('sage'),
-      guarantee: aphroditeFitnessPackages.flexiCoaching.guarantee
-    },
     // Semi-Private - Partner Training
     {
       name: aphroditeFitnessPackages.semiPrivate.name,
@@ -194,7 +179,7 @@ export default function PricingTiers() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Evidence-based strength training for busy parents. From £12/month online programmes
+            Evidence-based strength training for busy parents. From £48 one-off online programmes
             to premium 1:1 coaching. Join 500+ parents who&apos;ve transformed their strength and confidence.
           </p>
         </motion.div>

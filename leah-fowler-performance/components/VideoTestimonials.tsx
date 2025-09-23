@@ -220,7 +220,7 @@ export default function VideoTestimonials() {
 
                   {/* Transformation */}
                   <p className="text-base font-semibold text-navy dark:text-white border-l-4 border-gold pl-4">
-                    "{testimonial.transformation}"
+                    &quot;{testimonial.transformation}&quot;
                   </p>
 
                   {/* Key Results */}
@@ -313,7 +313,7 @@ export default function VideoTestimonials() {
 
                       {/* Transformation */}
                       <p className="text-sm font-semibold text-navy dark:text-white">
-                        "{testimonial.transformation}"
+                        &quot;{testimonial.transformation}&quot;
                       </p>
 
                       {/* Results Preview */}

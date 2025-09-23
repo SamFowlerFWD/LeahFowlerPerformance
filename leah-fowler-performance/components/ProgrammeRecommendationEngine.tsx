@@ -385,7 +385,7 @@ export default function ProgrammeRecommendationEngine({
                     ))}
                   </div>
                   <p className="text-sm italic text-gray-600 mb-2">
-                    "{programme.testimonial.quote}"
+                    &quot;{programme.testimonial.quote}&quot;
                   </p>
                   <div className="text-xs">
                     <p className="font-semibold">{programme.testimonial.name}</p>
@@ -592,8 +592,8 @@ export default function ProgrammeRecommendationEngine({
             <Shield className="w-10 h-10 text-green-600 mx-auto" />
             <h3 className="text-xl font-semibold">100% Success Guarantee</h3>
             <p className="text-gray-700 max-w-2xl mx-auto">
-              We\&apos;re so confident in our approach that we guarantee measurable improvements 
-              within 30 days or we\'ll work with you for free until you see results.
+              We&apos;re so confident in our approach that we guarantee measurable improvements
+              within 30 days or we&apos;ll work with you for free until you see results.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
               <div className="flex items-center space-x-2">

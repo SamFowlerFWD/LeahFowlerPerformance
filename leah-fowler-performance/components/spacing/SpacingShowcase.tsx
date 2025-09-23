@@ -178,7 +178,7 @@ export const SpacingShowcase: React.FC = () => {
 
               <p className="text-2xl md:text-3xl leading-relaxed text-gray-800 mb-space-8">
                 The transformation in our mothers&apos; progress has been remarkable.
-                Leah's evidence-based approach delivered measurable results within weeks.
+                Leah&apos;s evidence-based approach delivered measurable results within weeks.
               </p>
 
               <footer className="flex items-center justify-center gap-space-4">

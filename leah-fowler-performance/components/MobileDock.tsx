@@ -17,7 +17,7 @@ interface DockItem {
 
 const dockItems: DockItem[] = [
   { id: 'home', label: 'Home', icon: Home, href: '/' },
-  { id: 'assessment', label: 'Assess', icon: Calendar, href: '/assessment' },
+  { id: 'apply', label: 'Apply', icon: Calendar, href: '/apply' },
   { id: 'programmes', label: 'Plans', icon: User, href: '#programmes' },
   { id: 'contact', label: 'Chat', icon: MessageCircle, href: '#contact', badge: 1 },
 ]
@@ -111,11 +111,11 @@ export default function MobileDock() {
                         {/* Quick links */}
                         <div className="grid grid-cols-2 gap-3">
                           <Link
-                            href="/assessment"
+                            href="/apply"
                             className="bg-gray-50 dark:bg-navy-light rounded-xl p-4 text-center hover:bg-gray-100 dark:hover:bg-navy transition-colors"
                           >
                             <Calendar className="w-6 h-6 mx-auto mb-2 text-gold" />
-                            <span className="text-sm font-medium text-navy dark:text-white">Free Assessment</span>
+                            <span className="text-sm font-medium text-navy dark:text-white">Apply for Coaching</span>
                           </Link>
                           <Link
                             href="#testimonials"

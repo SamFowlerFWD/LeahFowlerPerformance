@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
- '@/types/blog'
+import type { PostFormData } from '@/types/blog'
 
 // Initialize Supabase Admin Client
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_KEY!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
   {
     auth: {
       autoRefreshToken: false,
@@ -211,8 +211,13 @@ export async function PUT(request: NextRequest) {
 }
 
     // Handle status changes
-    if (body.status === 'published' && !body.published_at) {
-      updateData.published_at = new Date().toISOString()
+    // Add published_at timestamp when publishing
+    interface UpdateDataWithPublished extends Partial<PostFormData> {
+      published_at?: string;
+      updated_at: string;
+    }
+    if (body.status === 'published') {
+      (updateData as UpdateDataWithPublished).published_at = new Date().toISOString()
     }
     if (body.status === 'scheduled') {
       updateData.scheduled_for = body.scheduled_for

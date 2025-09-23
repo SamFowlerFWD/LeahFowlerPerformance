@@ -6,11 +6,11 @@ import { generateServiceSchema } from '@/lib/schema-markup'
 
 export const metadata: Metadata = {
   title: 'Training Packages & Pricing | Aphrodite Fitness Norfolk',
-  description: 'Transform your strength with evidence-based training programmes. From £12/month online to premium 1:1 coaching. Small groups, flexi training, and personal training available.',
+  description: 'Transform your strength with evidence-based training programmes. From £48 online foundation programme to premium 1:1 coaching. Small groups, semi-private, and personal training available.',
   keywords: 'personal training Norfolk, small group fitness classes, online fitness programmes, strength training Norwich, parent fitness programmes',
   openGraph: {
     title: 'Training Packages | Aphrodite Fitness Norfolk',
-    description: 'Evidence-based strength training from £12/month. Small groups £120, Personal training from £80/month. Join 500+ parents transforming their strength.',
+    description: 'Evidence-based strength training from £48. Small groups £120, Personal training from £140/month. Join 500+ parents transforming their strength.',
     url: 'https://leahfowlerperformance.com/services',
     siteName: 'Leah Fowler Performance',
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Transform Your Performance | Services & Pricing',
-    description: 'Strength training packages from £12/month. Small groups, personal training, and online programmes. Start your transformation today.',
+    description: 'Strength training packages from £48. Small groups, personal training, and online programmes. Start your transformation today.',
     images: ['https://leahfowlerperformance.com/og-services.jpg'],
   },
   alternates: {
@@ -66,7 +66,7 @@ export default function ServicesPage() {
 
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
               Evidence-based strength training for busy parents.
-              From £12/month online programmes to premium 1:1 coaching.
+              From £48 online foundation programme to premium 1:1 coaching.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

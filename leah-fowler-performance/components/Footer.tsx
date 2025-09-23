@@ -27,11 +27,12 @@ import { Input } from '@/components/ui/input'
 
 const footerLinks = {
   programmes: [
-    { label: 'Premium Performance - £350/month', href: '#programmes', badge: 'Popular' },
-    { label: 'Performance Essentials - £199/month', href: '#programmes', badge: null },
-    { label: 'Online Programme - £97/month', href: '#programmes', badge: null },
-    { label: 'Small Group Training - £79/month', href: '#programmes', badge: 'Dereham' },
-    { label: 'Free Assessment', href: '/assessment', badge: 'New' },
+    { label: 'Pathway to Endurance - £48', href: '#programmes', badge: '16 Weeks' },
+    { label: 'Small Group Training - £120', href: '#programmes', badge: '12 Sessions' },
+    { label: 'Semi-Private - £90/month pp', href: '#programmes', badge: 'Partners' },
+    { label: 'Silver Package - £140/month', href: '#programmes', badge: 'Popular' },
+    { label: 'Gold Elite - £250/month', href: '#programmes', badge: 'Premium' },
+    { label: 'Apply for Coaching', href: '/apply', badge: 'Start Here' },
   ],
   services: [
     { label: 'Strength & Conditioning', href: '#programmes' },
@@ -113,7 +114,7 @@ export default function Footer() {
                     </h3>
                     <p className="text-white/90 text-lg">
                       Weekly insights on reclaiming your identity, finding strength, and thriving as a mother.
-                      Plus, get our exclusive Identity Reclamation Guide (£97 value) free.
+                      Plus, get our exclusive Identity Reclamation Guide free when you subscribe.
                     </p>
                     <div className="flex items-center gap-6 mt-6">
                       <div className="flex items-center gap-2">

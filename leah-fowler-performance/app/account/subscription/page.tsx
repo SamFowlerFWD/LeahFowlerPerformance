@@ -407,7 +407,7 @@ export default function SubscriptionDashboard() {
                               </div>
                               <div>
                                 <p className="font-medium text-navy dark:text-white">
-                                  {method.card_brand.charAt(0).toUpperCase() + method.card_brand.slice(1)} •••• {method.card_last4}
+                                  {method.card_brand ? method.card_brand.charAt(0).toUpperCase() + method.card_brand.slice(1) : 'Card'} •••• {method.card_last4}
                                 </p>
                                 <p className="text-sm text-gray-500 dark:text-gray-400">
                                   Expires {method.card_exp_month}/{method.card_exp_year}

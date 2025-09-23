@@ -166,10 +166,14 @@ export const personSchema = {
   "name": "Leah Fowler",
   "givenName": "Leah",
   "familyName": "Fowler",
-  "jobTitle": "Strength Coach for Mums & Founder",
-  "description": "Mother of 3, Spartan Ultra finisher, and Norfolk's specialist mum fitness coach. From zero press-ups to ultra races. Helped 500+ mums get properly strong. Understanding the juggle because I live it.",
+  "jobTitle": "Performance Consultant & Strength Coach",
+  "alternateName": "Leah Fowler Performance Coach",
+  "description": "Mother of 3, Spartan Ultra finisher, and Norfolk's premier performance consultant. From zero press-ups to ultra races. Helped 500+ parents achieve peak performance. Understanding the juggle because I live it.",
   "url": "https://leahfowlerperformance.com/about",
-  "image": "https://leahfowlerperformance.com/leah-fowler.jpg",
+  "image": [
+    "https://leahfowlerperformance.com/images/leah/leah-fowler-pt.webp",
+    "https://leahfowlerperformance.com/images/leah/leah-fowler-pt-300x300.webp"
+  ],
   "email": "leah@leahfowlerperformance.com",
   "telephone": "+44-7XXX-XXXXXX",
   "address": {
@@ -189,15 +193,22 @@ export const personSchema = {
     "@type": "Organization",
     "@id": "https://leahfowlerperformance.com/#organization"
   },
+  "gender": "Female",
+  "nationality": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  },
   "knowsAbout": [
-    "Performance Psychology",
-    "Executive Coaching",
-    "Behavioural Science",
-    "Stress Physiology",
-    "Sleep Science",
-    "Nutritional Strategy",
-    "Movement Science",
-    "Leadership Development"
+    "Performance Optimisation",
+    "Strength & Conditioning",
+    "Mother Fitness Training",
+    "Postnatal Recovery",
+    "Executive Performance Coaching",
+    "Behavioural Psychology",
+    "Athletic Performance",
+    "Obstacle Race Training",
+    "Triathlon Training",
+    "Family Fitness Integration"
   ],
   "hasCredential": [
     {
@@ -207,13 +218,24 @@ export const personSchema = {
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Nutrition Specialist",
+      "name": "Strength & Conditioning Specialist",
+      "credentialCategory": "Professional Qualification"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Postnatal Fitness Specialist",
       "credentialCategory": "Professional Qualification"
     }
   ],
+  "award": [
+    "Spartan Ultra Finisher",
+    "Triathlon Competitor",
+    "500+ Successful Client Transformations"
+  ],
   "sameAs": [
     "https://www.linkedin.com/in/leahfowlerperformance",
-    "https://www.instagram.com/leahfowlerperformance"
+    "https://www.instagram.com/leahfowlerperformance",
+    "https://www.facebook.com/leahfowlerperformance"
   ]
 };
 

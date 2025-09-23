@@ -98,9 +98,13 @@ export async function GET(request: NextRequest) {
     }
 
     // Format the response
-    const formattedPosts = data?.map(post => ({
+    interface PostWithTags {
+      tags?: Array<{ tag: unknown }>;
+      [key: string]: unknown;
+    }
+    const formattedPosts = data?.map((post: PostWithTags) => ({
       ...post,
-      tags: post.tags?.map((t: unknown) => t.tag).filter(Boolean) || []
+      tags: post.tags?.map((t) => t.tag).filter(Boolean) || []
     })) || []
 
     return NextResponse.json({

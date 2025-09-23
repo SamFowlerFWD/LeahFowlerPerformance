@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Menu, X, Sun, Moon, Phone, Mail, Calendar, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -9,17 +10,19 @@ import { cn } from '@/lib/utils'
 
 const navItems = [
   { href: '/', label: 'Home' },
-  { 
-    href: '#programmes', 
+  {
+    href: '#programmes',
     label: 'Programmes',
     dropdown: [
-      { href: '#programmes', label: 'Premium Performance - £350/month' },
-      { href: '#programmes', label: 'Performance Essentials - £199/month' },
-      { href: '#programmes', label: 'Online Programme - £97/month' },
-      { href: '#programmes', label: 'Small Group Training - £79/month' },
+      { href: '#programmes', label: '🌟 Online Package - £100/month (BEST VALUE)' },
+      { href: '#programmes', label: 'Pathway to Endurance - £48 (16 weeks)' },
+      { href: '#programmes', label: 'Small Group Training - £120 (12 sessions)' },
+      { href: '#programmes', label: 'Silver 1:1 Training - £140/month' },
+      { href: '#programmes', label: 'Gold Elite Training - £250/month' },
+      { href: '#programmes', label: 'Semi-Private Coaching - £90/month per person' },
     ]
   },
-  { href: '/assessment', label: 'Free Assessment' },
+  { href: '/apply', label: 'Apply for Coaching' },
   { href: '#about', label: 'About' },
   { href: '/blog', label: 'Blog' },
   { href: '#testimonials', label: 'Success Stories' },
@@ -75,26 +78,39 @@ export default function ModernHeader() {
               whileTap={{ scale: 0.95 }}
               className="relative"
             >
-              <Link href="/" className="flex items-center space-x-2">
+              <Link href="/" className="flex items-center space-x-3">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="absolute -inset-2 bg-gradient-to-r from-gold/20 to-sage/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
-                <div className="relative">
+                {/* Leah's Profile Image */}
+                <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden ring-2 ring-gold/20">
+                  <Image
+                    src="/images/leah/leah-fowler-pt-150x150.webp"
+                    alt="Leah Fowler, Performance Consultant"
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="48px"
+                  />
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="relative">
+                    <span className={cn(
+                      "text-2xl font-bold bg-gradient-to-r from-gold to-sage bg-clip-text text-transparent",
+                      !isScrolled && "text-white"
+                    )}>
+                      LFP
+                    </span>
+                  </div>
                   <span className={cn(
-                    "text-2xl font-bold bg-gradient-to-r from-gold to-sage bg-clip-text text-transparent",
-                    !isScrolled && "text-white"
+                    "hidden md:block text-lg font-semibold transition-colors duration-300",
+                    isScrolled ? "text-navy dark:text-white" : "text-white"
                   )}>
-                    LFP
+                    Leah Fowler Performance
                   </span>
                 </div>
-                <span className={cn(
-                  "hidden md:block text-lg font-semibold transition-colors duration-300",
-                  isScrolled ? "text-navy dark:text-white" : "text-white"
-                )}>
-                  Leah Fowler Performance
-                </span>
               </Link>
             </motion.div>
 
@@ -210,9 +226,9 @@ export default function ModernHeader() {
                   className="bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy font-bold px-6 py-2 rounded-xl shadow-lg hover:shadow-gold/30 transition-all duration-300"
                   asChild
                 >
-                  <Link href="/assessment" className="flex items-center gap-2">
+                  <Link href="/apply" className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
-                    Book Consultation
+                    Apply for Coaching
                   </Link>
                 </Button>
               </motion.div>
@@ -279,8 +295,8 @@ export default function ModernHeader() {
               className="w-full bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy font-bold py-6 rounded-xl shadow-lg hover:shadow-gold/30 transition-all duration-300"
               asChild
             >
-              <Link href="/assessment" onClick={() => setIsOpen(false)}>
-                Start Free Assessment
+              <Link href="/apply" onClick={() => setIsOpen(false)}>
+                Apply for Coaching
               </Link>
             </Button>
             
