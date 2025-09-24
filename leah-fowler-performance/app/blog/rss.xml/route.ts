@@ -39,7 +39,7 @@ export async function GET() {
   <channel>
     <title>Leah Fowler Performance Blog</title>
     <link>${baseUrl}</link>
-    <description>Evidence-based insights on strength training, nutrition, sleep optimisation, and lifestyle strategies for busy professionals.</description>
+    <description>Evidence-based insights on strength training, nutrition, sleep optimisation, and lifestyle strategies for busy parents, professionals and athletes.</description>
     <language>en-GB</language>
     <copyright>© ${new Date().getFullYear()} Leah Fowler Performance Coach</copyright>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>

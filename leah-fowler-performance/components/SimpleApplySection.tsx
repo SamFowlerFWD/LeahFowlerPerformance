@@ -32,7 +32,7 @@ export default function SimpleApplySection() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join our most popular programme with daily accountability, app-based tracking,
+            Join our most popular programme with smart app accountability, progress tracking,
             and weekly one-on-one reviews. 3-month commitment for lasting results.
           </p>
 
@@ -40,7 +40,7 @@ export default function SimpleApplySection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
               <CheckCircle className="h-5 w-5 text-gold" />
-              <span>Daily accountability check-ins</span>
+              <span>Smart accountability system</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
               <CheckCircle className="h-5 w-5 text-gold" />

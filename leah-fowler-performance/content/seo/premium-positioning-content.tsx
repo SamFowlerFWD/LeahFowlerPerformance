@@ -296,7 +296,7 @@ export const programmePositioning = {
       duration: "90-day total immersion",
       includes: [
         "Weekly 90-minute deep consultancy",
-        "Daily check-ins and protocol adjustments",
+        "Continuous progress monitoring with weekly protocol optimisation",
         "Full biometric monitoring suite provided",
         "Meal optimisation and supplementation protocol",
         "Sleep lab analysis and bedroom audit",

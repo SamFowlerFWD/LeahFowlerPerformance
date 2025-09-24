@@ -179,7 +179,7 @@ const PremiumHeroWithImage: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="text-sm md:text-base lg:text-lg text-white/80 max-w-2xl"
               >
-                <span className="text-white/90">Norfolk Strength and Conditioning Coach</span> • Mum of 3 • Online Personal Trainer • Daily Accountability
+                <span className="text-white/90">Norfolk Strength and Conditioning Coach</span> • Mum of 3 • Online Personal Trainer • Smart Accountability Systems
               </motion.p>
             </div>
 

@@ -160,8 +160,8 @@ export default function BlogPage() {
               </h1>
               
               <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-                Evidence-based insights on strength training, nutrition, sleep optimisation, 
-                and lifestyle strategies for busy professionals.
+                Evidence-based insights on strength training, nutrition, sleep optimisation,
+                and lifestyle strategies for busy parents, professionals and athletes.
               </p>
               
               {/* Search Bar */}

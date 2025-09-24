@@ -38,9 +38,9 @@ const programmes = [
     icon: Crown,
     color: 'from-gold to-gold-light',
     bgGradient: 'from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20',
-    description: 'Our flagship online coaching programme delivering personalised training, daily accountability, and expert guidance through our mobile app. Transform your performance with the flexibility to train anywhere.',
+    description: 'The flagship online coaching programme delivering personalised training, smart app accountability, and expert guidance through our mobile app. Transform your performance with the flexibility to train anywhere.',
     features: [
-      { icon: CheckCircle, text: 'Daily accountability check-ins and support' },
+      { icon: CheckCircle, text: 'Smart accountability system with weekly coaching support' },
       { icon: Trophy, text: 'Personalised goal setting and milestones' },
       { icon: Dumbbell, text: 'App-based exercise and diet tracking' },
       { icon: Calendar, text: 'Lifestyle-based workout programming' },
@@ -53,7 +53,7 @@ const programmes = [
       'Measurable performance gains'
     ],
     testimonial: {
-      text: "The daily accountability and app tracking made all the difference. I've never been more consistent or seen better results!",
+      text: "The combination of app tracking and weekly coaching creates unstoppable accountability. I've never been more consistent or seen better results!",
       author: 'James Patterson',
       role: 'CEO & Father of Three'
     }

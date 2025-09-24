@@ -7,7 +7,7 @@ import ModernHeader from '@/components/ModernHeader'
 import PremiumHeroWithImage from '@/components/PremiumHeroWithImage'
 import AchievementBadge from '@/components/AchievementBadge'
 // import TrustBar from '@/components/TrustBar' - Removed per request
-import SimpleApplySection from '@/components/SimpleApplySection'
+// import SimpleApplySection from '@/components/SimpleApplySection' // Removed - too repetitive
 import AphroditePricingTiers from '@/components/AphroditePricingTiers'
 import MobileDock from '@/components/MobileDock'
 import PremiumTestimonialsSection from '@/components/PremiumTestimonialsSection'
@@ -50,11 +50,7 @@ export default function Home() {
         </SectionErrorBoundary>
 
         {/* Removed HeroStatsSection and TrustBar per request */}
-
-        {/* Apply for Coaching Section - Simple CTA */}
-        <SectionErrorBoundary sectionName="SimpleApplySection">
-          <SimpleApplySection />
-        </SectionErrorBoundary>
+        {/* Removed SimpleApplySection - too repetitive before pricing section */}
 
         {/* Aphrodite Fitness Packages - Complete Training Options */}
         <SectionErrorBoundary sectionName="AphroditePricingTiers">

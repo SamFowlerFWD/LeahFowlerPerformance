@@ -296,7 +296,7 @@
 - **Not Another Time Management Course:** This is neuroscience-based performance optimisation
 - **Not Generic Advice:** Every strategy is personalised to your specific context
 - **Not Theoretical:** Practical tools you'll implement from day one
-- **Not Alone:** Daily accountability and support ensure follow-through
+- **Not Alone:** Continuous accountability and weekly coaching ensure follow-through
 - **Not Short-Term:** Sustainable systems that compound over time
 
 ## 5. PROGRAMME DESCRIPTIONS

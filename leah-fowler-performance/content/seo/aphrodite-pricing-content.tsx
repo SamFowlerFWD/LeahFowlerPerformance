@@ -12,7 +12,7 @@ export const aphroditeFitnessPackages = {
     period: "/month",
     billing: "monthly",
     tagline: "Complete Digital Transformation",
-    shortDescription: "Full online coaching with daily accountability and personalised programming",
+    shortDescription: "Full online coaching with smart app accountability and personalised programming",
     popular: true,
     color: "gold" as const,
     badge: "MOST POPULAR • BEST VALUE",
@@ -22,7 +22,7 @@ export const aphroditeFitnessPackages = {
     personalised programming, and real accountability that fits around your life, not the other way around.`,
 
     features: [
-      { text: "Daily accountability check-ins", included: true, highlight: true },
+      { text: "Smart app accountability with weekly coaching reviews", included: true, highlight: true },
       { text: "App-based workout tracking", included: true, highlight: true },
       { text: "Personalised nutrition guidance", included: true, highlight: true },
       { text: "Weekly video check-ins", included: true },
@@ -37,7 +37,7 @@ export const aphroditeFitnessPackages = {
     idealFor: [
       "Busy professionals needing flexibility",
       "Parents who can't commit to fixed sessions",
-      "Those wanting daily accountability",
+      "Those wanting comprehensive accountability systems",
       "Anyone serious about transformation"
     ],
 
@@ -49,7 +49,7 @@ export const aphroditeFitnessPackages = {
     ],
 
     testimonial: {
-      quote: "The daily check-ins keep me accountable. I've achieved more in 3 months than 3 years on my own!",
+      quote: "The app tracking and weekly coaching keep me accountable every single day. I've achieved more in 3 months than 3 years on my own!",
       author: "James P.",
       role: "CEO & Dad of 2",
       result: "Lost 15kg, gained confidence"
@@ -400,7 +400,7 @@ export const packageComparison = {
     },
     {
       name: "Sessions per Week",
-      onlinePackage: "Daily check-ins",
+      onlinePackage: "App tracking + weekly coaching",
       smallGroup: "1 (scheduled)",
       semiPrivate: "1",
       silver: "1",

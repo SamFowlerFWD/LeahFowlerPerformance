@@ -57,7 +57,7 @@ export default function ApplicationForm() {
   const [submissionError, setSubmissionError] = useState<string | null>(null)
 
   const programmes = [
-    { value: 'online-package', label: '🌟 Online Package (£100/month) - BEST VALUE', description: 'Daily accountability, app tracking, weekly reviews - 3 month commitment' },
+    { value: 'online-package', label: '🌟 Online Package (£100/month) - BEST VALUE', description: 'Smart app accountability, progress tracking, weekly coaching reviews - 3 month commitment' },
     { value: 'pathway', label: 'Pathway to Endurance (£48 one-off)', description: '16-week online foundation programme' },
     { value: 'smallgroup', label: 'Small Group Training (£120)', description: '12 sessions over 3 months, max 6 people' },
     { value: 'semiprivate', label: 'Semi-Private Coaching (£90/month per person)', description: '2:1 partner training sessions' },

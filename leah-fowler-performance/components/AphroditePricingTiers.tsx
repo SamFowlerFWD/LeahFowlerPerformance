@@ -282,7 +282,13 @@ export default function AphroditePricingTiers() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-16"
+          className={`grid gap-8 lg:gap-10 mb-16 ${
+            filteredPackages.length === 1
+              ? 'md:grid-cols-1 lg:grid-cols-1 place-items-center'
+              : filteredPackages.length === 2
+              ? 'md:grid-cols-2 lg:grid-cols-2 justify-center max-w-4xl mx-auto'
+              : 'md:grid-cols-2 lg:grid-cols-3'
+          }`}
           style={{
             opacity: isAnimating ? 0.5 : 1,
             pointerEvents: isAnimating ? 'none' : 'auto'
@@ -292,7 +298,9 @@ export default function AphroditePricingTiers() {
             <motion.div
               key={pkg.slug}
               variants={cardVariants}
-              className={`relative ${pkg.popular ? 'lg:-mt-8' : ''}`}
+              className={`relative ${pkg.popular ? 'lg:-mt-8' : ''} ${
+                filteredPackages.length === 1 ? 'w-full max-w-md' : ''
+              }`}
             >
               {/* Badge */}
               {pkg.badge && (

@@ -26,8 +26,8 @@ import { cn } from '@/lib/utils'
 const features = [
   {
     icon: CheckCircle,
-    title: 'Daily Accountability',
-    description: 'Check-ins every single day to keep you on track and motivated',
+    title: 'Smart Accountability System',
+    description: 'App-powered tracking with weekly coaching reviews to keep you on track',
     highlight: true
   },
   {
@@ -116,8 +116,8 @@ export default function OnlinePackageShowcase() {
           </h2>
 
           <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-            Our flagship online coaching programme combining expert guidance,
-            daily accountability, and app-based convenience for busy professionals
+            The flagship online coaching programme combining expert guidance,
+            smart app accountability, and flexible training for busy parents, professionals and athletes
           </p>
 
           {/* Price Highlight */}
@@ -298,64 +298,7 @@ export default function OnlinePackageShowcase() {
           </div>
         </motion.div>
 
-
-        {/* Final CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 1.1 }}
-          className="text-center bg-gradient-to-r from-navy via-navy-dark to-navy rounded-3xl p-16 md:p-20 relative overflow-hidden"
-        >
-          <div className="absolute inset-0">
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3]
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity
-              }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold/20 rounded-full blur-3xl"
-            />
-          </div>
-
-          <div className="relative">
-            <Badge className="inline-flex items-center gap-2 px-6 py-3 mb-8 bg-gold/20 text-gold border-gold/30 text-lg font-semibold">
-              <Trophy className="h-5 w-5" />
-              LIMITED SPACES AVAILABLE
-            </Badge>
-
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Life?
-            </h3>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
-              Join hundreds of successful clients who've transformed their bodies
-              and lives with our Online Package
-            </p>
-
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block"
-            >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy font-bold px-16 py-8 rounded-2xl shadow-2xl hover:shadow-gold/40 transition-all duration-300 text-xl"
-                asChild
-              >
-                <Link href="/apply" className="flex items-center gap-3">
-                  Start Your Online Package Today
-                  <ArrowRight className="h-6 w-6" />
-                </Link>
-              </Button>
-            </motion.div>
-
-            <p className="mt-6 text-white/60 text-sm">
-              3-month commitment • Cancel anytime after • 100% satisfaction guarantee
-            </p>
-          </div>
-        </motion.div>
+        {/* Final CTA section removed - too pushy and repetitive */}
       </div>
     </section>
   )
