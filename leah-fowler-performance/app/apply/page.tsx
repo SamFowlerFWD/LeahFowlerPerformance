@@ -7,9 +7,9 @@ import { ArrowLeft } from 'lucide-react'
 
 export default function ApplyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-50">
+      <header className="fixed top-0 left-0 right-0 bg-white backdrop-blur-md border-b border-gray-100 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <Link href="/" className="flex items-center gap-2 text-navy hover:text-gold transition-colors">
@@ -23,31 +23,10 @@ export default function ApplyPage() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-8"
-          >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4">
-              Start Your Online Coaching Journey
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Apply for coaching today and we'll help you choose the perfect programme
-              for your goals, schedule, and lifestyle. Train from anywhere with expert guidance.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <ApplicationForm />
-          </motion.div>
+      {/* Main Content - Adjusted spacing for fixed header */}
+      <main className="pt-24 pb-20">
+        <div className="container mx-auto">
+          <ApplicationForm />
         </div>
       </main>
 

@@ -95,15 +95,21 @@ module.exports = {
       colors: {
         // Navy palette for dark mode
         navy: {
-          light: '#1e293b',
-          DEFAULT: '#0f172a',
-          dark: '#020617',
+          light: '#2a3952',
+          DEFAULT: '#1a2942',
+          dark: '#0a1932',
         },
         // Gold accent for premium feel
         gold: {
-          light: '#fbbf24',
-          DEFAULT: '#f59e0b',
-          dark: '#d97706',
+          light: '#e4b584',
+          DEFAULT: '#d4a574',
+          dark: '#c49564',
+        },
+        // Sage for natural, calming accent
+        sage: {
+          light: '#97b97b',
+          DEFAULT: '#87a96b',
+          dark: '#77995b',
         },
         // Emerald for success and growth
         emerald: {
