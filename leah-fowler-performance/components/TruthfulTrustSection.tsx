@@ -34,8 +34,8 @@ const realAchievements = [
   },
   {
     icon: Medal,
-    title: 'Triathlon Competitor',
-    description: 'Endurance athlete & mother',
+    title: 'Triathlon Finisher',
+    description: 'Proof of what consistency achieves',
     value: '3',
     unit: 'Triathlons',
     color: 'from-blue-500 to-purple-500'

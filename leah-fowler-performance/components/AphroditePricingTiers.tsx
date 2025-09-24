@@ -34,7 +34,7 @@ import {
 } from '@/content/seo/aphrodite-pricing-content'
 
 export default function AphroditePricingTiers() {
-  const [selectedCategory, setSelectedCategory] = React.useState<'all' | 'group' | 'personal' | 'online'>('all')
+  const [selectedCategory, setSelectedCategory] = React.useState<'all' | 'group' | 'personal' | 'online'>('online')
   const [showComparison, setShowComparison] = React.useState(false)
   const [isAnimating, setIsAnimating] = React.useState(false)
 
@@ -165,8 +165,8 @@ export default function AphroditePricingTiers() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Evidence-based strength training for busy parents. Join 500+ parents who&apos;ve
-            reclaimed their strength, energy and confidence.
+            Evidence-based strength training for busy parents and professionals.
+            Reclaim your strength, energy and confidence with personalised coaching.
           </p>
 
           {/* Social Proof Bar */}
@@ -181,12 +181,6 @@ export default function AphroditePricingTiers() {
               <Trophy className="h-5 w-5 text-gold" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 {urgencyContent.social.retention}
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Heart className="h-5 w-5 text-gold" />
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Mother of 3 • Spartan Athlete
               </span>
             </div>
           </div>
@@ -465,34 +459,6 @@ export default function AphroditePricingTiers() {
           )}
         </motion.div>
 
-        {/* Social Runs Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="mb-16 p-8 rounded-3xl bg-gradient-to-r from-sage via-sage-light to-sage text-white"
-        >
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">{socialRuns.name}</h3>
-              <p className="text-white/90 mb-3">{socialRuns.description}</p>
-              <div className="flex flex-wrap gap-3">
-                {socialRuns.features.map((feature, idx) => (
-                  <span key={idx} className="text-xs px-3 py-1 bg-white/20 rounded-full">
-                    {feature}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <Button
-              className="bg-white text-sage hover:bg-white/90 px-8 py-6 rounded-xl font-bold shadow-xl"
-            >
-              {socialRuns.cta}
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-        </motion.div>
 
         {/* Comparison Table Toggle */}
         <motion.div
@@ -607,8 +573,8 @@ export default function AphroditePricingTiers() {
               <div className="flex items-start gap-3">
                 <Users className="h-5 w-5 text-navy mt-1" />
                 <div>
-                  <h4 className="font-semibold text-navy mb-1">500+ Parents Transformed</h4>
-                  <p className="text-sm text-navy/80">Join a supportive community of strong parents</p>
+                  <h4 className="font-semibold text-navy mb-1">Community Support</h4>
+                  <p className="text-sm text-navy/80">Join a supportive community focused on strength</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -622,57 +588,6 @@ export default function AphroditePricingTiers() {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center"
-        >
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Not sure which programme is right for you?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={() => {
-                // Scroll to booking section
-                const bookingSection = document.getElementById('booking')
-                if (bookingSection) {
-                  bookingSection.scrollIntoView({ behavior: 'smooth' })
-                }
-              }}
-              className="px-8 py-6 rounded-xl font-bold text-lg bg-gradient-to-r from-gold to-gold-light text-navy hover:from-gold-light hover:to-gold transition-all duration-300 shadow-xl"
-            >
-              <Calendar className="mr-2 h-5 w-5" />
-              Book Free Assessment
-            </Button>
-            <Button
-              onClick={handleWhatsAppClick}
-              variant="outline"
-              className="px-8 py-6 rounded-xl font-bold text-lg border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-all duration-300"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              WhatsApp Leah
-            </Button>
-          </div>
-
-          {/* Contact Info */}
-          <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-gray-600 dark:text-gray-400">
-            <a href={`tel:${locationInfo.contact.phone}`} className="flex items-center gap-2 hover:text-gold transition">
-              <Phone className="h-4 w-4" />
-              {locationInfo.contact.phone}
-            </a>
-            <a href={`mailto:${locationInfo.contact.email}`} className="flex items-center gap-2 hover:text-gold transition">
-              <FileText className="h-4 w-4" />
-              {locationInfo.contact.email}
-            </a>
-            <a href={`https://${locationInfo.contact.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition">
-              <Activity className="h-4 w-4" />
-              {locationInfo.contact.website}
-            </a>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

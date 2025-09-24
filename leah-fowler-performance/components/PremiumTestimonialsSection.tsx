@@ -103,7 +103,7 @@ const videoTestimonial = {
   thumbnail: "/images/hero/performance-consultant-norfolk-uk.webp",
   thumbnailAlt: "Leah Fowler Performance Coach video testimonial thumbnail Norfolk UK",
   videoUrl: "#", // Replace with actual video URL
-  title: "Watch How Mothers Transform",
+  title: "Watch Client Transformations",
   duration: "2:47",
   views: "15K+"
 }
@@ -149,7 +149,7 @@ export default function PremiumTestimonialsSection() {
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Join 500+ busy mothers who&apos;ve transformed their lives with evidence-based fitness coaching in Norfolk
+            Join our community of clients who&apos;ve transformed their lives with personalised fitness coaching in Norfolk
           </p>
 
           {/* Trust badges */}
@@ -159,21 +159,21 @@ export default function PremiumTestimonialsSection() {
               className="flex items-center gap-2 bg-white dark:bg-navy-dark/50 px-4 py-2 rounded-full shadow-md"
             >
               <Star className="h-5 w-5 text-gold fill-gold" />
-              <span className="font-bold text-navy dark:text-white">Real Mums Transformed</span>
+              <span className="font-bold text-navy dark:text-white">Real Transformations</span>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 bg-white dark:bg-navy-dark/50 px-4 py-2 rounded-full shadow-md"
             >
               <Award className="h-5 w-5 text-sage" />
-              <span className="font-bold text-navy dark:text-white">92% Hit Their Goals</span>
+              <span className="font-bold text-navy dark:text-white">Goal Achievement Focused</span>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 bg-white dark:bg-navy-dark/50 px-4 py-2 rounded-full shadow-md"
             >
               <TrendingUp className="h-5 w-5 text-gold" />
-              <span className="font-bold text-navy dark:text-white">80% 6-Month Retention</span>
+              <span className="font-bold text-navy dark:text-white">Long-term Success</span>
             </motion.div>
           </div>
         </motion.div>
@@ -419,25 +419,20 @@ export default function PremiumTestimonialsSection() {
             Ready to Write Your Success Story?
           </h3>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Join hundreds of mothers who&apos;ve transformed their fitness with Norfolk&apos;s premier performance coaching
+            Join our community of clients transforming their fitness with Norfolk&apos;s premier performance coaching
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <PremiumButton
-              size="xl"
-              variant="primary"
-              pulse
-              shimmer
-              className="min-w-[250px]"
-            >
-              Start Your Transformation
-            </PremiumButton>
-            <PremiumButton
-              size="xl"
-              variant="luxury"
-              className="min-w-[200px]"
-            >
-              Read More Stories
-            </PremiumButton>
+          <div className="flex justify-center">
+            <a href="/apply">
+              <PremiumButton
+                size="xl"
+                variant="primary"
+                pulse
+                shimmer
+                className="min-w-[250px]"
+              >
+                Apply for Coaching
+              </PremiumButton>
+            </a>
           </div>
         </motion.div>
       </div>

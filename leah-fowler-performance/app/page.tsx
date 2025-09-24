@@ -5,20 +5,15 @@ import SectionErrorBoundary from '@/components/SectionErrorBoundary'
 import AnnouncementBar from '@/components/AnnouncementBar'
 import ModernHeader from '@/components/ModernHeader'
 import PremiumHeroWithImage from '@/components/PremiumHeroWithImage'
-import AchievementBadge from '@/components/AchievementBadge'
-// import TrustBar from '@/components/TrustBar' - Removed per request
-// import SimpleApplySection from '@/components/SimpleApplySection' // Removed - too repetitive
 import AphroditePricingTiers from '@/components/AphroditePricingTiers'
 import MobileDock from '@/components/MobileDock'
 import PremiumTestimonialsSection from '@/components/PremiumTestimonialsSection'
-// import TrustSection from '@/components/TrustSection' // REMOVED: Contains false claims - legal liability
-import TruthfulTrustSection from '@/components/TruthfulTrustSection' // TRUTHFUL replacement
 import AboutSection from '@/components/AboutSection'
-import LeadMagnetDelivery from '@/components/LeadMagnetDelivery'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 // import HeroStatsSection from '@/components/HeroStatsSection' - Removed per request
 import OnlinePackageShowcase from '@/components/OnlinePackageShowcase'
+import FAQSection from '@/components/FAQSection'
 
 // Only use dynamic imports for client-only components
 const FloatingElements = dynamic(() => import('@/components/FloatingElements'), { ssr: false })
@@ -41,42 +36,29 @@ export default function Home() {
         {/* Premium Hero Section with Professional Imagery */}
         <PremiumHeroWithImage />
 
-        {/* Achievement Badge - Positioned below hero */}
-        <AchievementBadge />
+        {/* Premium Testimonials Section - Moved up right after hero */}
+        <SectionErrorBoundary sectionName="PremiumTestimonialsSection">
+          <PremiumTestimonialsSection />
+        </SectionErrorBoundary>
 
         {/* FEATURED: Online Package Showcase - Main Product Offering */}
         <SectionErrorBoundary sectionName="OnlinePackageShowcase">
           <OnlinePackageShowcase />
         </SectionErrorBoundary>
 
-        {/* Removed HeroStatsSection and TrustBar per request */}
-        {/* Removed SimpleApplySection - too repetitive before pricing section */}
-
         {/* Aphrodite Fitness Packages - Complete Training Options */}
         <SectionErrorBoundary sectionName="AphroditePricingTiers">
           <AphroditePricingTiers />
         </SectionErrorBoundary>
 
-        {/* Premium Testimonials Section - World-class social proof with SEO optimization */}
-        <SectionErrorBoundary sectionName="PremiumTestimonialsSection">
-          <PremiumTestimonialsSection />
-        </SectionErrorBoundary>
-
-        {/* Trust Building Section - Now 100% Truthful */}
-        <TruthfulTrustSection />
-
-        {/* Additional Lead Magnets */}
-        <section className="luxury-section bg-gray-50 dark:bg-navy">
-          <div className="container mx-auto">
-            <div className="max-w-4xl mx-auto">
-              <LeadMagnetDelivery />
-            </div>
-          </div>
-        </section>
-
         {/* About Section */}
         <SectionErrorBoundary sectionName="AboutSection">
           <AboutSection />
+        </SectionErrorBoundary>
+
+        {/* FAQ Section */}
+        <SectionErrorBoundary sectionName="FAQSection">
+          <FAQSection />
         </SectionErrorBoundary>
 
         {/* Contact Section */}

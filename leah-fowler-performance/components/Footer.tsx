@@ -27,12 +27,12 @@ import { Input } from '@/components/ui/input'
 
 const footerLinks = {
   programmes: [
+    { label: 'Online Package - £60/month', href: '#programmes', badge: 'Most Popular' },
     { label: 'Pathway to Endurance - £48', href: '#programmes', badge: '16 Weeks' },
     { label: 'Small Group Training - £120', href: '#programmes', badge: '12 Sessions' },
     { label: 'Semi-Private - £90/month pp', href: '#programmes', badge: 'Partners' },
-    { label: 'Silver Package - £140/month', href: '#programmes', badge: 'Popular' },
+    { label: 'Silver Package - £140/month', href: '#programmes', badge: '1-to-1' },
     { label: 'Gold Elite - £250/month', href: '#programmes', badge: 'Premium' },
-    { label: 'Apply for Coaching', href: '/apply', badge: 'Start Here' },
   ],
   services: [
     { label: 'Strength & Conditioning', href: '#programmes' },
@@ -110,11 +110,11 @@ export default function Footer() {
                       EXCLUSIVE INSIGHTS
                     </div>
                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                      Join 500+ Warrior Mothers
+                      Join Our Fitness Community
                     </h3>
                     <p className="text-white/90 text-lg">
-                      Weekly insights on reclaiming your identity, finding strength, and thriving as a mother.
-                      Plus, get our exclusive Identity Reclamation Guide free when you subscribe.
+                      Weekly fitness tips, training insights, and motivation delivered straight to your inbox.
+                      Plus, get exclusive offers and early access to new programmes.
                     </p>
                     <div className="flex items-center gap-6 mt-6">
                       <div className="flex items-center gap-2">
@@ -163,7 +163,7 @@ export default function Footer() {
                           <div key={i} className="w-8 h-8 rounded-full bg-white/20 border-2 border-white/30" />
                         ))}
                       </div>
-                      <span className="text-white/90 text-sm">Join 5,217 subscribers</span>
+                      <span className="text-white/90 text-sm">Join our growing community</span>
                     </div>
                   </form>
                 </div>
@@ -198,8 +198,8 @@ export default function Footer() {
               </Link>
               
               <p className="text-white/70 mb-6 leading-relaxed">
-                Elite performance consulting for ambitious leaders. Transform your potential into 
-                extraordinary results with evidence-based strategies and personalised coaching.
+                Strength and conditioning coaching for busy parents and professionals. Build sustainable
+                fitness habits with flexible online and in-person training in Norfolk.
               </p>
               
               {/* Social Links */}
@@ -222,8 +222,8 @@ export default function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-gold" />
-                  <a href="tel:+447XXXXXXXXX" className="text-white/70 hover:text-gold transition-colors">
-                    +44 7XXX XXXXXX
+                  <a href="tel:+447990600958" className="text-white/70 hover:text-gold transition-colors">
+                    07990 600958
                   </a>
                 </div>
                 <div className="flex items-center gap-3">

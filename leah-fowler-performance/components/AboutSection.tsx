@@ -25,7 +25,7 @@ const credentials = [
   },
   {
     icon: Trophy,
-    title: 'Spartan Ultra Finisher',
+    title: 'Ultra Endurance Finisher',
     subtitle: 'From Zero Press-ups to 50K Races',
     color: 'from-orange-500 to-amber-500'
   },
@@ -61,12 +61,6 @@ const expertise = [
   'Building Lasting Strength',
 ]
 
-const mediaLogos = [
-  { name: 'Spartan', placeholder: 'SPARTAN RACE' },
-  { name: 'Norfolk', placeholder: 'NORFOLK FITNESS' },
-  { name: 'Community', placeholder: 'MUM FITNESS COMMUNITY' },
-  { name: 'Success', placeholder: 'SUCCESS STORIES' },
-]
 
 // iOS 16 Glassmorphism Card Component
 const GlassCard = ({
@@ -343,7 +337,7 @@ export default function AboutSection() {
             
             <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-8 sm:mb-10 md:mb-12">
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
-                From new mum to Ultra athlete, I understand the challenges of balancing family life with fitness goals.
+                From struggling with my first press-up to completing Ultra endurance events, I&apos;m living proof of what hard work and consistency can achieve.
                 I&apos;ve completed 3 Spartan Ultra Beasts, an Outlaw Triathlon, and coached over 200 families to transform
                 their health together. As a mum of two, I prove daily that extraordinary is possible.
               </p>
@@ -423,23 +417,6 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Media Features */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center"
-          >
-            <p className="text-white/60 text-xs sm:text-sm md:text-base uppercase tracking-wider mb-6 sm:mb-8">Proud Partners & Achievements</p>
-            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 opacity-60">
-              {mediaLogos.map((media) => (
-                <div key={media.name} className="text-white/80 font-bold text-sm sm:text-base md:text-xl lg:text-2xl tracking-wider">
-                  {media.placeholder}
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

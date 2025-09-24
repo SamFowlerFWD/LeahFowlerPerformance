@@ -179,7 +179,7 @@ const PremiumHeroWithImage: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="text-sm md:text-base lg:text-lg text-white/80 max-w-2xl"
               >
-                <span className="text-white/90">Norfolk Strength and Conditioning Coach</span> • Mum of 3 • Online Personal Trainer • Smart Accountability Systems
+                <span className="text-white/90">Norfolk Strength and Conditioning Coach</span> • Online Personal Trainer
               </motion.p>
             </div>
 
@@ -190,26 +190,18 @@ const PremiumHeroWithImage: React.FC = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-3"
             >
-              <PremiumButton
-                size="md"
-                variant="primary"
-                pulse
-                shimmer
-                icon={<ArrowRight className="w-4 h-4" />}
-                className="text-sm"
-              >
-                Start Online Package - £100/month
-              </PremiumButton>
-
-              <PremiumButton
-                size="md"
-                variant="luxury"
-                icon={<Play className="w-4 h-4" />}
-                iconPosition="left"
-                className="text-sm"
-              >
-                See How the App Works
-              </PremiumButton>
+              <a href="/apply" className="inline-block">
+                <PremiumButton
+                  size="md"
+                  variant="primary"
+                  pulse
+                  shimmer
+                  icon={<ArrowRight className="w-4 h-4" />}
+                  className="text-sm"
+                >
+                  Apply for Coaching
+                </PremiumButton>
+              </a>
             </motion.div>
           </div>
         </motion.div>
@@ -220,14 +212,13 @@ const PremiumHeroWithImage: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-3"
+          className="flex flex-col items-center"
         >
-          <span className="text-xs uppercase tracking-[0.2em] text-white/50 font-medium">Discover Excellence</span>
           <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center relative overflow-hidden hover:border-white/40 transition-colors">
             <motion.div
               animate={{ y: [0, 16, 0] }}

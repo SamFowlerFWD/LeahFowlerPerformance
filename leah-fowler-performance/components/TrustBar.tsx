@@ -119,7 +119,7 @@ export default function TrustBar() {
           className="mt-6 text-center"
         >
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Trusted by executives, entrepreneurs, and elite athletes across Norfolk and beyond
+            Trusted by executives, entrepreneurs, and high performers across Norfolk and beyond
           </p>
         </motion.div>
       </div>

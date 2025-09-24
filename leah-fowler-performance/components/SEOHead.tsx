@@ -124,7 +124,7 @@ export const pageMetadata = {
 
   about: (): Metadata => generateSEOMetadata({
     title: "About Leah Fowler | Evidence-Based Performance Consultant UK",
-    description: "Meet Leah Fowler, Norfolk's leading strength coach for mums. MSc Exercise Psychology, mother of three, elite athlete. Smart strength training that fits real life.",
+    description: "Meet Leah Fowler, Norfolk's leading strength coach for mums. MSc Exercise Psychology, mother of three, endurance event finisher. Smart strength training that fits real life.",
     keywords: [
       'Leah Fowler',
       'performance consultant Norwich',

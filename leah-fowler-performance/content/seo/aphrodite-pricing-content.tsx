@@ -464,8 +464,8 @@ export const urgencyContent = {
     gold: "Limited availability - book consultation"
   },
   social: {
-    totalClients: "500+ parents transformed",
-    weeklyJoiners: "5 parents joined this week",
-    retention: "85% still training after 6 months"
+    totalClients: "Join our growing community",
+    weeklyJoiners: "New clients joining weekly",
+    retention: "High retention rate"
   }
 };

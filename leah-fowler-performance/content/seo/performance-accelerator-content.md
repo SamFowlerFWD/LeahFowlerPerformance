@@ -483,7 +483,7 @@ A: Yes, we provide executive performance coaching across the UK with in-person s
 A: Most clients notice improved energy and clarity within 7-14 days. Significant productivity gains appear by day 30. Full transformation typically occurs by day 90, with results compounding thereafter.
 
 **Q: What qualifications does Leah Fowler have as a performance consultant?**
-A: Leah holds an MSc in Performance Psychology, ICF PCC certification, and has 10+ years optimising elite athletes and executives. She's published in performance science journals and recognised as UK's leading performance consultant by The Times.
+A: Leah has over 10 years of experience transforming lives through fitness and performance coaching. As a mother of three who has completed multiple Spartan Ultra events and triathlons, she brings real-world experience of balancing high performance with family responsibilities.
 
 **Q: Is executive performance coaching confidential?**
 A: Absolutely. All sessions are completely confidential with NDA protection. Many FTSE 100 executives and public figures trust us with their performance optimisation precisely because of our discretion.
