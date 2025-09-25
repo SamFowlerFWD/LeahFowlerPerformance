@@ -2,8 +2,7 @@
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Star, TrendingUp, Zap, Target, Award, ChevronLeft, ChevronRight, Play, Clock } from 'lucide-react'
-import Image from 'next/image'
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 import { PremiumButton } from '@/components/ui/premium-button'
 import {
   fadeIn,
@@ -18,126 +17,60 @@ const testimonials = [
     name: "Mary Ewin",
     role: "HIIT Enthusiast",
     location: "Norfolk",
-    image: "/images/testimonials/client-transformation-1.webp",
-    imageAlt: "Mary Ewin Aphrodite Fitness client review",
     rating: 5,
     headline: "Weekly Workouts I Actually Look Forward To",
     quote: "I really enjoy Leah's workouts and look forward to them each week. Leah is great at explaining how to pinpoint which muscles to use for each exercise to ensure the exercises are done correctly. She makes every session effective and enjoyable.",
-    results: [
-      { metric: "Consistency", improvement: "Weekly", icon: Star },
-      { metric: "Technique", improvement: "Improved", icon: Target },
-      { metric: "Enjoyment", improvement: "100%", icon: TrendingUp },
-    ],
-    programme: "Group HIIT Sessions",
-    beforeAfter: {
-      before: "Looking for motivation",
-      after: "Looking forward to workouts"
-    }
+    programme: "Group HIIT Sessions"
   },
   {
     id: 2,
     name: "Lisa Tubby",
     role: "HIIT Regular",
     location: "Norfolk",
-    image: "/images/testimonials/client-transformation-2.webp",
-    imageAlt: "Lisa Tubby Aphrodite Fitness HIIT review",
     rating: 5,
     headline: "The Sweatiest, Most Effective Workouts",
     quote: "I've been joining in Leah's HIIT workouts for a few weeks and really enjoy them. Always feel like I've worked hard at the end and very sweaty. A great work out and Leah explains each exercise clearly so you know you're doing it right.",
-    results: [
-      { metric: "Workout Intensity", improvement: "High", icon: Clock },
-      { metric: "Consistency", improvement: "Weeks", icon: Star },
-      { metric: "Results Feeling", improvement: "100%", icon: Target },
-    ],
-    programme: "HIIT Classes",
-    beforeAfter: {
-      before: "Starting fitness journey",
-      after: "Consistently sweating it out"
-    }
+    programme: "HIIT Classes"
   },
   {
     id: 3,
     name: "Lauren Seamons",
     role: "1:1 Client",
     location: "Norfolk",
-    image: "/images/testimonials/client-transformation-3.webp",
-    imageAlt: "Lauren Seamons personal training review",
     rating: 5,
     headline: "Supportive, Knowledgeable and Fun 1:1 Training",
     quote: "I have recently started some 1:1 sessions with Leah. Leah is really supportive, knowledgeable and fun! She is particular and really makes sure you understand how to do an exercise correctly. The sessions are challenging but achievable.",
-    results: [
-      { metric: "Form & Technique", improvement: "Excellent", icon: Star },
-      { metric: "Knowledge Gained", improvement: "100%", icon: TrendingUp },
-      { metric: "Support Level", improvement: "Outstanding", icon: Target },
-    ],
-    programme: "1:1 Personal Training",
-    beforeAfter: {
-      before: "New to personal training",
-      after: "Confident with proper form"
-    }
+    programme: "1:1 Personal Training"
   },
   {
     id: 4,
     name: "Catherine Cane",
     role: "4 Week Plan Member",
     location: "Norfolk",
-    image: "/images/testimonials/client-transformation-4.webp",
-    imageAlt: "Catherine Cane Aphrodite Fitness transformation",
     rating: 5,
     headline: "Kickstarting a Healthier, More Active Lifestyle",
     quote: "For the past 3 weeks, I've tried to kickstart my path to a healthier, more active lifestyle. I wanted to lose weight, feel stronger and happier. I signed up to Aphrodite Fitness 4 week plan and it's been amazing - feeling stronger already!",
-    results: [
-      { metric: "Strength", improvement: "Increasing", icon: Star },
-      { metric: "Consistency", improvement: "3 Weeks", icon: Target },
-      { metric: "Happiness", improvement: "Improved", icon: Zap },
-    ],
-    programme: "4 Week Programme",
-    beforeAfter: {
-      before: "Wanting to get healthier",
-      after: "Actively stronger & happier"
-    }
+    programme: "4 Week Programme"
   },
   {
     id: 5,
     name: "Becky Meade",
     role: "Regular Member",
     location: "Norfolk",
-    image: "/images/testimonials/client-transformation-5.webp",
-    imageAlt: "Becky Meade workout review",
     rating: 5,
     headline: "Fun, Challenging Workouts That Keep Me Coming Back",
     quote: "I always enjoy getting my butt kicked during these workouts! They're good fun and challenging, and Leah does a great job of keeping it different to keep things interesting. Never a dull session!",
-    results: [
-      { metric: "Workout Variety", improvement: "Excellent", icon: Star },
-      { metric: "Challenge Level", improvement: "Perfect", icon: Target },
-      { metric: "Fun Factor", improvement: "100%", icon: Zap },
-    ],
-    programme: "Group Sessions",
-    beforeAfter: {
-      before: "Looking for challenging workouts",
-      after: "Consistently challenged & engaged"
-    }
+    programme: "Group Sessions"
   },
   {
     id: 6,
     name: "Michelle Dunsire",
     role: "Group Class Member",
     location: "Norfolk",
-    image: "/images/testimonials/client-transformation-6.webp",
-    imageAlt: "Michelle Dunsire testimonial",
     rating: 5,
     headline: "Encouraging, Clear Instruction Every Time",
     quote: "Leah always explains everything really well and is super encouraging throughout! They are tough but you always feel accomplished afterwards. The perfect balance of challenge and support.",
-    results: [
-      { metric: "Instruction Quality", improvement: "Excellent", icon: Star },
-      { metric: "Encouragement", improvement: "Constant", icon: Target },
-      { metric: "Achievement", improvement: "Every Session", icon: Zap },
-    ],
-    programme: "Group Training",
-    beforeAfter: {
-      before: "Needing guidance & support",
-      after: "Feeling accomplished & capable"
-    }
+    programme: "Group Training"
   }
 ]
 
@@ -219,94 +152,35 @@ export default function PremiumTestimonialsSection() {
                   transition={{ duration: 0.5, ease: easings.easeOutCubic }}
                   className="bg-white dark:bg-navy-light rounded-3xl shadow-2xl overflow-hidden"
                 >
-                  <div className="grid md:grid-cols-2 gap-0">
-                    {/* Image/Visual Side */}
-                    <div className="relative h-64 md:h-full bg-gradient-to-br from-gold/20 to-sage/20">
-                      {testimonials[activeIndex].image ? (
-                        <Image
-                          src={testimonials[activeIndex].image}
-                          alt={testimonials[activeIndex].imageAlt}
-                          fill
-                          className="object-cover"
-                        />
-                      ) : (
-                        <div className="h-full flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-gold to-sage flex items-center justify-center mb-4">
-                              <span className="text-3xl font-bold text-white">
-                                {testimonials[activeIndex].name.charAt(0)}
-                              </span>
-                            </div>
-                            <p className="text-navy dark:text-white font-semibold">
-                              {testimonials[activeIndex].programme}
-                            </p>
-                          </div>
-                        </div>
-                      )}
+                  <div className="p-8 md:p-12">
+                    {/* Rating */}
+                    <div className="flex mb-4">
+                      {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 text-gold fill-current" />
+                      ))}
                     </div>
 
-                    {/* Content Side */}
-                    <div className="p-8 md:p-12">
-                      {/* Rating */}
-                      <div className="flex mb-4">
-                        {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 text-gold fill-current" />
-                        ))}
-                      </div>
+                    {/* Headline */}
+                    <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">
+                      {testimonials[activeIndex].headline}
+                    </h3>
 
-                      {/* Headline */}
-                      <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">
-                        {testimonials[activeIndex].headline}
-                      </h3>
+                    {/* Quote */}
+                    <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-8 italic leading-relaxed">
+                      "{testimonials[activeIndex].quote}"
+                    </blockquote>
 
-                      {/* Quote */}
-                      <blockquote className="text-gray-700 dark:text-gray-300 mb-6 italic">
-                        "{testimonials[activeIndex].quote}"
-                      </blockquote>
-
-                      {/* Author */}
-                      <div className="mb-6">
-                        <p className="font-semibold text-navy dark:text-white">
-                          {testimonials[activeIndex].name}
-                        </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
-                          {testimonials[activeIndex].role} • {testimonials[activeIndex].location}
-                        </p>
-                      </div>
-
-                      {/* Results */}
-                      <div className="grid grid-cols-3 gap-4 mb-6">
-                        {testimonials[activeIndex].results.map((result, index) => {
-                          const Icon = result.icon
-                          return (
-                            <div key={index} className="text-center">
-                              <Icon className="h-6 w-6 text-gold mx-auto mb-2" />
-                              <p className="text-2xl font-bold text-navy dark:text-white">
-                                {result.improvement}
-                              </p>
-                              <p className="text-xs text-gray-600 dark:text-gray-400">
-                                {result.metric}
-                              </p>
-                            </div>
-                          )
-                        })}
-                      </div>
-
-                      {/* Before/After */}
-                      <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 dark:bg-navy rounded-xl">
-                        <div>
-                          <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">Before</p>
-                          <p className="text-sm font-medium text-navy dark:text-white">
-                            {testimonials[activeIndex].beforeAfter.before}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">After</p>
-                          <p className="text-sm font-medium text-gold">
-                            {testimonials[activeIndex].beforeAfter.after}
-                          </p>
-                        </div>
-                      </div>
+                    {/* Author */}
+                    <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
+                      <p className="font-semibold text-lg text-navy dark:text-white">
+                        {testimonials[activeIndex].name}
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {testimonials[activeIndex].role} • {testimonials[activeIndex].location}
+                      </p>
+                      <p className="text-sm text-gold mt-1 font-medium">
+                        {testimonials[activeIndex].programme}
+                      </p>
                     </div>
                   </div>
                 </motion.div>
