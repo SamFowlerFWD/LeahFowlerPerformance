@@ -1,7 +1,7 @@
 {
-  "name": "Leah Fowler Performance - Family Fitness Norfolk",
-  "short_name": "LFP Fitness",
-  "description": "Transform your family's fitness with Norfolk's premier performance coach",
+  "name": "Strength PT - Elite Online Personal Training & Coaching UK",
+  "short_name": "Strength PT",
+  "description": "Elite online PT & strength coaching by LFP. Professional performance optimization from Dereham, UK.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
@@ -43,7 +43,7 @@
       "name": "WhatsApp Leah",
       "short_name": "Chat",
       "description": "Contact Leah on WhatsApp",
-      "url": "https://wa.me/447123456789",
+      "url": "https://wa.me/447990600958",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     }
   ],

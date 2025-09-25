@@ -5,12 +5,12 @@ import TrustBar from '@/components/TrustBar'
 import { generateServiceSchema } from '@/lib/schema-markup'
 
 export const metadata: Metadata = {
-  title: 'Training Packages & Pricing | Aphrodite Fitness Norfolk',
-  description: 'Transform your strength with evidence-based training programmes. From £48 online foundation programme to premium 1:1 coaching. Small groups, semi-private, and personal training available.',
-  keywords: 'personal training Norfolk, small group fitness classes, online fitness programmes, strength training Norwich, parent fitness programmes',
+  title: 'Online PT Packages | Strength Coach Norfolk | From £48',
+  description: 'Professional online personal training from £48/month. Strength & conditioning programmes. Personalised coaching, app-based training. Start today.',
+  keywords: 'online PT packages, online personal training UK, strength coaching prices, fitness programmes Norfolk, online coach UK, PT prices Norwich',
   openGraph: {
-    title: 'Training Packages | Aphrodite Fitness Norfolk',
-    description: 'Evidence-based strength training from £48. Small groups £120, Personal training from £140/month. Join 500+ parents transforming their strength.',
+    title: 'Online Personal Training Packages | Leah Fowler Performance',
+    description: 'Transform with elite online PT coaching. Programmes from £48/month. Personalised training, nutrition support, app access. Book free consultation.',
     url: 'https://leahfowlerperformance.com/services',
     siteName: 'Leah Fowler Performance',
     images: [
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Transform Your Performance | Services & Pricing',
-    description: 'Strength training packages from £48. Small groups, personal training, and online programmes. Start your transformation today.',
+    title: 'Online PT & Strength Coaching | Professional Programmes',
+    description: 'Evidence-based online personal training. Transform your performance with expert strength & conditioning. Start from £48. Free consultation available.',
     images: ['https://leahfowlerperformance.com/og-services.jpg'],
   },
   alternates: {

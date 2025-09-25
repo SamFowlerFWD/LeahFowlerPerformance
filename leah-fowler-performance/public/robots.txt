@@ -1,17 +1,19 @@
-# Robots.txt for Leah Fowler Performance
-# Norfolk's Premier Mother Identity Coach
-# https://leahfowlerperformance.com
+# Robots.txt for Strength PT
+# Online Personal Training & Strength Conditioning - Norfolk UK
+# https://strengthpt.co.uk
 
 User-agent: *
 Allow: /
 Crawl-delay: 0
 
-# Priority pages for mother transformation content
-Allow: /mother-transformation
-Allow: /postnatal-recovery
-Allow: /warrior-mother-programme
+# Priority pages for online PT and strength coaching
+Allow: /services
+Allow: /performance-accelerator
+Allow: /online-training
 Allow: /testimonials
 Allow: /about
+Allow: /apply
+Allow: /assessment
 
 # Block admin and API routes
 Disallow: /admin/
@@ -25,9 +27,9 @@ Allow: /api/lead-magnet
 Allow: /api/performance-assessment
 
 # Sitemap location
-Sitemap: https://leahfowlerperformance.com/sitemap.xml
-Sitemap: https://leahfowlerperformance.com/sitemap-blog.xml
-Sitemap: https://leahfowlerperformance.com/sitemap-testimonials.xml
+Sitemap: https://strengthpt.co.uk/sitemap.xml
+Sitemap: https://strengthpt.co.uk/sitemap-blog.xml
+Sitemap: https://strengthpt.co.uk/sitemap-testimonials.xml
 
 # Specific bot instructions
 User-agent: Googlebot

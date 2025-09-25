@@ -49,7 +49,7 @@ test.describe('Full UI/UX Inspection', () => {
         const page = await context.newPage();
         const pageIssues: UIIssue[] = [];
 
-        console.log(`\\nTesting ${route.name} at ${viewport.name}`);
+        console.log(`\nTesting ${route.name} at ${viewport.name}`);
 
         try {
           // Navigate to page
@@ -83,7 +83,7 @@ test.describe('Full UI/UX Inspection', () => {
               const classList = el.className;
               const tagName = el.tagName.toLowerCase();
               return {
-                selector: \`\${tagName}\${classList ? '.' + classList.split(' ')[0] : ''}\`,
+                selector: `${tagName}${classList ? '.' + classList.split(' ')[0] : ''}`,
                 padding: {
                   top: parseFloat(styles.paddingTop),
                   right: parseFloat(styles.paddingRight),
@@ -107,7 +107,7 @@ test.describe('Full UI/UX Inspection', () => {
                 viewport: viewport.name,
                 type: 'padding',
                 selector: info.selector,
-                description: \`Asymmetric horizontal padding: \${info.padding.left}px left vs \${info.padding.right}px right (diff: \${horizontalDiff}px)\`,
+                description: `Asymmetric horizontal padding: ${info.padding.left}px left vs ${info.padding.right}px right (diff: ${horizontalDiff}px)`,
                 severity: horizontalDiff > 20 ? 'major' : 'minor',
                 computedStyles: info.padding
               });
@@ -119,7 +119,7 @@ test.describe('Full UI/UX Inspection', () => {
                 viewport: viewport.name,
                 type: 'padding',
                 selector: info.selector,
-                description: \`Asymmetric vertical padding: \${info.padding.top}px top vs \${info.padding.bottom}px bottom (diff: \${verticalDiff}px)\`,
+                description: `Asymmetric vertical padding: ${info.padding.top}px top vs ${info.padding.bottom}px bottom (diff: ${verticalDiff}px)`,
                 severity: verticalDiff > 20 ? 'major' : 'minor',
                 computedStyles: info.padding
               });
@@ -145,7 +145,7 @@ test.describe('Full UI/UX Inspection', () => {
                   viewport: viewport.name,
                   type: 'padding',
                   selector: info.selector,
-                  description: \`Inconsistent padding compared to other \${key} elements (deviation: \${maxDeviation}px)\`,
+                  description: `Inconsistent padding compared to other ${key} elements (deviation: ${maxDeviation}px)`,
                   severity: maxDeviation > 30 ? 'major' : 'minor',
                   computedStyles: info.padding
                 });
@@ -173,7 +173,7 @@ test.describe('Full UI/UX Inspection', () => {
                 page: route.path,
                 viewport: viewport.name,
                 type: 'text-justify',
-                description: \`Justified text found: "\${textInfo.text}" - can cause readability issues\`,
+                description: `Justified text found: "${textInfo.text}" - can cause readability issues`,
                 severity: 'minor',
                 computedStyles: textInfo
               });
@@ -210,7 +210,7 @@ test.describe('Full UI/UX Inspection', () => {
                   page: route.path,
                   viewport: viewport.name,
                   type: 'alignment',
-                  description: \`Flex items misaligned horizontally by \${yVariance.toFixed(0)}px\`,
+                  description: `Flex items misaligned horizontally by ${yVariance.toFixed(0)}px`,
                   severity: yVariance > 20 ? 'major' : 'minor'
                 });
               }
@@ -224,7 +224,7 @@ test.describe('Full UI/UX Inspection', () => {
                   page: route.path,
                   viewport: viewport.name,
                   type: 'alignment',
-                  description: \`Flex items misaligned vertically by \${xVariance.toFixed(0)}px\`,
+                  description: `Flex items misaligned vertically by ${xVariance.toFixed(0)}px`,
                   severity: xVariance > 20 ? 'major' : 'minor'
                 });
               }
@@ -239,8 +239,8 @@ test.describe('Full UI/UX Inspection', () => {
             const box = await element.boundingBox();
             if (box && box.width > 0 && box.height > 0) {
               const selector = await element.evaluate(el => {
-                const id = el.id ? \`#\${el.id}\` : '';
-                const classes = el.className ? \`.\${el.className.split(' ')[0]}\` : '';
+                const id = el.id ? `#${el.id}` : '';
+                const classes = el.className ? `.${el.className.split(' ')[0]}` : '';
                 return id || classes || el.tagName.toLowerCase();
               });
               bounds.push({ box, selector });
@@ -261,8 +261,8 @@ test.describe('Full UI/UX Inspection', () => {
                   page: route.path,
                   viewport: viewport.name,
                   type: 'overlap',
-                  selector: \`\${bounds[i].selector} and \${bounds[j].selector}\`,
-                  description: \`Interactive elements overlap by \${overlapX.toFixed(0)}x\${overlapY.toFixed(0)}px\`,
+                  selector: `${bounds[i].selector} and ${bounds[j].selector}`,
+                  description: `Interactive elements overlap by ${overlapX.toFixed(0)}x${overlapY.toFixed(0)}px`,
                   severity: 'critical'
                 });
               }
@@ -322,7 +322,7 @@ test.describe('Full UI/UX Inspection', () => {
                   viewport: viewport.name,
                   type: 'contrast',
                   selector: contrastInfo.text,
-                  description: \`Low colour contrast (\${contrast.toFixed(0)}): "\${contrastInfo.text}" - \${contrastInfo.color} on \${contrastInfo.backgroundColor}\`,
+                  description: `Low colour contrast (${contrast.toFixed(0)}): "${contrastInfo.text}" - ${contrastInfo.color} on ${contrastInfo.backgroundColor}`,
                   severity: contrast < 50 ? 'critical' : 'major',
                   computedStyles: contrastInfo
                 });
@@ -331,16 +331,16 @@ test.describe('Full UI/UX Inspection', () => {
           }
 
           // Take screenshot
-          const screenshotName = \`\${route.name.replace(/\\s+/g, '-')}-\${viewport.name}.png\`;
+          const screenshotName = `${route.name.replace(/\s+/g, '-')}-${viewport.name}.png`;
           await page.screenshot({
             path: path.join('tests/ui-ux-inspection/screenshots', screenshotName),
             fullPage: false
           });
 
-          console.log(\`  Found \${pageIssues.length} issues\`);
+          console.log(`  Found ${pageIssues.length} issues`);
 
         } catch (error) {
-          console.error(\`Error testing \${route.name} at \${viewport.name}:\`, error);
+          console.error(`Error testing ${route.name} at ${viewport.name}:`, error);
           pageIssues.push({
             page: route.path,
             viewport: viewport.name,
@@ -381,14 +381,14 @@ test.describe('Full UI/UX Inspection', () => {
       generateMarkdownSummary(report)
     );
 
-    console.log('\\n' + '='.repeat(50));
+    console.log('\n' + '='.repeat(50));
     console.log('UI/UX INSPECTION COMPLETE');
     console.log('='.repeat(50));
-    console.log(\`Total Issues: \${report.summary.totalIssues}\`);
-    console.log(\`- Critical: \${report.summary.criticalIssues}\`);
-    console.log(\`- Major: \${report.summary.majorIssues}\`);
-    console.log(\`- Minor: \${report.summary.minorIssues}\`);
-    console.log('\\nReports generated:');
+    console.log(`Total Issues: ${report.summary.totalIssues}`);
+    console.log(`- Critical: ${report.summary.criticalIssues}`);
+    console.log(`- Major: ${report.summary.majorIssues}`);
+    console.log(`- Minor: ${report.summary.minorIssues}`);
+    console.log('\nReports generated:');
     console.log('- ui-ux-report.json');
     console.log('- ui-ux-dashboard.html');
     console.log('- ui-ux-issues.csv');
@@ -427,7 +427,7 @@ function generateComprehensiveReport(issues: UIIssue[]) {
     recommendations.push({
       priority: 'CRITICAL',
       title: 'Fix Critical Issues Immediately',
-      description: \`\${summary.criticalIssues} critical issues found that severely impact usability and accessibility\`,
+      description: `${summary.criticalIssues} critical issues found that severely impact usability and accessibility`,
       actions: [
         'Fix overlapping interactive elements',
         'Address critical colour contrast failures',
@@ -440,7 +440,7 @@ function generateComprehensiveReport(issues: UIIssue[]) {
     recommendations.push({
       priority: 'HIGH',
       title: 'Improve Colour Contrast',
-      description: \`\${summary.contrastIssues} contrast issues affect WCAG 2.1 AA compliance\`,
+      description: `${summary.contrastIssues} contrast issues affect WCAG 2.1 AA compliance`,
       actions: [
         'Review colour palette for sufficient contrast ratios',
         'Use darker text on light backgrounds',
@@ -453,7 +453,7 @@ function generateComprehensiveReport(issues: UIIssue[]) {
     recommendations.push({
       priority: 'MEDIUM',
       title: 'Standardise Component Padding',
-      description: \`\${summary.paddingIssues} padding inconsistencies affect visual consistency\`,
+      description: `${summary.paddingIssues} padding inconsistencies affect visual consistency`,
       actions: [
         'Create standard spacing tokens',
         'Use consistent padding values across similar components',
@@ -477,7 +477,7 @@ function generateComprehensiveReport(issues: UIIssue[]) {
 }
 
 function generateHTMLDashboard(report: any): string {
-  return \`<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -629,54 +629,54 @@ function generateHTMLDashboard(report: any): string {
 <body>
   <div class="container">
     <h1>UI/UX Inspection Dashboard</h1>
-    <p class="subtitle">Comprehensive analysis of \${report.metadata.totalPages} pages across \${report.metadata.totalViewports} viewports</p>
+    <p class="subtitle">Comprehensive analysis of ${report.metadata.totalPages} pages across ${report.metadata.totalViewports} viewports</p>
 
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-label">Total Issues</div>
-        <div class="stat-value">\${report.summary.totalIssues}</div>
+        <div class="stat-value">${report.summary.totalIssues}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Critical</div>
-        <div class="stat-value critical">\${report.summary.criticalIssues}</div>
+        <div class="stat-value critical">${report.summary.criticalIssues}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Major</div>
-        <div class="stat-value major">\${report.summary.majorIssues}</div>
+        <div class="stat-value major">${report.summary.majorIssues}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Minor</div>
-        <div class="stat-value minor">\${report.summary.minorIssues}</div>
+        <div class="stat-value minor">${report.summary.minorIssues}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Padding Issues</div>
-        <div class="stat-value">\${report.summary.paddingIssues}</div>
+        <div class="stat-value">${report.summary.paddingIssues}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Alignment Issues</div>
-        <div class="stat-value">\${report.summary.alignmentIssues}</div>
+        <div class="stat-value">${report.summary.alignmentIssues}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Overlap Issues</div>
-        <div class="stat-value \${report.summary.overlapIssues > 0 ? 'critical' : 'success'}">\${report.summary.overlapIssues}</div>
+        <div class="stat-value ${report.summary.overlapIssues > 0 ? 'critical' : 'success'}">${report.summary.overlapIssues}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Contrast Issues</div>
-        <div class="stat-value \${report.summary.contrastIssues > 0 ? 'major' : 'success'}">\${report.summary.contrastIssues}</div>
+        <div class="stat-value ${report.summary.contrastIssues > 0 ? 'major' : 'success'}">${report.summary.contrastIssues}</div>
       </div>
     </div>
 
     <div class="section">
       <h2>Priority Recommendations</h2>
-      \${report.recommendations.map(rec => \`
-        <div class="recommendation \${rec.priority}">
-          <h3>\${rec.title}</h3>
-          <p>\${rec.description}</p>
+      ${report.recommendations.map(rec => `
+        <div class="recommendation ${rec.priority}">
+          <h3>${rec.title}</h3>
+          <p>${rec.description}</p>
           <ul>
-            \${rec.actions.map(action => \`<li>\${action}</li>\`).join('')}
+            ${rec.actions.map(action => `<li>${action}</li>`).join('')}
           </ul>
         </div>
-      \`).join('')}
+      `).join('')}
     </div>
 
     <div class="section">
@@ -693,7 +693,7 @@ function generateHTMLDashboard(report: any): string {
           </tr>
         </thead>
         <tbody>
-          \${Object.entries(report.byPage).map(([page, issues]) => {
+          ${Object.entries(report.byPage).map(([page, issues]) => {
             const pageIssues = issues as any[];
             const critical = pageIssues.filter(i => i.severity === 'critical').length;
             const major = pageIssues.filter(i => i.severity === 'major').length;
@@ -703,16 +703,16 @@ function generateHTMLDashboard(report: any): string {
               return acc;
             }, {});
             const mostCommon = Object.entries(typeCounts).sort((a: any, b: any) => b[1] - a[1])[0];
-            return \`
+            return `
               <tr>
-                <td>\${page}</td>
-                <td>\${pageIssues.length}</td>
-                <td>\${critical > 0 ? \`<span class="badge badge-critical">\${critical}</span>\` : '-'}</td>
-                <td>\${major > 0 ? \`<span class="badge badge-major">\${major}</span>\` : '-'}</td>
-                <td>\${minor > 0 ? \`<span class="badge badge-minor">\${minor}</span>\` : '-'}</td>
-                <td>\${mostCommon ? mostCommon[0] : '-'}</td>
+                <td>${page}</td>
+                <td>${pageIssues.length}</td>
+                <td>${critical > 0 ? `<span class="badge badge-critical">${critical}</span>` : '-'}</td>
+                <td>${major > 0 ? `<span class="badge badge-major">${major}</span>` : '-'}</td>
+                <td>${minor > 0 ? `<span class="badge badge-minor">${minor}</span>` : '-'}</td>
+                <td>${mostCommon ? mostCommon[0] : '-'}</td>
               </tr>
-            \`;
+            `;
           }).join('')}
         </tbody>
       </table>
@@ -720,14 +720,14 @@ function generateHTMLDashboard(report: any): string {
 
     <div class="section">
       <h2>Test Metadata</h2>
-      <p>Generated: \${new Date(report.metadata.timestamp).toLocaleString()}</p>
-      <p>Total Pages Tested: \${report.metadata.totalPages}</p>
-      <p>Viewports Tested: \${viewports.map(v => v.name).join(', ')}</p>
-      <p>Total Test Runs: \${report.metadata.totalTests}</p>
+      <p>Generated: ${new Date(report.metadata.timestamp).toLocaleString()}</p>
+      <p>Total Pages Tested: ${report.metadata.totalPages}</p>
+      <p>Viewports Tested: ${viewports.map(v => v.name).join(', ')}</p>
+      <p>Total Test Runs: ${report.metadata.totalTests}</p>
     </div>
   </div>
 </body>
-</html>\`;
+</html>`;
 }
 
 function generateCSV(issues: UIIssue[]): string {
@@ -742,59 +742,59 @@ function generateCSV(issues: UIIssue[]): string {
       issue.severity,
       (issue.selector || '').replace(/,/g, ';'),
       issue.description.replace(/,/g, ';')
-    ].map(field => \`"\${field}"\`).join(','));
+    ].map(field => `"${field}"`).join(','));
   }
 
-  return rows.join('\\n');
+  return rows.join('\n');
 }
 
 function generateMarkdownSummary(report: any): string {
-  return \`# UI/UX Inspection Summary Report
+  return `# UI/UX Inspection Summary Report
 
-Generated: \${report.metadata.timestamp}
+Generated: ${report.metadata.timestamp}
 
 ## Executive Summary
 
-Comprehensive UI/UX inspection of **\${report.metadata.totalPages} pages** across **\${report.metadata.totalViewports} viewports**, totalling **\${report.metadata.totalTests} test scenarios**.
+Comprehensive UI/UX inspection of **${report.metadata.totalPages} pages** across **${report.metadata.totalViewports} viewports**, totalling **${report.metadata.totalTests} test scenarios**.
 
 ### Overall Statistics
 
 | Metric | Count | Status |
 |--------|-------|--------|
-| **Total Issues** | \${report.summary.totalIssues} | \${report.summary.totalIssues > 50 ? '🔴 Critical' : report.summary.totalIssues > 20 ? '🟡 Needs Attention' : '🟢 Good'} |
-| **Critical Issues** | \${report.summary.criticalIssues} | \${report.summary.criticalIssues > 0 ? '🔴 Immediate Action Required' : '✅ None'} |
-| **Major Issues** | \${report.summary.majorIssues} | \${report.summary.majorIssues > 10 ? '🟡 High Priority' : '✅ Manageable'} |
-| **Minor Issues** | \${report.summary.minorIssues} | ℹ️ Low Priority |
+| **Total Issues** | ${report.summary.totalIssues} | ${report.summary.totalIssues > 50 ? '🔴 Critical' : report.summary.totalIssues > 20 ? '🟡 Needs Attention' : '🟢 Good'} |
+| **Critical Issues** | ${report.summary.criticalIssues} | ${report.summary.criticalIssues > 0 ? '🔴 Immediate Action Required' : '✅ None'} |
+| **Major Issues** | ${report.summary.majorIssues} | ${report.summary.majorIssues > 10 ? '🟡 High Priority' : '✅ Manageable'} |
+| **Minor Issues** | ${report.summary.minorIssues} | ℹ️ Low Priority |
 
 ### Issue Breakdown by Type
 
 | Issue Type | Count | Description |
 |------------|-------|-------------|
-| **Padding Inconsistencies** | \${report.summary.paddingIssues} | Asymmetric or inconsistent padding affecting visual hierarchy |
-| **Alignment Problems** | \${report.summary.alignmentIssues} | Misaligned elements in grids and flexbox containers |
-| **Element Overlaps** | \${report.summary.overlapIssues} | Interactive elements overlapping, blocking user interaction |
-| **Colour Contrast** | \${report.summary.contrastIssues} | WCAG 2.1 AA compliance failures |
-| **Text Justification** | \${report.summary.textJustifyIssues} | Justified text causing readability issues |
-| **Performance** | \${report.summary.performanceIssues} | Pages exceeding 2-second load target |
+| **Padding Inconsistencies** | ${report.summary.paddingIssues} | Asymmetric or inconsistent padding affecting visual hierarchy |
+| **Alignment Problems** | ${report.summary.alignmentIssues} | Misaligned elements in grids and flexbox containers |
+| **Element Overlaps** | ${report.summary.overlapIssues} | Interactive elements overlapping, blocking user interaction |
+| **Colour Contrast** | ${report.summary.contrastIssues} | WCAG 2.1 AA compliance failures |
+| **Text Justification** | ${report.summary.textJustifyIssues} | Justified text causing readability issues |
+| **Performance** | ${report.summary.performanceIssues} | Pages exceeding 2-second load target |
 
 ## Priority Recommendations
 
-\${report.recommendations.map(rec => \`
-### \${rec.priority === 'CRITICAL' ? '🔴' : rec.priority === 'HIGH' ? '🟡' : '🟢'} \${rec.title}
+${report.recommendations.map(rec => `
+### ${rec.priority === 'CRITICAL' ? '🔴' : rec.priority === 'HIGH' ? '🟡' : '🟢'} ${rec.title}
 
-\${rec.description}
+${rec.description}
 
 **Action Items:**
-\${rec.actions.map(action => \`- \${action}\`).join('\\n')}
-\`).join('\\n')}
+${rec.actions.map(action => `- ${action}`).join('\n')}
+`).join('\n')}
 
 ## Most Affected Pages
 
-\${Object.entries(report.byPage)
+${Object.entries(report.byPage)
   .sort((a: any, b: any) => b[1].length - a[1].length)
   .slice(0, 5)
-  .map(([page, issues]: any) => \`- **\${page}**: \${issues.length} issues\`)
-  .join('\\n')}
+  .map(([page, issues]: any) => `- **${page}**: ${issues.length} issues`)
+  .join('\n')}
 
 ## Viewport Analysis
 
@@ -807,20 +807,20 @@ The following viewports were tested:
 
 ## WCAG 2.1 AA Compliance
 
-\${report.summary.contrastIssues > 0 ? \`
+${report.summary.contrastIssues > 0 ? `
 ⚠️ **Compliance Status: Non-Compliant**
 
-The site currently has \${report.summary.contrastIssues} colour contrast issues that prevent WCAG 2.1 AA compliance.
+The site currently has ${report.summary.contrastIssues} colour contrast issues that prevent WCAG 2.1 AA compliance.
 
 Key requirements:
 - Normal text: minimum 4.5:1 contrast ratio
 - Large text (18pt+): minimum 3:1 contrast ratio
 - Interactive elements: minimum 3:1 contrast ratio
-\` : \`
+` : `
 ✅ **Compliance Status: Passed**
 
 No critical colour contrast issues detected. The site meets WCAG 2.1 AA requirements.
-\`}
+`}
 
 ## Next Steps
 
@@ -870,5 +870,5 @@ Create standardised design tokens for:
 
 *Report generated by comprehensive Playwright UI/UX inspection suite*
 *Leah Fowler Performance - Elite Performance Optimisation*
-\`;
+`;
 }

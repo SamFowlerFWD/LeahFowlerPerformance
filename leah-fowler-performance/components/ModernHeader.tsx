@@ -9,10 +9,9 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { href: '/', label: 'Home' },
   {
     href: '#programmes',
-    label: 'Programmes',
+    label: 'Services',
     dropdown: [
       { href: '#programmes', label: '🌟 Online Package - £100/month (BEST VALUE)' },
       { href: '#programmes', label: 'Pathway to Endurance - £48 (16 weeks)' },
@@ -22,11 +21,6 @@ const navItems = [
       { href: '#programmes', label: 'Semi-Private Coaching - £90/month per person' },
     ]
   },
-  { href: '/apply', label: 'Apply for Coaching' },
-  { href: '#about', label: 'About' },
-  { href: '/blog', label: 'Blog' },
-  { href: '#testimonials', label: 'Success Stories' },
-  { href: '#contact', label: 'Contact' },
 ]
 
 export default function ModernHeader() {
@@ -40,10 +34,11 @@ export default function ModernHeader() {
     setIsScrolled(latest > 50)
   })
 
-  // Theme toggle
+  // Theme toggle - Default to dark mode
   React.useEffect(() => {
     const theme = localStorage.getItem('theme')
-    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // Default to dark mode unless explicitly set to light
+    if (theme !== 'light') {
       setIsDark(true)
       document.documentElement.classList.add('dark')
     }
@@ -64,7 +59,7 @@ export default function ModernHeader() {
     <>
       <motion.header
         className={cn(
-          "fixed top-12 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled
             ? "py-4 bg-white/95 dark:bg-navy-dark/95 backdrop-blur-xl shadow-xl border-b border-white/20"
             : "py-6 bg-gradient-to-b from-navy/90 to-navy/60 backdrop-blur-md"
@@ -78,124 +73,131 @@ export default function ModernHeader() {
               whileTap={{ scale: 0.95 }}
               className="relative"
             >
-              <Link href="/" className="flex items-center space-x-3">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-2 bg-gradient-to-r from-gold/20 to-sage/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
-                {/* Leah's Profile Image */}
-                <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden ring-2 ring-gold/20">
+              <Link href="/" className="flex items-center">
+                {/* Strength PT Logo */}
+                <div className="relative h-20 md:h-24 w-auto flex items-center">
                   <Image
-                    src="/images/leah/leah-fowler-pt-150x150.webp"
-                    alt="Leah Fowler, Performance Consultant"
-                    fill
-                    className="object-cover"
+                    src="/images/strength-pt-logo.svg"
+                    alt="Strength PT - Elite Online Personal Training & Strength Coaching UK | PT Dereham"
+                    width={360}
+                    height={96}
+                    className="h-full w-auto object-contain"
                     priority
-                    sizes="48px"
                   />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="relative">
-                    <span className={cn(
-                      "text-2xl font-bold bg-gradient-to-r from-gold to-sage bg-clip-text text-transparent",
-                      !isScrolled && "text-white"
-                    )}>
-                      LFP
-                    </span>
-                  </div>
-                  <span className={cn(
-                    "hidden md:block text-lg font-semibold transition-colors duration-300",
-                    isScrolled ? "text-navy dark:text-white" : "text-white"
-                  )}>
-                    Leah Fowler Performance
-                  </span>
                 </div>
               </Link>
             </motion.div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-2">
-              {navItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="relative"
-                  onMouseEnter={() => item.dropdown && setActiveDropdown(item.label)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "px-5 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2",
-                      isScrolled 
-                        ? "text-navy hover:text-gold hover:bg-gold/10 dark:text-white dark:hover:text-gold" 
-                        : "text-white/90 hover:text-white hover:bg-white/10"
-                    )}
+            {/* Center Section with Services and Get Started */}
+            <div className="hidden lg:flex items-center flex-1 justify-center">
+              <div className="flex items-center gap-6">
+                {/* Services Dropdown */}
+                {navItems.map((item) => (
+                  <div
+                    key={item.label}
+                    className="relative"
+                    onMouseEnter={() => item.dropdown && setActiveDropdown(item.label)}
+                    onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    {item.label}
-                    {item.dropdown && (
-                      <ChevronDown className={cn(
-                        "h-3 w-3 transition-transform duration-300",
-                        activeDropdown === item.label && "rotate-180"
-                      )} />
-                    )}
-                  </Link>
-                  
-                  {/* Dropdown Menu */}
-                  {item.dropdown && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ 
-                        opacity: activeDropdown === item.label ? 1 : 0,
-                        y: activeDropdown === item.label ? 0 : -10,
-                        pointerEvents: activeDropdown === item.label ? "auto" : "none"
+                    <Link
+                      href={item.href}
+                      className="px-4 py-2.5 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 hover:opacity-80"
+                      style={{
+                        color: '#d4a574',
+                        backgroundColor: 'transparent'
                       }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-64 bg-white/95 dark:bg-navy-dark/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden"
                     >
-                      {item.dropdown.map((subItem) => (
-                        <Link
-                          key={subItem.label}
-                          href={subItem.href}
-                          className="block px-6 py-3 text-sm font-medium text-navy dark:text-white hover:bg-gold/10 hover:text-gold transition-all duration-300"
-                        >
-                          {subItem.label}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </div>
-              ))}
+                      {item.label}
+                      {item.dropdown && (
+                        <ChevronDown className={cn(
+                          "h-3 w-3 transition-transform duration-300",
+                          activeDropdown === item.label && "rotate-180"
+                        )} style={{ color: '#d4a574' }} />
+                      )}
+                    </Link>
+
+                    {/* Dropdown Menu */}
+                    {item.dropdown && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{
+                          opacity: activeDropdown === item.label ? 1 : 0,
+                          y: activeDropdown === item.label ? 0 : -10,
+                          pointerEvents: activeDropdown === item.label ? "auto" : "none"
+                        }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 mt-2 w-64 backdrop-blur-xl rounded-2xl shadow-2xl border overflow-hidden z-50"
+                        style={{
+                          backgroundColor: 'var(--card)',
+                          borderColor: 'var(--border)'
+                        }}
+                      >
+                        {item.dropdown.map((subItem) => (
+                          <Link
+                            key={subItem.label}
+                            href={subItem.href}
+                            className="block px-6 py-3 text-sm font-medium transition-all duration-300 hover:opacity-80"
+                          style={{
+                            color: 'var(--card-foreground)',
+                            backgroundColor: 'transparent'
+                          }}
+                          >
+                            {subItem.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </div>
+                ))}
+
+                {/* Get Started Button - Centralized */}
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button
+                    className="font-bold px-6 py-2 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110"
+                    style={{
+                      backgroundColor: '#d4a574',
+                      color: '#000000'
+                    }}
+                    asChild
+                  >
+                    <Link href="/apply" className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4" style={{ color: '#000000' }} />
+                      Apply for Coaching
+                    </Link>
+                  </Button>
+                </motion.div>
+              </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="hidden lg:flex items-center space-x-3">
+            {/* Contact Icons Only */}
+            <div className="hidden lg:flex items-center space-x-2">
               {/* Quick Contact Icons */}
               <motion.a
-                href="tel:+441234567890"
+                href="tel:+447990600958"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className={cn(
-                  "p-3 rounded-lg transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center",
-                  isScrolled 
-                    ? "text-navy hover:text-gold hover:bg-gold/10 dark:text-white" 
-                    : "text-white/90 hover:text-white hover:bg-white/10"
-                )}
+                className="p-2.5 rounded-lg transition-all duration-300 min-w-[40px] min-h-[40px] flex items-center justify-center hover:opacity-80"
+                style={{
+                  color: '#d4a574',
+                  backgroundColor: 'transparent'
+                }}
                 aria-label="Call us"
               >
                 <Phone className="h-5 w-5" />
               </motion.a>
-              
+
               <motion.a
-                href="mailto:info@leahfowlerperformance.com"
+                href="mailto:leah@strengthpt.co.uk"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className={cn(
-                  "p-3 rounded-lg transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center",
-                  isScrolled 
-                    ? "text-navy hover:text-gold hover:bg-gold/10 dark:text-white" 
-                    : "text-white/90 hover:text-white hover:bg-white/10"
-                )}
+                className="p-2.5 rounded-lg transition-all duration-300 min-w-[40px] min-h-[40px] flex items-center justify-center hover:opacity-80"
+                style={{
+                  color: '#d4a574',
+                  backgroundColor: 'transparent'
+                }}
                 aria-label="Email us"
               >
                 <Mail className="h-5 w-5" />
@@ -206,32 +208,15 @@ export default function ModernHeader() {
                 onClick={toggleTheme}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className={cn(
-                  "p-3 rounded-lg transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center",
-                  isScrolled 
-                    ? "text-navy hover:text-gold hover:bg-gold/10 dark:text-white" 
-                    : "text-white/90 hover:text-white hover:bg-white/10"
-                )}
+                className="p-2.5 rounded-lg transition-all duration-300 min-w-[40px] min-h-[40px] flex items-center justify-center hover:opacity-80"
+                style={{
+                  color: '#d4a574',
+                  backgroundColor: 'transparent'
+                }}
                 aria-label="Toggle theme"
               >
                 {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </motion.button>
-
-              {/* CTA Button */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  className="bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy font-bold px-6 py-2 rounded-xl shadow-lg hover:shadow-gold/30 transition-all duration-300"
-                  asChild
-                >
-                  <Link href="/apply" className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    Apply for Coaching
-                  </Link>
-                </Button>
-              </motion.div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -239,12 +224,11 @@ export default function ModernHeader() {
               onClick={() => setIsOpen(!isOpen)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className={cn(
-                "lg:hidden p-3 rounded-lg transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center",
-                isScrolled 
-                  ? "text-navy hover:text-gold hover:bg-gold/10 dark:text-white" 
-                  : "text-white/90 hover:text-white hover:bg-white/10"
-              )}
+              className="lg:hidden p-3 rounded-lg transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center hover:opacity-80"
+              style={{
+                color: '#d4a574',
+                backgroundColor: 'transparent'
+              }}
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -258,41 +242,54 @@ export default function ModernHeader() {
         initial={{ x: "100%" }}
         animate={{ x: isOpen ? 0 : "100%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="fixed inset-y-0 right-0 w-full sm:w-80 bg-white/95 dark:bg-navy-dark/95 backdrop-blur-xl z-[60] lg:hidden shadow-2xl"
+        className="fixed inset-y-0 right-0 w-full sm:w-80 backdrop-blur-xl z-[60] lg:hidden shadow-2xl"
+        style={{
+          backgroundColor: 'var(--background)'
+        }}
       >
         <div className="flex flex-col h-full pt-20 pb-6 px-6">
-          <nav className="flex-1 space-y-2">
-            {navItems.map((item) => (
-              <div key={item.label}>
-                <Link
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 rounded-lg text-lg font-medium text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300"
-                >
-                  {item.label}
-                </Link>
-                {item.dropdown && (
-                  <div className="ml-4 mt-2 space-y-1">
-                    {item.dropdown.map((subItem) => (
-                      <Link
-                        key={subItem.label}
-                        href={subItem.href}
-                        onClick={() => setIsOpen(false)}
-                        className="block px-4 py-2 rounded-lg text-sm text-navy/70 dark:text-white/70 hover:text-gold hover:bg-gold/10 transition-all duration-300"
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
+          <nav className="flex-1">
+            <div className="space-y-2">
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  <div
+                    className="block px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 cursor-pointer hover:opacity-80"
+                  style={{
+                    color: '#d4a574'
+                  }}
+                  >
+                    {item.label}
                   </div>
-                )}
-              </div>
-            ))}
+                  {item.dropdown && (
+                    <div className="ml-4 mt-2 space-y-1">
+                      {item.dropdown.map((subItem) => (
+                        <Link
+                          key={subItem.label}
+                          href={subItem.href}
+                          onClick={() => setIsOpen(false)}
+                          className="block px-4 py-2 rounded-lg text-sm transition-all duration-300 hover:opacity-80"
+                        style={{
+                          color: 'var(--foreground-secondary)'
+                        }}
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </nav>
 
           {/* Mobile Menu Footer */}
-          <div className="border-t border-gray-200 dark:border-gray-700 pt-6 space-y-4">
+          <div className="border-t pt-6 space-y-4" style={{ borderColor: 'var(--border)' }}>
             <Button
-              className="w-full bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy font-bold py-6 rounded-xl shadow-lg hover:shadow-gold/30 transition-all duration-300"
+              className="w-full font-bold py-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110"
+              style={{
+                backgroundColor: '#d4a574',
+                color: '#000000'
+              }}
               asChild
             >
               <Link href="/apply" onClick={() => setIsOpen(false)}>
@@ -301,13 +298,13 @@ export default function ModernHeader() {
             </Button>
             
             <div className="flex justify-center space-x-4">
-              <a href="tel:+441234567890" className="p-3 rounded-lg text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300">
+              <a href="tel:+447990600958" className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#d4a574' }}>
                 <Phone className="h-5 w-5" />
               </a>
-              <a href="mailto:info@leahfowlerperformance.com" className="p-3 rounded-lg text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300">
+              <a href="mailto:leah@strengthpt.co.uk" className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#d4a574' }}>
                 <Mail className="h-5 w-5" />
               </a>
-              <button onClick={toggleTheme} className="p-3 rounded-lg text-navy dark:text-white hover:text-gold hover:bg-gold/10 transition-all duration-300">
+              <button onClick={toggleTheme} className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#d4a574' }}>
                 {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </button>
             </div>
@@ -322,7 +319,8 @@ export default function ModernHeader() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] lg:hidden"
+          className="fixed inset-0 backdrop-blur-sm z-[55] lg:hidden"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
         />
       )}
     </>

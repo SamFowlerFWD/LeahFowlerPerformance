@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-09-25T12:43:43.591Z",
+  "dependencies": {
+    "production": 42,
+    "development": 16,
+    "total": 58
+  },
+  "heavyPackages": {
+    "radixUI": 10,
+    "tiptap": 5,
+    "hasFramerMotion": true,
+    "hasStripe": true,
+    "hasSupabase": true
+  },
+  "recommendations": [
+    "Implement dynamic imports for Tiptap editor",
+    "Lazy load Stripe SDK only on payment pages",
+    "Code split Radix UI components",
+    "Use CSS for simple animations instead of Framer Motion",
+    "Implement route-based code splitting",
+    "Extract critical CSS and defer non-critical styles"
+  ]
+}

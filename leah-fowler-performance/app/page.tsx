@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       {/* Announcement Bar - Mother Identity Metrics */}
-      <AnnouncementBar />
+      {/* <AnnouncementBar /> - Removed for cleaner header */}
 
       {/* Modern Glassmorphism Header */}
       <ModernHeader />

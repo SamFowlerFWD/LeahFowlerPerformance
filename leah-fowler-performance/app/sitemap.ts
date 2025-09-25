@@ -2,162 +2,231 @@ import { MetadataRoute } from 'next'
 
 /**
  * Dynamic Sitemap Generation for Leah Fowler Performance
- * Optimized for mother-identity transformation content and local Norfolk SEO
+ * Optimized for Online PT & Strength Conditioning Coach SEO
+ * Targets: Norfolk, UK-wide online personal training
  */
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://leahfowlerperformance.com'
+  const baseUrl = 'https://strengthpt.co.uk'
   const currentDate = new Date().toISOString()
 
-  // Core pages with mother-identity focus
+  // Core pages with online PT and strength coaching focus
   const corePages = [
     {
       url: baseUrl,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 1.0,
+      priority: 1.0, // Homepage - highest priority
     },
     {
-      url: `${baseUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/mother-transformation`,
+      url: `${baseUrl}/services`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 0.95,
+      priority: 0.95, // Services page - critical for conversions
     },
     {
-      url: `${baseUrl}/warrior-mother-programme`,
+      url: `${baseUrl}/performance-accelerator`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/postnatal-recovery`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/testimonials`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.85,
+      priority: 0.9, // Key programme page
     },
     {
       url: `${baseUrl}/apply`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 0.9,
+      priority: 0.9, // Application/conversion page
     },
     {
-      url: `${baseUrl}/performance-accelerator`,
+      url: `${baseUrl}/about`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
-      priority: 0.85,
+      priority: 0.85, // About page - trust building
     },
     {
-      url: `${baseUrl}/blog`,
+      url: `${baseUrl}/testimonials`,
       lastModified: currentDate,
-      changeFrequency: 'daily' as const,
-      priority: 0.7,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85, // Social proof
+    },
+    {
+      url: `${baseUrl}/assessment`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85, // Lead generation
+    },
+    {
+      url: `${baseUrl}/online-training`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9, // Key service page
     },
     {
       url: `${baseUrl}/contact`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: 0.75, // Contact information
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'daily' as const,
+      priority: 0.7, // Blog index
+    },
+    {
+      url: `${baseUrl}/resources`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7, // Resources section
+    },
+  ]
+
+  // Service-specific landing pages for SEO
+  const servicePages = [
+    {
+      url: `${baseUrl}/online-pt-norfolk`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9, // Local SEO
+    },
+    {
+      url: `${baseUrl}/strength-coach-uk`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/online-personal-trainer`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/online-fitness-programmes`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
     },
   ]
 
   // Location-specific pages for local SEO
   const locationPages = [
     {
-      url: `${baseUrl}/mother-coach-norfolk`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/mother-fitness-dereham`,
+      url: `${baseUrl}/personal-trainer-norfolk`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/postnatal-training-norwich`,
+      url: `${baseUrl}/online-pt-dereham`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/warrior-mothers-wymondham`,
+      url: `${baseUrl}/strength-coach-norwich`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/fitness-coach-wymondham`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    },
   ]
 
-  // Blog posts focused on mother transformation
+  // Programme/package specific pages
+  const programmePages = [
+    {
+      url: `${baseUrl}/foundation-programme`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/performance-programme`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/elite-coaching`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/nutrition-coaching`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    },
+  ]
+
+  // Blog posts focused on online PT and strength training
   const blogPosts = [
     {
-      url: `${baseUrl}/blog/mirror-moment-breakthrough`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
-    },
-    {
-      url: `${baseUrl}/blog/from-exhausted-to-extraordinary`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
-    },
-    {
-      url: `${baseUrl}/blog/reclaim-your-identity`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
-    },
-    {
-      url: `${baseUrl}/blog/warrior-mother-mindset`,
+      url: `${baseUrl}/blog/online-personal-training-guide`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/blog/postnatal-to-powerful`,
+      url: `${baseUrl}/blog/strength-training-beginners`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/home-gym-setup`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/blog/nutrition-for-performance`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/blog/progressive-overload-explained`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
     },
   ]
 
   // Resource and guide pages
   const resourcePages = [
     {
-      url: `${baseUrl}/resources/mother-transformation-guide`,
+      url: `${baseUrl}/resources/training-app-guide`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/resources/macro-calculator`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.65,
     },
     {
-      url: `${baseUrl}/resources/identity-reclamation-workbook`,
+      url: `${baseUrl}/resources/exercise-library`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.65,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
     },
     {
-      url: `${baseUrl}/resources/warrior-mother-nutrition`,
+      url: `${baseUrl}/resources/progress-tracker`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     },
   ]
 
-  // Legal and policy pages
+  // Legal and policy pages (lower priority but necessary)
   const legalPages = [
     {
       url: `${baseUrl}/privacy-policy`,
@@ -177,14 +246,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
+    {
+      url: `${baseUrl}/refund-policy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+  ]
+
+  // Account/dashboard pages (if publicly accessible)
+  const accountPages = [
+    {
+      url: `${baseUrl}/account/login`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/account/register`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/account/forgot-password`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.4,
+    },
   ]
 
   // Combine all pages
   return [
     ...corePages,
+    ...servicePages,
     ...locationPages,
+    ...programmePages,
     ...blogPosts,
     ...resourcePages,
     ...legalPages,
+    ...accountPages,
   ]
 }

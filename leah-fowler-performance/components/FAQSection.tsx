@@ -202,7 +202,11 @@ export default function FAQSection() {
             </p>
             <a
               href="/apply"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gold to-gold-light text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 font-semibold rounded-full hover:shadow-xl hover:scale-105 hover:brightness-110 transition-all duration-300"
+              style={{
+                backgroundColor: '#d4a574',
+                color: '#000000'
+              }}
             >
               Book Your Free Chat
               <ChevronDown className="h-5 w-5 rotate-[-90deg]" />

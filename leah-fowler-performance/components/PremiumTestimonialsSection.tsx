@@ -423,15 +423,15 @@ export default function PremiumTestimonialsSection() {
           </p>
           <div className="flex justify-center">
             <a href="/apply">
-              <PremiumButton
-                size="xl"
-                variant="primary"
-                pulse
-                shimmer
-                className="min-w-[250px]"
+              <button
+                className="px-8 py-4 font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110 min-w-[250px]"
+                style={{
+                  backgroundColor: '#d4a574',
+                  color: '#000000'
+                }}
               >
                 Apply for Coaching
-              </PremiumButton>
+              </button>
             </a>
           </div>
         </motion.div>

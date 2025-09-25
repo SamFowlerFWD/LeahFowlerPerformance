@@ -52,7 +52,7 @@ const primaryNavItems: NavItem[] = [
     icon: MessageCircle,
     action: () => {
       const message = encodeURIComponent('Hi Leah, I\'d like to know more about your programmes!')
-      window.open(`https://wa.me/447123456789?text=${message}`, '_blank')
+      window.open(`https://wa.me/447990600958?text=${message}`, '_blank')
     },
     color: 'from-green-400 to-green-600'
   },
@@ -377,7 +377,7 @@ const MobileBottomNav: React.FC = () => {
         whileTap={{ scale: 0.95 }}
         onClick={() => {
           const message = encodeURIComponent('Hi Leah, I\'d like to know more!')
-          window.open(`https://wa.me/447123456789?text=${message}`, '_blank')
+          window.open(`https://wa.me/447990600958?text=${message}`, '_blank')
         }}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}

@@ -25,7 +25,7 @@ export default function FloatingElements() {
         
         {/* Button */}
         <motion.a
-          href="https://wa.me/447123456789?text=Hi%20Leah,%20I'm%20interested%20in%20your%20performance%20coaching%20programmes"
+          href="https://wa.me/447990600958?text=Hi%20Leah,%20I'm%20interested%20in%20your%20performance%20coaching%20programmes"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}

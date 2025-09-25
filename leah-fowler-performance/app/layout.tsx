@@ -19,13 +19,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leahfowlerperformance.com'),
+  metadataBase: new URL('https://strengthpt.co.uk'),
   title: {
-    default: "Mother Identity Coach Norfolk | Reclaim Your Strength | Leah Fowler",
-    template: "%s | Leah Fowler Performance"
+    default: "Strength PT | Elite Online Personal Training & Coaching UK",
+    template: "%s | Strength PT"
   },
-  description: "Rediscover yourself beyond motherhood. Norfolk's only mother-identity coach helps you reclaim strength, confidence & purpose. From mirror moment to milestone. 500+ mothers transformed. Start today →",
-  keywords: ["mother identity coach Norfolk", "postnatal fitness recovery Norfolk", "mother transformation Dereham", "mum fitness Norfolk", "identity reclamation coach", "warrior mother training Norfolk", "mirror moment breakthrough", "mother fitness Norwich", "postnatal strength training", "reclaim identity after children", "Norfolk mother coach", "Dereham mum fitness"],
+  description: "Strength PT - Elite online personal training & strength coaching. Professional PT Dereham-based, UK-wide service. Evidence-based programmes from £48. Transform with LFP.",
+  keywords: ["online PT Norfolk", "online personal trainer UK", "strength and conditioning coach", "online strength coach Norfolk", "PT Dereham", "personal trainer Dereham", "online fitness coach Norwich", "performance coach UK", "online PT programmes", "strength training online", "Dereham fitness coach", "online coaching UK"],
   authors: [{ name: "Leah Fowler" }],
   creator: "Leah Fowler",
   publisher: "Leah Fowler Performance",
@@ -37,16 +37,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://leahfowlerperformance.com',
-    siteName: 'Leah Fowler Performance - Mother Identity Coach',
-    title: 'Mother Identity Coach Norfolk | Rediscover the Woman Behind the Mother',
-    description: 'From exhausted to extraordinary. Norfolk\'s only mother-identity coach helps you reclaim your strength, rediscover yourself, and become the warrior mother your children deserve to see.',
+    url: 'https://strengthpt.co.uk',
+    siteName: 'Strength PT - Online Personal Training & Strength Coaching',
+    title: 'Online Personal Trainer Norfolk | Elite Strength Coach',
+    description: 'Transform with Norfolk\'s premier online PT. Evidence-based strength & conditioning. Start from £48/month. Book your free consultation today.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Leah Fowler Performance - Mother Identity & Strength Coach',
+        alt: 'Strength PT by LFP - Elite Online Personal Training & Coaching',
       },
     ],
   },
@@ -77,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className="scroll-smooth">
+    <html lang="en-GB" className="scroll-smooth dark">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

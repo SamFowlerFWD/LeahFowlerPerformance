@@ -185,7 +185,7 @@ const MobileSwipeableProgrammes: React.FC = () => {
 
   const handleWhatsApp = (programme: Programme) => {
     const message = `Hi Leah, I'm interested in the ${programme.title} programme. Can you tell me more?`
-    window.open(`https://wa.me/447123456789?text=${encodeURIComponent(message)}`, '_blank')
+    window.open(`https://wa.me/447990600958?text=${encodeURIComponent(message)}`, '_blank')
   }
 
   const handleBooking = (programme: Programme) => {

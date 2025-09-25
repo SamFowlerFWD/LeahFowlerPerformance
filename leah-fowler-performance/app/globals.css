@@ -5,6 +5,61 @@
 @custom-variant dark (&:is(.dark *));
 
 /* =====================================================
+   THEME VARIABLES - STARK CONTRAST BETWEEN MODES
+   ===================================================== */
+:root {
+  /* Light Mode - Monochrome/Minimal */
+  --background: #ffffff;
+  --background-secondary: #f8f8f8;
+  --foreground: #000000;
+  --foreground-secondary: #4a4a4a;
+  --border: #e0e0e0;
+  --accent: #000000;
+  --accent-foreground: #ffffff;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --muted: #f5f5f5;
+  --muted-foreground: #6b6b6b;
+  --hero-background: #ffffff;
+  --hero-foreground: #000000;
+}
+
+.dark {
+  /* Dark Mode - Rich Navy/Gold Palette */
+  --background: #0a1932;
+  --background-secondary: #1a2942;
+  --foreground: #ffffff;
+  --foreground-secondary: #e0e0e0;
+  --border: #2a3952;
+  --accent: #000000;
+  --accent-foreground: #ffffff;
+  --card: #1a2942;
+  --card-foreground: #ffffff;
+  --primary: #d4a574;
+  --primary-foreground: #0a1932;
+  --muted: #2a3952;
+  --muted-foreground: #9ca3af;
+  --hero-background: #0a1932;
+  --hero-foreground: #ffffff;
+}
+
+/* Apply theme variables to body */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =====================================================
+   GLOBAL STYLES WITH THEME SUPPORT
+   ===================================================== */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* =====================================================
    FIX 1: HORIZONTAL SCROLL PREVENTION
    Prevents overflow on mobile devices
    ===================================================== */
