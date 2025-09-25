@@ -1,99 +1,142 @@
-"use client"
+'use client'
 
-import * as React from 'react'
-import Image from 'next/image'
+import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Star, Quote, ChevronLeft, ChevronRight, Award, TrendingUp, Target, Zap } from 'lucide-react'
-import { Card } from '@/components/ui/card'
+import { Star, TrendingUp, Zap, Target, Award, ChevronLeft, ChevronRight, Play, Clock } from 'lucide-react'
+import Image from 'next/image'
 import { PremiumButton } from '@/components/ui/premium-button'
 import {
+  fadeIn,
+  slideInFromBottom,
   easings
 } from '@/lib/animations'
 
-// Mother transformation testimonials - deeply relatable stories
+// Real testimonials from Aphrodite Fitness clients
 const testimonials = [
   {
     id: 1,
-    name: "Emma Thompson",
-    role: "Mum of 2",
-    location: "Norwich, Norfolk",
+    name: "Mary Ewin",
+    role: "HIIT Enthusiast",
+    location: "Norfolk",
     image: "/images/testimonials/client-transformation-1.webp",
-    imageAlt: "Emma Thompson mother transformation story Leah Fowler Performance Norfolk",
+    imageAlt: "Mary Ewin Aphrodite Fitness client review",
     rating: 5,
-    headline: "From Zero Press-ups to Spartan Finisher in 6 Months",
-    quote: "I couldn't do a single press-up when I started. Leah understood the juggle - she's got three kids herself. Now I can deadlift my bodyweight and my daughter says 'My mum is the strongest!' Best part? I feel properly strong.",
+    headline: "Weekly Workouts I Actually Look Forward To",
+    quote: "I really enjoy Leah's workouts and look forward to them each week. Leah is great at explaining how to pinpoint which muscles to use for each exercise to ensure the exercises are done correctly. She makes every session effective and enjoyable.",
     results: [
-      { metric: "Press-ups Achieved", improvement: "25", icon: Star },
-      { metric: "Strength Gained", improvement: "+150%", icon: TrendingUp },
-      { metric: "Energy for Kids", improvement: "Transformed", icon: Zap },
+      { metric: "Consistency", improvement: "Weekly", icon: Star },
+      { metric: "Technique", improvement: "Improved", icon: Target },
+      { metric: "Enjoyment", improvement: "100%", icon: TrendingUp },
     ],
-    programme: "Performance Training",
+    programme: "Group HIIT Sessions",
     beforeAfter: {
-      before: "Zero fitness, exhausted, weak",
-      after: "Spartan finisher, strong mum, energised"
+      before: "Looking for motivation",
+      after: "Looking forward to workouts"
     }
   },
   {
     id: 2,
-    name: "Rachel Davies",
-    role: "Mum of 3, Teacher",
-    location: "Dereham, Norfolk",
+    name: "Lisa Tubby",
+    role: "HIIT Regular",
+    location: "Norfolk",
     image: "/images/testimonials/client-transformation-2.webp",
-    imageAlt: "Rachel Davies mother identity breakthrough Leah Fowler Performance",
+    imageAlt: "Lisa Tubby Aphrodite Fitness HIIT review",
     rating: 5,
-    headline: "From Exhausted to 10K Runner: My 12-Week Journey",
-    quote: "Three kids in four years left me with zero fitness. Leah's programme wasn't about weight loss - it was about getting strong. Now I'm training for my first obstacle race and can piggyback all three kids at once!",
+    headline: "The Sweatiest, Most Effective Workouts",
+    quote: "I've been joining in Leah's HIIT workouts for a few weeks and really enjoy them. Always feel like I've worked hard at the end and very sweaty. A great work out and Leah explains each exercise clearly so you know you're doing it right.",
     results: [
-      { metric: "10K Completed", improvement: "45 mins", icon: Award },
-      { metric: "Morning Energy", improvement: "+200%", icon: Zap },
-      { metric: "Confidence", improvement: "Sky High", icon: Target },
+      { metric: "Workout Intensity", improvement: "High", icon: Clock },
+      { metric: "Consistency", improvement: "Weeks", icon: Star },
+      { metric: "Results Feeling", improvement: "100%", icon: Target },
     ],
-    programme: "Strength & Stamina",
+    programme: "HIIT Classes",
     beforeAfter: {
-      before: "Survived each day, no energy",
-      after: "10K runner, strong teacher"
+      before: "Starting fitness journey",
+      after: "Consistently sweating it out"
     }
   },
   {
     id: 3,
-    name: "Lisa Mitchell",
-    role: "Mum of 1",
-    location: "King's Lynn, Norfolk",
-    image: null,
-    imageAlt: "Lisa Mitchell postnatal transformation Norfolk mother coach",
+    name: "Lauren Seamons",
+    role: "1:1 Client",
+    location: "Norfolk",
+    image: "/images/testimonials/client-transformation-3.webp",
+    imageAlt: "Lauren Seamons personal training review",
     rating: 5,
-    headline: "9 Months Postpartum to Obstacle Race Winner",
-    quote: "Everyone talked about 'bouncing back' but I just wanted to feel strong. Leah helped me build real fitness - not just lose baby weight. Now I've won two races and my daughter will grow up seeing what strength looks like.",
+    headline: "Supportive, Knowledgeable and Fun 1:1 Training",
+    quote: "I have recently started some 1:1 sessions with Leah. Leah is really supportive, knowledgeable and fun! She is particular and really makes sure you understand how to do an exercise correctly. The sessions are challenging but achievable.",
     results: [
-      { metric: "Deadlift PB", improvement: "80kg", icon: Star },
-      { metric: "Physical Strength", improvement: "+180%", icon: TrendingUp },
-      { metric: "Mental Resilience", improvement: "Unshakeable", icon: Target },
+      { metric: "Form & Technique", improvement: "Excellent", icon: Star },
+      { metric: "Knowledge Gained", improvement: "100%", icon: TrendingUp },
+      { metric: "Support Level", improvement: "Outstanding", icon: Target },
     ],
-    programme: "Foundation Strength",
+    programme: "1:1 Personal Training",
     beforeAfter: {
-      before: "Postnatal weakness, no fitness",
-      after: "Race winner, properly strong"
+      before: "New to personal training",
+      after: "Confident with proper form"
     }
   },
   {
     id: 4,
-    name: "Sophie Anderson",
-    role: "Mum of Twins",
+    name: "Catherine Cane",
+    role: "4 Week Plan Member",
     location: "Norfolk",
-    image: null,
-    imageAlt: "Sophie Anderson twin mum transformation Leah Fowler Performance",
+    image: "/images/testimonials/client-transformation-4.webp",
+    imageAlt: "Catherine Cane Aphrodite Fitness transformation",
     rating: 5,
-    headline: "Twin Mum to Triathlete: Building Real Strength",
-    quote: "After twins, I was exhausted. Couldn't carry both car seats without dying. Leah got it - she's juggling three kids herself. Started with basic movements, now I'm doing triathlons. My girls see mum being strong, not just tired.",
+    headline: "Kickstarting a Healthier, More Active Lifestyle",
+    quote: "For the past 3 weeks, I've tried to kickstart my path to a healthier, more active lifestyle. I wanted to lose weight, feel stronger and happier. I signed up to Aphrodite Fitness 4 week plan and it's been amazing - feeling stronger already!",
     results: [
-      { metric: "Strength Gain", improvement: "+250%", icon: Star },
-      { metric: "5K Time", improvement: "Sub-25min", icon: Target },
-      { metric: "Daily Energy", improvement: "+300%", icon: Zap },
+      { metric: "Strength", improvement: "Increasing", icon: Star },
+      { metric: "Consistency", improvement: "3 Weeks", icon: Target },
+      { metric: "Happiness", improvement: "Improved", icon: Zap },
     ],
-    programme: "Performance Training",
+    programme: "4 Week Programme",
     beforeAfter: {
-      before: "Surviving twin chaos, zero fitness",
-      after: "Triathlon finisher, strong mum"
+      before: "Wanting to get healthier",
+      after: "Actively stronger & happier"
+    }
+  },
+  {
+    id: 5,
+    name: "Becky Meade",
+    role: "Regular Member",
+    location: "Norfolk",
+    image: "/images/testimonials/client-transformation-5.webp",
+    imageAlt: "Becky Meade workout review",
+    rating: 5,
+    headline: "Fun, Challenging Workouts That Keep Me Coming Back",
+    quote: "I always enjoy getting my butt kicked during these workouts! They're good fun and challenging, and Leah does a great job of keeping it different to keep things interesting. Never a dull session!",
+    results: [
+      { metric: "Workout Variety", improvement: "Excellent", icon: Star },
+      { metric: "Challenge Level", improvement: "Perfect", icon: Target },
+      { metric: "Fun Factor", improvement: "100%", icon: Zap },
+    ],
+    programme: "Group Sessions",
+    beforeAfter: {
+      before: "Looking for challenging workouts",
+      after: "Consistently challenged & engaged"
+    }
+  },
+  {
+    id: 6,
+    name: "Michelle Dunsire",
+    role: "Group Class Member",
+    location: "Norfolk",
+    image: "/images/testimonials/client-transformation-6.webp",
+    imageAlt: "Michelle Dunsire testimonial",
+    rating: 5,
+    headline: "Encouraging, Clear Instruction Every Time",
+    quote: "Leah always explains everything really well and is super encouraging throughout! They are tough but you always feel accomplished afterwards. The perfect balance of challenge and support.",
+    results: [
+      { metric: "Instruction Quality", improvement: "Excellent", icon: Star },
+      { metric: "Encouragement", improvement: "Constant", icon: Target },
+      { metric: "Achievement", improvement: "Every Session", icon: Zap },
+    ],
+    programme: "Group Training",
+    beforeAfter: {
+      before: "Needing guidance & support",
+      after: "Feeling accomplished & capable"
     }
   }
 ]
@@ -145,278 +188,166 @@ export default function PremiumTestimonialsSection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-6">
             Real Results from{' '}
             <span className="bg-gradient-to-r from-gold to-sage bg-clip-text text-transparent">
-              Real Achievers
+              Real Clients
             </span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Join our community of clients who&apos;ve transformed their lives with personalised fitness coaching in Norfolk
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            Join hundreds of Norfolk clients who've transformed their strength and fitness with Leah's expert guidance
           </p>
-
-          {/* Trust badges */}
-          <div className="flex flex-wrap justify-center gap-6 mt-8">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-2 bg-white dark:bg-navy-dark/50 px-4 py-2 rounded-full shadow-md"
-            >
-              <Star className="h-5 w-5 text-gold fill-gold" />
-              <span className="font-bold text-navy dark:text-white">Real Transformations</span>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-2 bg-white dark:bg-navy-dark/50 px-4 py-2 rounded-full shadow-md"
-            >
-              <Award className="h-5 w-5 text-sage" />
-              <span className="font-bold text-navy dark:text-white">Goal Achievement Focused</span>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-2 bg-white dark:bg-navy-dark/50 px-4 py-2 rounded-full shadow-md"
-            >
-              <TrendingUp className="h-5 w-5 text-gold" />
-              <span className="font-bold text-navy dark:text-white">Long-term Success</span>
-            </motion.div>
-          </div>
         </motion.div>
 
         {/* Main Testimonial Carousel */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 xl:gap-24 items-center mb-20 lg:mb-24">
-          {/* Featured Testimonial */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeIndex}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 50 }}
-              transition={{ duration: 0.5, ease: easings.smooth }}
+        <div className="relative mb-20">
+          <div className="flex items-center justify-center">
+            {/* Previous button */}
+            <button
+              onClick={prevTestimonial}
+              className="absolute left-0 z-20 p-2 rounded-full bg-white dark:bg-navy shadow-xl hover:scale-110 transition-transform"
+              aria-label="Previous testimonial"
             >
-              <Card className="relative p-10 lg:p-12 xl:p-16 bg-white dark:bg-navy-dark shadow-2xl border-0">
-                {/* Quote decoration */}
-                <Quote className="absolute top-4 left-4 h-12 w-12 text-gold/20" />
+              <ChevronLeft className="h-6 w-6 text-navy dark:text-white" />
+            </button>
 
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-gold fill-gold" />
-                  ))}
-                </div>
-
-                {/* Headline */}
-                <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">
-                  {testimonials[activeIndex].headline}
-                </h3>
-
-                {/* Quote */}
-                <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-6 italic">
-                  &quot;{testimonials[activeIndex].quote}&quot;
-                </blockquote>
-
-                {/* Results Grid */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  {testimonials[activeIndex].results.map((result, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="text-center"
-                    >
-                      <result.icon className="h-6 w-6 mx-auto mb-2 text-gold" />
-                      <div className="text-2xl font-bold text-navy dark:text-white">
-                        {result.improvement}
-                      </div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">
-                        {result.metric}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Before/After */}
-                <div className="bg-gray-50 dark:bg-navy/30 rounded-lg p-4 mb-6">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="font-bold text-gray-500 dark:text-gray-400">Before:</span>
-                      <p className="text-gray-700 dark:text-gray-300 mt-1">
-                        {testimonials[activeIndex].beforeAfter.before}
-                      </p>
-                    </div>
-                    <div>
-                      <span className="font-bold text-sage">After:</span>
-                      <p className="text-gray-700 dark:text-gray-300 mt-1">
-                        {testimonials[activeIndex].beforeAfter.after}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Author */}
-                <div className="flex items-center gap-4">
-                  {testimonials[activeIndex].image ? (
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden">
-                      <Image
-                        src={testimonials[activeIndex].image}
-                        alt={testimonials[activeIndex].imageAlt}
-                        fill
-                        className="object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gold to-sage flex items-center justify-center text-white font-bold text-xl">
-                      {testimonials[activeIndex].name.split(' ').map(n => n[0]).join('')}
-                    </div>
-                  )}
-                  <div>
-                    <div className="font-bold text-navy dark:text-white">
-                      {testimonials[activeIndex].name}
-                    </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
-                      {testimonials[activeIndex].role}
-                    </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-500">
-                      {testimonials[activeIndex].location}
-                    </div>
-                  </div>
-                  <div className="ml-auto">
-                    <div className="text-xs text-gold font-bold bg-gold/10 px-3 py-1 rounded-full">
-                      {testimonials[activeIndex].programme}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-
-              {/* Navigation */}
-              <div className="flex justify-center gap-4 mt-6">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={prevTestimonial}
-                  className="p-3 rounded-full bg-white dark:bg-navy-dark shadow-lg hover:shadow-xl transition-all"
-                  aria-label="Previous testimonial"
+            {/* Testimonial Cards */}
+            <div className="relative max-w-4xl w-full mx-auto">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.5, ease: easings.easeOutCubic }}
+                  className="bg-white dark:bg-navy-light rounded-3xl shadow-2xl overflow-hidden"
                 >
-                  <ChevronLeft className="h-5 w-5 text-navy dark:text-white" />
-                </motion.button>
+                  <div className="grid md:grid-cols-2 gap-0">
+                    {/* Image/Visual Side */}
+                    <div className="relative h-64 md:h-full bg-gradient-to-br from-gold/20 to-sage/20">
+                      {testimonials[activeIndex].image ? (
+                        <Image
+                          src={testimonials[activeIndex].image}
+                          alt={testimonials[activeIndex].imageAlt}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="h-full flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-gold to-sage flex items-center justify-center mb-4">
+                              <span className="text-3xl font-bold text-white">
+                                {testimonials[activeIndex].name.charAt(0)}
+                              </span>
+                            </div>
+                            <p className="text-navy dark:text-white font-semibold">
+                              {testimonials[activeIndex].programme}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
 
-                {/* Dots indicator */}
-                <div className="flex items-center gap-2">
-                  {testimonials.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveIndex(i)}
-                      className={`transition-all duration-300 ${
-                        i === activeIndex
-                          ? 'w-8 h-2 bg-gold rounded-full'
-                          : 'w-2 h-2 bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gold/50'
-                      }`}
-                      aria-label={`Go to testimonial ${i + 1}`}
-                    />
-                  ))}
-                </div>
+                    {/* Content Side */}
+                    <div className="p-8 md:p-12">
+                      {/* Rating */}
+                      <div className="flex mb-4">
+                        {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 text-gold fill-current" />
+                        ))}
+                      </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={nextTestimonial}
-                  className="p-3 rounded-full bg-white dark:bg-navy-dark shadow-lg hover:shadow-xl transition-all"
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight className="h-5 w-5 text-navy dark:text-white" />
-                </motion.button>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+                      {/* Headline */}
+                      <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">
+                        {testimonials[activeIndex].headline}
+                      </h3>
 
-          {/* Video Testimonial */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <Card className="relative aspect-video overflow-hidden shadow-2xl border-0 group cursor-pointer"
-              onClick={() => setIsVideoPlaying(true)}
-            >
-              <Image
-                src={videoTestimonial.thumbnail}
-                alt={videoTestimonial.thumbnailAlt}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
+                      {/* Quote */}
+                      <blockquote className="text-gray-700 dark:text-gray-300 mb-6 italic">
+                        "{testimonials[activeIndex].quote}"
+                      </blockquote>
 
-              {/* Play button overlay */}
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl">
-                  <div className="w-0 h-0 border-l-[20px] border-l-navy border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1" />
-                </div>
-              </motion.div>
+                      {/* Author */}
+                      <div className="mb-6">
+                        <p className="font-semibold text-navy dark:text-white">
+                          {testimonials[activeIndex].name}
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          {testimonials[activeIndex].role} • {testimonials[activeIndex].location}
+                        </p>
+                      </div>
 
-              {/* Video info */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <h4 className="text-white font-bold text-lg mb-2">
-                  {videoTestimonial.title}
-                </h4>
-                <div className="flex items-center gap-4 text-sm text-white/80">
-                  <span>{videoTestimonial.duration}</span>
-                  <span>•</span>
-                  <span>{videoTestimonial.views} views</span>
-                </div>
-              </div>
-            </Card>
+                      {/* Results */}
+                      <div className="grid grid-cols-3 gap-4 mb-6">
+                        {testimonials[activeIndex].results.map((result, index) => {
+                          const Icon = result.icon
+                          return (
+                            <div key={index} className="text-center">
+                              <Icon className="h-6 w-6 text-gold mx-auto mb-2" />
+                              <p className="text-2xl font-bold text-navy dark:text-white">
+                                {result.improvement}
+                              </p>
+                              <p className="text-xs text-gray-600 dark:text-gray-400">
+                                {result.metric}
+                              </p>
+                            </div>
+                          )
+                        })}
+                      </div>
 
-            {/* Additional visual testimonials grid */}
-            <div className="grid grid-cols-2 gap-4 mt-6">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="relative aspect-square rounded-lg overflow-hidden shadow-lg"
-              >
-                <Image
-                  src="/images/about/spartan-race-achievement-norfolk-coach.webp"
-                  alt="Spartan Race achievement with Leah Fowler Performance Coach Norfolk"
-                  fill
-                  className="object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent flex items-end p-4">
-                  <p className="text-white text-sm font-bold">Spartan Race Finisher</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="relative aspect-square rounded-lg overflow-hidden shadow-lg"
-              >
-                <Image
-                  src="/images/about/outlaw-triathlon-performance-coach.webp"
-                  alt="Outlaw Triathlon achievement Leah Fowler Performance Norfolk"
-                  fill
-                  className="object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent flex items-end p-4">
-                  <p className="text-white text-sm font-bold">Outlaw Triathlon Complete</p>
-                </div>
-              </motion.div>
+                      {/* Before/After */}
+                      <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 dark:bg-navy rounded-xl">
+                        <div>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">Before</p>
+                          <p className="text-sm font-medium text-navy dark:text-white">
+                            {testimonials[activeIndex].beforeAfter.before}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">After</p>
+                          <p className="text-sm font-medium text-gold">
+                            {testimonials[activeIndex].beforeAfter.after}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
-          </motion.div>
+
+            {/* Next button */}
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-0 z-20 p-2 rounded-full bg-white dark:bg-navy shadow-xl hover:scale-110 transition-transform"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="h-6 w-6 text-navy dark:text-white" />
+            </button>
+          </div>
+
+          {/* Dots indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`h-2 transition-all duration-300 ${
+                  index === activeIndex ? 'w-8 bg-gold' : 'w-2 bg-gray-300 dark:bg-gray-600'
+                } rounded-full`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* CTA Section */}
+        {/* Video Testimonial Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center bg-gradient-to-r from-navy to-navy-dark rounded-3xl p-12 shadow-2xl"
+          className="bg-gradient-to-r from-navy to-navy-dark rounded-3xl p-12 text-center"
         >
           <h3 className="text-3xl font-bold text-white mb-4">
-            Ready to Write Your Success Story?
+            Ready to Start Your Transformation?
           </h3>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
             Join our community of clients transforming their fitness with Norfolk&apos;s premier performance coaching
@@ -437,50 +368,9 @@ export default function PremiumTestimonialsSection() {
         </motion.div>
       </div>
 
-      {/* Schema.org structured data for testimonials */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "itemListElement": testimonials.map((testimonial, index) => ({
-              "@type": "Review",
-              "position": index + 1,
-              "author": {
-                "@type": "Person",
-                "name": testimonial.name,
-                "jobTitle": testimonial.role,
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": testimonial.location
-                }
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": testimonial.rating,
-                "bestRating": "5"
-              },
-              "reviewBody": testimonial.quote,
-              "about": {
-                "@type": "Service",
-                "name": testimonial.programme,
-                "provider": {
-                  "@type": "Person",
-                  "name": "Leah Fowler",
-                  "jobTitle": "Performance Coach",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Dereham",
-                    "addressRegion": "Norfolk",
-                    "addressCountry": "UK"
-                  }
-                }
-              }
-            }))
-          })
-        }}
-      />
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-gold/10 via-transparent to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-sage/10 via-transparent to-transparent rounded-full blur-3xl" />
     </section>
   )
 }
