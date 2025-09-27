@@ -1,0 +1,41 @@
+{
+  "passed": 4,
+  "failed": 3,
+  "tests": [
+    {
+      "name": "Connection to Supabase",
+      "status": "PASSED",
+      "error": null
+    },
+    {
+      "name": "Authentication System",
+      "status": "FAILED",
+      "error": "Email address \"test-1758995905838@example.com\" is invalid"
+    },
+    {
+      "name": "Table Structure",
+      "status": "PASSED",
+      "error": null
+    },
+    {
+      "name": "RLS Policies",
+      "status": "PASSED",
+      "error": null
+    },
+    {
+      "name": "Data Insertion/Deletion",
+      "status": "FAILED",
+      "error": "insert or update on table \"lead_magnet_downloads\" violates foreign key constraint \"lead_magnet_downloads_lead_magnet_id_fkey\""
+    },
+    {
+      "name": "Storage Buckets",
+      "status": "FAILED",
+      "error": "Missing storage buckets: assessment-attachments, email-assets, video-content, exports"
+    },
+    {
+      "name": "Database Functions",
+      "status": "PASSED",
+      "error": null
+    }
+  ]
+}

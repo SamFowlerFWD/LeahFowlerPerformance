@@ -1,0 +1,171 @@
+/* Critical Fix for Excessive Mobile Section Heights */
+
+/* Fix OnlinePackageShowcase excessive padding on mobile */
+@media (max-width: 640px) {
+  /* Override excessive padding on all sections for mobile */
+  section[class*="py-32"],
+  section[class*="py-40"],
+  section[class*="py-48"],
+  section[class*="py-56"],
+  section[class*="py-64"] {
+    padding-top: 3rem !important;    /* 48px instead of 128px+ */
+    padding-bottom: 3rem !important;  /* 48px instead of 128px+ */
+  }
+
+  /* Specific fix for OnlinePackageShowcase section */
+  section:has(h2:has-text("Online Package")),
+  .relative.py-32.md\:py-40.lg\:py-48.xl\:py-56 {
+    padding-top: 2rem !important;    /* 32px */
+    padding-bottom: 2rem !important;  /* 32px */
+  }
+
+  /* Fix spacing between elements within sections */
+  section > div > div[class*="mb-20"],
+  section > div > div[class*="mb-24"],
+  section > div > div[class*="mb-32"],
+  section > div > div[class*="my-24"],
+  section > div > div[class*="my-32"] {
+    margin-bottom: 2rem !important;  /* 32px instead of 80px+ */
+    margin-top: 2rem !important;
+  }
+
+  /* Fix grid gaps */
+  .grid[class*="gap-8"],
+  .grid[class*="gap-10"],
+  .grid[class*="gap-12"] {
+    gap: 1.5rem !important;  /* 24px */
+  }
+
+  /* Fix inner padding in cards and containers */
+  div[class*="p-12"],
+  div[class*="p-16"],
+  div[class*="p-20"] {
+    padding: 1.5rem !important;  /* 24px */
+  }
+
+  /* Fix heading margins */
+  h2[class*="mb-8"],
+  h2[class*="mb-12"],
+  h2[class*="mb-16"],
+  h3[class*="mb-8"],
+  h3[class*="mb-12"] {
+    margin-bottom: 1.5rem !important;  /* 24px */
+  }
+
+  /* Fix text paragraph spacing */
+  p[class*="mb-8"],
+  p[class*="mb-12"],
+  p[class*="mb-16"] {
+    margin-bottom: 1rem !important;  /* 16px */
+  }
+}
+
+/* Medium screens (tablets) - moderate the padding */
+@media (min-width: 641px) and (max-width: 1023px) {
+  section[class*="py-32"],
+  section[class*="py-40"],
+  section[class*="py-48"],
+  section[class*="py-56"],
+  section[class*="py-64"] {
+    padding-top: 4rem !important;    /* 64px */
+    padding-bottom: 4rem !important;  /* 64px */
+  }
+}
+
+/* Specific fixes for the FAQ section accordion spacing */
+@media (max-width: 640px) {
+  /* FAQ Section specific */
+  section:has(h2:has-text("FAQ")),
+  section:has(h2:has-text("Questions")) {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Accordion items spacing */
+  [data-radix-collection-item] {
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Accordion content padding */
+  [data-state="open"] > div,
+  [data-radix-accordion-content] {
+    padding: 1rem !important;
+  }
+}
+
+/* Fix About section spacing */
+@media (max-width: 640px) {
+  section:has(h2:has-text("Leah Fowler")),
+  section:has(h2:has-text("Meet Your Coach")) {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Fix Pricing section spacing */
+@media (max-width: 640px) {
+  section:has(h2:has-text("Choose Your")) {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Pricing cards grid */
+  section:has(h2:has-text("Choose Your")) .grid {
+    gap: 1.5rem !important;
+  }
+
+  /* Individual pricing cards */
+  section:has(h2:has-text("Choose Your")) .grid > div {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Fix Contact section if it exists */
+@media (max-width: 640px) {
+  section:has(h2:has-text("Contact")),
+  section:has(h2:has-text("Get in Touch")) {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* General mobile optimization for all sections */
+@media (max-width: 640px) {
+  /* Ensure no section is taller than necessary */
+  section {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Reset any excessive margins on main containers */
+  section > div[class*="max-w"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Fix nested container padding */
+  section > div > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Emergency height limiter - if any section is still too tall */
+@media (max-width: 640px) {
+  section {
+    max-height: none !important; /* Allow natural height */
+  }
+
+  /* But prevent individual elements from being too tall */
+  section > div > div {
+    max-height: none !important;
+  }
+}
+
+/* Fix the transformation timeline spacing specifically */
+@media (max-width: 640px) {
+  .my-24.md\:my-32 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+}

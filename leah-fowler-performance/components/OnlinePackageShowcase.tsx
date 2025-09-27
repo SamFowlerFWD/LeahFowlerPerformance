@@ -93,7 +93,7 @@ export default function OnlinePackageShowcase() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section ref={ref} className="relative py-32 md:py-40 lg:py-48 xl:py-56 overflow-hidden bg-gradient-to-b from-white via-gold/5 to-white dark:from-navy-dark dark:via-gold/10 dark:to-navy-dark">
+    <section ref={ref} className="relative py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 overflow-hidden bg-gradient-to-b from-white via-gold/5 to-white dark:from-navy-dark dark:via-gold/10 dark:to-navy-dark">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-3xl" />
@@ -106,7 +106,7 @@ export default function OnlinePackageShowcase() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-8 md:mb-12 lg:mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-navy dark:text-white mb-8 tracking-tight">
             The Online Package
@@ -141,7 +141,7 @@ export default function OnlinePackageShowcase() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 md:mb-12 lg:mb-16"
         >
           {features.map((feature, index) => (
             <motion.div
@@ -151,7 +151,7 @@ export default function OnlinePackageShowcase() {
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }}
               className={cn(
-                "bg-white dark:bg-navy-dark rounded-2xl p-8 shadow-lg transition-all duration-300",
+                "bg-white dark:bg-navy-dark rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg transition-all duration-300",
                 feature.highlight && "border-2 border-gold/30 shadow-gold/20"
               )}
             >
@@ -178,7 +178,7 @@ export default function OnlinePackageShowcase() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-gradient-to-r from-navy via-navy-dark to-navy rounded-3xl p-12 md:p-16 lg:p-20 mb-20 relative overflow-hidden"
+          className="bg-gradient-to-r from-navy via-navy-dark to-navy rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 xl:p-20 mb-8 md:mb-12 lg:mb-16 relative overflow-hidden"
         >
           <div className="absolute inset-0">
             <div className="absolute top-0 right-0 w-96 h-96 bg-gold/20 rounded-full blur-3xl" />
@@ -234,7 +234,7 @@ export default function OnlinePackageShowcase() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-gradient-to-r from-gold/10 to-sage/10 dark:from-gold/20 dark:to-sage/20 rounded-3xl p-12 md:p-16 mb-20"
+          className="bg-gradient-to-r from-gold/10 to-sage/10 dark:from-gold/20 dark:to-sage/20 rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 mb-8 md:mb-12 lg:mb-16"
         >
           <h3 className="text-2xl md:text-3xl font-bold text-navy dark:text-white mb-8 text-center">
             What's Included in Your Package
@@ -261,7 +261,7 @@ export default function OnlinePackageShowcase() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="my-24 md:my-32"
+          className="my-8 sm:my-12 md:my-16 lg:my-24"
         >
           <h3 className="text-3xl md:text-4xl font-bold text-navy dark:text-white text-center mb-12">
             Your 3 Steps to Longevity
@@ -282,7 +282,7 @@ export default function OnlinePackageShowcase() {
                   </div>
                 )}
 
-                <div className="bg-white dark:bg-navy-dark rounded-2xl p-8 shadow-lg h-full">
+                <div className="bg-white dark:bg-navy-dark rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full">
                   <div className="bg-gradient-to-br from-sage to-sage-light p-3 rounded-xl inline-block mb-4">
                     <phase.icon className="h-8 w-8 text-white" />
                   </div>

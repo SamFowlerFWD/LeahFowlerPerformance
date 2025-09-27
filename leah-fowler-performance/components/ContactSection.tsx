@@ -109,7 +109,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-32 sm:py-40 md:py-48 lg:py-56 xl:py-64 bg-white relative overflow-hidden">
+    <section id="contact" className="py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-white relative overflow-hidden">
       {/* Premium Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50" />

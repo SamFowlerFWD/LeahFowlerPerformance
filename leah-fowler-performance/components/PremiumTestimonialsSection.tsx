@@ -105,7 +105,7 @@ export default function PremiumTestimonialsSection() {
   }, [])
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 lg:py-40 xl:py-48 bg-gradient-to-b from-white to-gray-50 dark:from-navy-dark dark:to-navy relative">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-navy-dark dark:to-navy relative">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 

@@ -205,7 +205,7 @@ const GlassCard = ({
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-navy via-navy/95 to-navy-dark relative overflow-hidden">
+    <section id="about" className="py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gradient-to-br from-navy via-navy/95 to-navy-dark relative overflow-hidden">
       {/* Premium Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-[0.02]" />
