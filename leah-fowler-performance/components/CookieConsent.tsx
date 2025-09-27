@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { X, Cookie, Shield, BarChart3 } from 'lucide-react'
+import { X, Cookie, Shield, BarChart3, Settings } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface CookiePreferences {
@@ -23,7 +23,7 @@ export default function CookieConsent() {
   useEffect(() => {
     // Set mounted to true to ensure we only render on client
     setMounted(true)
-    
+
     // Check if user has already made a choice
     const cookieChoice = typeof window !== 'undefined' ? localStorage.getItem('cookieConsent') : null
     if (!cookieChoice) {
@@ -59,19 +59,19 @@ export default function CookieConsent() {
     if (typeof window !== 'undefined') {
       localStorage.setItem('cookieConsent', JSON.stringify(prefs))
       localStorage.setItem('cookieConsentDate', new Date().toISOString())
-    
+
     // Initialize analytics if accepted
     if (prefs.analytics) {
       // Initialize Google Analytics or other analytics tools
       console.log('Analytics cookies accepted')
     }
-    
+
     if (prefs.marketing) {
       // Initialize marketing cookies
       console.log('Marketing cookies accepted')
     }
     }
-    
+
     setShowBanner(false)
     setShowDetails(false)
   }
@@ -81,193 +81,177 @@ export default function CookieConsent() {
 
   return (
     <>
-      {/* Overlay */}
-      <div 
-        className={cn(
-          "fixed inset-0 bg-black/50 z-[100] transition-opacity",
-          showDetails ? "opacity-100" : "opacity-0 pointer-events-none"
-        )}
-        onClick={() => setShowDetails(false)}
-      />
-
-      {/* Main Banner */}
+      {/* MINIMAL Cookie Banner - Ultra thin bar */}
       <div className={cn(
-        "fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gold shadow-2xl z-[101] transition-transform",
+        "fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-[100] transition-transform",
         showBanner ? "translate-y-0" : "translate-y-full"
       )}>
-        <div className="container mx-auto px-6 py-6">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-            <div className="flex items-start gap-4 flex-1">
-              <Cookie className="h-8 w-8 text-gold mt-1 flex-shrink-0" />
-              <div>
-                <h3 className="text-lg font-semibold text-navy mb-2">
-                  Cookie Preferences
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  We use cookies to enhance your experience, analyse site traffic, and for marketing purposes. 
-                  By clicking &quot;Accept All&quot;, you consent to our use of cookies. You can manage your preferences 
-                  by clicking &quot;Manage Preferences&quot;. For more information, please read our{' '}
-                  <a href="/privacy-policy" className="text-gold hover:underline">Privacy Policy</a> and{' '}
-                  <a href="/cookie-policy" className="text-gold hover:underline">Cookie Policy</a>.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3">
+        <div className="px-3 py-1.5 sm:px-4 sm:py-2">
+          <div className="flex items-center justify-between gap-2">
+            {/* Ultra minimal text - single line on mobile */}
+            <div className="flex items-center gap-1.5 text-white text-[10px] sm:text-xs">
+              <Cookie className="h-3 w-3 sm:h-4 sm:w-4 text-gold flex-shrink-0" />
+              <span className="hidden sm:inline">
+                We use cookies for better experience.
+              </span>
+              <span className="sm:hidden">
+                We use cookies
+              </span>
               <button
                 onClick={() => setShowDetails(true)}
-                className="px-4 py-2 text-sm border border-navy text-navy rounded-lg hover:bg-navy hover:text-white transition-colors"
+                className="underline hover:text-gold transition-colors text-[10px] sm:text-xs"
               >
-                Manage Preferences
+                Details
               </button>
+            </div>
+
+            {/* Ultra compact buttons */}
+            <div className="flex items-center gap-1.5">
               <button
                 onClick={handleRejectAll}
-                className="px-4 py-2 text-sm border border-muted text-muted-foreground rounded-lg hover:bg-muted transition-colors"
+                className="px-2 py-0.5 text-[10px] sm:text-xs text-white/80 hover:text-white transition-colors"
               >
-                Reject All
+                Reject
               </button>
               <button
                 onClick={handleAcceptAll}
-                className="px-4 py-2 text-sm bg-gold text-navy rounded-lg font-semibold hover:bg-gold-dark transition-colors"
+                className="px-3 py-0.5 text-[10px] sm:text-xs bg-gold text-black rounded-sm font-semibold hover:bg-gold/90 transition-colors"
               >
-                Accept All
+                Accept
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Detailed Preferences Modal */}
+      {/* Detailed Preferences Modal - Only if user wants details */}
       {showDetails && (
-        <div className="fixed inset-0 flex items-center justify-center p-4 z-[102]">
-          <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white border-b p-6">
-              <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-navy">Cookie Preferences Centre</h2>
-                <button
-                  onClick={() => setShowDetails(false)}
-                  className="p-2 hover:bg-muted rounded-lg transition-colors"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
+        <>
+          {/* Overlay */}
+          <div
+            className="fixed inset-0 bg-black/50 z-[101]"
+            onClick={() => setShowDetails(false)}
+          />
 
-            <div className="p-6 space-y-6">
-              <div className="prose prose-sm text-muted-foreground">
-                <p>
-                  When you visit our website, we may store or retrieve information on your browser, 
-                  mostly in the form of cookies. This information might be about you, your preferences, 
-                  or your device and is mostly used to make the site work as you expect it to.
+          <div className="fixed inset-0 flex items-center justify-center p-4 z-[102]">
+            <div className="bg-white rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+              <div className="sticky top-0 bg-white border-b p-4">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-bold text-navy">Cookie Settings</h2>
+                  <button
+                    onClick={() => setShowDetails(false)}
+                    className="p-1 hover:bg-muted rounded-lg transition-colors"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="p-4 space-y-4">
+                <p className="text-xs text-muted-foreground">
+                  Manage your cookie preferences below.
+                  <a href="/privacy-policy" className="text-gold hover:underline ml-1">Privacy Policy</a>
                 </p>
-              </div>
 
-              {/* Necessary Cookies */}
-              <div className="border rounded-lg p-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-start gap-3">
-                    <Shield className="h-5 w-5 text-sage mt-0.5" />
+                {/* Necessary Cookies */}
+                <div className="border rounded-lg p-3">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-2 flex-1">
+                      <Shield className="h-4 w-4 text-sage mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-sm font-semibold text-navy">
+                          Essential
+                        </h3>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          Required for site to function
+                        </p>
+                      </div>
+                    </div>
                     <div>
-                      <h3 className="font-semibold text-navy mb-1">
-                        Strictly Necessary Cookies
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        These cookies are essential for the website to function properly. They enable 
-                        basic functions like page navigation and access to secure areas of the website. 
-                        The website cannot function properly without these cookies.
-                      </p>
+                      <input
+                        type="checkbox"
+                        checked={preferences.necessary}
+                        disabled
+                        className="w-4 h-4 accent-sage cursor-not-allowed"
+                      />
                     </div>
                   </div>
-                  <div className="ml-4">
-                    <input
-                      type="checkbox"
-                      checked={preferences.necessary}
-                      disabled
-                      className="w-5 h-5 accent-sage cursor-not-allowed"
-                    />
-                    <p className="text-xs text-muted-foreground mt-1">Always On</p>
-                  </div>
                 </div>
-              </div>
 
-              {/* Analytics Cookies */}
-              <div className="border rounded-lg p-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-start gap-3">
-                    <BarChart3 className="h-5 w-5 text-gold mt-0.5" />
+                {/* Analytics Cookies */}
+                <div className="border rounded-lg p-3">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-2 flex-1">
+                      <BarChart3 className="h-4 w-4 text-gold mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-sm font-semibold text-navy">
+                          Analytics
+                        </h3>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          Helps us improve our site
+                        </p>
+                      </div>
+                    </div>
                     <div>
-                      <h3 className="font-semibold text-navy mb-1">
-                        Analytics & Performance Cookies
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        These cookies allow us to count visits and traffic sources so we can measure 
-                        and improve the performance of our site. They help us to know which pages are 
-                        the most and least popular and see how visitors move around the site.
-                      </p>
+                      <input
+                        type="checkbox"
+                        checked={preferences.analytics}
+                        onChange={(e) => setPreferences(prev => ({ ...prev, analytics: e.target.checked }))}
+                        className="w-4 h-4 accent-gold cursor-pointer"
+                      />
                     </div>
                   </div>
-                  <div className="ml-4">
-                    <input
-                      type="checkbox"
-                      checked={preferences.analytics}
-                      onChange={(e) => setPreferences(prev => ({ ...prev, analytics: e.target.checked }))}
-                      className="w-5 h-5 accent-gold cursor-pointer"
-                    />
-                  </div>
                 </div>
-              </div>
 
-              {/* Marketing Cookies */}
-              <div className="border rounded-lg p-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-start gap-3">
-                    <Cookie className="h-5 w-5 text-navy mt-0.5" />
+                {/* Marketing Cookies */}
+                <div className="border rounded-lg p-3">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-2 flex-1">
+                      <Cookie className="h-4 w-4 text-navy mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-sm font-semibold text-navy">
+                          Marketing
+                        </h3>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          Personalised ads & content
+                        </p>
+                      </div>
+                    </div>
                     <div>
-                      <h3 className="font-semibold text-navy mb-1">
-                        Marketing & Targeting Cookies
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        These cookies may be set through our site by our advertising partners. They may 
-                        be used by those companies to build a profile of your interests and show you 
-                        relevant adverts on other sites.
-                      </p>
+                      <input
+                        type="checkbox"
+                        checked={preferences.marketing}
+                        onChange={(e) => setPreferences(prev => ({ ...prev, marketing: e.target.checked }))}
+                        className="w-4 h-4 accent-navy cursor-pointer"
+                      />
                     </div>
                   </div>
-                  <div className="ml-4">
-                    <input
-                      type="checkbox"
-                      checked={preferences.marketing}
-                      onChange={(e) => setPreferences(prev => ({ ...prev, marketing: e.target.checked }))}
-                      className="w-5 h-5 accent-navy cursor-pointer"
-                    />
-                  </div>
                 </div>
-              </div>
 
-              <div className="border-t pt-6">
-                <div className="flex flex-col sm:flex-row gap-3 justify-end">
+                <div className="flex gap-2 pt-2">
                   <button
                     onClick={handleRejectAll}
-                    className="px-6 py-2 border border-muted text-muted-foreground rounded-lg hover:bg-muted transition-colors"
+                    className="flex-1 px-3 py-1.5 text-xs border border-muted text-muted-foreground rounded hover:bg-muted transition-colors"
                   >
                     Reject All
                   </button>
                   <button
                     onClick={handleAcceptSelected}
-                    className="px-6 py-2 border border-navy text-navy rounded-lg hover:bg-navy hover:text-white transition-colors"
+                    className="flex-1 px-3 py-1.5 text-xs border border-navy text-navy rounded hover:bg-navy hover:text-white transition-colors"
                   >
-                    Save My Preferences
+                    Save
                   </button>
                   <button
                     onClick={handleAcceptAll}
-                    className="px-6 py-2 bg-gold text-navy rounded-lg font-semibold hover:bg-gold-dark transition-colors"
+                    className="flex-1 px-3 py-1.5 text-xs bg-gold text-black rounded font-semibold hover:bg-gold/90 transition-colors"
                   >
-                    Accept All Cookies
+                    Accept All
                   </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </>
   )
