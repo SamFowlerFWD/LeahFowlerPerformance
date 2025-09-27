@@ -161,9 +161,11 @@ section {
   overflow-y: visible !important;
 }
 
-/* Fix any absolute positioned elements that might be expanding sections */
-section [class*="absolute"] {
-  position: absolute !important;
-  height: auto !important;
-  max-height: 100% !important;
+/* Fix any absolute positioned elements that might be expanding sections - MOBILE ONLY */
+@media (max-width: 640px) {
+  section [class*="absolute"] {
+    position: absolute !important;
+    height: auto !important;
+    max-height: 100% !important;
+  }
 }

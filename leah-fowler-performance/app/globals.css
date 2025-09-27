@@ -2,6 +2,8 @@
 @import "./mobile-optimizations.css";
 @import "./mobile-section-fix.css";
 @import "./mobile-critical-fix.css";
+@import "./mobile-header-fix.css";
+@import "./hero-desktop-fix.css";
 @import "../styles/animations.css";
 
 @custom-variant dark (&:is(.dark *));

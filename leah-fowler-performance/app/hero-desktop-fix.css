@@ -1,0 +1,55 @@
+/* Fix for Hero Image Layout on Desktop */
+
+/* Ensure hero image displays properly beside content on desktop */
+@media (min-width: 1024px) {
+  /* Hero section specific fixes */
+  section:has(.lg\:flex.lg\:flex-row) {
+    overflow: visible !important;
+  }
+
+  /* Ensure image container is relative on desktop, not absolute */
+  section:has(.lg\:flex.lg\:flex-row) .lg\:relative {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Ensure proper flex layout on desktop */
+  section:has(.lg\:flex.lg\:flex-row) > div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  /* Fix z-index for hero content to appear above background */
+  section:has(.lg\:flex.lg\:flex-row) .lg\:w-3\/5 {
+    z-index: 10 !important;
+    position: relative !important;
+  }
+
+  /* Fix z-index for hero image container */
+  section:has(.lg\:flex.lg\:flex-row) .lg\:w-2\/5 {
+    z-index: 5 !important;
+    position: relative !important;
+  }
+
+  /* Ensure no unwanted absolute positioning on desktop */
+  section:has(.lg\:flex.lg\:flex-row) .lg\:relative.lg\:w-2\/5 {
+    position: relative !important;
+    width: 40% !important;
+    height: 60vh !important;
+  }
+}
+
+/* Additional safety for medium screens */
+@media (min-width: 768px) {
+  /* Prevent absolute positioning issues on tablets and up */
+  .lg\:relative {
+    position: relative !important;
+  }
+
+  /* Ensure hero content is visible */
+  section .lg\:flex.lg\:flex-row > * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
