@@ -141,7 +141,7 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="lg:hidden text-navy dark:text-white hover:text-gold dark:hover:text-gold"
+                className="lg:hidden text-navy dark:text-white hover:text-gold dark:hover:text-gold min-h-[44px] min-w-[44px]"
                 aria-label="Toggle mobile menu"
               >
                 <Menu className="h-6 w-6" />
@@ -165,7 +165,7 @@ export default function Header() {
                     <SheetClose asChild>
                       <Link
                         href={item.href}
-                        className="flex items-center justify-between px-4 py-3 text-lg font-medium text-navy dark:text-white hover:text-gold dark:hover:text-gold hover:bg-gold/10 rounded-lg transition-all duration-200 group"
+                        className="flex items-center justify-between px-4 py-4 min-h-[44px] text-lg font-medium text-navy dark:text-white hover:text-gold dark:hover:text-gold hover:bg-gold/10 rounded-lg transition-all duration-200 group"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <span>{item.label}</span>
@@ -179,7 +179,7 @@ export default function Header() {
               <div className="mt-8 space-y-3">
                 <Button
                   variant="outline"
-                  className="w-full text-navy dark:text-white border-navy dark:border-white hover:bg-navy hover:text-white dark:hover:bg-white dark:hover:text-navy"
+                  className="w-full min-h-[48px] text-navy dark:text-white border-navy dark:border-white hover:bg-navy hover:text-white dark:hover:bg-white dark:hover:text-navy"
                   asChild
                 >
                   <a href="tel:07XXXXXXXXX" className="flex items-center justify-center gap-2">
@@ -188,7 +188,7 @@ export default function Header() {
                   </a>
                 </Button>
                 <Button
-                  className="w-full bg-gradient-to-r from-gold to-gold/90 hover:from-gold/90 hover:to-gold text-navy font-semibold shadow-lg"
+                  className="w-full min-h-[48px] bg-gradient-to-r from-gold to-gold/90 hover:from-gold/90 hover:to-gold text-navy font-semibold shadow-lg"
                   asChild
                 >
                   <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>

@@ -27,20 +27,22 @@ function RadioGroupItem({
     <RadioGroupPrimitive.Item
       data-slot="radio-group-item"
       className={cn(
-        "aspect-square size-6 shrink-0 rounded-full border-2 border-navy bg-white shadow-sm transition-all duration-200 outline-none",
-        "hover:border-navy hover:shadow-md",
+        "relative min-h-[44px] min-w-[44px] flex items-center justify-center",
+        "before:content-[''] before:absolute before:inset-0 before:min-h-[44px] before:min-w-[44px] before:-m-2.5",
+        "after:content-[''] after:absolute after:size-6 after:rounded-full after:border-2 after:border-navy after:bg-white after:shadow-sm after:transition-all after:duration-200",
+        "hover:after:border-navy hover:after:shadow-md",
         "focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2",
         "disabled:cursor-not-allowed disabled:opacity-50",
-        "data-[state=checked]:border-navy data-[state=checked]:bg-navy data-[state=checked]:shadow-md",
+        "data-[state=checked]:after:border-navy data-[state=checked]:after:bg-navy data-[state=checked]:after:shadow-md",
         className
       )}
       {...props}
     >
       <RadioGroupPrimitive.Indicator
         data-slot="radio-group-indicator"
-        className="relative flex items-center justify-center"
+        className="relative z-10 flex items-center justify-center"
       >
-        <CircleIcon className="fill-white absolute top-1/2 left-1/2 size-3 -translate-x-1/2 -translate-y-1/2" />
+        <CircleIcon className="fill-white size-3" />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )

@@ -105,17 +105,17 @@ const PremiumHeroWithImage: React.FC = () => {
   return (
     <motion.section
       ref={heroRef}
-      className="relative min-h-screen overflow-x-visible overflow-y-hidden"
+      className="relative min-h-[100vh] lg:min-h-[60vh] overflow-x-visible overflow-y-hidden"
       style={{
         background: 'linear-gradient(to bottom right, var(--hero-background), var(--background))'
       }}
     >
-      {/* Desktop: Split Layout / Mobile: Stacked - Full height */}
-      <div className="relative flex flex-col lg:flex-row min-h-screen pt-32">
+      {/* Desktop: Split Layout / Mobile: Full Screen Overlay */}
+      <div className="relative min-h-[100vh] lg:min-h-[60vh] lg:flex lg:flex-row">
 
-        {/* Image Container with Ken Burns & Parallax - Allow overflow */}
+        {/* Image Container - Full screen on mobile, split on desktop */}
         <motion.div
-          className="relative w-full lg:w-2/5 h-[40vh] md:h-[45vh] lg:h-[calc(100vh-8rem)] overflow-visible order-1 lg:order-2 lg:absolute lg:right-0 lg:top-0"
+          className="absolute inset-0 lg:relative lg:w-2/5 lg:h-[60vh] overflow-visible lg:order-2"
           style={{ scale: imageScale, y: imageY }}
         >
           {/* Image with art direction */}
@@ -128,16 +128,18 @@ const PremiumHeroWithImage: React.FC = () => {
             />
           </div>
 
-          {/* Gradient overlay for text readability */}
+          {/* Strong gradient overlay for mobile text readability */}
           <motion.div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(to top, var(--hero-background), transparent)',
-              '@media (min-width: 1024px)': {
-                background: 'linear-gradient(to right, var(--hero-background), transparent)'
-              }
-            }}
+            className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent lg:hidden"
             style={{ opacity: overlayOpacity }}
+          />
+          {/* Desktop gradient */}
+          <motion.div
+            className="absolute inset-0 hidden lg:block"
+            style={{
+              background: 'linear-gradient(to right, var(--hero-background), transparent)',
+              opacity: overlayOpacity.get()
+            }}
           />
 
           {/* Premium gradient mesh overlay */}
@@ -149,13 +151,13 @@ const PremiumHeroWithImage: React.FC = () => {
           {/* Removed floating particles that were creating visual artifacts */}
         </motion.div>
 
-        {/* Content Container - Enhanced Premium Spacing */}
+        {/* Content Container - Overlay on mobile, split on desktop */}
         <motion.div
-          className="relative w-full lg:w-3/5 flex flex-col justify-center order-2 lg:order-1 px-6 sm:px-10 md:px-12 lg:px-16 py-12 sm:py-16 lg:py-20 lg:h-full"
+          className="absolute inset-0 flex items-end pb-20 px-4 sm:px-6 md:px-8 lg:relative lg:w-3/5 lg:flex lg:flex-col lg:justify-center lg:items-start lg:order-1 lg:px-16 lg:py-12 lg:pb-12 lg:h-full"
           style={{ y: contentY }}
         >
-          {/* Background effects for content side */}
-          <div className="absolute inset-0">
+          {/* Background effects for desktop content side only */}
+          <div className="absolute inset-0 hidden lg:block">
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, var(--hero-background), var(--background))' }} />
             {/* Noise texture - using class instead of inline style to avoid hydration issues */}
             <div className="absolute inset-0 opacity-[0.02] bg-noise" />
@@ -163,9 +165,9 @@ const PremiumHeroWithImage: React.FC = () => {
 
           {/* Removed floating particles that were creating visual artifacts */}
 
-          <div className="relative z-10 w-full max-w-2xl mx-auto lg:mx-0 lg:pt-8">
+          <div className="relative z-10 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 lg:pt-0">
             {/* Powerful Headlines That Make Parents Stop Scrolling */}
-            <div className="mb-6 md:mb-8 lg:mb-10">
+            <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={currentHeadline}
@@ -173,9 +175,9 @@ const PremiumHeroWithImage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6 }}
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-[1.1]"
+                  className="text-7xl sm:text-8xl md:text-8xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-8 lg:mb-10 leading-[1.1] text-white lg:text-current"
                 >
-                  <span className="block" style={{ color: 'var(--hero-foreground)' }}>
+                  <span className="block text-white lg:text-[color:var(--hero-foreground)]">
                     {powerfulHeadlines[currentHeadline]}
                   </span>
                 </motion.h1>
@@ -186,10 +188,9 @@ const PremiumHeroWithImage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-sm md:text-base lg:text-lg max-w-2xl opacity-80"
-                style={{ color: 'var(--hero-foreground)' }}
+                className="text-xl sm:text-2xl md:text-2xl lg:text-lg max-w-2xl text-white/90 lg:text-[color:var(--hero-foreground)] lg:opacity-80 mx-auto lg:mx-0"
               >
-                <span className="opacity-90" style={{ color: 'var(--hero-foreground)' }}>Norfolk Strength and Conditioning Coach</span> • Online Personal Trainer
+                <span className="text-white/95 lg:text-[color:var(--hero-foreground)] lg:opacity-90">Norfolk Strength and Conditioning Coach</span> • Online Personal Trainer
               </motion.p>
             </div>
 
@@ -198,7 +199,7 @@ const PremiumHeroWithImage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-3"
+              className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
             >
               <Link href="/apply" className="inline-block">
                 <button
@@ -217,28 +218,23 @@ const PremiumHeroWithImage: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - Hidden on mobile overlay */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="hidden lg:block absolute bottom-24 left-1/2 transform -translate-x-1/2 z-30"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center"
         >
-          <div className="w-6 h-10 border-2 rounded-full flex justify-center relative overflow-hidden transition-colors"
-            style={{
-              borderColor: 'var(--hero-foreground)',
-              borderOpacity: 0.2
-            }}>
+          <div className="w-8 h-12 border-2 border-white/60 rounded-full flex justify-center relative overflow-hidden bg-black/30 backdrop-blur-sm">
             <motion.div
-              animate={{ y: [0, 16, 0] }}
+              animate={{ y: [0, 20, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-3 rounded-full mt-2"
-              style={{ backgroundColor: 'var(--hero-foreground)' }}
+              className="w-2 h-4 rounded-full mt-2 bg-white"
             />
           </div>
         </motion.div>

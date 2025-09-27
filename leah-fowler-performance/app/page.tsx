@@ -6,7 +6,7 @@ import AnnouncementBar from '@/components/AnnouncementBar'
 import ModernHeader from '@/components/ModernHeader'
 import PremiumHeroWithImage from '@/components/PremiumHeroWithImage'
 import AphroditePricingTiers from '@/components/AphroditePricingTiers'
-import MobileDock from '@/components/MobileDock'
+// import MobileDock from '@/components/MobileDock' - Removed for cleaner mobile UI
 import PremiumTestimonialsSection from '@/components/PremiumTestimonialsSection'
 import AboutSection from '@/components/AboutSection'
 import ContactSection from '@/components/ContactSection'
@@ -75,8 +75,7 @@ export default function Home() {
 
       {/* Exit Intent Popup - Removed per request */}
 
-      {/* Mobile Navigation Dock */}
-      <MobileDock />
+      {/* Mobile Navigation Dock - Removed for cleaner mobile UI */}
     </>
   )
 }

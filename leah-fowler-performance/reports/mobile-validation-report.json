@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-09-27T13:10:41.251Z",
+  "summary": {
+    "totalTests": 1,
+    "passed": 0,
+    "failed": 1,
+    "passRate": "0.0%"
+  },
+  "checksSummary": {
+    "horizontalScroll": 1,
+    "touchTargets": 0,
+    "fontSizes": 1,
+    "navigation": 1,
+    "contentOverflow": 0
+  },
+  "details": [
+    {
+      "page": "Homepage",
+      "viewport": "iPhone X",
+      "checks": {
+        "horizontalScroll": true,
+        "touchTargets": false,
+        "fontSizes": true,
+        "navigation": true,
+        "contentOverflow": false
+      },
+      "issues": [
+        "✅ No horizontal scroll",
+        "❌ 42 small touch targets found: a.w-10.h-10 (37x40px), a.w-10.h-10 (37x40px), a.w-10.h-10 (37x40px)",
+        "✅ All fonts are readable (≥14px)",
+        "✅ Mobile navigation is present and functional",
+        "❌ 42 overflowing elements: a.skip-to-content, div.fixed.inset-y-0, div.flex.flex-col"
+      ]
+    }
+  ]
+}

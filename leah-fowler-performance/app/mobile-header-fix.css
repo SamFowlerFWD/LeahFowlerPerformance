@@ -1,0 +1,48 @@
+/* Mobile Header Fixes */
+@media (max-width: 639px) {
+  header.mobile-header-compact {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+  }
+
+  header.mobile-header-compact.scrolled {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  header.mobile-header-compact {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+  }
+
+  header.mobile-header-compact.scrolled {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  header.mobile-header-compact {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  header.mobile-header-compact.scrolled {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  header.mobile-header-compact {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  header.mobile-header-compact.scrolled {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+}

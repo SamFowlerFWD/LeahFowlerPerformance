@@ -1,0 +1,948 @@
+{
+  "timestamp": "2025-09-27T13:00:48.103Z",
+  "totalIssues": 67,
+  "criticalIssues": 3,
+  "highIssues": 40,
+  "mediumIssues": 24,
+  "lowIssues": 0,
+  "issuesByType": {
+    "Small Touch Targets": 21,
+    "Small Font Size": 24,
+    "Content Overflow": 19,
+    "Audit Error": 2,
+    "Navigation Issue": 1
+  },
+  "issuesByPage": {
+    "Homepage": 12,
+    "Services": 5,
+    "Apply": 7,
+    "Assessment": 11,
+    "Performance Accelerator": 8,
+    "Blog": 12,
+    "Family Athlete Demo": 12
+  },
+  "issuesByViewport": {
+    "iPhone SE": 17,
+    "iPhone X": 18,
+    "iPhone 11 Pro Max": 17,
+    "iPad": 15
+  },
+  "details": [
+    {
+      "page": "Homepage",
+      "viewport": "iPhone SE",
+      "type": "Small Touch Targets",
+      "description": "10 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.w-10.h-10 (26x40px)",
+        "a.w-10.h-10 (26x40px)",
+        "a.w-10.h-10 (26x40px)",
+        "a.w-10.h-10 (26x40px)",
+        "a.w-10.h-10 (26x40px)",
+        "a.text-white/70.hover:text-gold (113x24px)",
+        "a.text-white/70.hover:text-gold (229x20px)",
+        "a.text-white/70.hover:text-gold (224x40px)",
+        "a.text-white/70.hover:text-gold (224x40px)",
+        "a.text-white/70.hover:text-gold (224x40px)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPhone SE",
+      "type": "Small Font Size",
+      "description": "8 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.px-4.py-2 (12.0px)",
+        "span.text-navy/70 (12.0px)",
+        "span.text-gray-600.dark:text-gray-400 (12.0px)",
+        "span.uppercase.tracking-wider (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span.px-2.py-0.5 (12.0px)",
+        "span.text-xs.mt-1 (12.0px)",
+        "span.absolute.-top-1 (10.0px)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPhone SE",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "section.py-32.md:py-40 (text overflow)",
+        "div.bg-white.dark:bg-navy-light (text overflow)",
+        "section.relative.py-32 (text overflow)",
+        "div.bg-gradient-to-r.from-navy (text overflow)",
+        "section.py-16.sm:py-20 (text overflow)"
+      ]
+    },
+    {
+      "page": "Services",
+      "viewport": "iPhone SE",
+      "type": "Audit Error",
+      "description": "Failed to audit page: Error: page.evaluate: TypeError: el.className.split is not a function\n    at eval (eval at evaluate (:291:30), <anonymous>:8:90)\n    at NodeList.forEach (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:5:11)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "critical"
+    },
+    {
+      "page": "Apply",
+      "viewport": "iPhone SE",
+      "type": "Small Touch Targets",
+      "description": "8 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.text-gray-400.hover:text-white (93x20px)",
+        "a.text-gray-400.hover:text-white (113x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "a.text-gold.hover:underline (106x20px)",
+        "a.text-gold.hover:underline (102x20px)"
+      ]
+    },
+    {
+      "page": "Apply",
+      "viewport": "iPhone SE",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPhone SE",
+      "type": "Small Touch Targets",
+      "description": "2 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.text-gray-400.hover:text-white (93x20px)",
+        "a.text-gray-400.hover:text-white (113x20px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPhone SE",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "div.text-card-foreground.flex (text overflow)"
+      ]
+    },
+    {
+      "page": "Performance Accelerator",
+      "viewport": "iPhone SE",
+      "type": "Small Touch Targets",
+      "description": "7 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "div.bg-muted.text-muted-foreground (176x36px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "a.text-gold.hover:underline (106x20px)",
+        "a.text-gold.hover:underline (102x20px)"
+      ]
+    },
+    {
+      "page": "Performance Accelerator",
+      "viewport": "iPhone SE",
+      "type": "Small Font Size",
+      "description": "2 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.inline-flex.items-center (12.0px)",
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Performance Accelerator",
+      "viewport": "iPhone SE",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "div.bg-card.text-card-foreground (text overflow)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPhone SE",
+      "type": "Small Touch Targets",
+      "description": "10 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.w-10.h-10 (26x40px)",
+        "a.w-10.h-10 (26x40px)",
+        "a.w-10.h-10 (26x40px)",
+        "a.w-10.h-10 (26x40px)",
+        "a.w-10.h-10 (26x40px)",
+        "a.text-white/70.hover:text-gold (113x24px)",
+        "a.text-white/70.hover:text-gold (229x20px)",
+        "a.text-white/70.hover:text-gold (224x40px)",
+        "a.text-white/70.hover:text-gold (224x40px)",
+        "a.text-white/70.hover:text-gold (224x40px)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPhone SE",
+      "type": "Small Font Size",
+      "description": "6 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.justify-center.rounded-md (12.0px)",
+        "span.text-xs.text-gray-500 (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span (12.0px)",
+        "span.px-2.py-0.5 (12.0px)",
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPhone SE",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "article.bg-white.rounded-xl (text overflow)",
+        "h3.text-xl.font-bold (text overflow)",
+        "article.bg-white.rounded-xl (text overflow)",
+        "h3.text-xl.font-bold (text overflow)",
+        "article.bg-white.rounded-xl (text overflow)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPhone SE",
+      "type": "Small Font Size",
+      "description": "9 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.text-white/80 (12.0px)",
+        "span.uppercase.tracking-wider (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span.absolute.top-4 (12.0px)",
+        "span.text-xs.text-slate-600 (12.0px)",
+        "span.px-3.py-1 (12.0px)",
+        "span.absolute.bottom-2 (12.0px)",
+        "span.absolute.-top-1 (10.0px)",
+        "span.text-[10px].mt-1 (10.0px)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPhone SE",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "section.py-16.sm:py-20 (text overflow)",
+        "div.bg-white.rounded-2xl (text overflow)",
+        "section.py-24.md:py-32 (text overflow)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPhone SE",
+      "type": "Navigation Issue",
+      "description": "Desktop navigation not adapted for mobile (no hamburger menu)",
+      "severity": "critical"
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPhone X",
+      "type": "Small Touch Targets",
+      "description": "10 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.w-10.h-10 (37x40px)",
+        "a.w-10.h-10 (37x40px)",
+        "a.w-10.h-10 (37x40px)",
+        "a.w-10.h-10 (37x40px)",
+        "a.w-10.h-10 (37x40px)",
+        "a.text-white/70.hover:text-gold (113x24px)",
+        "a.text-white/70.hover:text-gold (229x20px)",
+        "a.text-white/70.hover:text-gold (279x40px)",
+        "a.text-white/70.hover:text-gold (279x40px)",
+        "a.text-white/70.hover:text-gold (279x40px)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPhone X",
+      "type": "Small Font Size",
+      "description": "8 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.px-4.py-2 (12.0px)",
+        "span.text-navy/70 (12.0px)",
+        "span.text-gray-600.dark:text-gray-400 (12.0px)",
+        "span.uppercase.tracking-wider (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span.px-2.py-0.5 (12.0px)",
+        "span.text-xs.mt-1 (12.0px)",
+        "span.absolute.-top-1 (10.0px)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPhone X",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "section.py-32.md:py-40 (text overflow)",
+        "section.relative.py-32 (text overflow)",
+        "div.bg-gradient-to-r.from-navy (text overflow)",
+        "section.py-16.sm:py-20 (text overflow)",
+        "section.py-16.sm:py-20 (text overflow)"
+      ]
+    },
+    {
+      "page": "Services",
+      "viewport": "iPhone X",
+      "type": "Small Touch Targets",
+      "description": "5 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "a.text-gold.hover:underline (106x20px)"
+      ]
+    },
+    {
+      "page": "Services",
+      "viewport": "iPhone X",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Apply",
+      "viewport": "iPhone X",
+      "type": "Small Touch Targets",
+      "description": "7 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.text-gray-400.hover:text-white (93x20px)",
+        "a.text-gray-400.hover:text-white (113x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "a.text-gold.hover:underline (106x20px)"
+      ]
+    },
+    {
+      "page": "Apply",
+      "viewport": "iPhone X",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPhone X",
+      "type": "Small Touch Targets",
+      "description": "7 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.text-gray-400.hover:text-white (93x20px)",
+        "a.text-gray-400.hover:text-white (113x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "a.text-gold.hover:underline (106x20px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPhone X",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPhone X",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "div.text-card-foreground.flex (text overflow)"
+      ]
+    },
+    {
+      "page": "Performance Accelerator",
+      "viewport": "iPhone X",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.inline-flex.items-center (12.0px)"
+      ]
+    },
+    {
+      "page": "Performance Accelerator",
+      "viewport": "iPhone X",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "div.bg-card.text-card-foreground (text overflow)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPhone X",
+      "type": "Small Touch Targets",
+      "description": "10 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.w-10.h-10 (37x40px)",
+        "a.w-10.h-10 (37x40px)",
+        "a.w-10.h-10 (37x40px)",
+        "a.w-10.h-10 (37x40px)",
+        "a.w-10.h-10 (37x40px)",
+        "a.text-white/70.hover:text-gold (113x24px)",
+        "a.text-white/70.hover:text-gold (229x20px)",
+        "a.text-white/70.hover:text-gold (279x40px)",
+        "a.text-white/70.hover:text-gold (279x40px)",
+        "a.text-white/70.hover:text-gold (279x40px)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPhone X",
+      "type": "Small Font Size",
+      "description": "6 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.justify-center.rounded-md (12.0px)",
+        "span.text-xs.text-gray-500 (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span (12.0px)",
+        "span.px-2.py-0.5 (12.0px)",
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPhone X",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "article.bg-white.rounded-xl (text overflow)",
+        "article.bg-white.rounded-xl (text overflow)",
+        "article.bg-white.rounded-xl (text overflow)",
+        "div.relative.bg-gradient-to-r (text overflow)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPhone X",
+      "type": "Small Touch Targets",
+      "description": "5 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "a.text-gold.hover:underline (106x20px)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPhone X",
+      "type": "Small Font Size",
+      "description": "10 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.text-white/80 (12.0px)",
+        "span.uppercase.tracking-wider (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span.absolute.top-4 (12.0px)",
+        "span.text-xs.text-slate-600 (12.0px)",
+        "span.px-3.py-1 (12.0px)",
+        "span.absolute.bottom-2 (12.0px)",
+        "span.absolute.-top-1 (10.0px)",
+        "span.text-[10px].mt-1 (10.0px)",
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPhone X",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "section.py-16.sm:py-20 (text overflow)",
+        "div.bg-white.rounded-2xl (text overflow)",
+        "div.bg-white.rounded-2xl (text overflow)",
+        "div.bg-white.rounded-2xl (text overflow)",
+        "div.bg-white.rounded-2xl (text overflow)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Touch Targets",
+      "description": "10 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.text-white/70.hover:text-gold (113x24px)",
+        "a.text-white/70.hover:text-gold (229x20px)",
+        "a.text-white/70.hover:text-gold (318x20px)",
+        "a.text-white/70.hover:text-gold (318x20px)",
+        "a.text-white/70.hover:text-gold (318x20px)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Font Size",
+      "description": "8 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.px-4.py-2 (12.0px)",
+        "span.text-navy/70 (12.0px)",
+        "span.text-gray-600.dark:text-gray-400 (12.0px)",
+        "span.uppercase.tracking-wider (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span.px-2.py-0.5 (12.0px)",
+        "span.text-xs.mt-1 (12.0px)",
+        "span.absolute.-top-1 (10.0px)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "section.py-32.md:py-40 (text overflow)",
+        "section.relative.py-32 (text overflow)",
+        "div.bg-gradient-to-r.from-navy (text overflow)",
+        "section.py-16.sm:py-20 (text overflow)",
+        "div.bg-white.dark:bg-navy-dark (text overflow)"
+      ]
+    },
+    {
+      "page": "Services",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Audit Error",
+      "description": "Failed to audit page: Error: page.evaluate: TypeError: el.className.split is not a function\n    at eval (eval at evaluate (:291:30), <anonymous>:8:90)\n    at NodeList.forEach (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:5:11)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "critical"
+    },
+    {
+      "page": "Apply",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Touch Targets",
+      "description": "8 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.text-gray-400.hover:text-white (93x20px)",
+        "a.text-gray-400.hover:text-white (113x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "a.text-gold.hover:underline (106x20px)",
+        "a.text-gold.hover:underline (102x20px)"
+      ]
+    },
+    {
+      "page": "Apply",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Touch Targets",
+      "description": "8 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.text-gray-400.hover:text-white (93x20px)",
+        "a.text-gray-400.hover:text-white (113x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "a.text-gold.hover:underline (106x20px)",
+        "a.text-gold.hover:underline (102x20px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "div.text-card-foreground.flex (text overflow)"
+      ]
+    },
+    {
+      "page": "Performance Accelerator",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.inline-flex.items-center (12.0px)"
+      ]
+    },
+    {
+      "page": "Performance Accelerator",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "div.bg-card.text-card-foreground (text overflow)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Touch Targets",
+      "description": "10 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.text-white/70.hover:text-gold (113x24px)",
+        "a.text-white/70.hover:text-gold (229x20px)",
+        "a.text-white/70.hover:text-gold (318x20px)",
+        "a.text-white/70.hover:text-gold (318x20px)",
+        "a.text-white/70.hover:text-gold (318x20px)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Font Size",
+      "description": "6 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.justify-center.rounded-md (12.0px)",
+        "span.text-xs.text-gray-500 (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span (12.0px)",
+        "span.px-2.py-0.5 (12.0px)",
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "article.bg-white.rounded-xl (text overflow)",
+        "article.bg-white.rounded-xl (text overflow)",
+        "article.bg-white.rounded-xl (text overflow)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Touch Targets",
+      "description": "6 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "div (20x20px)",
+        "a.text-gold.hover:underline (106x20px)",
+        "a.text-gold.hover:underline (102x20px)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Small Font Size",
+      "description": "10 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.text-white/80 (12.0px)",
+        "span.uppercase.tracking-wider (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span.absolute.top-4 (12.0px)",
+        "span.text-xs.text-slate-600 (12.0px)",
+        "span.px-3.py-1 (12.0px)",
+        "span.absolute.bottom-2 (12.0px)",
+        "span.absolute.-top-1 (10.0px)",
+        "span.text-[10px].mt-1 (10.0px)",
+        "span.text-xs.mt-1 (12.0px)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPhone 11 Pro Max",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "section.py-16.sm:py-20 (text overflow)",
+        "section.py-24.md:py-32 (text overflow)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPad",
+      "type": "Small Touch Targets",
+      "description": "10 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.text-white/70.hover:text-gold (113x24px)",
+        "a.text-white/70.hover:text-gold (229x20px)",
+        "a.text-white/70.hover:text-gold (296x40px)",
+        "a.text-white/70.hover:text-gold (296x20px)",
+        "a.text-white/70.hover:text-gold (296x20px)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPad",
+      "type": "Small Font Size",
+      "description": "7 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.px-4.py-2 (12.0px)",
+        "span.text-navy/70 (12.0px)",
+        "span.text-gray-600.dark:text-gray-400 (12.0px)",
+        "span.px-2.py-0.5 (12.0px)",
+        "p.text-white/40.text-xs (12.0px)",
+        "span.text-xs.mt-1 (12.0px)",
+        "span.absolute.-top-1 (10.0px)"
+      ]
+    },
+    {
+      "page": "Homepage",
+      "viewport": "iPad",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "section.py-16.sm:py-20 (text overflow)",
+        "div.relative.overflow-hidden (text overflow)",
+        "section.py-32.sm:py-40 (text overflow)",
+        "div.relative.bg-gradient-to-r (text overflow)"
+      ]
+    },
+    {
+      "page": "Services",
+      "viewport": "iPad",
+      "type": "Small Font Size",
+      "description": "9 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "p.text-xs.text-gray-500 (12.0px)",
+        "span.text-xs.font-bold (12.0px)",
+        "span.text-xs.text-gray-700 (12.0px)",
+        "span.text-gray-600.dark:text-gray-400 (12.0px)",
+        "span.px-4.py-2 (12.0px)",
+        "span.text-xs.text-navy/80 (12.0px)",
+        "span.text-navy/70 (12.0px)",
+        "span.px-2.py-1 (12.0px)",
+        "span.text-xs.font-medium (12.0px)"
+      ]
+    },
+    {
+      "page": "Apply",
+      "viewport": "iPad",
+      "type": "Small Touch Targets",
+      "description": "5 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.flex.items-center (143x24px)",
+        "a.text-gray-400.hover:text-white (93x20px)",
+        "a.text-gray-400.hover:text-white (113x20px)",
+        "a.text-gold.hover:underline (93x17px)",
+        "a.text-gold.hover:underline (89x17px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPad",
+      "type": "Small Touch Targets",
+      "description": "3 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.flex.items-center (143x24px)",
+        "a.text-gray-400.hover:text-white (93x20px)",
+        "a.text-gray-400.hover:text-white (113x20px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPad",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "p.text-xs.text-muted-foreground (12.0px)"
+      ]
+    },
+    {
+      "page": "Assessment",
+      "viewport": "iPad",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "div.text-card-foreground.flex (text overflow)"
+      ]
+    },
+    {
+      "page": "Performance Accelerator",
+      "viewport": "iPad",
+      "type": "Small Font Size",
+      "description": "1 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.inline-flex.items-center (12.0px)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPad",
+      "type": "Small Touch Targets",
+      "description": "10 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.w-10.h-10 (40x40px)",
+        "a.text-white/70.hover:text-gold (113x24px)",
+        "a.text-white/70.hover:text-gold (229x20px)",
+        "a.text-white/70.hover:text-gold (296x40px)",
+        "a.text-white/70.hover:text-gold (296x20px)",
+        "a.text-white/70.hover:text-gold (296x20px)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPad",
+      "type": "Small Font Size",
+      "description": "6 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.justify-center.rounded-md (12.0px)",
+        "span.text-xs.text-gray-500 (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "span (12.0px)",
+        "span.px-2.py-0.5 (12.0px)",
+        "p.text-white/40.text-xs (12.0px)"
+      ]
+    },
+    {
+      "page": "Blog",
+      "viewport": "iPad",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "div.relative.bg-gradient-to-r (text overflow)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPad",
+      "type": "Small Touch Targets",
+      "description": "2 elements below 44x44px minimum",
+      "severity": "high",
+      "elements": [
+        "a.text-gold.hover:underline (93x17px)",
+        "a.text-gold.hover:underline (89x17px)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPad",
+      "type": "Small Font Size",
+      "description": "10 elements with font size below 14px",
+      "severity": "medium",
+      "elements": [
+        "span.text-xs.text-white/80 (12.0px)",
+        "span.absolute.top-4 (12.0px)",
+        "span.text-xs.text-slate-600 (12.0px)",
+        "span.px-3.py-1 (12.0px)",
+        "span.inline-flex.items-center (12.0px)",
+        "p.text-xs.text-slate-500 (12.0px)",
+        "span.absolute.bottom-2 (12.0px)",
+        "p.text-xs.text-orange-600 (12.0px)",
+        "span.absolute.-top-1 (10.0px)",
+        "span.text-[10px].mt-1 (10.0px)"
+      ]
+    },
+    {
+      "page": "Family Athlete Demo",
+      "viewport": "iPad",
+      "type": "Content Overflow",
+      "description": "Elements with hidden overflow or overlapping content",
+      "severity": "high",
+      "elements": [
+        "section.py-16.sm:py-20 (text overflow)",
+        "div.relative.overflow-hidden (text overflow)"
+      ]
+    }
+  ]
+}

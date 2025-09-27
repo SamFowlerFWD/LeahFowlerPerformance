@@ -105,11 +105,11 @@ export default function PremiumTestimonialsSection() {
   }, [])
 
   return (
-    <section className="py-32 md:py-40 lg:py-48 xl:py-56 bg-gradient-to-b from-white to-gray-50 dark:from-navy-dark dark:to-navy relative overflow-hidden">
+    <section className="py-16 sm:py-24 md:py-32 lg:py-40 xl:py-48 bg-gradient-to-b from-white to-gray-50 dark:from-navy-dark dark:to-navy relative">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
-      <div className="max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
         {/* Section Header with SEO-optimized H2 */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -118,13 +118,13 @@ export default function PremiumTestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy dark:text-white mb-4 sm:mb-6">
             Real Results from{' '}
             <span className="bg-gradient-to-r from-gold to-sage bg-clip-text text-transparent">
               Real Clients
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-2 sm:px-0">
             Join hundreds of Norfolk clients who've transformed their strength and fitness with Leah's expert guidance
           </p>
         </motion.div>
@@ -135,10 +135,10 @@ export default function PremiumTestimonialsSection() {
             {/* Previous button */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-0 z-20 p-2 rounded-full bg-white dark:bg-navy shadow-xl hover:scale-110 transition-transform"
+              className="absolute left-0 sm:left-2 z-20 p-3 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full bg-white dark:bg-navy shadow-xl hover:scale-110 transition-transform"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="h-6 w-6 text-navy dark:text-white" />
+              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-navy dark:text-white" />
             </button>
 
             {/* Testimonial Cards */}
@@ -152,7 +152,7 @@ export default function PremiumTestimonialsSection() {
                   transition={{ duration: 0.5, ease: easings.easeOutCubic }}
                   className="bg-white dark:bg-navy-light rounded-3xl shadow-2xl overflow-hidden"
                 >
-                  <div className="p-8 md:p-12">
+                  <div className="p-6 sm:p-8 md:p-10 lg:p-12">
                     {/* Rating */}
                     <div className="flex mb-4">
                       {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
@@ -161,25 +161,19 @@ export default function PremiumTestimonialsSection() {
                     </div>
 
                     {/* Headline */}
-                    <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-navy dark:text-white mb-3 sm:mb-4">
                       {testimonials[activeIndex].headline}
                     </h3>
 
                     {/* Quote */}
-                    <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-8 italic leading-relaxed">
+                    <blockquote className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 italic leading-relaxed">
                       "{testimonials[activeIndex].quote}"
                     </blockquote>
 
                     {/* Author */}
-                    <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
-                      <p className="font-semibold text-lg text-navy dark:text-white">
+                    <div className="border-t border-gray-200 dark:border-gray-700 pt-4 sm:pt-6">
+                      <p className="font-semibold text-base sm:text-lg text-navy dark:text-white">
                         {testimonials[activeIndex].name}
-                      </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        {testimonials[activeIndex].role} • {testimonials[activeIndex].location}
-                      </p>
-                      <p className="text-sm text-gold mt-1 font-medium">
-                        {testimonials[activeIndex].programme}
                       </p>
                     </div>
                   </div>
@@ -190,10 +184,10 @@ export default function PremiumTestimonialsSection() {
             {/* Next button */}
             <button
               onClick={nextTestimonial}
-              className="absolute right-0 z-20 p-2 rounded-full bg-white dark:bg-navy shadow-xl hover:scale-110 transition-transform"
+              className="absolute right-0 sm:right-2 z-20 p-3 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full bg-white dark:bg-navy shadow-xl hover:scale-110 transition-transform"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="h-6 w-6 text-navy dark:text-white" />
+              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-navy dark:text-white" />
             </button>
           </div>
 
@@ -203,8 +197,8 @@ export default function PremiumTestimonialsSection() {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`h-2 transition-all duration-300 ${
-                  index === activeIndex ? 'w-8 bg-gold' : 'w-2 bg-gray-300 dark:bg-gray-600'
+                className={`h-3 sm:h-2 min-h-[44px] min-w-[44px] transition-all duration-300 ${
+                  index === activeIndex ? 'w-12 sm:w-8 bg-gold' : 'w-3 sm:w-2 bg-gray-300 dark:bg-gray-600'
                 } rounded-full`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -218,18 +212,18 @@ export default function PremiumTestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-navy to-navy-dark rounded-3xl p-12 text-center"
+          className="bg-gradient-to-r from-navy to-navy-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 text-center"
         >
-          <h3 className="text-3xl font-bold text-white mb-4">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
             Ready to Start Your Transformation?
           </h3>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Join our community of clients transforming their fitness with Norfolk&apos;s premier performance coaching
           </p>
           <div className="flex justify-center">
             <a href="/apply">
               <button
-                className="px-8 py-4 font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110 min-w-[250px]"
+                className="px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110 min-w-[200px] sm:min-w-[250px] min-h-[48px]"
                 style={{
                   backgroundColor: '#d4a574',
                   color: '#000000'

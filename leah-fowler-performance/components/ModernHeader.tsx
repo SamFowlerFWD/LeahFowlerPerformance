@@ -3,6 +3,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import '../app/mobile-header-fix.css'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Menu, X, Sun, Moon, Phone, Mail, Calendar, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -59,13 +60,13 @@ export default function ModernHeader() {
     <>
       <motion.header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 mobile-header-compact",
           isScrolled
-            ? "py-4 bg-white/95 dark:bg-navy-dark/95 backdrop-blur-xl shadow-xl border-b border-white/20"
-            : "py-6 bg-gradient-to-b from-navy/90 to-navy/60 backdrop-blur-md"
+            ? "bg-white/95 dark:bg-navy-dark/95 backdrop-blur-xl shadow-xl border-b border-white/20 scrolled"
+            : "bg-gradient-to-b from-navy/90 to-navy/60 backdrop-blur-md"
         )}
       >
-        <nav className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+        <nav className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-0">
           <div className="flex justify-between items-center">
             {/* Logo with animation */}
             <motion.div
@@ -74,8 +75,8 @@ export default function ModernHeader() {
               className="relative"
             >
               <Link href="/" className="flex items-center">
-                {/* Strength PT Logo */}
-                <div className="relative h-20 md:h-24 w-auto flex items-center">
+                {/* Strength PT Logo - Smaller on mobile */}
+                <div className="relative h-20 sm:h-24 md:h-14 lg:h-16 xl:h-20 w-auto flex items-center">
                   <Image
                     src="/images/strength-pt-logo.svg"
                     alt="Strength PT - Elite Online Personal Training & Strength Coaching UK | PT Dereham"

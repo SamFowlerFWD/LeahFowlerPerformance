@@ -65,13 +65,7 @@ const navItems: NavItem[] = [
   },
 ]
 
-// Bottom navigation items for quick access
-const bottomNavItems = [
-  { href: '/', icon: <Home className="h-5 w-5" />, label: 'Home' },
-  { href: '#programmes', icon: <Target className="h-5 w-5" />, label: 'Programmes' },
-  { href: '/assessment', icon: <Award className="h-5 w-5" />, label: 'Assessment' },
-  { href: '#contact', icon: <MessageCircle className="h-5 w-5" />, label: 'Contact' },
-]
+// Bottom navigation items removed - Using slide-out menu only
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -353,38 +347,7 @@ export default function MobileNav() {
         )}
       </AnimatePresence>
 
-      {/* Bottom Navigation Bar (Mobile Only) */}
-      {isMobile && (
-        <motion.nav
-          initial={{ y: 100 }}
-          animate={{ y: 0 }}
-          transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="fixed bottom-0 left-0 right-0 bg-white dark:bg-navy-dark border-t border-gray-200 dark:border-gray-700 z-40 lg:hidden"
-        >
-          <div className="flex justify-around items-center px-2 py-2">
-            {bottomNavItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "flex flex-col items-center justify-center p-2 rounded-lg transition-all duration-300 touch-manipulation",
-                  "hover:bg-gold/10 active:bg-gold/20",
-                  pathname === item.href && "text-gold"
-                )}
-                style={{ minHeight: '56px', minWidth: '64px' }}
-              >
-                <motion.div
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ duration: 0.1 }}
-                >
-                  {item.icon}
-                </motion.div>
-                <span className="text-xs mt-1 font-medium">{item.label}</span>
-              </Link>
-            ))}
-          </div>
-        </motion.nav>
-      )}
+      {/* Bottom Navigation Bar Removed - Using floating hamburger menu instead */}
     </>
   )
 }

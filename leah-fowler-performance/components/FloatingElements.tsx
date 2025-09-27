@@ -66,29 +66,7 @@ export default function FloatingElements() {
         </motion.div>
       </motion.div>
 
-      {/* Quick Action Bar (Mobile) */}
-      <motion.div
-        initial={{ y: 100 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 3, type: "spring", stiffness: 100 }}
-        className="fixed bottom-0 left-0 right-0 lg:hidden bg-white dark:bg-navy-dark border-t border-gray-200 dark:border-navy/30 p-4 z-40"
-      >
-        <div className="flex gap-3">
-          <Button
-            className="flex-1 bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy font-bold"
-            asChild
-          >
-            <a href="/assessment">Start Assessment</a>
-          </Button>
-          <Button
-            variant="outline"
-            className="flex-1 border-navy dark:border-white"
-            asChild
-          >
-            <a href="/consultation">Book Call</a>
-          </Button>
-        </div>
-      </motion.div>
+      {/* Quick Action Bar Removed - Cleaner mobile experience without bottom bar */}
     </>
   )
 }
