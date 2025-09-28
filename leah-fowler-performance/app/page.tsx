@@ -14,6 +14,7 @@ import Footer from '@/components/Footer'
 // import HeroStatsSection from '@/components/HeroStatsSection' - Removed per request
 import OnlinePackageShowcase from '@/components/OnlinePackageShowcase'
 import FAQSection from '@/components/FAQSection'
+import LocationAndWhySection from '@/components/LocationAndWhySection'
 
 // Only use dynamic imports for client-only components
 const FloatingElements = dynamic(() => import('@/components/FloatingElements'), { ssr: false })
@@ -59,6 +60,11 @@ export default function Home() {
         {/* FAQ Section */}
         <SectionErrorBoundary sectionName="FAQSection">
           <FAQSection />
+        </SectionErrorBoundary>
+
+        {/* Location & Why Choose Section */}
+        <SectionErrorBoundary sectionName="LocationAndWhySection">
+          <LocationAndWhySection />
         </SectionErrorBoundary>
 
         {/* Contact Section */}

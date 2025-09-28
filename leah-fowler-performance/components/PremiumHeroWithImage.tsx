@@ -104,17 +104,17 @@ const PremiumHeroWithImage: React.FC = () => {
   return (
     <motion.section
       ref={heroRef}
-      className="relative min-h-[100vh] lg:min-h-[60vh] overflow-x-visible overflow-y-hidden"
+      className="relative min-h-[100vh] md:min-h-[60vh] overflow-x-visible overflow-y-hidden"
       style={{
         background: 'linear-gradient(to bottom right, var(--hero-background), var(--background))'
       }}
     >
       {/* Desktop: Split Layout / Mobile: Full Screen Overlay */}
-      <div className="relative min-h-[100vh] lg:min-h-[60vh] lg:flex lg:flex-row">
+      <div className="relative min-h-[100vh] md:min-h-[60vh] md:flex md:flex-row">
 
         {/* Image Container - Full screen on mobile, split on desktop */}
         <motion.div
-          className="absolute inset-0 lg:relative lg:w-2/5 lg:h-[60vh] overflow-visible lg:order-2"
+          className="absolute inset-0 md:relative md:w-2/5 md:h-[60vh] overflow-visible md:order-2"
           style={{ scale: imageScale, y: imageY }}
         >
           {/* Image with art direction */}
@@ -150,13 +150,13 @@ const PremiumHeroWithImage: React.FC = () => {
           {/* Removed floating particles that were creating visual artifacts */}
         </motion.div>
 
-        {/* Content Container - Overlay on mobile, split on desktop */}
+        {/* Content Container - Overlay on mobile, split on tablet/desktop */}
         <motion.div
-          className="absolute inset-0 flex items-end pb-20 px-4 sm:px-6 md:px-8 lg:relative lg:w-3/5 lg:flex lg:flex-col lg:justify-center lg:items-start lg:order-1 lg:px-16 lg:py-12 lg:pb-12 lg:h-full"
+          className="absolute inset-0 flex items-end pb-20 px-4 sm:px-6 md:relative md:w-3/5 md:flex md:flex-col md:justify-center md:items-start md:order-1 md:px-8 lg:px-16 md:py-8 lg:py-12 md:pb-8 lg:pb-12 md:h-full"
           style={{ y: contentY }}
         >
-          {/* Background effects for desktop content side only */}
-          <div className="absolute inset-0 hidden lg:block">
+          {/* Background effects for tablet/desktop content side only */}
+          <div className="absolute inset-0 hidden md:block">
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, var(--hero-background), var(--background))' }} />
             {/* Noise texture - using class instead of inline style to avoid hydration issues */}
             <div className="absolute inset-0 opacity-[0.02] bg-noise" />
@@ -164,7 +164,7 @@ const PremiumHeroWithImage: React.FC = () => {
 
           {/* Removed floating particles that were creating visual artifacts */}
 
-          <div className="relative z-10 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 lg:pt-0">
+          <div className="relative z-10 w-full max-w-2xl mx-auto text-center md:text-left md:mx-0 md:pt-0">
             {/* Powerful Headlines That Make Parents Stop Scrolling */}
             <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
               <AnimatePresence mode="wait">
@@ -174,9 +174,9 @@ const PremiumHeroWithImage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6 }}
-                  className="text-7xl sm:text-8xl md:text-8xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-8 lg:mb-10 leading-[1.1] text-white lg:text-current"
+                  className="text-5xl sm:text-6xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-6 lg:mb-10 leading-[1.1] text-white md:text-foreground"
                 >
-                  <span className="block text-white lg:text-[color:var(--hero-foreground)]">
+                  <span className="block text-white md:text-foreground">
                     {powerfulHeadlines[currentHeadline]}
                   </span>
                 </motion.h1>
@@ -187,9 +187,9 @@ const PremiumHeroWithImage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-xl sm:text-2xl md:text-2xl lg:text-lg max-w-2xl text-white/90 lg:text-[color:var(--hero-foreground)] lg:opacity-80 mx-auto lg:mx-0"
+                className="text-lg sm:text-xl md:text-base lg:text-lg max-w-2xl text-white/90 md:text-foreground md:opacity-90 mx-auto md:mx-0"
               >
-                <span className="text-white/95 lg:text-[color:var(--hero-foreground)] lg:opacity-90">Norfolk Strength and Conditioning Coach</span> • Online Personal Trainer
+                <span className="text-white/95 md:text-foreground md:opacity-100">Norfolk Strength and Conditioning Coach</span> • Online Personal Trainer
               </motion.p>
             </div>
 
@@ -198,7 +198,7 @@ const PremiumHeroWithImage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
             >
               <Link href="/apply" className="inline-block">
                 <button
@@ -222,7 +222,7 @@ const PremiumHeroWithImage: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2 }}
-        className="hidden lg:block absolute bottom-24 left-1/2 transform -translate-x-1/2 z-30"
+        className="hidden md:block absolute bottom-24 left-1/2 transform -translate-x-1/2 z-30"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

@@ -8,12 +8,8 @@ import {
   Award,
   GraduationCap,
   Users,
-  Target,
   Heart,
-  CheckCircle,
-  Trophy,
-  Star,
-  Sparkles
+  CheckCircle
 } from 'lucide-react'
 
 const credentials = [
@@ -22,12 +18,6 @@ const credentials = [
     title: 'Mother of 3',
     subtitle: 'Who Gets the Real-Life Juggle',
     color: 'from-red-600 to-pink-600'
-  },
-  {
-    icon: Trophy,
-    title: 'Ultra Endurance Finisher',
-    subtitle: 'From Zero Press-ups to 50K Races',
-    color: 'from-orange-500 to-amber-500'
   },
   {
     icon: Users,
@@ -43,12 +33,7 @@ const credentials = [
   },
 ]
 
-const stats = [
-  { value: '500+', label: 'Mums Trained', icon: Heart },
-  { value: '127', label: 'Race Finishes', icon: Trophy },
-  { value: '300%', label: 'Average Strength Gain', icon: Star },
-  { value: '3wk', label: 'First Press-up', icon: Target },
-]
+// Stats section removed per user request
 
 const expertise = [
   'Strength Training for Mums',
@@ -314,20 +299,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* Header Badge */}
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full bg-gradient-to-r from-gold/20 to-amber-100/20 backdrop-blur-sm border border-gold/30 text-gold-light text-xs sm:text-sm md:text-base font-semibold mb-6 sm:mb-8 md:mb-10"
-            >
-              <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
-              <span className="uppercase tracking-wider">YOUR FAMILY FITNESS COACH</span>
-              <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
-            </motion.div>
-
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-tight">
+<h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-tight">
               A BIT ABOUT ME...
             </h2>
 
@@ -346,7 +318,7 @@ export default function AboutSection() {
             </div>
 
             {/* Credentials Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
               {credentials.map((cred, index) => (
                 <motion.div
                   key={cred.title}
@@ -365,23 +337,6 @@ export default function AboutSection() {
               ))}
             </div>
 
-            {/* Stats Bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-6 md:gap-8 p-6 sm:p-8 md:p-10 lg:p-12 bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/10 shadow-2xl">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="text-center"
-                >
-                  <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-gold mx-auto mb-2 sm:mb-3" />
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs sm:text-sm md:text-base text-white/60">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
 

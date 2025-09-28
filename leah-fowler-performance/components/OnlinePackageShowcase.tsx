@@ -5,8 +5,6 @@ import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import {
   Smartphone,
-  CheckCircle,
-  Trophy,
   Target,
   Calendar,
   MessageSquare,
@@ -17,7 +15,8 @@ import {
   Clock,
   Star,
   ChartBar,
-  Shield
+  Shield,
+  CheckCircle
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -25,20 +24,15 @@ import { cn } from '@/lib/utils'
 
 const features = [
   {
-    icon: CheckCircle,
-    title: 'Smart Accountability System',
-    description: 'App-powered tracking with weekly coaching reviews to keep you on track',
+    icon: Smartphone,
+    title: 'Smart App-Based Accountability',
+    description: 'Track workouts, nutrition, and progress with app-powered monitoring and weekly coaching reviews',
     highlight: true
   },
   {
     icon: Target,
     title: 'Personalised Goals',
     description: 'Custom targets and milestones designed specifically for your journey'
-  },
-  {
-    icon: Smartphone,
-    title: 'App-Based Tracking',
-    description: 'Log your workouts, nutrition, and progress all in one place'
   },
   {
     icon: Calendar,
@@ -50,11 +44,6 @@ const features = [
     title: 'Weekly Reviews',
     description: 'One-on-one progress check-ins to adjust and optimise your plan',
     highlight: true
-  },
-  {
-    icon: Trophy,
-    title: '3-Month Transformation',
-    description: 'Guaranteed results with our proven 12-week programme'
   }
 ]
 
@@ -84,7 +73,7 @@ const transformationTimeline = [
     week: 'Weeks 9-12',
     title: 'Peak Performance',
     description: 'Advanced techniques, lifestyle integration, lasting habits',
-    icon: Trophy
+    icon: Star
   }
 ]
 
