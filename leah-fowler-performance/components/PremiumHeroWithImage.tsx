@@ -53,12 +53,11 @@ const stats = [
 // Powerful headlines that speak directly to parents' experiences and aspirations
 // Each one addresses a specific moment every parent has felt or wanted
 const powerfulHeadlines = [
-  "Be the Parent Who Races Them Up the Stairs",
-  "From School Run Exhaustion to Spartan Strong",
   "Strong Enough for Piggybacks at 40",
-  "Your Kids Deserve the Strongest Version of You",
-  "Remember When You Had Energy? Let's Get It Back.",
-  "The Parent at Sports Day Everyone Asks About"
+  "Be the Parent Who Races Them Up the Stairs",
+  "Reclaim the Part of You Before You Were 'Just a Mum'",
+  "A Strength That Carries You Forward, Mind and Body",
+  "Meet You Where You Are Now and Get You to the Start Line"
 ]
 
 const PremiumHeroWithImage: React.FC = () => {
