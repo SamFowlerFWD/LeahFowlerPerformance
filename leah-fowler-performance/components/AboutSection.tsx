@@ -328,7 +328,7 @@ export default function AboutSection() {
             </motion.div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              Leah Fowler
+              A BIT ABOUT ME...
             </h2>
 
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl text-orange-500 font-medium mb-6 sm:mb-8 md:mb-10 leading-tight">
@@ -337,15 +337,11 @@ export default function AboutSection() {
             
             <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-8 sm:mb-10 md:mb-12">
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
-                From struggling with my first press-up to completing Ultra endurance events, I&apos;m living proof of what hard work and consistency can achieve.
-                I&apos;ve completed 3 Spartan Ultra Beasts, an Outlaw Triathlon, and coached over 200 families to transform
-                their health together. As a mum of two, I prove daily that extraordinary is possible.
+                I am Leah, I have always loved being outside and physically active. Now I am a mum of 3 young children and I can appreciate just how important exercise is, both physically in order to carry out all the day to day running around after children but also mentally building strength and self confidence since becoming a mum has helped me feel myself again.
               </p>
 
               <p className="text-sm sm:text-base md:text-lg lg:text-lg text-white/80 leading-relaxed">
-                Whether you&apos;re training for your first 5K or your fifth Spartan Race, developing your child&apos;s athletic
-                potential, or wanting to get fit as a family, I provide the coaching, community, and accountability you
-                need. From our Dereham base, we&apos;re building Norfolk&apos;s strongest, most supportive fitness family.
+                I know just how hard it can be to fit time in for yourself and find the energy to do something productive, but having been through it and come out the other side so much stronger I am determined to help other women to do the same for themselves.
               </p>
             </div>
 

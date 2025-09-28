@@ -24,16 +24,6 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Lisa Tubby",
-    role: "HIIT Regular",
-    location: "Norfolk",
-    rating: 5,
-    headline: "The Sweatiest, Most Effective Workouts",
-    quote: "I've been joining in Leah's HIIT workouts for a few weeks and really enjoy them. Always feel like I've worked hard at the end and very sweaty. A great work out and Leah explains each exercise clearly so you know you're doing it right.",
-    programme: "HIIT Classes"
-  },
-  {
-    id: 3,
     name: "Lauren Seamons",
     role: "1:1 Client",
     location: "Norfolk",
@@ -43,7 +33,7 @@ const testimonials = [
     programme: "1:1 Personal Training"
   },
   {
-    id: 4,
+    id: 3,
     name: "Catherine Cane",
     role: "4 Week Plan Member",
     location: "Norfolk",
@@ -51,16 +41,6 @@ const testimonials = [
     headline: "Kickstarting a Healthier, More Active Lifestyle",
     quote: "For the past 3 weeks, I've tried to kickstart my path to a healthier, more active lifestyle. I wanted to lose weight, feel stronger and happier. I signed up to Aphrodite Fitness 4 week plan and it's been amazing - feeling stronger already!",
     programme: "4 Week Programme"
-  },
-  {
-    id: 5,
-    name: "Becky Meade",
-    role: "Regular Member",
-    location: "Norfolk",
-    rating: 5,
-    headline: "Fun, Challenging Workouts That Keep Me Coming Back",
-    quote: "I always enjoy getting my butt kicked during these workouts! They're good fun and challenging, and Leah does a great job of keeping it different to keep things interesting. Never a dull session!",
-    programme: "Group Sessions"
   },
   {
     id: 6,
@@ -125,7 +105,7 @@ export default function PremiumTestimonialsSection() {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-2 sm:px-0">
-            Join hundreds of Norfolk clients who've transformed their strength and fitness with Leah's expert guidance
+            Here's what clients have to say....
           </p>
         </motion.div>
 
@@ -206,34 +186,6 @@ export default function PremiumTestimonialsSection() {
           </div>
         </div>
 
-        {/* Video Testimonial Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-navy to-navy-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 text-center"
-        >
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
-            Ready to Start Your Transformation?
-          </h3>
-          <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Join our community of clients transforming their fitness with Norfolk&apos;s premier performance coaching
-          </p>
-          <div className="flex justify-center">
-            <a href="/apply">
-              <button
-                className="px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110 min-w-[200px] sm:min-w-[250px] min-h-[48px]"
-                style={{
-                  backgroundColor: '#d4a574',
-                  color: '#000000'
-                }}
-              >
-                Apply for Coaching
-              </button>
-            </a>
-          </div>
-        </motion.div>
       </div>
 
       {/* Decorative elements */}

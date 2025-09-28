@@ -41,6 +41,11 @@ export default function Home() {
           <PremiumTestimonialsSection />
         </SectionErrorBoundary>
 
+        {/* About Section - Positioned right after testimonials */}
+        <SectionErrorBoundary sectionName="AboutSection">
+          <AboutSection />
+        </SectionErrorBoundary>
+
         {/* FEATURED: Online Package Showcase - Main Product Offering */}
         <SectionErrorBoundary sectionName="OnlinePackageShowcase">
           <OnlinePackageShowcase />
@@ -49,11 +54,6 @@ export default function Home() {
         {/* Aphrodite Fitness Packages - Complete Training Options */}
         <SectionErrorBoundary sectionName="AphroditePricingTiers">
           <AphroditePricingTiers />
-        </SectionErrorBoundary>
-
-        {/* About Section */}
-        <SectionErrorBoundary sectionName="AboutSection">
-          <AboutSection />
         </SectionErrorBoundary>
 
         {/* FAQ Section */}

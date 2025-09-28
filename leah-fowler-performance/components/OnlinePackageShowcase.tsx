@@ -93,7 +93,7 @@ export default function OnlinePackageShowcase() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section ref={ref} className="relative py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 overflow-hidden bg-gradient-to-b from-white via-gold/5 to-white dark:from-navy-dark dark:via-gold/10 dark:to-navy-dark">
+    <section ref={ref} className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 overflow-hidden bg-gradient-to-b from-white via-gold/5 to-white dark:from-navy-dark dark:via-gold/10 dark:to-navy-dark">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-3xl" />
@@ -108,27 +108,26 @@ export default function OnlinePackageShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 md:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-navy dark:text-white mb-8 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-navy dark:text-white mb-6 tracking-tight">
             The Online Package
             <span className="block mt-2 bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
               Transform From Anywhere
             </span>
           </h2>
 
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-            The flagship online coaching programme combining expert guidance,
-            smart app accountability, and flexible training for busy parents, professionals and athletes
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-6xl mx-auto leading-tight mb-3">
+            Online coaching delivers you a fully supported programme through an app you can have on your phone. You&apos;ll receive expert guidance as each detail is programmed specifically for you, tailored to your individual needs and factoring in your lifestyle. Monthly goal setting and programme review as well as a weekly check in mean that you&apos;ll remain accountable and get the very best out of your workouts.
           </p>
 
           {/* Price Highlight */}
-          <div className="inline-block bg-gradient-to-r from-gold/10 to-gold/20 dark:from-gold/20 dark:to-gold/30 rounded-3xl p-8 border-2 border-gold/30">
+          <div className="inline-block bg-gradient-to-r from-gold/10 to-gold/20 dark:from-gold/20 dark:to-gold/30 rounded-3xl p-6 border-2 border-gold/30">
             <div className="flex items-center justify-center">
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-navy dark:text-white">
+                <p className="text-2xl md:text-3xl font-bold text-navy dark:text-white">
                   £100
-                  <span className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">/month</span>
+                  <span className="text-lg md:text-xl text-gray-600 dark:text-gray-300">/month</span>
                 </p>
-                <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 mt-2">
+                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-2">
                   3-month minimum commitment
                 </p>
               </div>
@@ -163,7 +162,7 @@ export default function OnlinePackageShowcase() {
               )}>
                 <feature.icon className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-navy dark:text-white mb-2">
+              <h3 className="text-lg font-bold text-navy dark:text-white mb-2">
                 {feature.title}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -178,7 +177,7 @@ export default function OnlinePackageShowcase() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-gradient-to-r from-navy via-navy-dark to-navy rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 xl:p-20 mb-8 md:mb-12 lg:mb-16 relative overflow-hidden"
+          className="bg-gradient-to-r from-navy via-navy-dark to-navy rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 mb-6 md:mb-8 lg:mb-10 relative overflow-hidden"
         >
           <div className="absolute inset-0">
             <div className="absolute top-0 right-0 w-96 h-96 bg-gold/20 rounded-full blur-3xl" />
@@ -187,10 +186,10 @@ export default function OnlinePackageShowcase() {
 
           <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Everything in One App
               </h3>
-              <p className="text-lg md:text-xl text-white/80 mb-8">
+              <p className="text-base md:text-lg text-white/80 mb-6">
                 Track your workouts, log your nutrition, monitor progress, and stay connected
                 with your coach - all from your phone.
               </p>
@@ -234,9 +233,9 @@ export default function OnlinePackageShowcase() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-gradient-to-r from-gold/10 to-sage/10 dark:from-gold/20 dark:to-sage/20 rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 mb-8 md:mb-12 lg:mb-16"
+          className="bg-gradient-to-r from-gold/10 to-sage/10 dark:from-gold/20 dark:to-sage/20 rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 mb-6 md:mb-8 lg:mb-10"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-navy dark:text-white mb-8 text-center">
+          <h3 className="text-xl md:text-2xl font-bold text-navy dark:text-white mb-6 text-center">
             What's Included in Your Package
           </h3>
 
@@ -263,7 +262,7 @@ export default function OnlinePackageShowcase() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="my-8 sm:my-12 md:my-16 lg:my-24"
         >
-          <h3 className="text-3xl md:text-4xl font-bold text-navy dark:text-white text-center mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-navy dark:text-white text-center mb-8">
             Your 3 Steps to Longevity
           </h3>
 
@@ -282,11 +281,11 @@ export default function OnlinePackageShowcase() {
                   </div>
                 )}
 
-                <div className="bg-white dark:bg-navy-dark rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full">
+                <div className="bg-white dark:bg-navy-dark rounded-2xl p-3 sm:p-4 md:p-6 shadow-lg h-full">
                   <div className="bg-gradient-to-br from-sage to-sage-light p-3 rounded-xl inline-block mb-4">
                     <phase.icon className="h-8 w-8 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3 mt-4">
+                  <h4 className="text-lg font-bold text-navy dark:text-white mb-3 mt-4">
                     {phase.title}
                   </h4>
                   <p className="text-gray-600 dark:text-gray-300">
