@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { getAllSchemas, getPageSchema } from '@/lib/schema-markup';
+import { getAllSchemas, getPageSchema } from '@/lib/schema-markup-updated';
 
 /**
  * Schema Markup Component

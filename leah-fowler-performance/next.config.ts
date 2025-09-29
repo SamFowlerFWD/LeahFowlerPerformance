@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { seoRedirects, seoHeaders } from './next.config.seo';
 
 const nextConfig: NextConfig = {
   images: {
@@ -24,6 +25,14 @@ const nextConfig: NextConfig = {
   // Also disable TypeScript errors if needed
   typescript: {
     ignoreBuildErrors: true,
+  },
+  // SEO redirects for brand transition from Aphrodite Fitness and Strength PT
+  async redirects() {
+    return seoRedirects;
+  },
+  // SEO headers for brand transition
+  async headers() {
+    return seoHeaders;
   },
 };
 

@@ -1,0 +1,16 @@
+{
+  "name": "leah-fowler-database-migrations",
+  "version": "1.0.0",
+  "description": "Database migrations for Leah Fowler Performance Supabase database",
+  "main": "execute-migrations.js",
+  "scripts": {
+    "migrate": "node execute-migrations.js",
+    "check-schema": "node check-schema.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.3"
+  },
+  "devDependencies": {},
+  "author": "Sam Fowler",
+  "license": "ISC"
+}

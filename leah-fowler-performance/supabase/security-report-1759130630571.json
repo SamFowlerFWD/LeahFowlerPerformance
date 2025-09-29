@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-09-29T07:23:49.767Z",
+  "database_url": "https://ltlbfltlhysjxslusypq.supabase.co",
+  "critical_tables": {
+    "gdpr_verification_requests": "EXISTS",
+    "api_rate_limits": "EXISTS",
+    "security_audit_log": "EXISTS",
+    "gdpr_consent_log": "EXISTS",
+    "assessment_submissions": "EXISTS",
+    "posts": "EXISTS"
+  },
+  "security_features": {
+    "gdpr_columns": "MISSING"
+  },
+  "recommendations": [
+    "Add GDPR columns to assessment_submissions table"
+  ]
+}

@@ -1,0 +1,5 @@
+Click this link to execute the migration:
+https://supabase.com/dashboard/project/ltlbfltlhysjxslusypq/sql/new
+
+Then paste the contents of:
+/database-migrations/01-gdpr-security-migration.sql

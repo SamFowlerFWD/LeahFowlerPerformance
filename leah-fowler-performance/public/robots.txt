@@ -1,15 +1,15 @@
-# Robots.txt for Strength PT
-# Online Personal Training & Strength Conditioning - Norfolk UK
-# https://strengthpt.co.uk
+# Robots.txt for Leah Coach
+# Elite Performance Consultancy (formerly Aphrodite Fitness & Strength PT)
+# https://leah.coach
 
 User-agent: *
 Allow: /
 Crawl-delay: 0
 
-# Priority pages for online PT and strength coaching
+# Priority pages for performance consultancy and executive coaching
 Allow: /services
 Allow: /performance-accelerator
-Allow: /online-training
+Allow: /programmes
 Allow: /testimonials
 Allow: /about
 Allow: /apply
@@ -26,10 +26,14 @@ Allow: /api/assessment/submit
 Allow: /api/lead-magnet
 Allow: /api/performance-assessment
 
-# Sitemap location
+# Sitemap locations - Primary and legacy domains
+Sitemap: https://leah.coach/sitemap.xml
+Sitemap: https://leah.coach/sitemap-blog.xml
+Sitemap: https://leah.coach/sitemap-testimonials.xml
+
+# Legacy domain sitemaps for transition period
 Sitemap: https://strengthpt.co.uk/sitemap.xml
-Sitemap: https://strengthpt.co.uk/sitemap-blog.xml
-Sitemap: https://strengthpt.co.uk/sitemap-testimonials.xml
+Sitemap: https://aphroditefitness.co.uk/sitemap.xml
 
 # Specific bot instructions
 User-agent: Googlebot
@@ -53,7 +57,7 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
-# ChatGPT and AI crawlers
+# ChatGPT and AI crawlers - Allow for brand recognition
 User-agent: GPTBot
 Allow: /
 User-agent: ChatGPT-User
@@ -83,3 +87,8 @@ Disallow: /*.json$
 Disallow: /*.xml$
 Allow: /sitemap*.xml$
 Allow: /manifest.json$
+
+# Brand evolution notice for crawlers
+# This site was formerly: Aphrodite Fitness (aphroditefitness.co.uk)
+# Previous domain: Strength PT (strengthpt.co.uk)
+# Current brand: Leah Coach - Elite Performance Consultancy

@@ -19,16 +19,16 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://strengthpt.co.uk'),
+  metadataBase: new URL('https://leah.coach'),
   title: {
-    default: "Strength PT | Elite Online Personal Training & Coaching UK",
-    template: "%s | Strength PT"
+    default: "Leah Coach | Elite Performance Consultancy UK (formerly Aphrodite Fitness)",
+    template: "%s | Leah Coach"
   },
-  description: "Strength PT - Elite online personal training & strength coaching. Professional PT Dereham-based, UK-wide service. Evidence-based programmes from £48. Transform with LFP.",
-  keywords: ["online PT Norfolk", "online personal trainer UK", "strength and conditioning coach", "online strength coach Norfolk", "PT Dereham", "personal trainer Dereham", "online fitness coach Norwich", "performance coach UK", "online PT programmes", "strength training online", "Dereham fitness coach", "online coaching UK"],
+  description: "Leah Coach - Elite performance consultancy for high-achieving professionals. Formerly Aphrodite Fitness & Strength PT. Transform your life performance with evidence-based coaching from £48. UK-wide online programmes.",
+  keywords: ["Leah Coach", "performance consultant UK", "executive coaching", "Aphrodite Fitness", "formerly Aphrodite Fitness", "Strength PT", "online performance coach", "high achiever coaching", "professional performance optimisation", "executive wellness UK", "parent fitness coach", "Norfolk performance consultant", "Dereham coach", "life performance coaching"],
   authors: [{ name: "Leah Fowler" }],
   creator: "Leah Fowler",
-  publisher: "Leah Fowler Performance",
+  publisher: "Leah Coach Performance Consultancy",
   formatDetection: {
     email: false,
     address: false,
@@ -37,10 +37,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://strengthpt.co.uk',
-    siteName: 'Strength PT - Online Personal Training & Strength Coaching',
-    title: 'Online Personal Trainer Norfolk | Elite Strength Coach',
-    description: 'Transform with Norfolk\'s premier online PT. Evidence-based strength & conditioning. Start from £48/month. Book your free consultation today.',
+    url: 'https://leah.coach',
+    siteName: 'Leah Coach - Elite Performance Consultancy (formerly Aphrodite Fitness)',
+    title: 'Leah Coach | Performance Consultant UK | Formerly Aphrodite Fitness',
+    description: 'Elite performance consultancy for high-achieving professionals. Formerly Aphrodite Fitness. Evidence-based life optimisation from £48/month. Transform with Leah Coach.',
     images: [
       {
         url: '/og-image.jpg',
@@ -82,7 +82,12 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="canonical" href="https://leah.coach" />
+        <link rel="alternate" href="https://strengthpt.co.uk" hrefLang="en-GB" />
+        <link rel="alternate" href="https://aphroditefitness.co.uk" hrefLang="en-GB" />
         <meta name="theme-color" content="#1a2942" />
+        <meta property="og:see_also" content="https://strengthpt.co.uk" />
+        <meta property="og:see_also" content="https://aphroditefitness.co.uk" />
         <SchemaMarkup />
       </head>
       <body

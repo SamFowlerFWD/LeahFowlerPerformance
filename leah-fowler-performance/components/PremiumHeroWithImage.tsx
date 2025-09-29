@@ -44,10 +44,10 @@ const spacingScale = {
 }
 
 const stats = [
-  { icon: Users, label: 'Parents Trained', value: '500+', color: 'text-orange-500', glow: 'shadow-orange-500/30' },
-  { icon: Trophy, label: 'Average Strength Gain', value: '300%', color: 'text-blue-500', glow: 'shadow-blue-500/30' },
-  { icon: Award, label: 'Years Experience', value: '10+', color: 'text-green-500', glow: 'shadow-green-500/30' },
-  { icon: Heart, label: 'Still Training', value: '85%', color: 'text-red-500', glow: 'shadow-red-500/30' },
+  { icon: Award, label: 'Industry Leading', value: 'Level 4 S&C', color: 'text-orange-500', glow: 'shadow-orange-500/30' },
+  { icon: Trophy, label: 'Years of Experience', value: 'Proven', color: 'text-blue-500', glow: 'shadow-blue-500/30' },
+  { icon: Users, label: 'Client Retention', value: '85%+', color: 'text-green-500', glow: 'shadow-green-500/30' },
+  { icon: Heart, label: 'Mother of', value: '3 Kids', color: 'text-red-500', glow: 'shadow-red-500/30' },
 ]
 
 // Powerful headlines that speak directly to parents' experiences and aspirations

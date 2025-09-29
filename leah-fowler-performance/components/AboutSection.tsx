@@ -9,7 +9,8 @@ import {
   GraduationCap,
   Users,
   Heart,
-  CheckCircle
+  CheckCircle,
+  ChevronDown
 } from 'lucide-react'
 
 const credentials = [
@@ -20,15 +21,15 @@ const credentials = [
     color: 'from-red-600 to-pink-600'
   },
   {
-    icon: Users,
-    title: '500+ Mums Stronger',
-    subtitle: 'Properly Strong, Not Just Surviving',
+    icon: GraduationCap,
+    title: 'Industry-Leading Qualifications',
+    subtitle: 'Level 4 S&C + Level 3 PT',
     color: 'from-blue-500 to-purple-500'
   },
   {
     icon: Award,
-    title: '15 Years Coaching',
-    subtitle: 'Real Experience, Real Results',
+    title: 'Years of Experience',
+    subtitle: 'Transforming Parents Into Athletes',
     color: 'from-green-500 to-emerald-500'
   },
 ]
@@ -189,6 +190,25 @@ const GlassCard = ({
 }
 
 export default function AboutSection() {
+  const [showQualifications, setShowQualifications] = useState(false)
+
+  const qualificationsList = [
+    'Level 4 Strength & Conditioning Coach',
+    'Level 3 Personal Trainer',
+    'Pre & Postnatal Exercise Specialist',
+    'Nutrition for Sport & Exercise',
+    'First Aid & Emergency Response',
+    'Safeguarding & Child Protection'
+  ]
+
+  const cpdList = [
+    'Olympic Lifting Techniques',
+    'Biomechanics & Movement Analysis',
+    'Female Athletic Performance',
+    'Injury Prevention Strategies',
+    'Mindset & Performance Psychology',
+    'Advanced Programme Design'
+  ]
   return (
     <section id="about" className="py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gradient-to-br from-navy via-navy/95 to-navy-dark relative overflow-hidden">
       {/* Premium Background Elements */}
@@ -337,6 +357,79 @@ export default function AboutSection() {
               ))}
             </div>
 
+            {/* Qualifications Dropdown */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mb-8 sm:mb-10 md:mb-12"
+            >
+              <button
+                onClick={() => setShowQualifications(!showQualifications)}
+                className="w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 group"
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-white font-semibold text-sm sm:text-base md:text-lg">See All Qualifications</span>
+                  <ChevronDown
+                    className={`h-5 w-5 text-gold transition-transform duration-300 ${
+                      showQualifications ? 'rotate-180' : ''
+                    }`}
+                  />
+                </div>
+              </button>
+
+              <motion.div
+                initial={false}
+                animate={{
+                  height: showQualifications ? 'auto' : 0,
+                  opacity: showQualifications ? 1 : 0
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className="overflow-hidden"
+              >
+                <div className="mt-6 grid md:grid-cols-2 gap-8 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+                  {/* Qualifications Column */}
+                  <div className="text-center">
+                    <h4 className="text-gold font-bold text-lg mb-4">Qualifications</h4>
+                    <ul className="space-y-2 text-left inline-block">
+                      {qualificationsList.map((qual, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: showQualifications ? 1 : 0, x: showQualifications ? 0 : -20 }}
+                          transition={{ duration: 0.3, delay: index * 0.05 }}
+                          className="flex items-start gap-2"
+                        >
+                          <CheckCircle className="h-4 w-4 text-sage mt-0.5 flex-shrink-0" />
+                          <span className="text-white/80 text-sm">{qual}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CPD Column */}
+                  <div className="text-center">
+                    <h4 className="text-gold font-bold text-lg mb-4">Continued Professional Development</h4>
+                    <ul className="space-y-2 text-left inline-block">
+                      {cpdList.map((cpd, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: showQualifications ? 1 : 0, x: showQualifications ? 0 : -20 }}
+                          transition={{ duration: 0.3, delay: index * 0.05 + 0.1 }}
+                          className="flex items-start gap-2"
+                        >
+                          <CheckCircle className="h-4 w-4 text-sage mt-0.5 flex-shrink-0" />
+                          <span className="text-white/80 text-sm">{cpd}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
           </motion.div>
         </div>
 
@@ -351,7 +444,7 @@ export default function AboutSection() {
             className="text-center mb-20"
           >
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold mb-6 sm:mb-8 md:mb-10">Core Expertise</h3>
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5 max-w-4xl mx-auto">
               {expertise.map((item, index) => (
                 <motion.span
                   key={item}
@@ -359,7 +452,7 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="inline-flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-xs sm:text-sm md:text-base hover:bg-white/15 transition-colors"
+                  className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-xs sm:text-sm md:text-base hover:bg-white/15 transition-colors"
                 >
                   <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-sage" />
                   {item}

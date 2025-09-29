@@ -5,6 +5,7 @@ import SectionErrorBoundary from '@/components/SectionErrorBoundary'
 import AnnouncementBar from '@/components/AnnouncementBar'
 import ModernHeader from '@/components/ModernHeader'
 import PremiumHeroWithImage from '@/components/PremiumHeroWithImage'
+import BrandTransitionNotice, { HiddenSEOContent } from '@/components/BrandTransitionNotice'
 import AphroditePricingTiers from '@/components/AphroditePricingTiers'
 // import MobileDock from '@/components/MobileDock' - Removed for cleaner mobile UI
 import PremiumTestimonialsSection from '@/components/PremiumTestimonialsSection'
@@ -26,6 +27,9 @@ const FloatingElements = dynamic(() => import('@/components/FloatingElements'), 
 export default function Home() {
   return (
     <>
+      {/* Hidden SEO content for brand transition */}
+      <HiddenSEOContent />
+
       {/* Announcement Bar - Mother Identity Metrics */}
       {/* <AnnouncementBar /> - Removed for cleaner header */}
 
@@ -36,6 +40,9 @@ export default function Home() {
       <main className="min-h-screen">
         {/* Premium Hero Section with Professional Imagery */}
         <PremiumHeroWithImage />
+
+        {/* Brand Transition Notice - Subtle reminder of evolution */}
+        <BrandTransitionNotice variant="subtle" />
 
         {/* Premium Testimonials Section - Moved up right after hero */}
         <SectionErrorBoundary sectionName="PremiumTestimonialsSection">

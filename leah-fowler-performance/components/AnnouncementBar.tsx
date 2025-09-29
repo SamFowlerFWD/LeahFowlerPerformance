@@ -2,18 +2,18 @@
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Trophy, Users, Star } from 'lucide-react'
+import { Trophy, GraduationCap, Star } from 'lucide-react'
 
 const AnnouncementBar: React.FC = () => {
   const announcements = [
     {
-      icon: Users,
-      text: "500+ Mums Stronger",
+      icon: GraduationCap,
+      text: "Level 4 S&C + Level 3 PT",
       color: "text-orange-500"
     },
     {
       icon: Trophy,
-      text: "300% Average Strength Gain",
+      text: "Years of Experience",
       color: "text-green-500"
     },
     {

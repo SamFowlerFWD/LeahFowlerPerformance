@@ -1,0 +1,196 @@
+{
+  "critical_tables": {
+    "passed": 7,
+    "failed": 0,
+    "tests": [
+      {
+        "table": "gdpr_verification_requests",
+        "exists": true,
+        "critical": true
+      },
+      {
+        "table": "api_rate_limits",
+        "exists": true,
+        "critical": true
+      },
+      {
+        "table": "security_audit_log",
+        "exists": true,
+        "critical": false
+      },
+      {
+        "table": "gdpr_consent_log",
+        "exists": true,
+        "critical": false
+      },
+      {
+        "table": "assessment_submissions",
+        "exists": true,
+        "critical": false
+      },
+      {
+        "table": "posts",
+        "exists": true,
+        "critical": false
+      },
+      {
+        "table": "admin_users",
+        "exists": true,
+        "critical": false
+      }
+    ]
+  },
+  "gdpr_columns": {
+    "passed": 2,
+    "failed": 5,
+    "tests": [
+      {
+        "table": "assessment_submissions",
+        "column": "gdpr_consent_given",
+        "exists": false,
+        "critical": true
+      },
+      {
+        "table": "assessment_submissions",
+        "column": "gdpr_consent_timestamp",
+        "exists": false,
+        "critical": true
+      },
+      {
+        "table": "assessment_submissions",
+        "column": "gdpr_deletion_requested",
+        "exists": false,
+        "critical": true
+      },
+      {
+        "table": "assessment_submissions",
+        "column": "gdpr_deletion_timestamp",
+        "exists": false,
+        "critical": true
+      },
+      {
+        "table": "gdpr_consent_log",
+        "column": "submission_id",
+        "exists": false,
+        "critical": false
+      },
+      {
+        "table": "security_audit_log",
+        "column": "request_headers",
+        "exists": true,
+        "critical": false
+      },
+      {
+        "table": "security_audit_log",
+        "column": "response_status",
+        "exists": true,
+        "critical": false
+      }
+    ]
+  },
+  "indexes": {
+    "passed": 4,
+    "failed": 2,
+    "tests": [
+      {
+        "name": "Assessment email lookup",
+        "table": "assessment_submissions",
+        "column": "email",
+        "passed": true,
+        "duration": 59
+      },
+      {
+        "name": "Assessment creation date",
+        "table": "assessment_submissions",
+        "column": "created_at",
+        "passed": true,
+        "duration": 60
+      },
+      {
+        "name": "Posts publication status",
+        "table": "posts",
+        "column": "status",
+        "passed": true,
+        "duration": 59
+      },
+      {
+        "name": "Posts slug lookup",
+        "table": "posts",
+        "column": "slug",
+        "passed": true,
+        "duration": 60
+      },
+      {
+        "name": "GDPR token lookup",
+        "table": "gdpr_verification_requests",
+        "column": "token",
+        "passed": false,
+        "error": "Could not find the table 'public.gdpr_verification_requests' in the schema cache"
+      },
+      {
+        "name": "Rate limit lookup",
+        "table": "api_rate_limits",
+        "column": "identifier",
+        "passed": false,
+        "error": "Could not find the table 'public.api_rate_limits' in the schema cache"
+      }
+    ]
+  },
+  "functions": {
+    "passed": 0,
+    "failed": 2,
+    "tests": [
+      {
+        "name": "validate_email",
+        "params": {
+          "email": "test@example.com"
+        },
+        "exists": false
+      },
+      {
+        "name": "check_rate_limit",
+        "params": {
+          "p_identifier": "test",
+          "p_endpoint": "/api/test"
+        },
+        "exists": false
+      }
+    ]
+  },
+  "rls_policies": {
+    "passed": 1,
+    "failed": 3,
+    "tests": [
+      {
+        "table": "gdpr_verification_requests",
+        "enabled": false,
+        "error": "Not in schema cache"
+      },
+      {
+        "table": "api_rate_limits",
+        "enabled": false,
+        "error": "Not in schema cache"
+      },
+      {
+        "table": "security_audit_log",
+        "enabled": false,
+        "error": "Not in schema cache"
+      },
+      {
+        "table": "gdpr_consent_log",
+        "enabled": true
+      }
+    ]
+  },
+  "overall": {
+    "total_tests": 26,
+    "passed": 14,
+    "failed": 12,
+    "critical_failures": [
+      "Missing GDPR column: assessment_submissions.gdpr_consent_given",
+      "Missing GDPR column: assessment_submissions.gdpr_consent_timestamp",
+      "Missing GDPR column: assessment_submissions.gdpr_deletion_requested",
+      "Missing GDPR column: assessment_submissions.gdpr_deletion_timestamp"
+    ]
+  }
+}
