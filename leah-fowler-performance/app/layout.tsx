@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import CookieConsent from '@/components/CookieConsent';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import MobileNav from '@/components/MobileNav';
+import ConditionalMobileNav from '@/components/ConditionalMobileNav';
 import "./globals.css";
 
 const inter = Inter({
@@ -102,7 +102,7 @@ export default function RootLayout({
           {children}
         </div>
 
-        <MobileNav />
+        <ConditionalMobileNav />
         <CookieConsent />
       </body>
     </html>

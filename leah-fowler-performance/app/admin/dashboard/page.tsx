@@ -1,31 +1,22 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { createClient } from '@supabase/supabase-js'
+import { createBrowserClient } from '@/lib/supabase-auth'
+import { AdminLayout } from '@/components/admin/AdminLayout'
 import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import {
   Users,
   FileText,
   MessageSquare,
   TrendingUp,
-  LogOut,
-  Shield,
   Eye,
   Calendar
 } from 'lucide-react'
 import Link from 'next/link'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+const supabase = createBrowserClient()
 
 export default function AdminDashboard() {
-  const router = useRouter()
-  const [loading, setLoading] = useState(true)
-  const [adminUser, setAdminUser] = useState<any>(null)
   const [stats, setStats] = useState({
     assessments: 0,
     posts: 0,
@@ -34,39 +25,8 @@ export default function AdminDashboard() {
   })
 
   useEffect(() => {
-    checkAuth()
     loadStats()
   }, [])
-
-  const checkAuth = async () => {
-    try {
-      const { data: { user } } = await supabase.auth.getUser()
-
-      if (!user) {
-        router.push('/admin/login')
-        return
-      }
-
-      const { data: adminData } = await supabase
-        .from('admin_users')
-        .select('*')
-        .eq('user_id', user.id)
-        .eq('is_active', true)
-        .single()
-
-      if (!adminData) {
-        router.push('/admin/login')
-        return
-      }
-
-      setAdminUser(adminData)
-    } catch (error) {
-      console.error('Auth check failed:', error)
-      router.push('/admin/login')
-    } finally {
-      setLoading(false)
-    }
-  }
 
   const loadStats = async () => {
     try {
@@ -103,128 +63,103 @@ export default function AdminDashboard() {
     }
   }
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut()
-    router.push('/admin/login')
-  }
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <Shield className="h-12 w-12 text-gold mx-auto mb-4 animate-pulse" />
-          <p className="text-gray-600">Loading admin dashboard...</p>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Shield className="h-8 w-8 text-gold" />
-              <div>
-                <h1 className="text-xl font-bold">Admin Dashboard</h1>
-                <p className="text-sm text-gray-300">Welcome, {adminUser?.email}</p>
-              </div>
-            </div>
-            <Button
-              onClick={handleLogout}
-              variant="ghost"
-              className="text-white hover:bg-navy-dark"
-            >
-              <LogOut className="h-4 w-4 mr-2" />
-              Logout
-            </Button>
-          </div>
+    <AdminLayout>
+
+      <div>
+        {/* Page Header */}
+        <div className="mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-navy">Dashboard</h1>
+          <p className="text-gray-600 mt-1">Monitor your platform's performance and manage content</p>
         </div>
-      </div>
 
-      {/* Stats Cards */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <Card className="p-6">
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+          <Card className="p-4 sm:p-6 bg-navy border-gold/20 hover:border-gold/40 transition-all">
             <div className="flex items-center justify-between mb-2">
-              <Users className="h-8 w-8 text-blue-600" />
-              <span className="text-3xl font-bold">{stats.assessments}</span>
+              <Users className="h-8 w-8 text-gold" />
+              <span className="text-2xl sm:text-3xl font-bold text-white">{stats.assessments}</span>
             </div>
-            <p className="text-gray-600">Assessment Submissions</p>
+            <p className="text-gold/70 text-sm font-medium">Assessment Submissions</p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-4 sm:p-6 bg-navy border-gold/20 hover:border-gold/40 transition-all">
             <div className="flex items-center justify-between mb-2">
-              <FileText className="h-8 w-8 text-green-600" />
-              <span className="text-3xl font-bold">{stats.posts}</span>
+              <FileText className="h-8 w-8 text-gold" />
+              <span className="text-2xl sm:text-3xl font-bold text-white">{stats.posts}</span>
             </div>
-            <p className="text-gray-600">Blog Posts</p>
+            <p className="text-gold/70 text-sm font-medium">Blog Posts</p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-4 sm:p-6 bg-navy border-gold/20 hover:border-gold/40 transition-all">
             <div className="flex items-center justify-between mb-2">
-              <MessageSquare className="h-8 w-8 text-purple-600" />
-              <span className="text-3xl font-bold">{stats.categories}</span>
+              <MessageSquare className="h-8 w-8 text-gold" />
+              <span className="text-2xl sm:text-3xl font-bold text-white">{stats.categories}</span>
             </div>
-            <p className="text-gray-600">Categories</p>
+            <p className="text-gold/70 text-sm font-medium">Categories</p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-4 sm:p-6 bg-navy border-gold/20 hover:border-gold/40 transition-all">
             <div className="flex items-center justify-between mb-2">
-              <Eye className="h-8 w-8 text-orange-600" />
-              <span className="text-3xl font-bold">{stats.views}</span>
+              <Eye className="h-8 w-8 text-gold" />
+              <span className="text-2xl sm:text-3xl font-bold text-white">{stats.views}</span>
             </div>
-            <p className="text-gray-600">Total Views</p>
+            <p className="text-gold/70 text-sm font-medium">Total Views</p>
           </Card>
         </div>
 
         {/* Quick Actions */}
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Quick Actions</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-navy mb-4 sm:mb-6">Quick Actions</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <Link href="/admin/assessments">
-            <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
-              <Users className="h-12 w-12 text-blue-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">View Assessments</h3>
-              <p className="text-gray-600">Review performance assessment submissions and lead data</p>
+            <Card className="p-4 sm:p-6 bg-navy/5 hover:bg-navy/10 border-gold/20 hover:border-gold/40 transition-all cursor-pointer group">
+              <Users className="h-10 sm:h-12 w-10 sm:w-12 text-gold mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-base sm:text-lg font-semibold text-navy mb-2">View Assessments</h3>
+              <p className="text-sm text-gray-700">Review performance assessment submissions and lead data</p>
             </Card>
           </Link>
 
           <Link href="/admin/blog">
-            <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
-              <FileText className="h-12 w-12 text-green-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Manage Blog</h3>
-              <p className="text-gray-600">Create, edit, and manage blog posts and categories</p>
+            <Card className="p-4 sm:p-6 bg-navy/5 hover:bg-navy/10 border-gold/20 hover:border-gold/40 transition-all cursor-pointer group">
+              <FileText className="h-10 sm:h-12 w-10 sm:w-12 text-gold mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-base sm:text-lg font-semibold text-navy mb-2">Manage Blog</h3>
+              <p className="text-sm text-gray-700">Create, edit, and manage blog posts and categories</p>
             </Card>
           </Link>
 
           <Link href="/admin/blog/new">
-            <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer">
-              <TrendingUp className="h-12 w-12 text-purple-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Create New Post</h3>
-              <p className="text-gray-600">Write and publish a new blog post</p>
+            <Card className="p-4 sm:p-6 bg-navy/5 hover:bg-navy/10 border-gold/20 hover:border-gold/40 transition-all cursor-pointer group">
+              <TrendingUp className="h-10 sm:h-12 w-10 sm:w-12 text-gold mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-base sm:text-lg font-semibold text-navy mb-2">Create New Post</h3>
+              <p className="text-sm text-gray-700">Write and publish a new blog post</p>
             </Card>
           </Link>
         </div>
 
-        {/* Admin Info */}
-        <Card className="mt-8 p-6 bg-gold/5 border-gold/20">
-          <div className="flex items-start gap-3">
-            <Shield className="h-6 w-6 text-gold mt-1" />
-            <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Admin Access Level: {adminUser?.role}</h3>
-              <p className="text-sm text-gray-600">
-                You have full access to manage content, view submissions, and configure the platform.
-                All actions are logged for security purposes.
-              </p>
-              <p className="text-xs text-gray-500 mt-2">
-                Last login: {adminUser?.last_login_at ? new Date(adminUser.last_login_at).toLocaleString() : 'First login'}
-              </p>
+        {/* Recent Activity */}
+        <div className="mt-8 sm:mt-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-navy mb-4 sm:mb-6">Recent Activity</h2>
+          <Card className="p-4 sm:p-6 bg-white border-gold/20">
+            <div className="flex flex-col sm:flex-row items-start gap-3">
+              <Calendar className="h-6 w-6 text-gold flex-shrink-0 mt-0.5" />
+              <div className="space-y-3 w-full">
+                <div className="pb-3 border-b border-gold/10">
+                  <p className="text-sm font-medium text-navy">Latest Assessment</p>
+                  <p className="text-xs text-gray-600 mt-1">2 hours ago - New performance assessment submitted</p>
+                </div>
+                <div className="pb-3 border-b border-gold/10">
+                  <p className="text-sm font-medium text-navy">Blog Post Published</p>
+                  <p className="text-xs text-gray-600 mt-1">Yesterday - "Peak Performance Strategies for Q4"</p>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-navy">System Update</p>
+                  <p className="text-xs text-gray-600 mt-1">3 days ago - Admin panel security enhancements</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
       </div>
-    </div>
+    </AdminLayout>
   )
 }

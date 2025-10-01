@@ -5,6 +5,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { adminLogout } from '@/lib/auth/admin-auth';
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -81,45 +82,29 @@ export function AdminLayout({ children, user }: AdminLayoutProps) {
     : navigation;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Mobile sidebar backdrop */}
-      {isSidebarOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-gray-600 bg-opacity-75 lg:hidden"
-          onClick={() => setIsSidebarOpen(false)}
-        />
-      )}
-
-      {/* Sidebar */}
-      <div
-        className={cn(
-          'fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-200 ease-in-out lg:transform-none lg:translate-x-0',
-          isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        )}
-      >
+    <div className="min-h-screen bg-[#14213b]">
+      {/* Desktop Sidebar */}
+      <div className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-64 lg:bg-navy lg:shadow-xl">
         <div className="h-full flex flex-col">
           {/* Logo */}
-          <div className="flex items-center justify-between h-16 px-4 border-b">
-            <div className="flex items-center">
-              <Shield className="h-8 w-8 text-primary mr-2" />
-              <span className="text-xl font-bold">Admin Panel</span>
-            </div>
-            <button
-              className="lg:hidden"
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              <X className="h-6 w-6" />
-            </button>
+          <div className="flex items-center h-16 px-4 border-b border-gold/20 bg-navy">
+            <Link href="/admin/dashboard" className="flex items-center">
+              <Shield className="h-8 w-8 text-gold mr-3" />
+              <div>
+                <span className="text-lg font-bold text-white">Admin Panel</span>
+                <span className="text-xs text-gold/70 block">Leah Fowler Performance</span>
+              </div>
+            </Link>
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
+          <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto bg-navy">
             {allNavigation.map((item, index) => {
               if ('divider' in item) {
                 return (
                   <div key={`divider-${index}`} className="my-4">
-                    <div className="border-t border-gray-200" />
-                    <p className="mt-4 mb-2 px-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    <div className="border-t border-gold/20" />
+                    <p className="mt-4 mb-2 px-2 text-xs font-semibold text-gold/60 uppercase tracking-wider">
                       Super Admin
                     </p>
                   </div>
@@ -132,10 +117,10 @@ export function AdminLayout({ children, user }: AdminLayoutProps) {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                    'flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-all min-h-[44px]',
                     isActive
-                      ? 'bg-primary text-white'
-                      : 'text-gray-700 hover:bg-gray-100'
+                      ? 'bg-gold/20 text-gold border border-gold/30'
+                      : 'text-white/80 hover:bg-gold/10 hover:text-gold'
                   )}
                 >
                   <item.icon className="h-5 w-5 mr-3" />
@@ -149,18 +134,18 @@ export function AdminLayout({ children, user }: AdminLayoutProps) {
           </nav>
 
           {/* User info */}
-          <div className="border-t p-4">
+          <div className="border-t border-gold/20 p-4 bg-navy">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <User className="h-4 w-4 text-primary" />
+                <div className="h-8 w-8 rounded-full bg-gold/10 flex items-center justify-center">
+                  <User className="h-4 w-4 text-gold" />
                 </div>
               </div>
               <div className="ml-3 flex-1 min-w-0">
-                <p className="text-sm font-medium text-gray-900 truncate">
+                <p className="text-sm font-medium text-white truncate">
                   {user?.email}
                 </p>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-gold/60">
                   {user?.role?.replace('_', ' ')}
                 </p>
               </div>
@@ -172,30 +157,98 @@ export function AdminLayout({ children, user }: AdminLayoutProps) {
       {/* Main content */}
       <div className="lg:ml-64">
         {/* Top bar */}
-        <header className="bg-white shadow-sm border-b">
-          <div className="flex items-center justify-between h-16 px-4">
-            <button
-              className="lg:hidden"
-              onClick={() => setIsSidebarOpen(true)}
-            >
-              <Menu className="h-6 w-6" />
-            </button>
+        <header className="sticky top-0 z-sticky bg-navy/95 backdrop-blur-premium shadow-xl border-b border-gold/20">
+          <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+            {/* Mobile menu button */}
+            <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="lg:hidden min-h-[44px] min-w-[44px] p-0 hover:bg-gold/10"
+                  aria-label="Open menu"
+                >
+                  <Menu className="h-6 w-6 text-white" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[280px] sm:w-[350px] p-0 bg-navy">
+                <div className="flex flex-col h-full">
+                  {/* Mobile Menu Header */}
+                  <div className="flex items-center justify-between p-4 border-b border-gold/20 bg-navy">
+                    <div className="flex items-center gap-3">
+                      <Shield className="h-8 w-8 text-gold" />
+                      <div>
+                        <h2 className="text-lg font-bold text-white">Admin Panel</h2>
+                        <p className="text-xs text-gold/60">{user?.email}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mobile Navigation */}
+                  <nav className="flex-1 py-6 px-4 overflow-y-auto">
+                    <div className="space-y-2">
+                      {allNavigation.map((item, index) => {
+                        if ('divider' in item) {
+                          return (
+                            <div key={`divider-${index}`} className="my-4">
+                              <div className="border-t border-gold/20" />
+                              <p className="mt-4 mb-2 px-2 text-xs font-semibold text-gold/60 uppercase tracking-wider">
+                                Super Admin
+                              </p>
+                            </div>
+                          );
+                        }
+
+                        const isActive = pathname === item.href;
+                        return (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            onClick={() => setIsSidebarOpen(false)}
+                            className={cn(
+                              'flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all min-h-[48px]',
+                              isActive
+                                ? 'bg-gold/20 text-gold border border-gold/30'
+                                : 'text-white/80 hover:bg-gold/10 hover:text-gold'
+                            )}
+                          >
+                            <item.icon className="h-5 w-5" />
+                            {item.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </nav>
+
+                  {/* Mobile Menu Footer */}
+                  <div className="p-4 border-t border-gold/20">
+                    <Button
+                      onClick={handleLogout}
+                      disabled={isLoggingOut}
+                      className="w-full justify-center gap-2 bg-red-50 text-red-600 hover:bg-red-100 min-h-[48px]"
+                    >
+                      <LogOut className="h-4 w-4" />
+                      {isLoggingOut ? 'Signing out...' : 'Sign Out'}
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
 
             <div className="flex-1" />
 
             {/* User menu */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center mr-2">
-                    <User className="h-4 w-4 text-primary" />
+                <Button variant="ghost" className="flex items-center min-h-[44px] hover:bg-gold/10">
+                  <div className="h-8 w-8 rounded-full bg-gold/20 flex items-center justify-center mr-2">
+                    <User className="h-4 w-4 text-gold" />
                   </div>
-                  <span className="hidden sm:inline-block text-sm">
+                  <span className="hidden sm:inline-block text-sm text-white">
                     {user?.email?.split('@')[0]}
                   </span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuContent align="end" className="w-56 bg-white border-gold/20">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
@@ -225,8 +278,10 @@ export function AdminLayout({ children, user }: AdminLayoutProps) {
         </header>
 
         {/* Page content */}
-        <main className="p-6">
-          {children}
+        <main className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white min-h-[calc(100vh-64px)]">
+          <div className="max-w-7xl mx-auto">
+            {children}
+          </div>
         </main>
       </div>
     </div>

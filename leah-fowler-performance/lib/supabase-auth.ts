@@ -20,7 +20,7 @@ export function createBrowserClient(): SupabaseClient {
         autoRefreshToken: true,
         detectSessionInUrl: true,
         storage: typeof window !== 'undefined' ? window.localStorage : undefined,
-        storageKey: 'supabase.auth.token',
+        storageKey: 'sb-ltlbfltlhysjxslusypq-auth-token',
         flowType: 'pkce'
       }
     }
