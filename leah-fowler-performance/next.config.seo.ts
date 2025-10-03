@@ -1,56 +1,10 @@
 /**
  * SEO Configuration for Domain Migration
- * Handles redirects from Aphrodite Fitness and Strength PT to Leah Coach
- * Preserves SEO equity during brand transition
+ * Primary domain: strengthpt.co.uk
+ * Alternate domains: leah.coach, aphroditefitness.co.uk
  */
 
 export const seoRedirects = [
-  // Core domain redirects - 301 permanent redirects
-  {
-    source: '/:path*',
-    has: [
-      {
-        type: 'host',
-        value: 'strengthpt.co.uk',
-      },
-    ],
-    destination: 'https://leah.coach/:path*',
-    permanent: true,
-  },
-  {
-    source: '/:path*',
-    has: [
-      {
-        type: 'host',
-        value: 'www.strengthpt.co.uk',
-      },
-    ],
-    destination: 'https://leah.coach/:path*',
-    permanent: true,
-  },
-  {
-    source: '/:path*',
-    has: [
-      {
-        type: 'host',
-        value: 'aphroditefitness.co.uk',
-      },
-    ],
-    destination: 'https://leah.coach/:path*',
-    permanent: true,
-  },
-  {
-    source: '/:path*',
-    has: [
-      {
-        type: 'host',
-        value: 'www.aphroditefitness.co.uk',
-      },
-    ],
-    destination: 'https://leah.coach/:path*',
-    permanent: true,
-  },
-
   // Legacy URL structure redirects
   {
     source: '/personal-training',
@@ -99,95 +53,74 @@ export const seoHeaders = [
       },
       {
         key: 'Link',
-        value: '<https://leah.coach>; rel="canonical"',
+        value: '<https://strengthpt.co.uk>; rel="canonical"',
       },
     ],
   },
 ];
 
 /**
- * SEO Meta Tags for Brand Transition
- * To be injected into page headers
+ * SEO Meta Tags for Brand
  */
 export const brandTransitionMeta = {
-  // For pages that need to reference the old brands
   alternates: {
-    canonical: 'https://leah.coach',
+    canonical: 'https://strengthpt.co.uk',
     types: {
       'text/html': [
-        { url: 'https://strengthpt.co.uk', title: 'Previously Strength PT' },
-        { url: 'https://aphroditefitness.co.uk', title: 'Formerly Aphrodite Fitness' },
+        { url: 'https://leah.coach', title: 'Also available at leah.coach' },
+        { url: 'https://aphroditefitness.co.uk', title: 'Aphrodite Fitness' },
       ],
     },
   },
 
-  // Open Graph tags for brand recognition
   openGraph: {
-    siteName: 'Leah Coach (formerly Aphrodite Fitness)',
+    siteName: 'Aphrodite Fitness with Leah Fowler',
     locale: 'en_GB',
     alternateLocale: 'en_US',
   },
 
-  // Additional meta tags
   other: {
-    'brand:previous': 'Aphrodite Fitness, Strength PT',
-    'brand:current': 'Leah Coach',
-    'brand:evolution': 'Aphrodite Fitness → Strength PT → Leah Coach',
+    'brand:name': 'Aphrodite Fitness',
+    'brand:trainer': 'Leah Fowler',
   },
 };
 
 /**
- * Content updates for brand transition
- * Key phrases to include in content for SEO continuity
+ * Content for brand
  */
 export const brandTransitionContent = {
-  headerText: 'Leah Coach - Elite Performance Consultancy',
-  subheaderText: 'Formerly Aphrodite Fitness | Previously Strength PT',
+  headerText: 'Aphrodite Fitness with Leah Fowler',
+  subheaderText: 'Personal Training & Strength Coaching | Norfolk',
 
-  aboutIntro: `Leah Coach represents the evolution of what began as Aphrodite Fitness -
-    a journey from fitness training to elite performance consultancy. What started as
-    personal training in Norfolk has transformed into a premium performance optimisation
-    service for high-achieving professionals across the UK.`,
+  aboutIntro: `Aphrodite Fitness delivers personal training and strength coaching for busy parents
+    and professionals in Norfolk. Online and in-person training with expert guidance.`,
 
-  seoFooterText: `Leah Coach is the premium evolution of Aphrodite Fitness and Strength PT,
-    now serving high-achieving professionals with elite performance consultancy.
-    Based in Dereham, Norfolk, serving clients nationwide.`,
+  seoFooterText: `Aphrodite Fitness with Leah Fowler - Personal training and strength coaching
+    in Norfolk. Serving clients locally and nationwide with online and in-person training.`,
 
   faqAddition: {
-    question: 'Is Leah Coach the same as Aphrodite Fitness?',
-    answer: `Yes! Leah Coach is the natural evolution of Aphrodite Fitness. We've grown from
-      a fitness training service into an elite performance consultancy. While our name has
-      changed to reflect our expanded scope, our commitment to transforming lives through
-      evidence-based coaching remains unchanged. All the expertise that made Aphrodite Fitness
-      successful is now elevated to serve high-achieving professionals seeking total life
-      optimisation.`,
+    question: 'What is Aphrodite Fitness?',
+    answer: `Aphrodite Fitness is a personal training and strength coaching service based in
+      Norfolk, run by qualified coach Leah Fowler. We offer online and in-person training
+      for busy parents and professionals who want to build strength and improve their fitness.`,
   },
 };
 
 /**
- * Structured data additions for brand transition
+ * Structured data for brand
  */
 export const brandTransitionSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   'mainEntity': {
     '@type': 'Organization',
-    'name': 'Leah Coach',
+    'name': 'Aphrodite Fitness with Leah Fowler',
     'alternateName': ['Aphrodite Fitness', 'Strength PT'],
-    'description': 'Elite performance consultancy evolved from Aphrodite Fitness',
-    'foundingDate': '2015',
+    'description': 'Personal training and strength coaching for busy parents and professionals in Norfolk',
+    'foundingDate': '2009',
     'founder': {
       '@type': 'Person',
       'name': 'Leah Fowler',
-    },
-    'parentOrganization': {
-      '@type': 'Organization',
-      'name': 'Aphrodite Fitness',
-      'dissolutionDate': '2024',
-      'successorOrganization': {
-        '@type': 'Organization',
-        'name': 'Leah Coach',
-      },
     },
   },
 };

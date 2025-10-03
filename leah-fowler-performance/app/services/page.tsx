@@ -4,6 +4,8 @@ import ComparisonTable from '@/components/ComparisonTable'
 import TrustBar from '@/components/TrustBar'
 import { generateServiceSchema } from '@/lib/schema-markup'
 
+export const dynamic = "force-dynamic"
+
 export const metadata: Metadata = {
   title: 'Online PT Packages | Strength Coach Norfolk | From £48',
   description: 'Professional online personal training from £48/month. Strength & conditioning programmes. Personalised coaching, app-based training. Start today.',
