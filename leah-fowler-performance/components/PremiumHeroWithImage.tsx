@@ -189,7 +189,7 @@ const PremiumHeroWithImage: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="text-lg sm:text-xl md:text-base lg:text-lg max-w-2xl text-white/90 md:text-foreground md:opacity-90 mx-auto md:mx-0"
               >
-                <span className="text-white/95 md:text-foreground md:opacity-100">Strength and Conditioning Coach<br />Online Personal Trainer</span>
+                <span className="text-white/95 md:text-foreground md:opacity-100">My focus is to get you feeling like yourself again - in fact, my aim is to get you feeling like a better version of yourself than ever before</span>
               </motion.p>
             </div>
 
