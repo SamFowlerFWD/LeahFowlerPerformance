@@ -1,0 +1,814 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "Leah Coach - Formerly Aphrodite Fitness - Previously Strength PT" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Leah Coach represents the evolution of Aphrodite Fitness, Norfolk's premier fitness coaching service, which later became Strength PT. We've transformed from personal training to elite performance consultancy, serving high-achieving professionals, executives, and parents across the UK.
+      - paragraph [ref=e7]: "Our journey: Aphrodite Fitness (2015-2022) → Strength PT (2022-2024) → Leah Coach (2024-present). Same founder, Leah Fowler. Same commitment to excellence. Elevated service for ambitious professionals."
+      - paragraph [ref=e8]: "Keywords: Leah Coach, Aphrodite Fitness, Strength PT, Leah Fowler, performance consultant, executive coaching, Norfolk coach, Dereham fitness, online coaching UK, formerly Aphrodite Fitness, previously Strength PT, high achiever coaching, professional performance optimisation."
+    - banner [ref=e9]:
+      - navigation [ref=e10]:
+        - generic [ref=e11]:
+          - link "AF Fitness - Elite Online Personal Training & Strength Coaching UK" [ref=e13] [cursor=pointer]:
+            - /url: /
+            - img "AF Fitness - Elite Online Personal Training & Strength Coaching UK" [ref=e15] [cursor=pointer]
+          - link "Apply for Coaching" [ref=e18] [cursor=pointer]:
+            - /url: /apply
+            - img
+            - text: Apply for Coaching
+          - generic [ref=e19]:
+            - link "Call us" [ref=e20] [cursor=pointer]:
+              - /url: tel:+447990600958
+              - img [ref=e21] [cursor=pointer]
+            - link "Email us" [ref=e23] [cursor=pointer]:
+              - /url: mailto:leah@strengthpt.co.uk
+              - img [ref=e24] [cursor=pointer]
+            - button "Toggle theme" [ref=e27]:
+              - img [ref=e28]
+            - button "Toggle menu" [ref=e30]:
+              - img [ref=e31]
+    - generic [ref=e33]:
+      - navigation [ref=e34]:
+        - generic [ref=e35]:
+          - link "Services" [ref=e36] [cursor=pointer]:
+            - /url: "#programmes"
+          - link "About" [ref=e37] [cursor=pointer]:
+            - /url: "#about"
+          - link "Blog" [ref=e38] [cursor=pointer]:
+            - /url: /blog
+          - link "Reviews" [ref=e39] [cursor=pointer]:
+            - /url: "#testimonials"
+      - generic [ref=e40]:
+        - link "Apply for Coaching" [ref=e41] [cursor=pointer]:
+          - /url: /apply
+        - generic [ref=e42]:
+          - link [ref=e43] [cursor=pointer]:
+            - /url: tel:+447990600958
+            - img [ref=e44] [cursor=pointer]
+          - link [ref=e46] [cursor=pointer]:
+            - /url: mailto:leah@strengthpt.co.uk
+            - img [ref=e47] [cursor=pointer]
+          - button [ref=e50]:
+            - img [ref=e51]
+    - main [ref=e53]:
+      - generic [ref=e55]:
+        - img "Leah Fowler - Strength Coach for Parents, Norfolk" [ref=e58]
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - heading "Strong Enough for Piggybacks at 40" [level=1] [ref=e69]:
+              - generic [ref=e70]: Strong Enough for Piggybacks at 40
+            - paragraph [ref=e71]:
+              - generic [ref=e72]:
+                - text: Strength and Conditioning Coach
+                - text: Online Personal Trainer
+          - link "Apply for Coaching" [ref=e74] [cursor=pointer]:
+            - /url: /apply
+            - button "Apply for Coaching" [ref=e75]:
+              - text: Apply for Coaching
+              - img [ref=e76]
+      - paragraph [ref=e83]:
+        - text: Leah Coach - Elite Performance Consultancy
+        - generic [ref=e84]: •
+        - generic [ref=e85]: Formerly Aphrodite Fitness & Strength PT
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - heading "Real Results from Real Clients" [level=2] [ref=e90]:
+            - text: Real Results from
+            - generic [ref=e91]: Real Clients
+          - paragraph [ref=e92]: Here's what clients have to say....
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - button "Previous testimonial" [ref=e95]:
+              - img [ref=e96]
+            - generic [ref=e100]:
+              - generic [ref=e101]:
+                - img [ref=e102]
+                - img [ref=e104]
+                - img [ref=e106]
+                - img [ref=e108]
+                - img [ref=e110]
+              - heading "Weekly Workouts I Actually Look Forward To" [level=3] [ref=e112]
+              - blockquote [ref=e113]: "\"I really enjoy Leah's workouts and look forward to them each week. Leah is great at explaining how to pinpoint which muscles to use for each exercise to ensure the exercises are done correctly. She makes every session effective and enjoyable.\""
+              - paragraph [ref=e115]: Mary Ewin
+            - button "Next testimonial" [ref=e116]:
+              - img [ref=e117]
+          - generic [ref=e119]:
+            - button "Go to testimonial 1" [ref=e120]
+            - button "Go to testimonial 2" [ref=e121]
+            - button "Go to testimonial 3" [ref=e122]
+            - button "Go to testimonial 4" [ref=e123]
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e133]:
+            - generic [ref=e134]:
+              - img "Leah Fowler - Performance Consultant" [ref=e138]
+              - generic [ref=e143]:
+                - img [ref=e145]
+                - generic [ref=e148]:
+                  - paragraph [ref=e149]: Strength Coach
+                  - paragraph [ref=e150]: Mum Fitness Expert
+              - generic [ref=e155]:
+                - img [ref=e157]
+                - generic [ref=e160]:
+                  - paragraph [ref=e161]: Specialist
+                  - paragraph [ref=e162]: S&C Coach
+            - generic [ref=e164]:
+              - generic [ref=e165]: Leah Fowler
+              - paragraph [ref=e166]: Founder & Lead Coach
+          - generic [ref=e167]:
+            - heading "A BIT ABOUT ME..." [level=2] [ref=e168]
+            - paragraph [ref=e169]: Family Fitness & Athletic Performance Specialist
+            - generic [ref=e170]:
+              - paragraph [ref=e171]: I am Leah, I have always loved being outside and physically active. Now I am a mum of 3 young children and I can appreciate just how important exercise is, both physically in order to carry out all the day to day running around after children but also mentally building strength and self confidence since becoming a mum has helped me feel myself again.
+              - paragraph [ref=e172]: I know just how hard it can be to fit time in for yourself and find the energy to do something productive, but having been through it and come out the other side so much stronger I am determined to help other women to do the same for themselves.
+            - generic [ref=e173]:
+              - generic [ref=e174]:
+                - img [ref=e176]
+                - heading "Mother of 3" [level=4] [ref=e178]
+                - paragraph [ref=e179]: Who Gets the Real-Life Juggle
+              - generic [ref=e180]:
+                - img [ref=e182]
+                - heading "Industry-Leading Qualifications" [level=4] [ref=e185]
+                - paragraph [ref=e186]: Level 4 S&C + Level 3 PT
+              - generic [ref=e187]:
+                - img [ref=e189]
+                - heading "Years of Experience" [level=4] [ref=e192]
+                - paragraph [ref=e193]: Transforming Parents Into Athletes
+            - generic [ref=e194]:
+              - button "See All Qualifications" [ref=e195]:
+                - generic [ref=e196]:
+                  - generic [ref=e197]: See All Qualifications
+                  - img [ref=e198]
+              - generic [ref=e200]:
+                - generic [ref=e201]:
+                  - heading "Qualifications" [level=4] [ref=e202]
+                  - list [ref=e203]:
+                    - listitem [ref=e204]:
+                      - img [ref=e205]
+                      - generic [ref=e208]: Level 4 Strength & Conditioning Coach
+                    - listitem [ref=e209]:
+                      - img [ref=e210]
+                      - generic [ref=e213]: Level 3 Personal Trainer
+                    - listitem [ref=e214]:
+                      - img [ref=e215]
+                      - generic [ref=e218]: Pre & Postnatal Exercise Specialist
+                    - listitem [ref=e219]:
+                      - img [ref=e220]
+                      - generic [ref=e223]: Nutrition for Sport & Exercise
+                    - listitem [ref=e224]:
+                      - img [ref=e225]
+                      - generic [ref=e228]: First Aid & Emergency Response
+                    - listitem [ref=e229]:
+                      - img [ref=e230]
+                      - generic [ref=e233]: Safeguarding & Child Protection
+                - generic [ref=e234]:
+                  - heading "Continued Professional Development" [level=4] [ref=e235]
+                  - list [ref=e236]:
+                    - listitem [ref=e237]:
+                      - img [ref=e238]
+                      - generic [ref=e241]: Olympic Lifting Techniques
+                    - listitem [ref=e242]:
+                      - img [ref=e243]
+                      - generic [ref=e246]: Biomechanics & Movement Analysis
+                    - listitem [ref=e247]:
+                      - img [ref=e248]
+                      - generic [ref=e251]: Female Athletic Performance
+                    - listitem [ref=e252]:
+                      - img [ref=e253]
+                      - generic [ref=e256]: Injury Prevention Strategies
+                    - listitem [ref=e257]:
+                      - img [ref=e258]
+                      - generic [ref=e261]: Mindset & Performance Psychology
+                    - listitem [ref=e262]:
+                      - img [ref=e263]
+                      - generic [ref=e266]: Advanced Programme Design
+        - generic [ref=e268]:
+          - heading "Core Expertise" [level=3] [ref=e269]
+          - generic [ref=e270]:
+            - generic [ref=e271]:
+              - img [ref=e272]
+              - text: Strength Training for Mums
+            - generic [ref=e275]:
+              - img [ref=e276]
+              - text: Postnatal Fitness Recovery
+            - generic [ref=e279]:
+              - img [ref=e280]
+              - text: Progressive Strength Building
+            - generic [ref=e283]:
+              - img [ref=e284]
+              - text: Real-Life Fitness Solutions
+            - generic [ref=e287]:
+              - img [ref=e288]
+              - text: Sustainable Training Plans
+            - generic [ref=e291]:
+              - img [ref=e292]
+              - text: No-Guilt Fitness Approach
+            - generic [ref=e295]:
+              - img [ref=e296]
+              - text: School-Run Friendly Sessions
+            - generic [ref=e299]:
+              - img [ref=e300]
+              - text: Building Lasting Strength
+      - generic [ref=e307]:
+        - generic [ref=e308]:
+          - heading "The Online Package Transform From Anywhere" [level=2] [ref=e309]:
+            - text: The Online Package
+            - generic [ref=e310]: Transform From Anywhere
+          - paragraph [ref=e311]: Online coaching delivers you a fully supported programme through an app you can have on your phone. You'll receive expert guidance as each detail is programmed specifically for you, tailored to your individual needs and factoring in your lifestyle. Monthly goal setting and programme review as well as a weekly check in mean that you'll remain accountable and get the very best out of your workouts.
+          - generic [ref=e314]:
+            - paragraph [ref=e315]:
+              - text: £100
+              - generic [ref=e316]: /month
+            - paragraph [ref=e317]: 3-month minimum commitment
+        - generic [ref=e318]:
+          - generic [ref=e319]:
+            - img [ref=e321]
+            - heading "Smart App-Based Accountability" [level=3] [ref=e323]
+            - paragraph [ref=e324]: Track workouts, nutrition, and progress with app-powered monitoring and weekly coaching reviews
+          - generic [ref=e325]:
+            - img [ref=e327]
+            - heading "Personalised Goals" [level=3] [ref=e331]
+            - paragraph [ref=e332]: Custom targets and milestones designed specifically for your journey
+          - generic [ref=e333]:
+            - img [ref=e335]
+            - heading "Lifestyle Programming" [level=3] [ref=e337]
+            - paragraph [ref=e338]: Workouts that fit around your schedule, not the other way around
+          - generic [ref=e339]:
+            - img [ref=e341]
+            - heading "Weekly Reviews" [level=3] [ref=e343]
+            - paragraph [ref=e344]: One-on-one progress check-ins to adjust and optimise your plan
+        - generic [ref=e349]:
+          - generic [ref=e350]:
+            - heading "Everything in One App" [level=3] [ref=e351]
+            - paragraph [ref=e352]: Track your workouts, log your nutrition, monitor progress, and stay connected with your coach - all from your phone.
+            - generic [ref=e353]:
+              - generic [ref=e354]:
+                - img [ref=e355]
+                - generic [ref=e358]: Workout Videos & Instructions
+              - generic [ref=e359]:
+                - img [ref=e360]
+                - generic [ref=e363]: Nutrition Logging & Guidance
+              - generic [ref=e364]:
+                - img [ref=e365]
+                - generic [ref=e368]: Progress Photos & Measurements
+              - generic [ref=e369]:
+                - img [ref=e370]
+                - generic [ref=e373]: Direct Coach Messaging
+          - generic [ref=e374]:
+            - img [ref=e377]
+            - img [ref=e380]
+        - generic [ref=e382]:
+          - heading "What's Included in Your Package" [level=3] [ref=e383]
+          - generic [ref=e384]:
+            - generic [ref=e385]:
+              - img [ref=e386]
+              - generic [ref=e389]: Train anywhere - home, gym, or outdoors
+            - generic [ref=e390]:
+              - img [ref=e391]
+              - generic [ref=e394]: Flexible scheduling that works for you
+            - generic [ref=e395]:
+              - img [ref=e396]
+              - generic [ref=e399]: Expert guidance from a qualified coach
+            - generic [ref=e400]:
+              - img [ref=e401]
+              - generic [ref=e404]: Community support and motivation
+            - generic [ref=e405]:
+              - img [ref=e406]
+              - generic [ref=e409]: Nutrition guidance included
+            - generic [ref=e410]:
+              - img [ref=e411]
+              - generic [ref=e414]: Progress tracking and analytics
+        - generic [ref=e415]:
+          - heading "Your 3 Steps to Longevity" [level=3] [ref=e416]
+          - generic [ref=e417]:
+            - generic [ref=e418]:
+              - img [ref=e420]
+              - generic [ref=e422]:
+                - img [ref=e424]
+                - heading "Foundation Building" [level=4] [ref=e426]
+                - paragraph [ref=e427]: Establish routines, learn proper form, build consistency
+            - generic [ref=e428]:
+              - img [ref=e430]
+              - generic [ref=e432]:
+                - img [ref=e434]
+                - heading "Strength Development" [level=4] [ref=e437]
+                - paragraph [ref=e438]: Progressive overload, increased intensity, visible changes
+            - generic [ref=e440]:
+              - img [ref=e442]
+              - heading "Peak Performance" [level=4] [ref=e444]
+              - paragraph [ref=e445]: Advanced techniques, lifestyle integration, lasting habits
+      - generic [ref=e447]:
+        - generic [ref=e448]:
+          - generic [ref=e449]:
+            - img [ref=e450]
+            - text: Transform Your Strength • Transform Your Life
+          - heading "Choose Your Training Journey" [level=2] [ref=e453]:
+            - text: Choose Your
+            - generic [ref=e454]: Training Journey
+          - paragraph [ref=e455]: Evidence-based strength training for busy parents and professionals. Reclaim your strength, energy and confidence with personalised coaching.
+          - generic [ref=e456]:
+            - generic [ref=e457]:
+              - img [ref=e458]
+              - generic [ref=e463]: Join our growing community
+            - generic [ref=e464]:
+              - img [ref=e465]
+              - generic [ref=e471]: High retention rate
+          - tablist "Filter training packages" [ref=e472]:
+            - tab "All Packages" [ref=e473]
+            - tab "Group Training" [ref=e474]
+            - tab "Personal Training" [ref=e475]
+            - tab "Online" [selected] [ref=e476]
+        - tabpanel "Training packages" [ref=e477]:
+          - generic [ref=e478]:
+            - generic [ref=e480]: MOST POPULAR • BEST VALUE
+            - generic [ref=e481]:
+              - generic [ref=e482]:
+                - img [ref=e485]
+                - heading "Online Package" [level=3] [ref=e487]
+                - paragraph [ref=e488]: Complete Digital Transformation
+                - generic [ref=e489]:
+                  - generic [ref=e490]: £100
+                  - generic [ref=e491]: /month
+              - generic [ref=e492]:
+                - generic [ref=e493]:
+                  - img [ref=e496]
+                  - generic [ref=e498]: Smart app accountability with weekly coaching reviews
+                - generic [ref=e499]:
+                  - img [ref=e502]
+                  - generic [ref=e504]: App-based workout tracking
+                - generic [ref=e505]:
+                  - img [ref=e508]
+                  - generic [ref=e510]: Personalised nutrition guidance
+                - generic [ref=e511]:
+                  - img [ref=e514]
+                  - generic [ref=e516]: Weekly video check-ins
+                - generic [ref=e517]:
+                  - img [ref=e520]
+                  - generic [ref=e522]: Goal setting & progression tracking
+                - generic [ref=e523]:
+                  - img [ref=e526]
+                  - generic [ref=e528]: Exercise form video reviews
+                - generic [ref=e529]:
+                  - img [ref=e532]
+                  - generic [ref=e534]: Direct messaging support
+                - generic [ref=e535]:
+                  - img [ref=e538]
+                  - generic [ref=e540]: Community access
+              - button "Start Your Transformation" [ref=e542]:
+                - text: Start Your Transformation
+                - img
+          - generic [ref=e544]:
+            - generic [ref=e545]:
+              - img [ref=e548]
+              - heading "Pathway to Endurance" [level=3] [ref=e552]
+              - paragraph [ref=e553]: 16-Week Online Foundation Programme
+              - generic [ref=e554]:
+                - generic [ref=e555]: £48
+                - generic [ref=e556]: for 16 weeks
+            - generic [ref=e557]:
+              - generic [ref=e558]:
+                - img [ref=e561]
+                - generic [ref=e563]: Complete 16-week progressive programme
+              - generic [ref=e564]:
+                - img [ref=e567]
+                - generic [ref=e569]: One-off payment of just £48
+              - generic [ref=e570]:
+                - img [ref=e573]
+                - generic [ref=e575]: Train anywhere, anytime
+              - generic [ref=e576]:
+                - img [ref=e579]
+                - generic [ref=e581]: Progressive strength training
+              - generic [ref=e582]:
+                - img [ref=e585]
+                - generic [ref=e587]: Mobility and flexibility work
+              - generic [ref=e588]:
+                - img [ref=e591]
+                - generic [ref=e593]: Core strengthening focus
+              - generic [ref=e594]:
+                - img [ref=e597]
+                - generic [ref=e599]: Functional movement patterns
+              - generic [ref=e600]:
+                - img [ref=e603]
+                - generic [ref=e605]: Full exercise video library
+            - button "Start 16 Weeks - £48" [ref=e607]:
+              - text: Start 16 Weeks - £48
+              - img
+        - button "Hide Package Comparison" [ref=e609]:
+          - img
+          - text: Hide Package Comparison
+        - table [ref=e610]:
+          - rowgroup [ref=e611]:
+            - row "Feature Online Package Small Group Semi-Private Silver Gold Pathway" [ref=e612]:
+              - cell "Feature" [ref=e613]
+              - cell "Online Package" [ref=e614]
+              - cell "Small Group" [ref=e615]
+              - cell "Semi-Private" [ref=e616]
+              - cell "Silver" [ref=e617]
+              - cell "Gold" [ref=e618]
+              - cell "Pathway" [ref=e619]
+          - rowgroup [ref=e620]:
+            - row "Training Format Online Coaching Group (max 6) 2:1 Personal 1:1 Personal 1:1 Personal Online" [ref=e621]:
+              - cell "Training Format" [ref=e622]
+              - cell "Online Coaching" [ref=e623]
+              - cell "Group (max 6)" [ref=e624]
+              - cell "2:1 Personal" [ref=e625]
+              - cell "1:1 Personal" [ref=e626]
+              - cell "1:1 Personal" [ref=e627]
+              - cell "Online" [ref=e628]
+            - row "Sessions per Week App tracking + weekly coaching 1 (scheduled) 1 1 2 Self-paced" [ref=e629]:
+              - cell "Sessions per Week" [ref=e630]
+              - cell "App tracking + weekly coaching" [ref=e631]
+              - cell "1 (scheduled)" [ref=e632]
+              - cell "1" [ref=e633]
+              - cell "1" [ref=e634]
+              - cell "2" [ref=e635]
+              - cell "Self-paced" [ref=e636]
+            - row "Nutrition Guidance Personalised Basic tips Included Personalised Advanced Educational" [ref=e637]:
+              - cell "Nutrition Guidance" [ref=e638]
+              - cell "Personalised" [ref=e639]
+              - cell "Basic tips" [ref=e640]
+              - cell "Included" [ref=e641]
+              - cell "Personalised" [ref=e642]
+              - cell "Advanced" [ref=e643]
+              - cell "Educational" [ref=e644]
+            - row "Coach Access Daily + video weekly During sessions Weekly Weekly + support 2x weekly + daily Monthly Q&A" [ref=e645]:
+              - cell "Coach Access" [ref=e646]
+              - cell "Daily + video weekly" [ref=e647]
+              - cell "During sessions" [ref=e648]
+              - cell "Weekly" [ref=e649]
+              - cell "Weekly + support" [ref=e650]
+              - cell "2x weekly + daily" [ref=e651]
+              - cell "Monthly Q&A" [ref=e652]
+            - row "Best For Busy professionals Community & fun Partner training Personalisation Rapid results Getting started" [ref=e653]:
+              - cell "Best For" [ref=e654]
+              - cell "Busy professionals" [ref=e655]
+              - cell "Community & fun" [ref=e656]
+              - cell "Partner training" [ref=e657]
+              - cell "Personalisation" [ref=e658]
+              - cell "Rapid results" [ref=e659]
+              - cell "Getting started" [ref=e660]
+            - row "Investment £100/month £120 (3 months) £90/month £140/month £250/month £48 (16 weeks)" [ref=e661]:
+              - cell "Investment" [ref=e662]
+              - cell "£100/month" [ref=e663]
+              - cell "£120 (3 months)" [ref=e664]
+              - cell "£90/month" [ref=e665]
+              - cell "£140/month" [ref=e666]
+              - cell "£250/month" [ref=e667]
+              - cell "£48 (16 weeks)" [ref=e668]
+      - generic [ref=e674]:
+        - generic [ref=e675]:
+          - generic [ref=e676]:
+            - img [ref=e677]
+            - generic [ref=e680]: FREQUENTLY ASKED QUESTIONS
+          - heading "Got Questions? Real Answers from a Real Mum" [level=2] [ref=e681]:
+            - text: Got Questions?
+            - generic [ref=e682]: Real Answers from a Real Mum
+          - paragraph [ref=e683]: Everything Norfolk mums want to know about getting strong again after children. No judgement, just honest answers from someone who's been there.
+        - generic [ref=e684]:
+          - generic [ref=e685]:
+            - button "I haven't exercised since having children - is this programme suitable for me?" [expanded] [ref=e686]:
+              - generic [ref=e687]:
+                - img [ref=e689]
+                - heading "I haven't exercised since having children - is this programme suitable for me?" [level=3] [ref=e691]
+              - img [ref=e693]
+            - paragraph [ref=e698]: Absolutely! Most of my clients in Norfolk are mums returning to fitness after years away. We start exactly where you are now, even if that's struggling with a single press-up. As a mum of three myself, I understand the physical changes after pregnancy and create personalised programmes that rebuild your strength safely.
+          - button "How much time do I need to commit each week?" [ref=e700]:
+            - generic [ref=e701]:
+              - img [ref=e703]
+              - heading "How much time do I need to commit each week?" [level=3] [ref=e705]
+            - img [ref=e707]
+          - button "Do you offer sessions in Dereham or do I need to travel to Norwich?" [ref=e710]:
+            - generic [ref=e711]:
+              - img [ref=e713]
+              - heading "Do you offer sessions in Dereham or do I need to travel to Norwich?" [level=3] [ref=e715]
+            - img [ref=e717]
+          - button "What if I can't arrange childcare?" [ref=e720]:
+            - generic [ref=e721]:
+              - img [ref=e723]
+              - heading "What if I can't arrange childcare?" [level=3] [ref=e725]
+            - img [ref=e727]
+          - button "How quickly will I see results?" [ref=e730]:
+            - generic [ref=e731]:
+              - img [ref=e733]
+              - heading "How quickly will I see results?" [level=3] [ref=e735]
+            - img [ref=e737]
+          - button "What makes your approach different from other personal trainers in Norfolk?" [ref=e740]:
+            - generic [ref=e741]:
+              - img [ref=e743]
+              - heading "What makes your approach different from other personal trainers in Norfolk?" [level=3] [ref=e745]
+            - img [ref=e747]
+          - button "How much does personal training cost?" [ref=e750]:
+            - generic [ref=e751]:
+              - img [ref=e753]
+              - heading "How much does personal training cost?" [level=3] [ref=e755]
+            - img [ref=e757]
+          - button "Do I need any equipment to get started?" [ref=e760]:
+            - generic [ref=e761]:
+              - img [ref=e763]
+              - heading "Do I need any equipment to get started?" [level=3] [ref=e765]
+            - img [ref=e767]
+          - button "What if I have injuries or physical limitations?" [ref=e770]:
+            - generic [ref=e771]:
+              - img [ref=e773]
+              - heading "What if I have injuries or physical limitations?" [level=3] [ref=e775]
+            - img [ref=e777]
+          - button "Can I really get strong enough to do obstacle races like you?" [ref=e780]:
+            - generic [ref=e781]:
+              - img [ref=e783]
+              - heading "Can I really get strong enough to do obstacle races like you?" [level=3] [ref=e785]
+            - img [ref=e787]
+          - button "How do I know if online coaching will work for me?" [ref=e790]:
+            - generic [ref=e791]:
+              - img [ref=e793]
+              - heading "How do I know if online coaching will work for me?" [level=3] [ref=e795]
+            - img [ref=e797]
+          - button "What's the first step to getting started?" [ref=e800]:
+            - generic [ref=e801]:
+              - img [ref=e803]
+              - heading "What's the first step to getting started?" [level=3] [ref=e805]
+            - img [ref=e807]
+        - generic [ref=e809]:
+          - paragraph [ref=e810]: Still have questions? Let's chat about your specific situation
+          - link "Book Your Free Chat" [ref=e811] [cursor=pointer]:
+            - /url: /apply
+            - text: Book Your Free Chat
+            - img [ref=e812] [cursor=pointer]
+      - generic [ref=e816]:
+        - generic [ref=e817]:
+          - heading "Training Location" [level=3] [ref=e818]:
+            - img [ref=e819]
+            - text: Training Location
+          - generic [ref=e822]:
+            - generic [ref=e823]:
+              - heading "Barrett's Health & Fitness" [level=4] [ref=e824]
+              - paragraph [ref=e825]: Dereham, Norfolk
+            - generic [ref=e826]:
+              - heading "Facilities" [level=4] [ref=e827]
+              - generic [ref=e828]:
+                - generic [ref=e829]:
+                  - img [ref=e830]
+                  - generic [ref=e832]: State-of-the-art gym
+                - generic [ref=e833]:
+                  - img [ref=e834]
+                  - generic [ref=e836]: Outdoor training space
+                - generic [ref=e837]:
+                  - img [ref=e838]
+                  - generic [ref=e840]: Free parking
+                - generic [ref=e841]:
+                  - img [ref=e842]
+                  - generic [ref=e844]: Shower facilities
+                - generic [ref=e845]:
+                  - img [ref=e846]
+                  - generic [ref=e848]: Café on-site
+        - generic [ref=e849]:
+          - heading "Why Choose Aphrodite Fitness" [level=3] [ref=e850]:
+            - img [ref=e851]
+            - text: Why Choose Aphrodite Fitness
+          - generic [ref=e857]:
+            - generic [ref=e858]:
+              - img [ref=e859]
+              - generic [ref=e861]:
+                - heading "Mother of 3, Spartan Athlete" [level=4] [ref=e862]
+                - paragraph [ref=e863]: I understand the challenges parents face
+            - generic [ref=e864]:
+              - img [ref=e865]
+              - generic [ref=e873]:
+                - heading "Evidence-Based Methods" [level=4] [ref=e874]
+                - paragraph [ref=e875]: Science-backed techniques for real results
+            - generic [ref=e876]:
+              - img [ref=e877]
+              - generic [ref=e882]:
+                - heading "Community Support" [level=4] [ref=e883]
+                - paragraph [ref=e884]: Join a supportive community focused on strength
+            - generic [ref=e885]:
+              - img [ref=e886]
+              - generic [ref=e888]:
+                - heading "Real-World Strength" [level=4] [ref=e889]
+                - paragraph [ref=e890]: Training that improves your daily life
+    - contentinfo [ref=e896]:
+      - generic [ref=e904]:
+        - generic [ref=e905]:
+          - generic [ref=e906]:
+            - img [ref=e907]
+            - text: EXCLUSIVE INSIGHTS
+          - heading "Join Our Fitness Community" [level=3] [ref=e909]
+          - paragraph [ref=e910]: Weekly fitness tips, training insights, and motivation delivered straight to your inbox. Plus, get exclusive offers and early access to new programmes.
+          - generic [ref=e911]:
+            - generic [ref=e912]:
+              - img [ref=e913]
+              - generic [ref=e916]: No spam, ever
+            - generic [ref=e917]:
+              - img [ref=e918]
+              - generic [ref=e921]: Unsubscribe anytime
+        - generic [ref=e922]:
+          - generic [ref=e923]:
+            - textbox "Enter your best email" [ref=e924]
+            - button "Get Free Guide" [ref=e925]:
+              - text: Get Free Guide
+              - img
+          - generic [ref=e933]: Join our growing community
+      - generic [ref=e935]:
+        - generic [ref=e936]:
+          - generic [ref=e937]:
+            - link "LF Leah Fowler Performance" [ref=e938] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e939] [cursor=pointer]:
+                - generic [ref=e940] [cursor=pointer]: LF
+                - generic [ref=e941] [cursor=pointer]:
+                  - generic [ref=e942] [cursor=pointer]: Leah Fowler
+                  - generic [ref=e943] [cursor=pointer]: Performance
+            - paragraph [ref=e944]: Strength and conditioning coaching for busy parents and professionals. Build sustainable fitness habits with flexible online and in-person training in Norfolk.
+            - generic [ref=e945]:
+              - link "LinkedIn" [ref=e946] [cursor=pointer]:
+                - /url: https://linkedin.com
+                - img [ref=e947] [cursor=pointer]
+              - link "Twitter" [ref=e951] [cursor=pointer]:
+                - /url: https://twitter.com
+                - img [ref=e952] [cursor=pointer]
+              - link "Instagram" [ref=e954] [cursor=pointer]:
+                - /url: https://instagram.com
+                - img [ref=e955] [cursor=pointer]
+              - link "Facebook" [ref=e958] [cursor=pointer]:
+                - /url: https://facebook.com
+                - img [ref=e959] [cursor=pointer]
+              - link "YouTube" [ref=e961] [cursor=pointer]:
+                - /url: https://youtube.com
+                - img [ref=e962] [cursor=pointer]
+            - generic [ref=e965]:
+              - generic [ref=e966]:
+                - img [ref=e967]
+                - link "07990 600958" [ref=e969] [cursor=pointer]:
+                  - /url: tel:+447990600958
+              - link "leah@leahfowlerperformance.com" [ref=e973] [cursor=pointer]:
+                - /url: mailto:leah@leahfowlerperformance.com
+              - generic [ref=e974]:
+                - img [ref=e975]
+                - generic [ref=e978]:
+                  - text: Dereham, Norfolk, UK
+                  - generic [ref=e979]: Sessions available globally
+          - generic [ref=e980]:
+            - heading "Programmes" [level=4] [ref=e981]
+            - list [ref=e982]:
+              - listitem [ref=e983]:
+                - link "Online Package - £60/month Most Popular" [ref=e984] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - generic [ref=e985] [cursor=pointer]:
+                    - img [ref=e986] [cursor=pointer]
+                    - text: Online Package - £60/month
+                  - generic [ref=e988] [cursor=pointer]: Most Popular
+              - listitem [ref=e989]:
+                - link "Pathway to Endurance - £48 16 Weeks" [ref=e990] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - generic [ref=e991] [cursor=pointer]:
+                    - img [ref=e992] [cursor=pointer]
+                    - text: Pathway to Endurance - £48
+                  - generic [ref=e994] [cursor=pointer]: 16 Weeks
+              - listitem [ref=e995]:
+                - link "Small Group Training - £120 12 Sessions" [ref=e996] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - generic [ref=e997] [cursor=pointer]:
+                    - img [ref=e998] [cursor=pointer]
+                    - text: Small Group Training - £120
+                  - generic [ref=e1000] [cursor=pointer]: 12 Sessions
+              - listitem [ref=e1001]:
+                - link "Semi-Private - £90/month pp Partners" [ref=e1002] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - generic [ref=e1003] [cursor=pointer]:
+                    - img [ref=e1004] [cursor=pointer]
+                    - text: Semi-Private - £90/month pp
+                  - generic [ref=e1006] [cursor=pointer]: Partners
+              - listitem [ref=e1007]:
+                - link "Silver Package - £140/month 1-to-1" [ref=e1008] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - generic [ref=e1009] [cursor=pointer]:
+                    - img [ref=e1010] [cursor=pointer]
+                    - text: Silver Package - £140/month
+                  - generic [ref=e1012] [cursor=pointer]: 1-to-1
+              - listitem [ref=e1013]:
+                - link "Gold Elite - £250/month Premium" [ref=e1014] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - generic [ref=e1015] [cursor=pointer]:
+                    - img [ref=e1016] [cursor=pointer]
+                    - text: Gold Elite - £250/month
+                  - generic [ref=e1018] [cursor=pointer]: Premium
+          - generic [ref=e1019]:
+            - heading "Services" [level=4] [ref=e1020]
+            - list [ref=e1021]:
+              - listitem [ref=e1022]:
+                - link "Strength & Conditioning" [ref=e1023] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - img [ref=e1024] [cursor=pointer]
+                  - text: Strength & Conditioning
+              - listitem [ref=e1026]:
+                - link "Nutrition Coaching" [ref=e1027] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - img [ref=e1028] [cursor=pointer]
+                  - text: Nutrition Coaching
+              - listitem [ref=e1030]:
+                - link "Sleep Optimisation" [ref=e1031] [cursor=pointer]:
+                  - /url: /blog
+                  - img [ref=e1032] [cursor=pointer]
+                  - text: Sleep Optimisation
+              - listitem [ref=e1034]:
+                - link "Lifestyle Coaching" [ref=e1035] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - img [ref=e1036] [cursor=pointer]
+                  - text: Lifestyle Coaching
+              - listitem [ref=e1038]:
+                - link "Online Training" [ref=e1039] [cursor=pointer]:
+                  - /url: "#programmes"
+                  - img [ref=e1040] [cursor=pointer]
+                  - text: Online Training
+          - generic [ref=e1042]:
+            - heading "Resources" [level=4] [ref=e1043]
+            - list [ref=e1044]:
+              - listitem [ref=e1045]:
+                - link "Performance Blog" [ref=e1046] [cursor=pointer]:
+                  - /url: /blog
+                  - img [ref=e1047] [cursor=pointer]
+                  - text: Performance Blog
+              - listitem [ref=e1049]:
+                - link "Sleep & Recovery" [ref=e1050] [cursor=pointer]:
+                  - /url: /blog
+                  - img [ref=e1051] [cursor=pointer]
+                  - text: Sleep & Recovery
+              - listitem [ref=e1053]:
+                - link "Strength Training Guides" [ref=e1054] [cursor=pointer]:
+                  - /url: /blog
+                  - img [ref=e1055] [cursor=pointer]
+                  - text: Strength Training Guides
+              - listitem [ref=e1057]:
+                - link "Nutrition Resources" [ref=e1058] [cursor=pointer]:
+                  - /url: /blog
+                  - img [ref=e1059] [cursor=pointer]
+                  - text: Nutrition Resources
+              - listitem [ref=e1061]:
+                - link "Exercise Library" [ref=e1062] [cursor=pointer]:
+                  - /url: /blog
+                  - img [ref=e1063] [cursor=pointer]
+                  - text: Exercise Library
+          - generic [ref=e1065]:
+            - heading "Company" [level=4] [ref=e1066]
+            - list [ref=e1067]:
+              - listitem [ref=e1068]:
+                - link "About Leah" [ref=e1069] [cursor=pointer]:
+                  - /url: "#about"
+                  - img [ref=e1070] [cursor=pointer]
+                  - text: About Leah
+              - listitem [ref=e1072]:
+                - link "Success Stories" [ref=e1073] [cursor=pointer]:
+                  - /url: "#testimonials"
+                  - img [ref=e1074] [cursor=pointer]
+                  - text: Success Stories
+              - listitem [ref=e1076]:
+                - link "Our Approach" [ref=e1077] [cursor=pointer]:
+                  - /url: "#about"
+                  - img [ref=e1078] [cursor=pointer]
+                  - text: Our Approach
+              - listitem [ref=e1080]:
+                - 'link "Location: Dereham" [ref=e1081] [cursor=pointer]':
+                  - /url: "#contact"
+                  - img [ref=e1082] [cursor=pointer]
+                  - text: "Location: Dereham"
+              - listitem [ref=e1084]:
+                - link "Contact Us" [ref=e1085] [cursor=pointer]:
+                  - /url: "#contact"
+                  - img [ref=e1086] [cursor=pointer]
+                  - text: Contact Us
+        - generic [ref=e1089]:
+          - heading "Certifications & Memberships" [level=4] [ref=e1090]
+          - generic [ref=e1091]:
+            - generic [ref=e1092]:
+              - img [ref=e1093]
+              - generic [ref=e1096]: Certified Personal Trainer
+            - generic [ref=e1097]:
+              - img [ref=e1098]
+              - generic [ref=e1100]: Strength & Conditioning Specialist
+            - generic [ref=e1101]:
+              - img [ref=e1102]
+              - generic [ref=e1104]: Nutrition Coach Certified
+            - generic [ref=e1105]:
+              - img [ref=e1106]
+              - generic [ref=e1109]: Mother of 3
+        - generic [ref=e1110]:
+          - generic [ref=e1111]:
+            - generic [ref=e1112]:
+              - paragraph [ref=e1113]: © 2025 Leah Fowler Performance. All rights reserved.
+              - generic [ref=e1114]:
+                - img [ref=e1115]
+                - generic [ref=e1117]: Norfolk-based fitness coach
+            - generic [ref=e1118]:
+              - link "Privacy Policy" [ref=e1119] [cursor=pointer]:
+                - /url: /privacy
+              - link "Terms of Service" [ref=e1120] [cursor=pointer]:
+                - /url: /terms
+              - link "Cookie Policy" [ref=e1121] [cursor=pointer]:
+                - /url: /cookies
+              - link "Sitemap" [ref=e1122] [cursor=pointer]:
+                - /url: /sitemap
+          - paragraph [ref=e1124]: Transforming high-achievers into peak performers since 2009 | Norfolk's premier performance consultancy | Serving clients globally
+```

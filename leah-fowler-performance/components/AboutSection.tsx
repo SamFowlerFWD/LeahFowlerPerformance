@@ -225,7 +225,7 @@ export default function AboutSection() {
           }}
           className="absolute -top-1/2 -right-1/2 w-full h-full"
         >
-          <div className="w-full h-full bg-gradient-to-br from-gold/10 via-transparent to-sage/10 blur-3xl" />
+          <div className="w-full h-full bg-gradient-to-br from-[#e7007d]/10 via-transparent to-[#e7007d]/10 blur-3xl" />
         </motion.div>
       </div>
 
@@ -243,7 +243,7 @@ export default function AboutSection() {
             {/* Main Image Container */}
             <div className="relative">
               {/* Decorative glow */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-gold/30 via-amber-300/20 to-sage/30 rounded-3xl blur-2xl opacity-60" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#e7007d]/30 via-amber-300/20 to-[#e7007d]/30 rounded-3xl blur-2xl opacity-60" />
               
               {/* Coach Photo */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl z-0">
@@ -268,8 +268,8 @@ export default function AboutSection() {
                 delay={0}
               >
                 <div className="flex items-center gap-2 md:gap-3">
-                  <div className="p-2 md:p-3 rounded-xl bg-gradient-to-br from-gold/20 to-amber-100/40 backdrop-blur-sm transition-all duration-300 group-hover:from-gold/30 group-hover:to-amber-100/50">
-                    <Award className="h-6 w-6 md:h-8 md:w-8 text-gold-dark transition-transform duration-300 group-hover:scale-110" />
+                  <div className="p-2 md:p-3 rounded-xl bg-gradient-to-br from-[#e7007d]/20 to-amber-100/40 backdrop-blur-sm transition-all duration-300 group-hover:from-[#e7007d]/30 group-hover:to-amber-100/50">
+                    <Award className="h-6 w-6 md:h-8 md:w-8 text-[#e7007d]-dark transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <div>
                     <p className="text-xs md:text-sm text-gray-600 uppercase tracking-wider font-medium">Strength Coach</p>
@@ -304,7 +304,7 @@ export default function AboutSection() {
               className="mt-8 sm:mt-10 md:mt-12 text-center"
             >
               <div className="inline-block">
-                <div className="h-16 sm:h-20 flex items-center justify-center text-3xl sm:text-4xl md:text-5xl font-signature text-gold italic">
+                <div className="h-16 sm:h-20 flex items-center justify-center text-3xl sm:text-4xl md:text-5xl font-signature text-[#e7007d] italic">
                   Leah Fowler
                 </div>
                 <p className="text-white/60 text-sm sm:text-base mt-1 sm:mt-2">Founder & Lead Coach</p>
@@ -372,7 +372,7 @@ export default function AboutSection() {
                 <div className="flex items-center justify-center gap-2">
                   <span className="text-white font-semibold text-sm sm:text-base md:text-lg">See All Qualifications</span>
                   <ChevronDown
-                    className={`h-5 w-5 text-gold transition-transform duration-300 ${
+                    className={`h-5 w-5 text-[#e7007d] transition-transform duration-300 ${
                       showQualifications ? 'rotate-180' : ''
                     }`}
                   />
@@ -391,7 +391,7 @@ export default function AboutSection() {
                 <div className="mt-6 grid md:grid-cols-2 gap-8 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
                   {/* Qualifications Column */}
                   <div className="text-center">
-                    <h4 className="text-gold font-bold text-lg mb-4">Qualifications</h4>
+                    <h4 className="text-[#e7007d] font-bold text-lg mb-4">Qualifications</h4>
                     <ul className="space-y-2 text-left inline-block">
                       {qualificationsList.map((qual, index) => (
                         <motion.li
@@ -410,7 +410,7 @@ export default function AboutSection() {
 
                   {/* CPD Column */}
                   <div className="text-center">
-                    <h4 className="text-gold font-bold text-lg mb-4">Continued Professional Development</h4>
+                    <h4 className="text-[#e7007d] font-bold text-lg mb-4">Continued Professional Development</h4>
                     <ul className="space-y-2 text-left inline-block">
                       {cpdList.map((cpd, index) => (
                         <motion.li
@@ -443,7 +443,7 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold mb-6 sm:mb-8 md:mb-10">Core Expertise</h3>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#e7007d] mb-6 sm:mb-8 md:mb-10">Core Expertise</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5 max-w-4xl mx-auto">
               {expertise.map((item, index) => (
                 <motion.span

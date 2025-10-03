@@ -15,12 +15,12 @@ import {
 const locationInfo = {
   venue: "Barrett's Health & Fitness",
   address: "Dereham, Norfolk",
+  what3words: "///factually.tapes.thrusters",
   facilities: [
     "State-of-the-art gym",
     "Outdoor training space",
     "Free parking",
-    "Shower facilities",
-    "Café on-site"
+    "Shower facilities"
   ]
 }
 
@@ -39,20 +39,21 @@ export default function LocationAndWhySection() {
           {/* Location Info */}
           <div className="p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-navy via-navy-dark to-navy-dark text-white">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <MapPin className="h-6 w-6 text-gold" />
+              <MapPin className="h-6 w-6 text-[#e7007d]" />
               Training Location
             </h3>
             <div className="space-y-4">
               <div>
-                <h4 className="font-semibold text-gold mb-2">{locationInfo.venue}</h4>
+                <h4 className="font-semibold text-[#e7007d] mb-2">{locationInfo.venue}</h4>
                 <p className="text-white/80">{locationInfo.address}</p>
+                <p className="text-white/60 text-sm mt-1">{locationInfo.what3words}</p>
               </div>
               <div>
                 <h4 className="font-semibold mb-3">Facilities</h4>
                 <div className="grid grid-cols-2 gap-2">
                   {locationInfo.facilities.map((facility, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-gold" />
+                      <Check className="h-4 w-4 text-[#e7007d]" />
                       <span className="text-sm text-white/80">{facility}</span>
                     </div>
                   ))}
@@ -62,7 +63,7 @@ export default function LocationAndWhySection() {
           </div>
 
           {/* What Makes Us Different */}
-          <div className="p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-gold via-gold-light to-gold">
+          <div className="p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[#e7007d] via-gold-light to-[#e7007d]">
             <h3 className="text-2xl font-bold mb-6 text-navy flex items-center gap-3">
               <Trophy className="h-6 w-6" />
               Why Choose Aphrodite Fitness

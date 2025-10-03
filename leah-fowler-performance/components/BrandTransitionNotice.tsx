@@ -31,9 +31,9 @@ export default function BrandTransitionNotice({ variant = 'subtle' }: { variant?
   return (
     <div className="text-center text-sm text-gray-600 dark:text-gray-400 py-2 px-4">
       <p>
-        Leah Coach - Elite Performance Consultancy
+        Aphrodite Fitness with Leah Fowler
         <span className="mx-2">•</span>
-        <span className="italic">Formerly Aphrodite Fitness & Strength PT</span>
+        <span className="italic">Personal Training & Strength Coaching | Norfolk</span>
       </p>
     </div>
   );

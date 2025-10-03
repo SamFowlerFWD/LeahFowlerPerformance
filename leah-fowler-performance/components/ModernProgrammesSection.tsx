@@ -59,36 +59,6 @@ const programmes = [
     }
   },
   {
-    id: 'pathway',
-    title: 'Pathway to Endurance',
-    subtitle: '16-Week Online Foundation Programme',
-    duration: 'One-off Payment',
-    price: '£48',
-    popular: false,
-    icon: Rocket,
-    color: 'from-sage to-sage-light',
-    bgGradient: 'from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20',
-    description: 'Complete 16-week online programme to build your strength and endurance foundation. Perfect for beginners or those returning to fitness.',
-    features: [
-      { icon: Home, text: 'Train from anywhere - home or gym' },
-      { icon: Calendar, text: 'Full 16-week progressive programme' },
-      { icon: Video, text: 'Complete exercise video library' },
-      { icon: Brain, text: 'Lifestyle optimisation guidance' },
-      { icon: Users, text: 'Community support network' },
-      { icon: Trophy, text: 'One-off payment - lifetime access' }
-    ],
-    outcomes: [
-      'Build fitness foundations',
-      'Improve strength & endurance',
-      'Develop sustainable habits'
-    ],
-    testimonial: {
-      text: "Perfect starting point! The programme gave me confidence and real results in just 16 weeks.",
-      author: 'Sarah Mitchell',
-      role: 'Professional & Mother'
-    }
-  },
-  {
     id: 'smallgroup',
     title: 'Small Group Training',
     subtitle: 'Circuit Style Group Sessions',

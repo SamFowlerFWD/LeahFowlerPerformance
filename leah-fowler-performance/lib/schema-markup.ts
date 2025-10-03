@@ -1,16 +1,16 @@
 /**
- * Comprehensive Schema.org structured data for Leah Fowler Performance
+ * Comprehensive Schema.org structured data for Aphrodite Fitness
  * Optimised for UK market and local SEO in Norfolk/Dereham
- * Positions business as performance consultancy (not fitness training)
+ * Personal training and strength coaching business
  */
 
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://strengthpt.co.uk/#organization",
-  "name": "Strength PT - Elite Online Personal Training & Strength Coaching",
-  "alternateName": "LFP Strength PT | Leah Fowler Performance",
-  "legalName": "Leah Fowler Performance Ltd",
+  "name": "Aphrodite Fitness with Leah Fowler - Personal Training & Strength Coaching Norfolk",
+  "alternateName": "Aphrodite Fitness | Leah Fowler PT",
+  "legalName": "Aphrodite Fitness",
   "url": "https://strengthpt.co.uk",
   "logo": {
     "@type": "ImageObject",
@@ -22,7 +22,7 @@ export const organizationSchema = {
     "encodingFormat": "image/svg+xml"
   },
   "image": "https://strengthpt.co.uk/og-image.jpg",
-  "description": "Strength PT delivers elite online personal training & strength coaching. Professional PT Dereham-based, serving UK-wide. Evidence-based programmes from £48/month. Transform your performance with LFP.",
+  "description": "Aphrodite Fitness with Leah Fowler - Personal training and strength coaching for busy parents and professionals in Norfolk. Online and in-person training from £48. Mother of 3, 15 years experience.",
   "email": "enquiries@strengthpt.co.uk",
   "telephone": "+447990600958",
   "address": {

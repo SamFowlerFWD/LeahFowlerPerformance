@@ -100,7 +100,7 @@ export default function PremiumTestimonialsSection() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy dark:text-white mb-4 sm:mb-6">
             Real Results from{' '}
-            <span className="bg-gradient-to-r from-gold to-sage bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#e7007d] to-[#e7007d] bg-clip-text text-transparent">
               Real Clients
             </span>
           </h2>
@@ -136,7 +136,7 @@ export default function PremiumTestimonialsSection() {
                     {/* Rating */}
                     <div className="flex mb-4">
                       {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-gold fill-current" />
+                        <Star key={i} className="h-5 w-5 text-[#e7007d] fill-current" />
                       ))}
                     </div>
 
@@ -178,7 +178,7 @@ export default function PremiumTestimonialsSection() {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={`h-3 sm:h-2 min-h-[44px] min-w-[44px] transition-all duration-300 ${
-                  index === activeIndex ? 'w-12 sm:w-8 bg-gold' : 'w-3 sm:w-2 bg-gray-300 dark:bg-gray-600'
+                  index === activeIndex ? 'w-12 sm:w-8 bg-[#e7007d]' : 'w-3 sm:w-2 bg-gray-300 dark:bg-gray-600'
                 } rounded-full`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -189,7 +189,7 @@ export default function PremiumTestimonialsSection() {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-gold/10 via-transparent to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[#e7007d]/10 via-transparent to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-sage/10 via-transparent to-transparent rounded-full blur-3xl" />
     </section>
   )

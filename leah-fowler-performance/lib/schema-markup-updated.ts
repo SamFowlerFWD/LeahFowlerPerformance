@@ -1,18 +1,18 @@
 /**
- * Comprehensive Schema.org structured data for Leah Coach
- * Elite performance consultancy for high-achieving professionals
- * Evolved from Aphrodite Fitness → Strength PT → Leah Coach
- * Optimised for brand transition while maintaining SEO equity
+ * Comprehensive Schema.org structured data for Strength PT
+ * Aphrodite Fitness with Leah Fowler
+ * Personal training and strength coaching in Norfolk
+ * Optimised for local SEO and brand recognition
  */
 
 // Brand Evolution Schema - Shows the progression
 export const brandEvolutionSchema = {
   "@context": "https://schema.org",
   "@type": "Corporation",
-  "@id": "https://leah.coach/#brand-evolution",
-  "name": "Leah Coach",
-  "description": "Elite performance consultancy evolved from Aphrodite Fitness",
-  "foundingDate": "2015",
+  "@id": "https://strengthpt.co.uk/#brand-evolution",
+  "name": "Aphrodite Fitness with Leah Fowler",
+  "description": "Personal training and strength coaching for parents and professionals in Norfolk",
+  "foundingDate": "2009",
   "foundingLocation": {
     "@type": "Place",
     "name": "Norfolk, UK"
@@ -22,42 +22,31 @@ export const brandEvolutionSchema = {
     "name": "Aphrodite Fitness",
     "description": "Original fitness coaching brand founded by Leah Fowler"
   },
-  "predecessorOf": [
-    {
-      "@type": "Organization",
-      "name": "Aphrodite Fitness",
-      "url": "https://aphroditefitness.co.uk",
-      "description": "Original fitness training brand (2015-2022)"
-    },
-    {
-      "@type": "Organization",
-      "name": "Strength PT",
-      "url": "https://strengthpt.co.uk",
-      "description": "Personal training evolution (2022-2024)"
-    }
+  "sameAs": [
+    "https://aphroditefitness.co.uk",
+    "https://leah.coach"
   ]
 };
 
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://leah.coach/#organization",
-  "name": "Leah Coach - Elite Performance Consultancy",
-  "alternateName": ["Aphrodite Fitness", "Strength PT", "Leah Fowler Performance"],
-  "legalName": "Leah Fowler Performance Ltd",
-  "url": "https://leah.coach",
+  "@id": "https://strengthpt.co.uk/#organization",
+  "name": "Aphrodite Fitness with Leah Fowler",
+  "alternateName": ["Aphrodite Fitness", "Strength PT"],
+  "legalName": "Aphrodite Fitness",
+  "url": "https://strengthpt.co.uk",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://leah.coach/images/leah-coach-logo.svg",
-    "width": 800,
-    "height": 200,
-    "caption": "Leah Coach - Elite Performance Consultancy UK (formerly Aphrodite Fitness)",
-    "name": "Leah Coach Logo",
-    "encodingFormat": "image/svg+xml"
+    "url": "https://strengthpt.co.uk/images/af-full-logo.avif",
+    "width": 360,
+    "height": 96,
+    "caption": "Aphrodite Fitness with Leah Fowler - Personal Training & Strength Coaching Norfolk",
+    "name": "Aphrodite Fitness Logo"
   },
-  "image": "https://leah.coach/og-image.jpg",
-  "description": "Leah Coach delivers elite performance consultancy for high-achieving professionals. Formerly Aphrodite Fitness & Strength PT. Evidence-based life optimisation programmes from £48/month. Transform your performance.",
-  "email": "enquiries@leah.coach",
+  "image": "https://strengthpt.co.uk/og-image.jpg",
+  "description": "Aphrodite Fitness with Leah Fowler delivers personal training and strength coaching for busy parents and professionals in Norfolk. Online and in-person training from £100/month. Mother of 3, 15 years experience.",
+  "email": "leah@aphroditefitness.co.uk",
   "telephone": "+447990600958",
   "address": {
     "@type": "PostalAddress",

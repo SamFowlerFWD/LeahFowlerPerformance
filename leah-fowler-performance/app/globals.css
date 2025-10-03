@@ -270,8 +270,8 @@ button.small::before,
    Clear focus states using brand colours
    ===================================================== */
 :root {
-  --focus-color-primary: #d4a574;  /* Gold */
-  --focus-color-secondary: #87a96b; /* Sage */
+  --focus-color-primary: #e7007d;  /* Magenta */
+  --focus-color-secondary: #e7007d; /* Magenta */
   --focus-outline-width: 3px;
   --focus-outline-offset: 2px;
 }
@@ -302,7 +302,7 @@ a.btn:focus-visible,
 [role="button"]:focus-visible {
   outline: var(--focus-outline-width) solid var(--focus-color-primary);
   outline-offset: var(--focus-outline-offset);
-  box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.2);
+  box-shadow: 0 0 0 4px rgba(231, 0, 125, 0.2);
 }
 
 /* Form input focus styles */
@@ -312,7 +312,7 @@ select:focus-visible {
   outline: var(--focus-outline-width) solid var(--focus-color-secondary);
   outline-offset: 0;
   border-color: var(--focus-color-secondary);
-  box-shadow: 0 0 0 3px rgba(135, 169, 107, 0.2);
+  box-shadow: 0 0 0 3px rgba(231, 0, 125, 0.2);
 }
 
 /* Link focus styles */
@@ -329,7 +329,7 @@ a:not(.button):not(.btn):focus-visible {
 .interactive-card:focus-visible {
   outline: var(--focus-outline-width) solid var(--focus-color-primary);
   outline-offset: var(--focus-outline-offset);
-  box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.2);
+  box-shadow: 0 0 0 4px rgba(231, 0, 125, 0.2);
 }
 
 /* =====================================================
@@ -438,13 +438,13 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #d4a574, #87a96b);
+  background: linear-gradient(180deg, #e7007d, #c70069);
   border-radius: 10px;
   border: 2px solid #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #c49564, #77995b);
+  background: linear-gradient(180deg, #ff1a9d, #e7007d);
 }
 
 /* Dark mode scrollbar */
@@ -574,10 +574,10 @@ html {
   --popover-foreground: oklch(0.145 0 0);
   --primary: #1a2942; /* Navy */
   --primary-foreground: #ffffff;
-  --secondary: #d4a574; /* Gold */
-  --secondary-foreground: #1a2942;
-  --accent: #87a96b; /* Sage */
-  --accent-foreground: #1a2942;
+  --secondary: #e7007d; /* Magenta */
+  --secondary-foreground: #ffffff;
+  --accent: #e7007d; /* Magenta */
+  --accent-foreground: #ffffff;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --border: oklch(0.922 0 0);
@@ -606,12 +606,12 @@ html {
   --color-navy: #1a2942;
   --color-navy-light: #2a3952;
   --color-navy-dark: #0a1932;
-  --color-gold: #d4a574;
-  --color-gold-light: #e4b584;
-  --color-gold-dark: #c49564;
-  --color-sage: #87a96b;
-  --color-sage-light: #97b97b;
-  --color-sage-dark: #77995b;
+  --color-gold: #e7007d;
+  --color-gold-light: #ff1a9d;
+  --color-gold-dark: #c70069;
+  --color-sage: #e7007d;
+  --color-sage-light: #ff1a9d;
+  --color-sage-dark: #c70069;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -657,12 +657,12 @@ html {
     --card-foreground: #f9fafb;
     --popover: #1a2942;
     --popover-foreground: #f9fafb;
-    --primary: #d4a574;
-    --primary-foreground: #1a2942;
-    --secondary: #87a96b;
-    --secondary-foreground: #1a2942;
-    --accent: #d4a574;
-    --accent-foreground: #1a2942;
+    --primary: #e7007d;
+    --primary-foreground: #ffffff;
+    --secondary: #e7007d;
+    --secondary-foreground: #ffffff;
+    --accent: #e7007d;
+    --accent-foreground: #ffffff;
     --muted: #2a3952;
     --muted-foreground: #9ca3af;
     --border: #2a3952;
@@ -851,14 +851,14 @@ section {
 
 /* Custom Utility Classes */
 .text-gradient {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--sage) 100%);
+  background: linear-gradient(135deg, #e7007d 0%, #ff1a9d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
+  background: linear-gradient(135deg, #c70069 0%, #ff1a9d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -869,7 +869,7 @@ section {
 }
 
 .bg-gradient-accent {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--sage) 100%);
+  background: linear-gradient(135deg, #e7007d 0%, #ff1a9d 100%);
 }
 
 .bg-gradient-premium {
@@ -936,7 +936,7 @@ section {
 .border-gradient {
   position: relative;
   background: linear-gradient(white, white) padding-box,
-              linear-gradient(135deg, var(--gold) 0%, var(--sage) 100%) border-box;
+              linear-gradient(135deg, #e7007d 0%, #ff1a9d 100%) border-box;
   border: 2px solid transparent;
 }
 
@@ -1015,13 +1015,13 @@ section {
 
 /* Focus visible improvements */
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid #e7007d;
   outline-offset: 2px;
 }
 
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid #e7007d;
   outline-offset: 2px;
 }
 
@@ -1673,7 +1673,7 @@ textarea {
 .luxury-divider {
   margin: 4rem 0; /* 64px */
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, #e7007d, transparent);
 }
 
 @media (min-width: 768px) {

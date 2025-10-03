@@ -66,11 +66,11 @@ export default function ModernHeader() {
               className="relative"
             >
               <Link href="/" className="flex items-center">
-                {/* Strength PT Logo - Smaller on mobile */}
+                {/* AF Full Logo - Smaller on mobile */}
                 <div className="relative h-20 sm:h-24 md:h-14 lg:h-16 xl:h-20 w-auto flex items-center">
                   <Image
-                    src="/images/strength-pt-logo.svg"
-                    alt="Strength PT - Elite Online Personal Training & Strength Coaching UK | PT Dereham"
+                    src="/images/af-full-logo.avif"
+                    alt="Aphrodite Fitness with Leah Fowler - Personal Training & Strength Coaching | Norfolk"
                     width={360}
                     height={96}
                     className="h-full w-auto object-contain"
@@ -89,13 +89,13 @@ export default function ModernHeader() {
                 <Button
                   className="font-bold px-6 py-2 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110"
                   style={{
-                    backgroundColor: '#d4a574',
-                    color: '#000000'
+                    backgroundColor: '#e7007d',
+                    color: '#ffffff'
                   }}
                   asChild
                 >
                   <Link href="/apply" className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" style={{ color: '#000000' }} />
+                    <Calendar className="h-4 w-4" style={{ color: '#ffffff' }} />
                     Apply for Coaching
                   </Link>
                 </Button>
@@ -111,7 +111,7 @@ export default function ModernHeader() {
                 whileTap={{ scale: 0.95 }}
                 className="hidden lg:flex p-2.5 rounded-lg transition-all duration-300 min-w-[40px] min-h-[40px] items-center justify-center hover:opacity-80"
                 style={{
-                  color: '#d4a574',
+                  color: '#e7007d',
                   backgroundColor: 'transparent'
                 }}
                 aria-label="Call us"
@@ -125,7 +125,7 @@ export default function ModernHeader() {
                 whileTap={{ scale: 0.95 }}
                 className="hidden lg:flex p-2.5 rounded-lg transition-all duration-300 min-w-[40px] min-h-[40px] items-center justify-center hover:opacity-80"
                 style={{
-                  color: '#d4a574',
+                  color: '#e7007d',
                   backgroundColor: 'transparent'
                 }}
                 aria-label="Email us"
@@ -140,7 +140,7 @@ export default function ModernHeader() {
                 whileTap={{ scale: 0.95 }}
                 className="hidden lg:flex p-2.5 rounded-lg transition-all duration-300 min-w-[40px] min-h-[40px] items-center justify-center hover:opacity-80"
                 style={{
-                  color: '#d4a574',
+                  color: '#e7007d',
                   backgroundColor: 'transparent'
                 }}
                 aria-label="Toggle theme"
@@ -155,7 +155,7 @@ export default function ModernHeader() {
                 whileTap={{ scale: 0.95 }}
                 className="p-3 rounded-lg transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center hover:opacity-80"
                 style={{
-                  color: '#d4a574',
+                  color: '#e7007d',
                   backgroundColor: 'transparent'
                 }}
                 aria-label="Toggle menu"
@@ -187,7 +187,7 @@ export default function ModernHeader() {
                   onClick={() => setIsOpen(false)}
                   className="block px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:opacity-80"
                   style={{
-                    color: '#d4a574'
+                    color: '#e7007d'
                   }}
                 >
                   {item.label}
@@ -201,8 +201,8 @@ export default function ModernHeader() {
             <Button
               className="w-full font-bold py-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110"
               style={{
-                backgroundColor: '#d4a574',
-                color: '#000000'
+                backgroundColor: '#e7007d',
+                color: '#ffffff'
               }}
               asChild
             >
@@ -210,15 +210,15 @@ export default function ModernHeader() {
                 Apply for Coaching
               </Link>
             </Button>
-            
+
             <div className="flex justify-center space-x-4">
-              <a href="tel:+447990600958" className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#d4a574' }}>
+              <a href="tel:+447990600958" className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#e7007d' }}>
                 <Phone className="h-5 w-5" />
               </a>
-              <a href="mailto:leah@strengthpt.co.uk" className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#d4a574' }}>
+              <a href="mailto:leah@strengthpt.co.uk" className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#e7007d' }}>
                 <Mail className="h-5 w-5" />
               </a>
-              <button onClick={toggleTheme} className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#d4a574' }}>
+              <button onClick={toggleTheme} className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#e7007d' }}>
                 {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </button>
             </div>

@@ -114,7 +114,10 @@ export async function adminAuthMiddleware(request: NextRequest) {
 
   try {
     // Get auth token from cookies or Authorization header
-    const authToken = request.cookies.get('sb-access-token')?.value ||
+    // FIXED: Use correct Supabase cookie names with project reference
+    const sbCookie = request.cookies.get('sb-ltlbfltlhysjxslusypq-auth-token')?.value;
+    const authToken = sbCookie ||
+                     request.cookies.get('sb-access-token')?.value ||
                      request.headers.get('authorization')?.replace('Bearer ', '');
 
     if (!authToken) {
@@ -146,10 +149,10 @@ export async function adminAuthMiddleware(request: NextRequest) {
       return NextResponse.redirect(loginUrl);
     }
 
-    // Check admin status
+    // Check admin status - FIXED: No admin_roles table, role is in admin_users
     const { data: adminData, error: adminError } = await supabase
       .from('admin_users')
-      .select('id, role_id, is_active, admin_roles!inner(role_name)')
+      .select('id, role, is_active')
       .eq('user_id', user.id)
       .eq('is_active', true)
       .single();
@@ -166,8 +169,8 @@ export async function adminAuthMiddleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/admin/unauthorized', request.url));
     }
 
-    // Extract role name
-    const roleName = adminData.admin_roles?.role_name;
+    // Extract role name - FIXED: role is directly in admin_users table
+    const roleName = adminData.role;
 
     // Check super admin requirement
     if (isSuperAdminRoute && roleName !== 'super_admin') {
@@ -273,7 +276,10 @@ export async function verifySuperAdmin(request: NextRequest): Promise<boolean> {
     }
   );
 
-  const authToken = request.cookies.get('sb-access-token')?.value ||
+  // FIXED: Use correct Supabase cookie names with project reference
+  const sbCookie = request.cookies.get('sb-ltlbfltlhysjxslusypq-auth-token')?.value;
+  const authToken = sbCookie ||
+                   request.cookies.get('sb-access-token')?.value ||
                    request.headers.get('authorization')?.replace('Bearer ', '');
 
   if (!authToken) return false;
@@ -284,12 +290,12 @@ export async function verifySuperAdmin(request: NextRequest): Promise<boolean> {
 
     const { data: adminData } = await supabase
       .from('admin_users')
-      .select('admin_roles!inner(role_name)')
+      .select('role')
       .eq('user_id', user.id)
       .eq('is_active', true)
       .single();
 
-    return adminData?.admin_roles?.role_name === 'super_admin';
+    return adminData?.role === 'super_admin';
   } catch {
     return false;
   }

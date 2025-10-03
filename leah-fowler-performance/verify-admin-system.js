@@ -1,18 +1,22 @@
 const { createClient } = require('@supabase/supabase-js');
+require('dotenv').config({ path: '.env.local' });
 
-const SUPABASE_URL = 'https://ltlbfltlhysjxslusypq.supabase.co';
-const SUPABASE_SERVICE_ROLE = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0bGJmbHRsaHlzanhzbHVzeXBxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1ODU2MjA4MiwiZXhwIjoyMDc0MTM4MDgyfQ._50CDqU_v1Q61ZqR3bxgp_4qeZaUL8WGp3OQgH9DieQ';
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ltlbfltlhysjxslusypq.supabase.co';
+const SUPABASE_SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0bGJmbHRsaHlzanhzbHVzeXBxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1ODU2MjA4MiwiZXhwIjoyMDc0MTM4MDgyfQ._50CDqU_v1Q61ZqR3bxgp_4qeZaUL8WGp3OQgH9DieQ';
 
 async function verifyAdminSystem() {
   console.log('🔍 Verifying Admin System Installation...\n');
+  console.log('Target:', SUPABASE_URL);
+  console.log('Admin User ID:', 'dfd9154b-4238-4672-8a0a-e657a18532c5');
+  console.log('=' .repeat(60) + '\n');
 
   const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE, {
     auth: { persistSession: false }
   });
 
   const checks = {
-    tables: ['admin_users', 'admin_audit_log', 'admin_sessions'],
-    functions: ['is_admin', 'is_super_admin', 'get_admin_role', 'log_admin_action'],
+    tables: ['admin_users', 'assessment_submissions', 'lead_magnets', 'posts', 'categories', 'tags'],
+    functions: ['is_admin'],
     passed: 0,
     failed: 0
   };
@@ -33,44 +37,69 @@ async function verifyAdminSystem() {
   // Check if functions work by trying to call them
   console.log('\n🔧 Checking Admin Functions:');
   try {
-    // Test is_admin function (will return false for service role)
+    // Test is_admin function with actual admin user
     const { data: isAdminResult, error: isAdminError } = await supabase
-      .rpc('is_admin', { user_id: '00000000-0000-0000-0000-000000000000' });
+      .rpc('is_admin', { user_id: 'dfd9154b-4238-4672-8a0a-e657a18532c5' });
 
     if (!isAdminError) {
-      console.log('   ✅ is_admin() function works');
-      checks.passed++;
+      console.log(`   ✅ is_admin() function exists and returns: ${isAdminResult}`);
+      if (isAdminResult === true) {
+        console.log('   ✅ Admin user correctly identified as admin');
+        checks.passed++;
+      } else {
+        console.log('   ❌ Admin user NOT recognized (function returns false)');
+        checks.failed++;
+      }
     } else {
       console.log(`   ❌ is_admin(): ${isAdminError.message}`);
       checks.failed++;
     }
 
-    // Test is_super_admin function
-    const { data: isSuperAdminResult, error: isSuperAdminError } = await supabase
-      .rpc('is_super_admin', { user_id: '00000000-0000-0000-0000-000000000000' });
+    // Test with non-admin user (should return false)
+    const { data: notAdminResult } = await supabase
+      .rpc('is_admin', { user_id: '00000000-0000-0000-0000-000000000000' });
 
-    if (!isSuperAdminError) {
-      console.log('   ✅ is_super_admin() function works');
+    if (notAdminResult === false) {
+      console.log('   ✅ is_admin() correctly returns false for non-admin');
       checks.passed++;
     } else {
-      console.log(`   ❌ is_super_admin(): ${isSuperAdminError.message}`);
-      checks.failed++;
-    }
-
-    // Test get_admin_role function
-    const { data: roleResult, error: roleError } = await supabase
-      .rpc('get_admin_role', { user_id: '00000000-0000-0000-0000-000000000000' });
-
-    if (!roleError) {
-      console.log('   ✅ get_admin_role() function works');
-      checks.passed++;
-    } else {
-      console.log(`   ❌ get_admin_role(): ${roleError.message}`);
-      checks.failed++;
+      console.log('   ⚠️  is_admin() unexpected result for non-admin:', notAdminResult);
     }
 
   } catch (err) {
     console.log('   ⚠️ Error checking functions:', err.message);
+    checks.failed++;
+  }
+
+  // Check admin user details
+  console.log('\n👤 Checking Admin User:');
+  try {
+    const { data: adminUser, error } = await supabase
+      .from('admin_users')
+      .select('*')
+      .eq('user_id', 'dfd9154b-4238-4672-8a0a-e657a18532c5')
+      .single();
+
+    if (adminUser && !error) {
+      console.log('   ✅ Admin user found in admin_users table:');
+      console.log(`      Email: ${adminUser.email}`);
+      console.log(`      Role: ${adminUser.role}`);
+      console.log(`      Active: ${adminUser.is_active ? 'Yes' : 'No'}`);
+      console.log(`      Created: ${new Date(adminUser.created_at).toLocaleDateString()}`);
+
+      if (adminUser.is_active && adminUser.role === 'super_admin') {
+        checks.passed++;
+      } else {
+        console.log('   ⚠️  Admin user exists but may not be properly configured');
+        checks.failed++;
+      }
+    } else {
+      console.log('   ❌ Admin user not found in admin_users table');
+      checks.failed++;
+    }
+  } catch (err) {
+    console.log('   ❌ Error checking admin user:', err.message);
+    checks.failed++;
   }
 
   // Summary
@@ -82,12 +111,15 @@ async function verifyAdminSystem() {
 
   if (checks.failed === 0) {
     console.log('\n🎉 Admin system is fully installed and operational!');
-    console.log('\n📝 Next Steps:');
-    console.log('1. Create an admin user in Supabase Auth');
-    console.log('2. Add them to admin_users table with super_admin role');
-    console.log('3. Replace middleware with admin-auth-fixed.ts');
+    console.log('\n📝 You can now login at:');
+    console.log('   URL: https://leah.coach/admin/login');
+    console.log('   Email: info@leah.coach');
+    console.log('   Password: Use the password that was set for this user');
+  } else if (checks.passed > checks.failed) {
+    console.log('\n⚠️  Admin system is mostly working but has some issues');
+    console.log('   The core functionality should work for admin login');
   } else {
-    console.log('\n⚠️ Some components may need attention');
+    console.log('\n❌ Admin system has critical issues that need attention');
   }
 
   return checks;

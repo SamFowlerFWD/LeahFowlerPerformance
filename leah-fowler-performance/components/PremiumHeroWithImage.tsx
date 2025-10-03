@@ -143,8 +143,8 @@ const PremiumHeroWithImage: React.FC = () => {
 
           {/* Premium gradient mesh overlay */}
           <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-gold/20 via-transparent to-transparent blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-sage/20 via-transparent to-transparent blur-2xl" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#e7007d]/20 via-transparent to-transparent blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#e7007d]/20 via-transparent to-transparent blur-2xl" />
           </div>
 
           {/* Removed floating particles that were creating visual artifacts */}
@@ -189,7 +189,7 @@ const PremiumHeroWithImage: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="text-lg sm:text-xl md:text-base lg:text-lg max-w-2xl text-white/90 md:text-foreground md:opacity-90 mx-auto md:mx-0"
               >
-                <span className="text-white/95 md:text-foreground md:opacity-100">Norfolk Strength and Conditioning Coach</span> • Online Personal Trainer
+                <span className="text-white/95 md:text-foreground md:opacity-100">Strength and Conditioning Coach<br />Online Personal Trainer</span>
               </motion.p>
             </div>
 
@@ -204,8 +204,8 @@ const PremiumHeroWithImage: React.FC = () => {
                 <button
                   className="px-6 py-3 font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110 flex items-center gap-2"
                   style={{
-                    backgroundColor: '#d4a574',
-                    color: '#000000'
+                    backgroundColor: '#e7007d',
+                    color: '#ffffff'
                   }}
                 >
                   Apply for Coaching

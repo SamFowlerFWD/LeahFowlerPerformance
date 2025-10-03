@@ -42,7 +42,7 @@ export default function ApplicationForm() {
     name: '',
     email: '',
     phone: '',
-    programme: 'online-package', // Set Online Package as default
+    programme: 'online', // Set Online as default
     goals: '',
     experience: '',
     availability: '',
@@ -57,13 +57,9 @@ export default function ApplicationForm() {
   const [submissionError, setSubmissionError] = useState<string | null>(null)
 
   const programmes = [
-    { value: 'online-package', label: '🌟 Online Package (£100/month) - BEST VALUE', description: 'Smart app accountability, progress tracking, weekly coaching reviews - 3 month commitment' },
-    { value: 'pathway', label: 'Pathway to Endurance (£48 one-off)', description: '16-week online foundation programme' },
-    { value: 'smallgroup', label: 'Small Group Training (£120)', description: '12 sessions over 3 months, max 6 people' },
-    { value: 'semiprivate', label: 'Semi-Private Coaching (£90/month per person)', description: '2:1 partner training sessions' },
-    { value: 'silver', label: 'Silver Package (£140/month)', description: 'Weekly 1:1 personal training' },
-    { value: 'gold', label: 'Gold Elite Package (£250/month)', description: 'Twice-weekly 1:1 elite training' },
-    { value: 'unsure', label: 'I need advice on the best option', description: 'Let\'s discuss your needs' }
+    { value: 'online', label: 'Online', description: 'Train anywhere with app-based coaching, weekly check-ins, and personalised programming' },
+    { value: 'in-person', label: 'In Person', description: 'Face-to-face training sessions in Norfolk with personalised attention' },
+    { value: 'hybrid', label: 'Hybrid', description: 'Combination of online and in-person training for maximum flexibility' }
   ]
 
   const experienceLevels = [
@@ -173,29 +169,29 @@ export default function ApplicationForm() {
   }
 
   return (
-    <Card className="max-w-4xl mx-auto bg-white shadow-xl border-0">
-      <div className="text-center px-8 py-12 bg-white border-b border-gray-100">
-        <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+    <Card className="max-w-4xl mx-auto bg-white dark:bg-navy-dark shadow-xl border-0">
+      <div className="text-center px-8 py-12 bg-white dark:bg-navy-dark border-b border-gray-100 dark:border-navy">
+        <h2 className="text-3xl md:text-4xl font-bold text-navy dark:text-white mb-4">
           Apply for Coaching
         </h2>
-        <p className="text-lg max-w-2xl mx-auto text-gray-600">
+        <p className="text-lg max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
           Tell us about your goals and we'll recommend the perfect programme for you.
           This takes just 2-3 minutes.
         </p>
       </div>
 
-      <CardContent className="bg-white p-8">
+      <CardContent className="bg-white dark:bg-navy-dark p-8">
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* Contact Information */}
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-navy flex items-center gap-2">
-              <User className="h-5 w-5 text-gold" />
+            <h3 className="text-xl font-semibold text-navy dark:text-white flex items-center gap-2">
+              <User className="h-5 w-5" style={{ color: '#e7007d' }} />
               Your Information
             </h3>
 
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="name" className="text-navy font-medium">Full Name *</Label>
+                <Label htmlFor="name" className="text-navy dark:text-white font-medium">Full Name *</Label>
                 <Input
                   id="name"
                   name="name"
@@ -203,12 +199,12 @@ export default function ApplicationForm() {
                   onChange={handleInputChange}
                   placeholder="Jane Smith"
                   required
-                  className="mt-2 bg-white border-2 border-gray-200 hover:border-navy/50 focus:border-navy text-navy placeholder:text-gray-400 min-h-[44px]"
+                  className="mt-2 bg-white dark:bg-navy border-2 border-gray-200 dark:border-navy-dark hover:border-[#e7007d] focus:border-[#e7007d] text-navy dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 min-h-[44px]"
                 />
               </div>
 
               <div>
-                <Label htmlFor="email" className="text-navy font-medium">Email Address *</Label>
+                <Label htmlFor="email" className="text-navy dark:text-white font-medium">Email Address *</Label>
                 <Input
                   id="email"
                   name="email"
@@ -217,7 +213,7 @@ export default function ApplicationForm() {
                   onChange={handleInputChange}
                   placeholder="jane@example.com"
                   required
-                  className="mt-2 bg-white border-2 border-gray-200 hover:border-navy/50 focus:border-navy text-navy placeholder:text-gray-400 min-h-[44px]"
+                  className="mt-2 bg-white dark:bg-navy border-2 border-gray-200 dark:border-navy-dark hover:border-[#e7007d] focus:border-[#e7007d] text-navy dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 min-h-[44px]"
                 />
               </div>
             </div>
@@ -252,18 +248,18 @@ export default function ApplicationForm() {
 
           {/* Programme Selection */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-navy flex items-center gap-2">
-              <Target className="h-5 w-5 text-gold" />
-              Which Programme Interests You? *
+            <h3 className="text-xl font-semibold text-navy dark:text-white flex items-center gap-2">
+              <Target className="h-5 w-5" style={{ color: '#e7007d' }} />
+              What type of training are you interested in? *
             </h3>
 
             <RadioGroup value={formData.programme} onValueChange={(value) => handleRadioChange('programme', value)} className="space-y-3">
               {programmes.map(programme => (
-                <div key={programme.value} className="flex items-start space-x-4 p-5 border-2 border-gray-200 rounded-xl hover:bg-gold/5 hover:border-gold/50 transition-all duration-200 cursor-pointer bg-white">
+                <div key={programme.value} className="flex items-start space-x-4 p-6 border-2 rounded-xl hover:border-[#e7007d] transition-all duration-200 cursor-pointer bg-white dark:bg-navy border-gray-200 dark:border-navy-dark">
                   <RadioGroupItem value={programme.value} id={programme.value} className="mt-0.5 flex-shrink-0 min-w-[24px] min-h-[24px]" />
                   <Label htmlFor={programme.value} className="cursor-pointer flex-1">
-                    <span className="font-medium block text-navy">{programme.label}</span>
-                    <span className="text-sm text-gray-600 mt-1">{programme.description}</span>
+                    <span className="font-bold block text-navy dark:text-white text-lg">{programme.label}</span>
+                    <span className="text-sm text-gray-600 dark:text-gray-300 mt-1 block">{programme.description}</span>
                   </Label>
                 </div>
               ))}

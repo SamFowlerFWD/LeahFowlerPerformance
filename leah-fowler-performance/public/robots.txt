@@ -1,19 +1,19 @@
-# Robots.txt for Leah Coach
-# Elite Performance Consultancy (formerly Aphrodite Fitness & Strength PT)
-# https://leah.coach
+# Robots.txt for Strength PT
+# Aphrodite Fitness with Leah Fowler
+# https://strengthpt.co.uk
 
 User-agent: *
 Allow: /
 Crawl-delay: 0
 
-# Priority pages for performance consultancy and executive coaching
+# Priority pages for personal training and strength coaching
 Allow: /services
-Allow: /performance-accelerator
 Allow: /programmes
 Allow: /testimonials
 Allow: /about
 Allow: /apply
 Allow: /assessment
+Allow: /online-training
 
 # Block admin and API routes
 Disallow: /admin/
@@ -24,15 +24,15 @@ Disallow: /api/internal/
 # Allow important API endpoints for assessments
 Allow: /api/assessment/submit
 Allow: /api/lead-magnet
-Allow: /api/performance-assessment
+Allow: /api/application/submit
 
-# Sitemap locations - Primary and legacy domains
-Sitemap: https://leah.coach/sitemap.xml
-Sitemap: https://leah.coach/sitemap-blog.xml
-Sitemap: https://leah.coach/sitemap-testimonials.xml
-
-# Legacy domain sitemaps for transition period
+# Sitemap locations - Primary and alternate domains
 Sitemap: https://strengthpt.co.uk/sitemap.xml
+Sitemap: https://strengthpt.co.uk/sitemap-blog.xml
+Sitemap: https://strengthpt.co.uk/sitemap-testimonials.xml
+
+# Alternate domain sitemaps
+Sitemap: https://leah.coach/sitemap.xml
 Sitemap: https://aphroditefitness.co.uk/sitemap.xml
 
 # Specific bot instructions
@@ -88,7 +88,7 @@ Disallow: /*.xml$
 Allow: /sitemap*.xml$
 Allow: /manifest.json$
 
-# Brand evolution notice for crawlers
-# This site was formerly: Aphrodite Fitness (aphroditefitness.co.uk)
-# Previous domain: Strength PT (strengthpt.co.uk)
-# Current brand: Leah Coach - Elite Performance Consultancy
+# Brand information for crawlers
+# Primary domain: Strength PT (strengthpt.co.uk)
+# Brand name: Aphrodite Fitness with Leah Fowler
+# Alternate domains: leah.coach, aphroditefitness.co.uk

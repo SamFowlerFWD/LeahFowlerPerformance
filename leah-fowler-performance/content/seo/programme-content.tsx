@@ -2,110 +2,11 @@
 // Complete content for all performance coaching programmes
 
 export const programmeContent = {
-  foundation: {
-    id: "pathway-programme",
-    name: "Pathway to Endurance",
-    price: "£12",
-    priceUnit: "/month",
-    tagline: "Build Your Fitness Foundation Online",
-    shortDescription: "Progressive strength training programme perfect for parents beginning their fitness journey",
-    
-    // SEO-optimized long description
-    longDescription: `Start your fitness journey with our Pathway to Endurance online programme - perfect for busy parents ready to build lasting strength. This self-paced programme provides progressive training plans, video demonstrations, and community support to help you develop a strong foundation.`,
-    
-    // Core benefits with keywords
-    benefits: [
-      {
-        title: "Weekly Performance Coaching",
-        description: "45-minute virtual sessions with certified performance consultants",
-        icon: "Video",
-        keyword: "weekly coaching sessions"
-      },
-      {
-        title: "Personalised 90-Day Roadmap",
-        description: "Custom performance plan based on your assessment results",
-        icon: "Map",
-        keyword: "personalised performance plan"
-      },
-      {
-        title: "Energy Optimisation Protocols",
-        description: "Science-based strategies to boost energy by 47%",
-        icon: "Zap",
-        keyword: "energy optimisation"
-      },
-      {
-        title: "Stress Resilience Toolkit",
-        description: "Proven techniques from elite sport psychology",
-        icon: "Shield",
-        keyword: "stress management"
-      },
-      {
-        title: "Mobile App Access",
-        description: "Daily micro-coaching and progress tracking",
-        icon: "Smartphone",
-        keyword: "coaching app"
-      },
-      {
-        title: "Community Support",
-        description: "Private Slack community of high-performing peers",
-        icon: "Users",
-        keyword: "peer support"
-      },
-      {
-        title: "Monthly Reviews",
-        description: "Performance metrics analysis and strategy adjustment",
-        icon: "TrendingUp",
-        keyword: "performance tracking"
-      }
-    ],
-    
-    // Target audience
-    idealFor: [
-      "Senior managers stepping into executive roles",
-      "High-performers feeling stuck at their current level",
-      "Professionals experiencing early burnout symptoms",
-      "Leaders seeking better work-life balance"
-    ],
-    
-    // Expected outcomes with metrics
-    outcomes: {
-      primary: "30% performance improvement in 90 days",
-      metrics: [
-        "25% increase in productive hours",
-        "40% better energy management",
-        "35% stress reduction",
-        "Enhanced decision-making clarity"
-      ]
-    },
-    
-    // Social proof
-    testimonial: {
-      quote: "Pathway to Endurance gave me the confidence to start strength training from home. Now I'm ready for in-person sessions!",
-      author: "David Thompson",
-      role: "Operations Director",
-      company: "Tech Startup",
-      result: "30% productivity increase"
-    },
-    
-    // SEO-focused FAQs
-    faqs: [
-      {
-        question: "Who is the Pathway to Endurance programme designed for?",
-        answer: "This online programme is perfect for complete beginners or parents returning to fitness after a break. It's ideal if you want to build strength foundations from home with flexibility around your schedule."
-      },
-      {
-        question: "How much time commitment is required?",
-        answer: "The programme requires just 45 minutes per week for coaching, plus 15-20 minutes daily for exercises and reflection. Most clients find they save 5-10 hours per week through improved efficiency."
-      }
-    ],
-    
-    // Call-to-action variations
-    ctas: {
-      primary: "Start Pathway Programme",
-      secondary: "Book Free Consultation",
-      exit: "Save My Spot - Limited Availability"
-    }
-  },
+  // PATHWAY TO ENDURANCE - REMOVED FOR NOW
+  // foundation: {
+  //   id: "pathway-programme",
+  //   name: "Pathway to Endurance",
+  // },
   
   acceleration: {
     id: "silver-programme",
@@ -327,55 +228,46 @@ export const programmeComparison = {
   features: [
     {
       name: "Coaching Frequency",
-      foundation: "Weekly 45-min",
       acceleration: "Bi-weekly 60-min",
       elite: "Weekly 90-min"
     },
     {
       name: "Session Format",
-      foundation: "Virtual",
       acceleration: "Virtual + Quarterly In-Person",
       elite: "Choice of Virtual or In-Person"
     },
     {
       name: "Coach Access",
-      foundation: "Scheduled Sessions",
       acceleration: "Priority Email/WhatsApp",
       elite: "24/7 Direct Access"
     },
     {
       name: "Biometric Tracking",
-      foundation: "Basic",
       acceleration: "Advanced",
       elite: "Comprehensive + Health Screening"
     },
     {
       name: "Support Team",
-      foundation: "Coach",
       acceleration: "Coach + Community",
       elite: "Full Performance Team"
     },
     {
       name: "Retreats",
-      foundation: false,
       acceleration: false,
       elite: "Quarterly"
     },
     {
       name: "Family Support",
-      foundation: false,
       acceleration: "Partner Programme",
       elite: "Full Family Programme"
     },
     {
       name: "Results Guarantee",
-      foundation: "30-day refund",
       acceleration: "30-day refund",
       elite: "100% success guarantee"
     },
     {
       name: "Investment",
-      pathway: "£12/month",
       silver: "£140/month",
       gold: "£250/month"
     }
@@ -395,7 +287,6 @@ export const pricingMessages = {
 // Urgency and scarcity messages
 export const urgencyContent = {
   limited: {
-    foundation: "Starting soon - 5 spots remaining",
     acceleration: "Only 3 spots available this month",
     elite: "2 openings - Application required"
   },

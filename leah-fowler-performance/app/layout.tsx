@@ -19,16 +19,16 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leah.coach'),
+  metadataBase: new URL('https://strengthpt.co.uk'),
   title: {
-    default: "Leah Coach | Elite Performance Consultancy UK (formerly Aphrodite Fitness)",
-    template: "%s | Leah Coach"
+    default: "Aphrodite Fitness with Leah Fowler | Personal Training & Strength Coaching | Norfolk",
+    template: "%s | Aphrodite Fitness"
   },
-  description: "Leah Coach - Elite performance consultancy for high-achieving professionals. Formerly Aphrodite Fitness & Strength PT. Transform your life performance with evidence-based coaching from £48. UK-wide online programmes.",
-  keywords: ["Leah Coach", "performance consultant UK", "executive coaching", "Aphrodite Fitness", "formerly Aphrodite Fitness", "Strength PT", "online performance coach", "high achiever coaching", "professional performance optimisation", "executive wellness UK", "parent fitness coach", "Norfolk performance consultant", "Dereham coach", "life performance coaching"],
+  description: "Aphrodite Fitness with Leah Fowler - Personal training and strength coaching for busy parents and professionals in Norfolk. Online and in-person training from £48. Mother of 3, 15 years experience.",
+  keywords: ["Aphrodite Fitness", "Leah Fowler", "personal trainer Norfolk", "strength coaching Norfolk", "online personal training", "Dereham personal trainer", "fitness for parents", "strength training mothers", "Norfolk PT", "female personal trainer", "online fitness coach UK", "strength and conditioning Norfolk"],
   authors: [{ name: "Leah Fowler" }],
   creator: "Leah Fowler",
-  publisher: "Leah Coach Performance Consultancy",
+  publisher: "Aphrodite Fitness",
   formatDetection: {
     email: false,
     address: false,
@@ -37,16 +37,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://leah.coach',
-    siteName: 'Leah Coach - Elite Performance Consultancy (formerly Aphrodite Fitness)',
-    title: 'Leah Coach | Performance Consultant UK | Formerly Aphrodite Fitness',
-    description: 'Elite performance consultancy for high-achieving professionals. Formerly Aphrodite Fitness. Evidence-based life optimisation from £48/month. Transform with Leah Coach.',
+    url: 'https://strengthpt.co.uk',
+    siteName: 'Aphrodite Fitness with Leah Fowler',
+    title: 'Aphrodite Fitness with Leah Fowler | Personal Training & Strength Coaching | Norfolk',
+    description: 'Personal training and strength coaching for busy parents and professionals in Norfolk. Online and in-person training from £48. Mother of 3, 15 years experience.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Strength PT by LFP - Elite Online Personal Training & Coaching',
+        alt: 'Aphrodite Fitness with Leah Fowler - Personal Training & Strength Coaching Norfolk',
       },
     ],
   },
@@ -82,11 +82,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="canonical" href="https://leah.coach" />
-        <link rel="alternate" href="https://strengthpt.co.uk" hrefLang="en-GB" />
+        <link rel="canonical" href="https://strengthpt.co.uk" />
+        <link rel="alternate" href="https://leah.coach" hrefLang="en-GB" />
         <link rel="alternate" href="https://aphroditefitness.co.uk" hrefLang="en-GB" />
         <meta name="theme-color" content="#1a2942" />
-        <meta property="og:see_also" content="https://strengthpt.co.uk" />
+        <meta property="og:see_also" content="https://leah.coach" />
         <meta property="og:see_also" content="https://aphroditefitness.co.uk" />
         <SchemaMarkup />
       </head>

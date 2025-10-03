@@ -1,13 +1,13 @@
 import { MetadataRoute } from 'next'
 
 /**
- * Dynamic Sitemap Generation for Leah Coach
- * Elite Performance Consultancy (formerly Aphrodite Fitness)
- * Targets: High-achieving professionals, executives, parents UK-wide
+ * Dynamic Sitemap Generation for Strength PT
+ * Aphrodite Fitness with Leah Fowler
+ * Targets: Parents, professionals, strength training clients Norfolk & UK-wide
  */
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://leah.coach'
+  const baseUrl = 'https://strengthpt.co.uk'
   const currentDate = new Date().toISOString()
 
   // Core pages with online PT and strength coaching focus

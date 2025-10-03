@@ -55,7 +55,7 @@ export const aphroditeFitnessPackages = {
       result: "Lost 15kg, gained confidence"
     },
 
-    cta: "Start Your Transformation",
+    cta: "Apply Now",
     guarantee: "30-day money-back guarantee"
   },
 
@@ -294,62 +294,20 @@ export const aphroditeFitnessPackages = {
     guarantee: "60-day results guarantee"
   },
 
-  // Pathway to Endurance - UPDATED: Now one-off payment
-  pathwayToEndurance: {
-    id: "pathway-to-endurance",
-    name: "Pathway to Endurance",
-    slug: "pathway",
-    price: 48,
-    currency: "£",
-    period: " for 16 weeks",
-    billing: "one-time",
-    tagline: "16-Week Online Foundation Programme",
-    shortDescription: "Complete 16-week online programme to build your fitness foundation",
-    popular: false,
-    color: "navy" as const,
-
-    longDescription: `Transform your fitness foundation with our comprehensive 16-week online programme.
-    For just £48 (one-off payment), you'll receive a complete progressive training system
-    that builds strength, endurance, and confidence. Perfect for busy professionals wanting
-    to train on their own schedule with expert guidance.`,
-
-    features: [
-      { text: "Complete 16-week progressive programme", included: true, highlight: true },
-      { text: "One-off payment of just £48", included: true, highlight: true },
-      { text: "Train anywhere, anytime", included: true },
-      { text: "Progressive strength training", included: true },
-      { text: "Mobility and flexibility work", included: true },
-      { text: "Core strengthening focus", included: true },
-      { text: "Functional movement patterns", included: true },
-      { text: "Full exercise video library", included: true },
-      { text: "Community forum access", included: true },
-      { text: "Option to upgrade to coaching", included: true }
-    ],
-
-    idealFor: [
-      "Complete beginners",
-      "Parents returning to fitness",
-      "Those building foundation strength",
-      "Budget-conscious parents"
-    ],
-
-    outcomes: [
-      "Build fitness foundations",
-      "Improve mobility and flexibility",
-      "Develop exercise confidence",
-      "Prepare for advanced training"
-    ],
-
-    testimonial: {
-      quote: "Pathway to Endurance gave me the confidence to start. Now I'm ready for in-person training!",
-      author: "Lisa T.",
-      role: "New mum",
-      result: "Progressed to Silver package"
-    },
-
-    cta: "Start 16 Weeks - £48",
-    guarantee: "30-day money-back guarantee"
-  }
+  // Pathway to Endurance - REMOVED FOR NOW
+  // pathwayToEndurance: {
+  //   id: "pathway-to-endurance",
+  //   name: "Pathway to Endurance",
+  //   slug: "pathway",
+  //   price: 48,
+  //   currency: "£",
+  //   period: " for 16 weeks",
+  //   billing: "one-time",
+  //   tagline: "16-Week Online Foundation Programme",
+  //   shortDescription: "Complete 16-week online programme to build your fitness foundation",
+  //   popular: false,
+  //   color: "navy" as const,
+  // }
 };
 
 // Social Runs - Free Community Events
@@ -372,12 +330,12 @@ export const socialRuns = {
 export const locationInfo = {
   venue: "Barrett's Health & Fitness",
   address: "Dereham, Norfolk",
+  what3words: "///factually.tapes.thrusters",
   facilities: [
     "State-of-the-art gym",
     "Outdoor training space",
     "Free parking",
-    "Shower facilities",
-    "Café on-site"
+    "Shower facilities"
   ],
   contact: {
     phone: "07990600958",
@@ -395,8 +353,7 @@ export const packageComparison = {
       smallGroup: "Group (max 6)",
       semiPrivate: "2:1 Personal",
       silver: "1:1 Personal",
-      gold: "1:1 Personal",
-      pathway: "Online"
+      gold: "1:1 Personal"
     },
     {
       name: "Sessions per Week",
@@ -404,8 +361,7 @@ export const packageComparison = {
       smallGroup: "1 (scheduled)",
       semiPrivate: "1",
       silver: "1",
-      gold: "2",
-      pathway: "Self-paced"
+      gold: "2"
     },
     {
       name: "Nutrition Guidance",
@@ -413,8 +369,7 @@ export const packageComparison = {
       smallGroup: "Basic tips",
       semiPrivate: "Included",
       silver: "Personalised",
-      gold: "Advanced",
-      pathway: "Educational"
+      gold: "Advanced"
     },
     {
       name: "Coach Access",
@@ -422,8 +377,7 @@ export const packageComparison = {
       smallGroup: "During sessions",
       semiPrivate: "Weekly",
       silver: "Weekly + support",
-      gold: "2x weekly + daily",
-      pathway: "Monthly Q&A"
+      gold: "2x weekly + daily"
     },
     {
       name: "Best For",
@@ -431,8 +385,7 @@ export const packageComparison = {
       smallGroup: "Community & fun",
       semiPrivate: "Partner training",
       silver: "Personalisation",
-      gold: "Rapid results",
-      pathway: "Getting started"
+      gold: "Rapid results"
     },
     {
       name: "Investment",
@@ -440,8 +393,7 @@ export const packageComparison = {
       smallGroup: "£120 (3 months)",
       semiPrivate: "£90/month",
       silver: "£140/month",
-      gold: "£250/month",
-      pathway: "£48 (16 weeks)"
+      gold: "£250/month"
     }
   ]
 };

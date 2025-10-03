@@ -30,7 +30,7 @@ const contactMethods = [
     value: 'Free 30-min mirror moment call',
     action: 'Start Your Journey',
     href: '#booking',
-    gradient: 'from-gold to-amber-600',
+    gradient: 'from-[#e7007d] to-amber-600',
     popular: true
 },
   {
@@ -123,7 +123,7 @@ export default function ContactSection() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-gold/10 to-transparent rounded-full blur-3xl"
+          className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-[#e7007d]/10 to-transparent rounded-full blur-3xl"
         />
         <motion.div
           animate={{

@@ -61,7 +61,7 @@ export default function Header() {
           >
             <Link href="/" className="group flex items-center space-x-2">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-gold to-sage rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#006d3d] to-[#008a4d] rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative bg-gradient-to-br from-navy to-navy-dark text-white font-bold text-xl px-4 py-3 rounded-xl shadow-xl">
                   LF
                 </div>
@@ -70,7 +70,7 @@ export default function Header() {
                 <div className="text-xl font-bold text-navy dark:text-white leading-tight">
                   Leah Fowler
                 </div>
-                <div className="text-xs text-gold font-semibold tracking-widest uppercase">
+                <div className="text-xs text-[#006d3d] font-semibold tracking-widest uppercase">
                   Performance
                 </div>
               </div>
@@ -93,11 +93,11 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="relative px-5 py-3 text-sm font-semibold text-navy dark:text-white hover:text-gold dark:hover:text-gold transition-all duration-300 group"
+                  className="relative px-5 py-3 text-sm font-semibold text-navy dark:text-white hover:text-[#006d3d] dark:hover:text-[#006d3d] transition-all duration-300 group"
                 >
                   <span className="relative z-10">{item.label}</span>
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-gold/10 to-sage/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-gradient-to-r from-[#006d3d]/10 to-[#008a4d]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     whileHover={{ scale: 1.05 }}
                   />
                 </Link>
@@ -115,7 +115,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="sm"
-              className="text-navy dark:text-white hover:text-gold dark:hover:text-gold"
+              className="text-navy dark:text-white hover:text-[#006d3d] dark:hover:text-[#006d3d]"
               asChild
             >
               <a href="tel:07XXXXXXXXX" className="flex items-center gap-2">
@@ -125,7 +125,7 @@ export default function Header() {
             </Button>
             <Button
               size="default"
-              className="px-6 py-2.5 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 rounded-xl"
+              className="px-6 py-2.5 bg-gradient-to-r from-[#006d3d] to-[#005530] hover:from-[#005530] hover:to-[#006d3d] text-white font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 rounded-xl"
               asChild
             >
               <Link href="#contact" className="flex items-center gap-2">
@@ -141,7 +141,7 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="lg:hidden text-navy dark:text-white hover:text-gold dark:hover:text-gold min-h-[44px] min-w-[44px]"
+                className="lg:hidden text-navy dark:text-white hover:text-[#006d3d] dark:hover:text-[#006d3d] min-h-[44px] min-w-[44px]"
                 aria-label="Toggle mobile menu"
               >
                 <Menu className="h-6 w-6" />
@@ -165,7 +165,7 @@ export default function Header() {
                     <SheetClose asChild>
                       <Link
                         href={item.href}
-                        className="flex items-center justify-between px-4 py-4 min-h-[44px] text-lg font-medium text-navy dark:text-white hover:text-gold dark:hover:text-gold hover:bg-gold/10 rounded-lg transition-all duration-200 group"
+                        className="flex items-center justify-between px-4 py-4 min-h-[44px] text-lg font-medium text-navy dark:text-white hover:text-[#006d3d] dark:hover:text-[#006d3d] hover:bg-[#006d3d]/10 rounded-lg transition-all duration-200 group"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <span>{item.label}</span>
@@ -188,7 +188,7 @@ export default function Header() {
                   </a>
                 </Button>
                 <Button
-                  className="w-full min-h-[48px] bg-gradient-to-r from-gold to-gold/90 hover:from-gold/90 hover:to-gold text-navy font-semibold shadow-lg"
+                  className="w-full min-h-[48px] bg-gradient-to-r from-[#006d3d] to-[#005530] hover:from-[#005530] hover:to-[#006d3d] text-white font-semibold shadow-lg"
                   asChild
                 >
                   <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>

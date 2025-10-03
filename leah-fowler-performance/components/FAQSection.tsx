@@ -95,7 +95,7 @@ export default function FAQSection() {
         {/* Background Pattern */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#e7007d]/5 via-transparent to-transparent rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-sage/5 via-transparent to-transparent rounded-full blur-3xl" />
         </div>
 
@@ -108,14 +108,14 @@ export default function FAQSection() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 md:mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-gold/10 dark:bg-gold/20 text-gold-dark rounded-full text-sm font-semibold">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-[#e7007d]/10 dark:bg-[#e7007d]/20 text-[#e7007d]-dark rounded-full text-sm font-semibold">
               <HelpCircle className="h-4 w-4" />
               <span>FREQUENTLY ASKED QUESTIONS</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-6">
               Got Questions?
-              <span className="block mt-2 bg-gradient-to-r from-gold via-gold-light to-sage bg-clip-text text-transparent">
+              <span className="block mt-2 bg-gradient-to-r from-[#e7007d] via-gold-light to-[#e7007d] bg-clip-text text-transparent">
                 Real Answers from a Real Mum
               </span>
             </h2>
@@ -150,8 +150,8 @@ export default function FAQSection() {
                   aria-controls={`faq-answer-${index}`}
                 >
                   <div className="flex items-start gap-4 pr-4">
-                    <div className="mt-1 p-2 bg-gradient-to-br from-gold/20 to-amber-100/20 rounded-lg flex-shrink-0">
-                      <MessageCircle className="h-5 w-5 text-gold-dark" />
+                    <div className="mt-1 p-2 bg-gradient-to-br from-[#e7007d]/20 to-amber-100/20 rounded-lg flex-shrink-0">
+                      <MessageCircle className="h-5 w-5 text-[#e7007d]-dark" />
                     </div>
                     <h3 className="text-base md:text-lg font-semibold text-navy dark:text-white">
                       {item.question}
@@ -162,7 +162,7 @@ export default function FAQSection() {
                     transition={{ duration: 0.3 }}
                     className="flex-shrink-0"
                   >
-                    <ChevronDown className="h-5 w-5 text-gold" />
+                    <ChevronDown className="h-5 w-5 text-[#e7007d]" />
                   </motion.div>
                 </button>
 

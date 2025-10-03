@@ -99,11 +99,11 @@ module.exports = {
           DEFAULT: '#1a2942',
           dark: '#0a1932',
         },
-        // Gold accent for premium feel
+        // Magenta accent for premium feel
         gold: {
-          light: '#e4b584',
-          DEFAULT: '#d4a574',
-          dark: '#c49564',
+          light: '#ff1a9d',
+          DEFAULT: '#e7007d',
+          dark: '#c70069',
         },
         // Sage for natural, calming accent
         sage: {

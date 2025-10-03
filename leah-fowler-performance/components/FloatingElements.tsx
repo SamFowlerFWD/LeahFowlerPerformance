@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
  '@/lib/utils'
 
@@ -32,7 +32,13 @@ export default function FloatingElements() {
           whileTap={{ scale: 0.95 }}
           className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full shadow-2xl hover:shadow-green-500/30 transition-all duration-300"
         >
-          <MessageCircle className="h-8 w-8 text-white fill-white" />
+          <Image
+            src="/images/whatsapp-logo.png"
+            alt="WhatsApp"
+            width={32}
+            height={32}
+            className="w-8 h-8"
+          />
           
           {/* Tooltip */}
           <AnimatePresence>

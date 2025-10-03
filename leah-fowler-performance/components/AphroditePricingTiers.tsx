@@ -35,7 +35,7 @@ import {
 
 export default function AphroditePricingTiers() {
   const [selectedCategory, setSelectedCategory] = React.useState<'all' | 'group' | 'personal' | 'online'>('online')
-  const [showComparison, setShowComparison] = React.useState(false)
+  const [showComparison, setShowComparison] = React.useState(true)
   const [isAnimating, setIsAnimating] = React.useState(false)
 
   // Convert packages object to array for mapping with error handling
@@ -154,7 +154,7 @@ export default function AphroditePricingTiers() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 lg:mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold font-medium text-sm mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e7007d]/10 border border-[#e7007d]/20 text-[#e7007d] font-medium text-sm mb-6">
             <TrendingUp className="h-4 w-4" />
             Transform Your Strength • Transform Your Life
           </span>
@@ -172,13 +172,13 @@ export default function AphroditePricingTiers() {
           {/* Social Proof Bar */}
           <div className="flex flex-wrap justify-center gap-6 mb-10">
             <div className="flex items-center gap-2">
-              <Users className="h-5 w-5 text-gold" />
+              <Users className="h-5 w-5 text-[#e7007d]" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 {urgencyContent.social.totalClients}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <Trophy className="h-5 w-5 text-gold" />
+              <Trophy className="h-5 w-5 text-[#e7007d]" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 {urgencyContent.social.retention}
               </span>
@@ -189,7 +189,7 @@ export default function AphroditePricingTiers() {
           <div
             role="tablist"
             aria-label="Filter training packages"
-            className="inline-flex items-center p-1 rounded-full bg-gray-100 dark:bg-navy-dark/50 border border-gray-200 dark:border-gold/20"
+            className="inline-flex items-center p-1 rounded-full bg-gray-100 dark:bg-navy-dark/50 border border-gray-200 dark:border-[#e7007d]/20"
           >
             <button
               type="button"
@@ -203,7 +203,7 @@ export default function AphroditePricingTiers() {
               aria-controls="pricing-panel"
               className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
                 selectedCategory === 'all'
-                  ? 'bg-white dark:bg-gold text-navy shadow-md'
+                  ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
                   : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
               }`}
             >
@@ -221,7 +221,7 @@ export default function AphroditePricingTiers() {
               aria-controls="pricing-panel"
               className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
                 selectedCategory === 'group'
-                  ? 'bg-white dark:bg-gold text-navy shadow-md'
+                  ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
                   : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
               }`}
             >
@@ -239,7 +239,7 @@ export default function AphroditePricingTiers() {
               aria-controls="pricing-panel"
               className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
                 selectedCategory === 'personal'
-                  ? 'bg-white dark:bg-gold text-navy shadow-md'
+                  ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
                   : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
               }`}
             >
@@ -257,7 +257,7 @@ export default function AphroditePricingTiers() {
               aria-controls="pricing-panel"
               className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
                 selectedCategory === 'online'
-                  ? 'bg-white dark:bg-gold text-navy shadow-md'
+                  ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
                   : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
               }`}
             >
@@ -299,7 +299,7 @@ export default function AphroditePricingTiers() {
               {/* Badge */}
               {pkg.badge && (
                 <div className="absolute -top-4 left-0 right-0 flex justify-center z-10">
-                  <span className="px-4 py-2 rounded-full bg-gradient-to-r from-gold to-gold-light text-navy text-xs font-bold shadow-lg">
+                  <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#e7007d] to-[#e7007d]-light text-navy text-xs font-bold shadow-lg">
                     {pkg.badge}
                   </span>
                 </div>
@@ -308,7 +308,7 @@ export default function AphroditePricingTiers() {
               <div
                 className={`relative h-full p-8 rounded-2xl transition-all duration-500 hover:scale-105 ${
                   pkg.popular
-                    ? 'bg-gradient-to-br from-gold via-gold-light to-gold shadow-2xl border-2 border-gold/30'
+                    ? 'bg-gradient-to-br from-[#e7007d] via-gold-light to-[#e7007d] shadow-2xl border-2 border-[#e7007d]/30'
                     : 'bg-white dark:bg-navy-dark shadow-xl hover:shadow-2xl border border-gray-200 dark:border-navy/30'
                 }`}
               >
@@ -320,8 +320,8 @@ export default function AphroditePricingTiers() {
                       : pkg.color === 'sage'
                       ? 'bg-sage/10'
                       : pkg.color === 'navy'
-                      ? 'bg-navy/10 dark:bg-gold/10'
-                      : 'bg-gold/10'
+                      ? 'bg-navy/10 dark:bg-[#e7007d]/10'
+                      : 'bg-[#e7007d]/10'
                   }`}>
                     <div className={
                       pkg.popular
@@ -329,8 +329,8 @@ export default function AphroditePricingTiers() {
                         : pkg.color === 'sage'
                         ? 'text-sage'
                         : pkg.color === 'navy'
-                        ? 'text-navy dark:text-gold'
-                        : 'text-gold'
+                        ? 'text-navy dark:text-[#e7007d]'
+                        : 'text-[#e7007d]'
                     }>
                       {getIcon(pkg.color)}
                     </div>
@@ -382,10 +382,10 @@ export default function AphroditePricingTiers() {
                       <div className="flex-shrink-0 mt-0.5">
                         {feature.included ? (
                           <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                            pkg.popular ? 'bg-navy/10' : 'bg-gold/10'
+                            pkg.popular ? 'bg-navy/10' : 'bg-[#e7007d]/10'
                           }`}>
                             <Check className={`h-3 w-3 ${
-                              pkg.popular ? 'text-navy' : 'text-gold'
+                              pkg.popular ? 'text-navy' : 'text-[#e7007d]'
                             }`} />
                           </div>
                         ) : (
@@ -410,27 +410,17 @@ export default function AphroditePricingTiers() {
                 {/* CTA Button */}
                 <motion.div className="space-y-4">
                   <Button
-                    className={`w-full py-6 rounded-xl font-bold text-lg transition-all duration-300 ${
+                    className={`w-full px-6 py-6 rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center ${
                       pkg.popular
                         ? 'bg-navy hover:bg-navy-dark text-white shadow-xl hover:shadow-2xl'
                         : pkg.name === 'Gold'
-                        ? 'bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy'
-                        : 'bg-gradient-to-r from-sage to-sage-light hover:from-sage-light hover:to-sage text-white'
+                        ? 'bg-gradient-to-r from-[#e7007d] to-[#e7007d]-light hover:from-[#e7007d]-light hover:to-[#e7007d] text-navy'
+                        : 'bg-gradient-to-r from-sage to-[#e7007d]-light hover:from-sage-light hover:to-[#e7007d] text-white'
                     }`}
                   >
                     {pkg.cta}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-
-                  {/* Guarantee */}
-                  <div className="flex items-center justify-center gap-2 text-xs">
-                    <Shield className="h-3.5 w-3.5 text-green-600 dark:text-green-400" />
-                    <span className={
-                      pkg.popular ? 'text-navy/70' : 'text-gray-600 dark:text-gray-400'
-                    }>
-                      {pkg.guarantee}
-                    </span>
-                  </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -471,7 +461,7 @@ export default function AphroditePricingTiers() {
           <Button
             onClick={() => setShowComparison(!showComparison)}
             variant="outline"
-            className="px-8 py-6 rounded-xl font-medium border-2 border-navy dark:border-gold text-navy dark:text-gold hover:bg-navy hover:text-white dark:hover:bg-gold dark:hover:text-navy transition-all duration-300"
+            className="px-8 py-6 rounded-xl font-semibold text-base border-2 border-[#e7007d] text-[#e7007d] hover:bg-[#e7007d] hover:text-white dark:border-[#e7007d] dark:text-[#e7007d] dark:hover:bg-[#e7007d] dark:hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <BarChart className="mr-2 h-5 w-5" />
             {showComparison ? 'Hide' : 'Show'} Package Comparison
