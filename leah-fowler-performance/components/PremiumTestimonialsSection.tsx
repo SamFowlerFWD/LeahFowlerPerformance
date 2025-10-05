@@ -98,10 +98,15 @@ export default function PremiumTestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto px-4 sm:px-0 mb-6 sm:mb-8 leading-relaxed">
+            My focus is to get you feeling like yourself again - in fact, my aim is to get you feeling like a better version of yourself than ever before.
+          </p>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto px-4 sm:px-0 mb-8 sm:mb-12 leading-relaxed">
             My coaching isn't centred around quick fixes, gimmicks or unrealistic visions.
             It is about you building a body that enables you to live your life to the fullest. I want to raise your expectations, see what life has to offer and what you're capable of.
-            You'll be amazed at what your body can do.
+            <span className="block mt-4 text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#e7007d] to-[#c70069] bg-clip-text text-transparent">
+              You'll be amazed at what your body can do.
+            </span>
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy dark:text-white mb-4 sm:mb-6">
             Real Results from{' '}

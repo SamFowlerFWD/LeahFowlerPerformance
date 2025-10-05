@@ -1,10 +1,20 @@
-import { Inter } from 'next/font/google'
+import { Be_Vietnam_Pro, Alegreya_Sans } from 'next/font/google'
 import '../globals.css'
 
-const inter = Inter({
+// Be Vietnam Pro for headings
+const beVietnamPro = Be_Vietnam_Pro({
+  variable: '--font-heading',
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  weight: ['400'],
+})
+
+// Alegreya Sans Light for body text
+const alegreyaSans = Alegreya_Sans({
+  variable: '--font-body',
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['300'],
 })
 
 export default function MobileDemoLayout({
@@ -13,7 +23,7 @@ export default function MobileDemoLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en-GB" className={inter.variable}>
+    <html lang="en-GB" className={`${beVietnamPro.variable} ${alegreyaSans.variable}`}>
       <head>
         {/* Viewport meta for optimal mobile rendering */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
@@ -39,7 +49,7 @@ export default function MobileDemoLayout({
         {/* Preload critical resources */}
         <link rel="preload" href="/images/hero/leah-training-action.webp" as="image" />
       </head>
-      <body className="font-sans antialiased min-h-screen bg-white text-slate-900">
+      <body className="font-body antialiased min-h-screen bg-white text-slate-900">
         {children}
       </body>
     </html>

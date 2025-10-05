@@ -8,6 +8,14 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      // Typography - Custom font families
+      fontFamily: {
+        'heading': ['var(--font-heading)', 'system-ui', 'sans-serif'],
+        'body': ['var(--font-body)', 'system-ui', 'sans-serif'],
+        'sans': ['var(--font-body)', 'system-ui', 'sans-serif'],
+        'serif': ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+      },
+
       // Premium spacing scale based on 8-point grid
       spacing: {
         '0': '0',

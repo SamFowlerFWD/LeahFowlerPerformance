@@ -76,7 +76,7 @@ export default function AssessmentSection() {
             ELITE QUALIFICATION ASSESSMENT
             <Sparkles className="h-5 w-5" />
           </motion.div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-navy mb-10 leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal text-navy mb-10 leading-tight">
             Qualify for
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold to-amber-600">
               Premium Consultancy

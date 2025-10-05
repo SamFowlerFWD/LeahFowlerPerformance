@@ -94,8 +94,7 @@ export default function ModernHeader() {
                   }}
                   asChild
                 >
-                  <Link href="/apply" className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" style={{ color: '#ffffff' }} />
+                  <Link href="/apply">
                     Apply for Coaching
                   </Link>
                 </Button>

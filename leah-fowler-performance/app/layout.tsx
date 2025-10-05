@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Be_Vietnam_Pro, Alegreya_Sans } from "next/font/google";
 import CookieConsent from '@/components/CookieConsent';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import ConditionalMobileNav from '@/components/ConditionalMobileNav';
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+// Be Vietnam Pro for headings - clean, modern, professional
+const beVietnamPro = Be_Vietnam_Pro({
+  variable: "--font-heading",
   subsets: ["latin"],
   display: 'swap',
+  weight: ['400'],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+// Alegreya Sans Light for body text - readable, elegant
+const alegreyaSans = Alegreya_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
   display: 'swap',
-  weight: ['400', '700', '900'],
+  weight: ['300'],
 });
 
 export const metadata: Metadata = {
@@ -91,7 +94,7 @@ export default function RootLayout({
         <SchemaMarkup />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased font-sans min-h-screen bg-white dark:bg-navy-dark text-gray-900 dark:text-gray-100 overflow-x-hidden`}
+        className={`${beVietnamPro.variable} ${alegreyaSans.variable} antialiased font-body min-h-screen bg-white dark:bg-navy-dark text-gray-900 dark:text-gray-100 overflow-x-hidden`}
       >
         {/* Skip to Content Link for Accessibility */}
         <a href="#main-content" className="skip-to-content">

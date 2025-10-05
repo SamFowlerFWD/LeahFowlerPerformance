@@ -304,7 +304,7 @@ export default function AboutSection() {
               className="mt-8 sm:mt-10 md:mt-12 text-center"
             >
               <div className="inline-block">
-                <div className="h-16 sm:h-20 flex items-center justify-center text-3xl sm:text-4xl md:text-5xl font-signature text-[#e7007d] italic">
+                <div className="h-16 sm:h-20 flex items-center justify-center text-3xl sm:text-4xl md:text-5xl font-heading text-[#e7007d]">
                   Leah Fowler
                 </div>
                 <p className="text-white/60 text-sm sm:text-base mt-1 sm:mt-2">Founder & Lead Coach</p>
@@ -319,14 +319,10 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-<h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-tight">
+<h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-normal text-white mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-tight">
               A BIT ABOUT ME...
             </h2>
 
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl text-orange-500 font-medium mb-6 sm:mb-8 md:mb-10 leading-tight">
-              Family Fitness & Athletic Performance Specialist
-            </p>
-            
             <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-8 sm:mb-10 md:mb-12">
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
                 I am Leah, I have always loved being outside and physically active. Now I am a mum of 3 young children and I can appreciate just how important exercise is, both physically in order to carry out all the day to day running around after children but also mentally building strength and self confidence since becoming a mum has helped me feel myself again.

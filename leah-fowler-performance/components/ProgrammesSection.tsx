@@ -121,7 +121,7 @@ export default function ProgrammesSection() {
             <Star className="h-5 w-5" />
           </motion.div>
           
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-navy mb-8 leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-normal text-navy mb-8 leading-tight">
             Transform Your
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold to-amber-600">
               Performance Today
