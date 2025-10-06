@@ -23,7 +23,7 @@ export const organizationSchema = {
   },
   "image": "https://strengthpt.co.uk/og-image.jpg",
   "description": "Aphrodite Fitness with Leah Fowler - Personal training and strength coaching for busy parents and professionals in Norfolk. Online and in-person training from £48. Mother of 3, 15 years experience.",
-  "email": "enquiries@strengthpt.co.uk",
+  "email": "leah@aphroditefitness.co.uk",
   "telephone": "+447990600958",
   "address": {
     "@type": "PostalAddress",
@@ -176,7 +176,7 @@ export const personSchema = {
     "https://strengthpt.co.uk/images/leah/leah-fowler-pt.webp",
     "https://strengthpt.co.uk/images/leah/leah-fowler-pt-300x300.webp"
   ],
-  "email": "leah@strengthpt.co.uk",
+  "email": "leah@aphroditefitness.co.uk",
   "telephone": "+447990600958",
   "address": {
     "@type": "PostalAddress",

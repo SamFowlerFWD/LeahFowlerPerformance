@@ -47,7 +47,7 @@ const contactMethods = [
     title: 'Message Another Parent',
     value: "I understand, let's talk",
     action: 'Share Your Story',
-    href: 'mailto:leah@leahfowlerperformance.com',
+    href: 'mailto:leah@aphroditefitness.co.uk',
     gradient: 'from-emerald-500 to-teal-600',
     popular: false
 },

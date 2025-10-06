@@ -119,7 +119,7 @@ export default function ModernHeader() {
               </motion.a>
 
               <motion.a
-                href="mailto:leah@strengthpt.co.uk"
+                href="mailto:leah@aphroditefitness.co.uk"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="hidden lg:flex p-2.5 rounded-lg transition-all duration-300 min-w-[40px] min-h-[40px] items-center justify-center hover:opacity-80"
@@ -214,7 +214,7 @@ export default function ModernHeader() {
               <a href="tel:+447990600958" className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#e7007d' }}>
                 <Phone className="h-5 w-5" />
               </a>
-              <a href="mailto:leah@strengthpt.co.uk" className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#e7007d' }}>
+              <a href="mailto:leah@aphroditefitness.co.uk" className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#e7007d' }}>
                 <Mail className="h-5 w-5" />
               </a>
               <button onClick={toggleTheme} className="p-3 rounded-lg transition-all duration-300 hover:opacity-80" style={{ color: '#e7007d' }}>

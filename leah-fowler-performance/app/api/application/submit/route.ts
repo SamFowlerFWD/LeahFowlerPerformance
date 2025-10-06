@@ -59,12 +59,12 @@ export async function POST(request: NextRequest) {
     })
 
     // Send notification email to Leah
-    // This would be implemented with your email service
-    // await sendNotificationEmail({
-    //   to: 'leah@leahfowlerperformance.com',
-    //   subject: 'New Coaching Application',
-    //   body: `New application from ${name} for ${programme}`
-    // })
+    // TODO: Integrate with email service (Resend/SendGrid)
+    // When email service is configured, send notification to:
+    // Email: leah@aphroditefitness.co.uk
+    // Subject: 'New Coaching Application'
+    // Body: Application details from ${name} for ${programme}
+    console.log('Email notification to be sent to: leah@aphroditefitness.co.uk')
 
     return NextResponse.json({
       success: true,

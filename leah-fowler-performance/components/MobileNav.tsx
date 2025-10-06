@@ -332,7 +332,7 @@ export default function MobileNav() {
                       <span className="font-medium">Call</span>
                     </a>
                     <a
-                      href="mailto:info@leahfowlerperformance.com"
+                      href="mailto:leah@aphroditefitness.co.uk"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-navy dark:text-white hover:bg-gold/10 transition-all duration-300 touch-manipulation"
                       style={{ minHeight: '48px' }}
                     >
