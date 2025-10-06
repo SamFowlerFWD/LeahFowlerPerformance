@@ -189,80 +189,82 @@ export default function AphroditePricingTiers() {
           <div
             role="tablist"
             aria-label="Filter training packages"
-            className="inline-flex items-center p-1 rounded-full bg-gray-100 dark:bg-navy-dark/50 border border-gray-200 dark:border-[#e7007d]/20"
+            className="flex items-center justify-center w-full px-2 sm:inline-flex sm:w-auto sm:px-0"
           >
-            <button
-              type="button"
-              onClick={() => {
-                setIsAnimating(true)
-                setSelectedCategory('all')
-                setTimeout(() => setIsAnimating(false), 300)
-              }}
-              role="tab"
-              aria-selected={selectedCategory === 'all'}
-              aria-controls="pricing-panel"
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === 'all'
-                  ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-              }`}
-            >
-              All Packages
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setIsAnimating(true)
-                setSelectedCategory('group')
-                setTimeout(() => setIsAnimating(false), 300)
-              }}
-              role="tab"
-              aria-selected={selectedCategory === 'group'}
-              aria-controls="pricing-panel"
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === 'group'
-                  ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-              }`}
-            >
-              Group Training
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setIsAnimating(true)
-                setSelectedCategory('personal')
-                setTimeout(() => setIsAnimating(false), 300)
-              }}
-              role="tab"
-              aria-selected={selectedCategory === 'personal'}
-              aria-controls="pricing-panel"
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === 'personal'
-                  ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-              }`}
-            >
-              Personal Training
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setIsAnimating(true)
-                setSelectedCategory('online')
-                setTimeout(() => setIsAnimating(false), 300)
-              }}
-              role="tab"
-              aria-selected={selectedCategory === 'online'}
-              aria-controls="pricing-panel"
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === 'online'
-                  ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-              }`}
-            >
-              Online
-            </button>
+            <div className="inline-flex items-center p-0.5 sm:p-1 rounded-full bg-gray-100 dark:bg-navy-dark/50 border border-gray-200 dark:border-[#e7007d]/20 w-full sm:w-auto">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsAnimating(true)
+                  setSelectedCategory('all')
+                  setTimeout(() => setIsAnimating(false), 300)
+                }}
+                role="tab"
+                aria-selected={selectedCategory === 'all'}
+                aria-controls="pricing-panel"
+                className={`px-2 sm:px-4 md:px-6 py-1 sm:py-2.5 rounded-full font-medium text-[10px] sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none ${
+                  selectedCategory === 'all'
+                    ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
+                }`}
+              >
+                All
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsAnimating(true)
+                  setSelectedCategory('group')
+                  setTimeout(() => setIsAnimating(false), 300)
+                }}
+                role="tab"
+                aria-selected={selectedCategory === 'group'}
+                aria-controls="pricing-panel"
+                className={`px-2 sm:px-4 md:px-6 py-1 sm:py-2.5 rounded-full font-medium text-[10px] sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none ${
+                  selectedCategory === 'group'
+                    ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
+                }`}
+              >
+                Group
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsAnimating(true)
+                  setSelectedCategory('personal')
+                  setTimeout(() => setIsAnimating(false), 300)
+                }}
+                role="tab"
+                aria-selected={selectedCategory === 'personal'}
+                aria-controls="pricing-panel"
+                className={`px-2 sm:px-4 md:px-6 py-1 sm:py-2.5 rounded-full font-medium text-[10px] sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none ${
+                  selectedCategory === 'personal'
+                    ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
+                }`}
+              >
+                Personal
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsAnimating(true)
+                  setSelectedCategory('online')
+                  setTimeout(() => setIsAnimating(false), 300)
+                }}
+                role="tab"
+                aria-selected={selectedCategory === 'online'}
+                aria-controls="pricing-panel"
+                className={`px-2 sm:px-4 md:px-6 py-1 sm:py-2.5 rounded-full font-medium text-[10px] sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none ${
+                  selectedCategory === 'online'
+                    ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
+                }`}
+              >
+                Online
+              </button>
+            </div>
           </div>
         </motion.div>
 

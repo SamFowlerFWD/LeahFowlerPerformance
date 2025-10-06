@@ -167,7 +167,7 @@ export default function OnlinePackageShowcase() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-gradient-to-r from-navy via-navy-dark to-navy rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 mb-6 md:mb-8 lg:mb-10 relative overflow-hidden"
+          className="bg-gradient-to-r from-navy via-navy-dark to-navy rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 mb-10 sm:mb-12 md:mb-16 lg:mb-20 relative overflow-hidden"
         >
           <div className="absolute inset-0">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#e7007d]/20 rounded-full blur-3xl" />
@@ -195,7 +195,7 @@ export default function OnlinePackageShowcase() {
             </div>
 
             <div className="relative">
-              <div className="max-w-[400px] mx-auto">
+              <div className="max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] mx-auto">
                 <Image
                   src="/images/trainerize-app.png"
                   alt="Aphrodite Fitness App Interface"
@@ -213,14 +213,14 @@ export default function OnlinePackageShowcase() {
                   repeat: Infinity,
                   repeatType: "reverse"
                 }}
-                className="absolute -top-4 -right-4"
+                className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 md:-top-4 md:-right-4"
               >
                 <Image
                   src="/images/af-full-logo.avif"
                   alt="Aphrodite Fitness"
                   width={100}
                   height={50}
-                  className="h-auto w-24 drop-shadow-2xl"
+                  className="h-auto w-12 sm:w-16 md:w-20 lg:w-24 drop-shadow-2xl"
                 />
               </motion.div>
             </div>
