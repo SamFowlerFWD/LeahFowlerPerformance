@@ -29,11 +29,11 @@ function RadioGroupItem({
       className={cn(
         "relative min-h-[44px] min-w-[44px] flex items-center justify-center",
         "before:content-[''] before:absolute before:inset-0 before:min-h-[44px] before:min-w-[44px] before:-m-2.5",
-        "after:content-[''] after:absolute after:size-6 after:rounded-full after:border-2 after:border-navy after:bg-white after:shadow-sm after:transition-all after:duration-200",
-        "hover:after:border-navy hover:after:shadow-md",
-        "focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2",
+        "after:content-[''] after:absolute after:size-6 after:rounded-full after:border-2 after:border-gray-300 dark:after:border-gray-500 after:bg-white dark:after:bg-navy-dark after:shadow-sm after:transition-all after:duration-200",
+        "hover:after:border-[#e7007d] hover:after:shadow-md",
+        "focus-visible:ring-2 focus-visible:ring-[#e7007d] focus-visible:ring-offset-2",
         "disabled:cursor-not-allowed disabled:opacity-50",
-        "data-[state=checked]:after:border-navy data-[state=checked]:after:bg-navy data-[state=checked]:after:shadow-md",
+        "data-[state=checked]:after:border-[#e7007d] data-[state=checked]:after:bg-white dark:data-[state=checked]:after:bg-navy-dark data-[state=checked]:after:shadow-md",
         className
       )}
       {...props}
@@ -42,7 +42,7 @@ function RadioGroupItem({
         data-slot="radio-group-indicator"
         className="relative z-10 flex items-center justify-center"
       >
-        <CircleIcon className="fill-white size-3" />
+        <CircleIcon className="size-3" style={{ fill: '#e7007d' }} />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )
