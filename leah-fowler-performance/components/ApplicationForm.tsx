@@ -126,41 +126,41 @@ export default function ApplicationForm() {
         className="max-w-2xl mx-auto p-8 text-center"
       >
         <div className="mb-6">
-          <CheckCircle className="h-20 w-20 text-green-500 mx-auto mb-4" />
+          <CheckCircle className="h-20 w-20 text-green-500 dark:text-green-400 mx-auto mb-4" />
         </div>
-        <h2 className="text-3xl font-bold text-navy mb-4">
+        <h2 className="text-3xl font-bold text-navy dark:text-white mb-4">
           Application Submitted Successfully!
         </h2>
-        <p className="text-lg text-gray-600 mb-6">
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
           Thank you for applying to Leah Fowler Performance coaching. We'll review your application and get back to you within 24 hours.
         </p>
-        <div className="space-y-4 text-left bg-gradient-to-br from-gold/10 to-sage/10 p-6 rounded-xl">
-          <h3 className="font-semibold text-lg mb-3">What happens next?</h3>
+        <div className="space-y-4 text-left bg-gradient-to-br from-[#e7007d]/10 to-[#e7007d]/5 dark:from-[#e7007d]/20 dark:to-[#e7007d]/10 p-6 rounded-xl border border-[#e7007d]/20 dark:border-[#e7007d]/30">
+          <h3 className="font-semibold text-lg mb-3 text-navy dark:text-white">What happens next?</h3>
           <div className="flex items-start gap-3">
-            <Calendar className="h-5 w-5 text-gold mt-0.5" />
+            <Calendar className="h-5 w-5 mt-0.5" style={{ color: '#e7007d' }} />
             <div>
-              <p className="font-medium">Within 24 hours</p>
-              <p className="text-sm text-gray-600">We'll review your application and goals</p>
+              <p className="font-medium text-navy dark:text-white">Within 24 hours</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">We'll review your application and goals</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Mail className="h-5 w-5 text-gold mt-0.5" />
+            <Mail className="h-5 w-5 mt-0.5" style={{ color: '#e7007d' }} />
             <div>
-              <p className="font-medium">Personalised response</p>
-              <p className="text-sm text-gray-600">You'll receive a tailored programme recommendation</p>
+              <p className="font-medium text-navy dark:text-white">Personalised response</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">You'll receive a tailored programme recommendation</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Trophy className="h-5 w-5 text-gold mt-0.5" />
+            <Trophy className="h-5 w-5 mt-0.5" style={{ color: '#e7007d' }} />
             <div>
-              <p className="font-medium">Start your journey</p>
-              <p className="text-sm text-gray-600">Begin training and transforming your performance</p>
+              <p className="font-medium text-navy dark:text-white">Start your journey</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Begin training and transforming your performance</p>
             </div>
           </div>
         </div>
         <Button
           onClick={() => window.location.href = '/'}
-          className="mt-8 bg-navy hover:bg-navy-dark text-white"
+          className="mt-8 bg-gradient-to-r from-[#e7007d] to-[#c70069] hover:from-[#c70069] hover:to-[#e7007d] text-white"
         >
           Return to Homepage
         </Button>
@@ -220,7 +220,7 @@ export default function ApplicationForm() {
 
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="phone" className="text-navy font-medium">Phone Number</Label>
+                <Label htmlFor="phone" className="text-navy dark:text-white font-medium">Phone Number</Label>
                 <Input
                   id="phone"
                   name="phone"
@@ -228,19 +228,19 @@ export default function ApplicationForm() {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="07123 456789"
-                  className="mt-2 bg-white border-2 border-gray-200 hover:border-navy/50 focus:border-navy text-navy placeholder:text-gray-400 min-h-[44px]"
+                  className="mt-2 bg-white dark:bg-navy border-2 border-gray-200 dark:border-navy-dark hover:border-[#e7007d] focus:border-[#e7007d] text-navy dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 min-h-[44px]"
                 />
               </div>
 
               <div>
-                <Label htmlFor="location" className="text-navy font-medium">Your Location</Label>
+                <Label htmlFor="location" className="text-navy dark:text-white font-medium">Your Location</Label>
                 <Input
                   id="location"
                   name="location"
                   value={formData.location}
                   onChange={handleInputChange}
                   placeholder="e.g., London, Norfolk, etc."
-                  className="mt-2 bg-white border-2 border-gray-200 hover:border-navy/50 focus:border-navy text-navy placeholder:text-gray-400 min-h-[44px]"
+                  className="mt-2 bg-white dark:bg-navy border-2 border-gray-200 dark:border-navy-dark hover:border-[#e7007d] focus:border-[#e7007d] text-navy dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 min-h-[44px]"
                 />
               </div>
             </div>
@@ -268,18 +268,18 @@ export default function ApplicationForm() {
 
           {/* Experience Level */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-navy flex items-center gap-2">
-              <Trophy className="h-5 w-5 text-gold" />
+            <h3 className="text-xl font-semibold text-navy dark:text-white flex items-center gap-2">
+              <Trophy className="h-5 w-5" style={{ color: '#e7007d' }} />
               Your Fitness Experience
             </h3>
 
             <RadioGroup value={formData.experience} onValueChange={(value) => handleRadioChange('experience', value)} className="space-y-3">
               {experienceLevels.map(level => (
-                <div key={level.value} className="flex items-start space-x-4 p-5 border-2 border-gray-200 rounded-xl hover:bg-sage/5 hover:border-sage/50 transition-all duration-200 cursor-pointer bg-white">
+                <div key={level.value} className="flex items-start space-x-4 p-5 border-2 rounded-xl hover:border-[#e7007d] transition-all duration-200 cursor-pointer bg-white dark:bg-navy border-gray-200 dark:border-navy-dark">
                   <RadioGroupItem value={level.value} id={`exp-${level.value}`} className="mt-0.5 flex-shrink-0 min-w-[24px] min-h-[24px]" />
                   <Label htmlFor={`exp-${level.value}`} className="cursor-pointer flex-1">
-                    <span className="font-medium block text-navy">{level.label}</span>
-                    <span className="text-sm text-gray-600 mt-1">{level.description}</span>
+                    <span className="font-medium block text-navy dark:text-white">{level.label}</span>
+                    <span className="text-sm text-gray-600 dark:text-gray-300 mt-1">{level.description}</span>
                   </Label>
                 </div>
               ))}
@@ -288,13 +288,13 @@ export default function ApplicationForm() {
 
           {/* Goals */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-navy flex items-center gap-2">
-              <MessageSquare className="h-5 w-5 text-gold" />
+            <h3 className="text-xl font-semibold text-navy dark:text-white flex items-center gap-2">
+              <MessageSquare className="h-5 w-5" style={{ color: '#e7007d' }} />
               Your Goals & Availability
             </h3>
 
             <div>
-              <Label htmlFor="goals" className="text-navy font-medium">What are your main fitness goals? *</Label>
+              <Label htmlFor="goals" className="text-navy dark:text-white font-medium">What are your main fitness goals? *</Label>
               <Textarea
                 id="goals"
                 name="goals"
@@ -302,37 +302,37 @@ export default function ApplicationForm() {
                 onChange={handleInputChange}
                 placeholder="e.g., Build strength, improve energy, prepare for an event, lose weight..."
                 required
-                className="mt-2 min-h-[100px] bg-white border-2 border-gray-200 hover:border-navy/50 focus:border-navy text-navy placeholder:text-gray-400"
+                className="mt-2 min-h-[100px] bg-white dark:bg-navy border-2 border-gray-200 dark:border-navy-dark hover:border-[#e7007d] focus:border-[#e7007d] text-navy dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
               />
             </div>
 
             <div>
-              <Label htmlFor="availability" className="text-navy font-medium">When can you train?</Label>
+              <Label htmlFor="availability" className="text-navy dark:text-white font-medium">When can you train?</Label>
               <Input
                 id="availability"
                 name="availability"
                 value={formData.availability}
                 onChange={handleInputChange}
                 placeholder="e.g., Mornings, evenings, weekends..."
-                className="mt-2 bg-white border-gray-300 text-navy placeholder:text-gray-400"
+                className="mt-2 bg-white dark:bg-navy border-2 border-gray-200 dark:border-navy-dark hover:border-[#e7007d] focus:border-[#e7007d] text-navy dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 min-h-[44px]"
               />
             </div>
 
             <div>
-              <Label htmlFor="message" className="text-navy font-medium">Anything else we should know?</Label>
+              <Label htmlFor="message" className="text-navy dark:text-white font-medium">Anything else we should know?</Label>
               <Textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
                 placeholder="Tell us about any injuries, preferences, or questions you have..."
-                className="mt-2 min-h-[100px] bg-white border-2 border-gray-200 hover:border-navy/50 focus:border-navy text-navy placeholder:text-gray-400"
+                className="mt-2 min-h-[100px] bg-white dark:bg-navy border-2 border-gray-200 dark:border-navy-dark hover:border-[#e7007d] focus:border-[#e7007d] text-navy dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
               />
             </div>
           </div>
 
           {/* Consent */}
-          <div className="space-y-4 p-6 bg-gold/5 rounded-xl border-2 border-gold/20">
+          <div className="space-y-4 p-6 bg-[#e7007d]/5 dark:bg-[#e7007d]/10 rounded-xl border-2 border-[#e7007d]/20 dark:border-[#e7007d]/30">
             <div className="flex items-start gap-3">
               <input
                 type="checkbox"
@@ -340,9 +340,9 @@ export default function ApplicationForm() {
                 name="dataConsent"
                 checked={formData.dataConsent}
                 onChange={handleCheckboxChange}
-                className="mt-1 h-5 w-5 text-gold border-2 border-gray-200 rounded focus:ring-2 focus:ring-gold"
+                className="mt-1 h-5 w-5 border-2 border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-[#e7007d] checked:bg-[#e7007d]"
               />
-              <Label htmlFor="dataConsent" className="text-sm text-navy">
+              <Label htmlFor="dataConsent" className="text-sm text-navy dark:text-white">
                 I consent to Leah Fowler Performance storing and processing my data to respond to my application
                 and provide coaching services. *
               </Label>
@@ -355,9 +355,9 @@ export default function ApplicationForm() {
                 name="marketingConsent"
                 checked={formData.marketingConsent}
                 onChange={handleCheckboxChange}
-                className="mt-1 h-5 w-5 text-gold border-2 border-gray-200 rounded focus:ring-2 focus:ring-gold"
+                className="mt-1 h-5 w-5 border-2 border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-[#e7007d] checked:bg-[#e7007d]"
               />
-              <Label htmlFor="marketingConsent" className="text-sm text-navy">
+              <Label htmlFor="marketingConsent" className="text-sm text-navy dark:text-white">
                 I'd like to receive training tips, programme updates, and exclusive offers via email.
               </Label>
             </div>
@@ -365,7 +365,7 @@ export default function ApplicationForm() {
 
           {/* Error Display */}
           {submissionError && (
-            <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+            <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300">
               {submissionError}
             </div>
           )}
@@ -375,7 +375,7 @@ export default function ApplicationForm() {
             <Button
               type="submit"
               disabled={isSubmitting || !formData.dataConsent}
-              className="bg-gradient-to-r from-gold to-gold-light hover:from-gold-light hover:to-gold text-navy font-bold px-12 py-6 min-h-[56px] text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-gradient-to-r from-[#e7007d] to-[#c70069] hover:from-[#c70069] hover:to-[#e7007d] text-white font-bold px-12 py-6 min-h-[56px] text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>
