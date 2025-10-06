@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase'
+import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { Resend } from 'resend'
 
 export async function POST(request: NextRequest) {
@@ -16,8 +16,16 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Initialize Supabase client
-    const supabase = createClient()
+    // Initialize Supabase client with service role key (bypasses RLS)
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
+
+    const supabase = createSupabaseClient(supabaseUrl, supabaseServiceKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    })
 
     // Store application in database
     const { error: dbError } = await supabase
