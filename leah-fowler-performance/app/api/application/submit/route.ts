@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase'
+import { Resend } from 'resend'
 
 export async function POST(request: NextRequest) {
   try {
@@ -49,22 +50,62 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Send confirmation email (you can add email service here)
-    // For now, we'll just log it
-    console.log('New coaching application received:', {
-      name,
-      email,
-      programme,
-      goals
-    })
+    // Send notification email to Leah using Resend
+    try {
+      const resend = new Resend(process.env.RESEND_API_KEY)
 
-    // Send notification email to Leah
-    // TODO: Integrate with email service (Resend/SendGrid)
-    // When email service is configured, send notification to:
-    // Email: leah@aphroditefitness.co.uk
-    // Subject: 'New Coaching Application'
-    // Body: Application details from ${name} for ${programme}
-    console.log('Email notification to be sent to: leah@aphroditefitness.co.uk')
+      await resend.emails.send({
+        from: process.env.EMAIL_FROM_ADDRESS || 'onboarding@resend.dev',
+        to: process.env.EMAIL_NOTIFICATION_TO || 'leah@aphroditefitness.co.uk',
+        subject: `New Coaching Application - ${programme}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #e7007d;">New Coaching Application Received</h2>
+
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="margin-top: 0;">Applicant Details</h3>
+              <p><strong>Name:</strong> ${name}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Phone:</strong> ${body.phone || 'Not provided'}</p>
+              <p><strong>Location:</strong> ${body.location || 'Not provided'}</p>
+            </div>
+
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="margin-top: 0;">Programme Information</h3>
+              <p><strong>Programme:</strong> ${programme}</p>
+              <p><strong>Experience Level:</strong> ${body.experience || 'Not provided'}</p>
+              <p><strong>Availability:</strong> ${body.availability || 'Not provided'}</p>
+            </div>
+
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="margin-top: 0;">Goals</h3>
+              <p>${goals}</p>
+            </div>
+
+            ${body.message ? `
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="margin-top: 0;">Additional Message</h3>
+              <p>${body.message}</p>
+            </div>
+            ` : ''}
+
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+              <p style="color: #666; font-size: 14px;">
+                View full application details in your admin dashboard at
+                <a href="https://strengthpt.co.uk/admin/assessments" style="color: #e7007d;">
+                  strengthpt.co.uk/admin/assessments
+                </a>
+              </p>
+            </div>
+          </div>
+        `
+      })
+
+      console.log('Email notification sent successfully to:', process.env.EMAIL_NOTIFICATION_TO)
+    } catch (emailError) {
+      console.error('Failed to send email notification:', emailError)
+      // Don't fail the whole request if email fails
+    }
 
     return NextResponse.json({
       success: true,
