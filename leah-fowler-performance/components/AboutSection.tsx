@@ -294,22 +294,6 @@ export default function AboutSection() {
                 </div>
               </GlassCard>
             </div>
-
-            {/* Signature */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="mt-8 sm:mt-10 md:mt-12 text-center"
-            >
-              <div className="inline-block">
-                <div className="h-16 sm:h-20 flex items-center justify-center text-3xl sm:text-4xl md:text-5xl font-heading text-[#e7007d]">
-                  Leah Fowler
-                </div>
-                <p className="text-white/60 text-sm sm:text-base mt-1 sm:mt-2">Founder & Lead Coach</p>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right: Content */}
@@ -320,114 +304,149 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
 <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-normal text-white mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              A BIT ABOUT ME...
+              My Goal for you
             </h2>
 
             <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-8 sm:mb-10 md:mb-12">
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
-                I am Leah, I have always loved being outside and physically active. Now I am a mum of 3 young children and I can appreciate just how important exercise is, both physically in order to carry out all the day to day running around after children but also mentally building strength and self confidence since becoming a mum has helped me feel myself again.
+                My focus is to get you feeling like yourself again - in fact, my aim is to get you feeling like a better version of yourself than ever before. My coaching isn&apos;t centred around quick fixes, gimmicks or unrealistic visions. It is about you building a body that enables you to live your life to the fullest. I want to raise your expectations, see what life has to offer and what you&apos;re capable of.
               </p>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-lg text-white/80 leading-relaxed">
-                I know just how hard it can be to fit time in for yourself and find the energy to do something productive, but having been through it and come out the other side so much stronger I am determined to help other women to do the same for themselves.
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-[#e7007d] leading-relaxed font-semibold">
+                You&apos;ll be amazed at what your body can do.
+              </p>
+
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
+                I understand what it feels like to lose a bit of yourself through becoming a parent. Although I have always loved being outside and physically active, now I am a mum I can appreciate just how important exercise is, both physically and mentally. I can help you to build strength and confidence that will help you to feel like you again.
               </p>
             </div>
-
-            {/* Credentials Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
-              {credentials.map((cred, index) => (
-                <motion.div
-                  key={cred.title}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/15 transition-all hover:scale-105 duration-300"
-                >
-                  <div className={`inline-flex p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${cred.color} mb-3 sm:mb-4`}>
-                    <cred.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" />
-                  </div>
-                  <h4 className="font-bold text-white text-sm sm:text-base md:text-lg mb-1 sm:mb-2">{cred.title}</h4>
-                  <p className="text-white/60 text-xs sm:text-sm md:text-base leading-relaxed">{cred.subtitle}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Qualifications Dropdown */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-8 sm:mb-10 md:mb-12"
-            >
-              <button
-                onClick={() => setShowQualifications(!showQualifications)}
-                className="w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 group"
-              >
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-white font-semibold text-sm sm:text-base md:text-lg">See All Qualifications</span>
-                  <ChevronDown
-                    className={`h-5 w-5 text-[#e7007d] transition-transform duration-300 ${
-                      showQualifications ? 'rotate-180' : ''
-                    }`}
-                  />
-                </div>
-              </button>
-
-              <motion.div
-                initial={false}
-                animate={{
-                  height: showQualifications ? 'auto' : 0,
-                  opacity: showQualifications ? 1 : 0
-                }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
-              >
-                <div className="mt-6 grid md:grid-cols-2 gap-8 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-                  {/* Qualifications Column */}
-                  <div className="text-center">
-                    <h4 className="text-[#e7007d] font-bold text-lg mb-4">Qualifications</h4>
-                    <ul className="space-y-2 text-left inline-block">
-                      {qualificationsList.map((qual, index) => (
-                        <motion.li
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: showQualifications ? 1 : 0, x: showQualifications ? 0 : -20 }}
-                          transition={{ duration: 0.3, delay: index * 0.05 }}
-                          className="flex items-start gap-2"
-                        >
-                          <CheckCircle className="h-4 w-4 text-sage mt-0.5 flex-shrink-0" />
-                          <span className="text-white/80 text-sm">{qual}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* CPD Column */}
-                  <div className="text-center">
-                    <h4 className="text-[#e7007d] font-bold text-lg mb-4">Continued Professional Development</h4>
-                    <ul className="space-y-2 text-left inline-block">
-                      {cpdList.map((cpd, index) => (
-                        <motion.li
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: showQualifications ? 1 : 0, x: showQualifications ? 0 : -20 }}
-                          transition={{ duration: 0.3, delay: index * 0.05 + 0.1 }}
-                          className="flex items-start gap-2"
-                        >
-                          <CheckCircle className="h-4 w-4 text-sage mt-0.5 flex-shrink-0" />
-                          <span className="text-white/80 text-sm">{cpd}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
 
           </motion.div>
         </div>
+
+        {/* My Story - Full Width Single Column */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 mb-12 sm:mb-16 md:mb-20"
+        >
+          <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
+              I&apos;ve worked with busy parents, I get it. I get the struggles you&apos;ll face, the pressures and potential set backs that come up. I&apos;ve helped my clients overcome these and work through them. I&apos;ve seen them get results and begin to appreciate their own strengths as they use them in everyday life. I know just how hard it can be to fit time in for yourself and find the energy to do something productive, but having been through it myself also and come out the other side so much stronger I am determined to help you to do the same.
+            </p>
+
+            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
+              This is more than just future proofing your body. Sure, there are huge benefits of strength training that will support us as we age, stronger bones, muscles and healthy heart. But I want you to enjoy life right now. I want you to find the joy in movement and see your potential. Whether you want to get better at a sport or hobby, try something new or go back to something you enjoyed when you were younger, I can help you achieve that, and hopefully you&apos;ll be able to have fun along the way too. Life is for living, this is your opportunity to grab it.
+            </p>
+
+            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
+              All you need to do to get started is make a plan, that can start with a chat. If you&apos;re ready to invest in yourself, for your future self and the person you want to be right now, let&apos;s arrange a call.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Credentials Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-12 sm:mb-16 md:mb-20"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
+            {credentials.map((cred, index) => (
+              <motion.div
+                key={cred.title}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/15 transition-all hover:scale-105 duration-300"
+              >
+                <div className={`inline-flex p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${cred.color} mb-3 sm:mb-4`}>
+                  <cred.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" />
+                </div>
+                <h4 className="font-bold text-white text-sm sm:text-base md:text-lg mb-1 sm:mb-2">{cred.title}</h4>
+                <p className="text-white/60 text-xs sm:text-sm md:text-base leading-relaxed">{cred.subtitle}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Qualifications Dropdown */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mb-16 sm:mb-20 md:mb-24 max-w-6xl mx-auto"
+        >
+          <button
+            onClick={() => setShowQualifications(!showQualifications)}
+            className="w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 group"
+          >
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-white font-semibold text-sm sm:text-base md:text-lg">See All Qualifications</span>
+              <ChevronDown
+                className={`h-5 w-5 text-[#e7007d] transition-transform duration-300 ${
+                  showQualifications ? 'rotate-180' : ''
+                }`}
+              />
+            </div>
+          </button>
+
+          <motion.div
+            initial={false}
+            animate={{
+              height: showQualifications ? 'auto' : 0,
+              opacity: showQualifications ? 1 : 0
+            }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div className="mt-6 grid md:grid-cols-2 gap-8 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+              {/* Qualifications Column */}
+              <div className="text-center">
+                <h4 className="text-[#e7007d] font-bold text-lg mb-4">Qualifications</h4>
+                <ul className="space-y-2 text-left inline-block">
+                  {qualificationsList.map((qual, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: showQualifications ? 1 : 0, x: showQualifications ? 0 : -20 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className="flex items-start gap-2"
+                    >
+                      <CheckCircle className="h-4 w-4 text-sage mt-0.5 flex-shrink-0" />
+                      <span className="text-white/80 text-sm">{qual}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* CPD Column */}
+              <div className="text-center">
+                <h4 className="text-[#e7007d] font-bold text-lg mb-4">Continued Professional Development</h4>
+                <ul className="space-y-2 text-left inline-block">
+                  {cpdList.map((cpd, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: showQualifications ? 1 : 0, x: showQualifications ? 0 : -20 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 + 0.1 }}
+                      className="flex items-start gap-2"
+                    >
+                      <CheckCircle className="h-4 w-4 text-sage mt-0.5 flex-shrink-0" />
+                      <span className="text-white/80 text-sm">{cpd}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
 
         {/* Bottom Section: Expertise & Media */}
         <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-32">
