@@ -31,7 +31,7 @@ ALTER TABLE public.coaching_applications ENABLE ROW LEVEL SECURITY;
 
 -- Drop existing policies if they exist
 DROP POLICY IF EXISTS "Service role can do everything" ON public.coaching_applications;
-DROP POLICY IF NOT EXISTS "Admins can read coaching applications" ON public.coaching_applications;
+DROP POLICY IF EXISTS "Admins can read coaching applications" ON public.coaching_applications;
 
 -- Create policy to allow service role to do everything (for API)
 CREATE POLICY "Service role can do everything"
