@@ -7,14 +7,11 @@ import {
   Mail,
   Phone,
   MessageSquare,
-  Target,
   Trophy,
   CheckCircle,
   ArrowRight,
   Loader2,
-  Calendar,
-  Home,
-  MapPin
+  Calendar
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -56,12 +53,6 @@ export default function ApplicationForm() {
   const [submissionSuccess, setSubmissionSuccess] = useState(false)
   const [submissionError, setSubmissionError] = useState<string | null>(null)
 
-  const programmes = [
-    { value: 'online', label: 'Online', description: 'Train anywhere with app-based coaching, weekly check-ins, and personalised programming' },
-    { value: 'in-person', label: 'In Person', description: 'Face-to-face training sessions in Norfolk with personalised attention' },
-    { value: 'hybrid', label: 'Hybrid', description: 'Combination of online and in-person training for maximum flexibility' }
-  ]
-
   const experienceLevels = [
     { value: 'beginner', label: 'Beginner', description: 'New to fitness or returning after a break' },
     { value: 'intermediate', label: 'Intermediate', description: 'Regular training for 6-12 months' },
@@ -89,7 +80,7 @@ export default function ApplicationForm() {
     setSubmissionError(null)
 
     // Validate required fields
-    if (!formData.name || !formData.email || !formData.programme || !formData.goals || !formData.dataConsent) {
+    if (!formData.name || !formData.email || !formData.goals || !formData.dataConsent) {
       setSubmissionError('Please fill in all required fields and accept the data consent.')
       setIsSubmitting(false)
       return
@@ -244,26 +235,6 @@ export default function ApplicationForm() {
                 />
               </div>
             </div>
-          </div>
-
-          {/* Programme Selection */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-navy dark:text-white flex items-center gap-2">
-              <Target className="h-5 w-5" style={{ color: '#e7007d' }} />
-              What type of training are you interested in? *
-            </h3>
-
-            <RadioGroup value={formData.programme} onValueChange={(value) => handleRadioChange('programme', value)} className="space-y-3">
-              {programmes.map(programme => (
-                <div key={programme.value} className="flex items-start space-x-4 p-6 border-2 rounded-xl hover:border-[#e7007d] transition-all duration-200 cursor-pointer bg-white dark:bg-navy border-gray-200 dark:border-navy-dark">
-                  <RadioGroupItem value={programme.value} id={programme.value} className="mt-0.5 flex-shrink-0 min-w-[24px] min-h-[24px]" />
-                  <Label htmlFor={programme.value} className="cursor-pointer flex-1">
-                    <span className="font-bold block text-navy dark:text-white text-lg">{programme.label}</span>
-                    <span className="text-sm text-gray-600 dark:text-gray-300 mt-1 block">{programme.description}</span>
-                  </Label>
-                </div>
-              ))}
-            </RadioGroup>
           </div>
 
           {/* Experience Level */}

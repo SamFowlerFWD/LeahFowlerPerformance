@@ -51,7 +51,6 @@ const stats = [
 ]
 
 // Powerful headlines that speak directly to parents' experiences and aspirations
-// Each one addresses a specific moment every parent has felt or wanted
 const powerfulHeadlines = [
   "Strong Enough for Piggybacks at 40",
   "Be the Parent Who Races Them Up the Stairs",
@@ -104,17 +103,17 @@ const PremiumHeroWithImage: React.FC = () => {
   return (
     <motion.section
       ref={heroRef}
-      className="relative min-h-[100vh] md:min-h-[60vh] overflow-x-visible overflow-y-hidden"
+      className="relative min-h-[100vh] md:min-h-[80vh] overflow-x-visible overflow-y-hidden"
       style={{
         background: 'linear-gradient(to bottom right, var(--hero-background), var(--background))'
       }}
     >
       {/* Desktop: Split Layout / Mobile: Full Screen Overlay */}
-      <div className="relative min-h-[100vh] md:min-h-[60vh] md:flex md:flex-row">
+      <div className="relative min-h-[100vh] md:min-h-[80vh] md:flex md:flex-row">
 
         {/* Image Container - Full screen on mobile, split on desktop */}
         <motion.div
-          className="absolute inset-0 md:relative md:w-2/5 md:h-[60vh] overflow-visible md:order-2"
+          className="absolute inset-0 md:relative md:w-2/5 md:h-[80vh] overflow-visible md:order-2"
           style={{ scale: imageScale, y: imageY }}
         >
           {/* Image with art direction */}
@@ -152,7 +151,7 @@ const PremiumHeroWithImage: React.FC = () => {
 
         {/* Content Container - Overlay on mobile, split on tablet/desktop */}
         <motion.div
-          className="absolute inset-0 flex items-end pb-20 px-4 sm:px-6 md:relative md:w-3/5 md:flex md:flex-col md:justify-center md:items-start md:order-1 md:px-8 lg:px-16 md:py-8 lg:py-12 md:pb-8 lg:pb-12 md:h-full"
+          className="absolute inset-0 flex items-end pb-20 px-4 sm:px-6 md:relative md:w-3/5 md:flex md:flex-col md:justify-start md:items-start md:order-1 md:px-8 lg:px-16 md:py-8 lg:py-12 md:pt-16 lg:pt-20 md:pb-8 lg:pb-12 md:h-full"
           style={{ y: contentY }}
         >
           {/* Background effects for tablet/desktop content side only */}
@@ -165,22 +164,26 @@ const PremiumHeroWithImage: React.FC = () => {
           {/* Removed floating particles that were creating visual artifacts */}
 
           <div className="relative z-10 w-full max-w-2xl mx-auto text-center md:text-left md:mx-0 md:pt-0">
-            {/* Powerful Headlines That Make Parents Stop Scrolling */}
+            {/* Main Headline */}
             <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-              <AnimatePresence mode="wait">
-                <motion.h1
-                  key={currentHeadline}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-5xl sm:text-6xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-6 lg:mb-10 leading-[1.1] text-white md:text-foreground"
-                >
-                  <span className="block text-white md:text-foreground">
-                    {powerfulHeadlines[currentHeadline]}
-                  </span>
-                </motion.h1>
-              </AnimatePresence>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-3 sm:space-y-4"
+              >
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
+                  I can help you feeling like yourself again - in fact, my aim is to get you feeling better than ever before.
+                </p>
+
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
+                  I want to raise your expectations, help you see what life has to offer and what you&apos;re capable of.
+                </p>
+
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
+                  I will help you grow in strength and rediscover your potential. Find joy in movement as you perform better, for longer.
+                </p>
+              </motion.div>
 
             </div>
 
@@ -206,6 +209,22 @@ const PremiumHeroWithImage: React.FC = () => {
             </motion.div>
           </div>
         </motion.div>
+      </div>
+
+      {/* Rolling Headlines - Above scroll indicator, hidden on mobile */}
+      <div className="hidden md:block absolute bottom-44 left-1/2 transform -translate-x-1/2 z-20 w-full max-w-3xl px-4">
+        <AnimatePresence mode="wait">
+          <motion.h2
+            key={currentHeadline}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.2] text-white text-center"
+          >
+            {powerfulHeadlines[currentHeadline]}
+          </motion.h2>
+        </AnimatePresence>
       </div>
 
       {/* Scroll indicator - Hidden on mobile overlay */}

@@ -130,13 +130,32 @@
 @media (max-width: 640px) {
   /* Nuclear option - constrain any section over 2000px */
   section {
-    max-height: 2000px !important;
-    overflow: visible !important; /* Keep content visible but limit container */
+    max-height: none !important; /* Changed from 2000px to prevent scrolling */
+    overflow: visible !important; /* Keep content visible */
   }
 
   /* But ensure content is still accessible */
   section > * {
     max-height: none !important;
+  }
+
+  /* Ensure About section is never separately scrollable */
+  section#about {
+    max-height: none !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+  }
+
+  /* Ensure all child containers in About section also don't have overflow scrolling */
+  section#about > * {
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+
+  section#about .grid {
+    max-height: none !important;
+    overflow-y: visible !important;
   }
 }
 

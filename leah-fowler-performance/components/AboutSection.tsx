@@ -7,46 +7,9 @@ import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import {
   Award,
   GraduationCap,
-  Users,
-  Heart,
   CheckCircle,
   ChevronDown
 } from 'lucide-react'
-
-const credentials = [
-  {
-    icon: Heart,
-    title: 'Mother of 3',
-    subtitle: 'Who Gets the Real-Life Juggle',
-    color: 'from-red-600 to-pink-600'
-  },
-  {
-    icon: GraduationCap,
-    title: 'Industry-Leading Qualifications',
-    subtitle: 'Level 4 S&C + Level 3 PT',
-    color: 'from-blue-500 to-purple-500'
-  },
-  {
-    icon: Award,
-    title: 'Years of Experience',
-    subtitle: 'Transforming Parents Into Athletes',
-    color: 'from-green-500 to-emerald-500'
-  },
-]
-
-// Stats section removed per user request
-
-const expertise = [
-  'Strength Training for Mums',
-  'Postnatal Fitness Recovery',
-  'Progressive Strength Building',
-  'Real-Life Fitness Solutions',
-  'Sustainable Training Plans',
-  'No-Guilt Fitness Approach',
-  'School-Run Friendly Sessions',
-  'Building Lasting Strength',
-]
-
 
 // iOS 16 Glassmorphism Card Component
 const GlassCard = ({
@@ -309,7 +272,11 @@ export default function AboutSection() {
 
             <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-8 sm:mb-10 md:mb-12">
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
-                My focus is to get you feeling like yourself again - in fact, my aim is to get you feeling like a better version of yourself than ever before. My coaching isn&apos;t centred around quick fixes, gimmicks or unrealistic visions. It is about you building a body that enables you to live your life to the fullest. I want to raise your expectations, see what life has to offer and what you&apos;re capable of.
+                I work with busy parents, parents with high pressure jobs, people who are juggling family life and responsibilities around their busy schedules.
+              </p>
+
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
+                My coaching is centred around building a body that enables you to live your life to the fullest.
               </p>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-[#e7007d] leading-relaxed font-semibold">
@@ -317,7 +284,15 @@ export default function AboutSection() {
               </p>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
-                I understand what it feels like to lose a bit of yourself through becoming a parent. Although I have always loved being outside and physically active, now I am a mum I can appreciate just how important exercise is, both physically and mentally. I can help you to build strength and confidence that will help you to feel like you again.
+                Coaching that isn&apos;t centred around quick fixes, gimmicks or unrealistic visions.
+              </p>
+
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
+                I understand what it feels like to lose a bit of yourself through becoming a parent. Although I have always loved being outside and physically active, now I am a mum I can appreciate just how important exercise is, both physically and mentally.
+              </p>
+
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
+                I can help you to build strength and confidence that will help you to feel like you again.
               </p>
             </div>
 
@@ -334,46 +309,23 @@ export default function AboutSection() {
         >
           <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
             <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-              I&apos;ve worked with busy parents, I get it. I get the struggles you&apos;ll face, the pressures and potential set backs that come up. I&apos;ve helped my clients overcome these and work through them. I&apos;ve seen them get results and begin to appreciate their own strengths as they use them in everyday life. I know just how hard it can be to fit time in for yourself and find the energy to do something productive, but having been through it myself also and come out the other side so much stronger I am determined to help you to do the same.
+              This is more than just future proofing your body. I want you to enjoy life right now.
             </p>
 
             <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-              This is more than just future proofing your body. Sure, there are huge benefits of strength training that will support us as we age, stronger bones, muscles and healthy heart. But I want you to enjoy life right now. I want you to find the joy in movement and see your potential. Whether you want to get better at a sport or hobby, try something new or go back to something you enjoyed when you were younger, I can help you achieve that, and hopefully you&apos;ll be able to have fun along the way too. Life is for living, this is your opportunity to grab it.
+              Whether you want to get better at a sport or hobby, try something new or go back to something you enjoyed when you were younger, I can help you achieve that, and hopefully you&apos;ll be able to have fun along the way too. Life is for living, this is your opportunity to grab it.
             </p>
 
             <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-              All you need to do to get started is make a plan, that can start with a chat. If you&apos;re ready to invest in yourself, for your future self and the person you want to be right now, let&apos;s arrange a call.
+              All you need to do to get started is make a plan, that can start with a chat.
+            </p>
+
+            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
+              If you&apos;re ready to invest in yourself, for your future self and the person you want to be right now, let&apos;s arrange a call.
             </p>
           </div>
         </motion.div>
 
-        {/* Credentials Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 sm:mb-16 md:mb-20"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
-            {credentials.map((cred, index) => (
-              <motion.div
-                key={cred.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/15 transition-all hover:scale-105 duration-300"
-              >
-                <div className={`inline-flex p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${cred.color} mb-3 sm:mb-4`}>
-                  <cred.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <h4 className="font-bold text-white text-sm sm:text-base md:text-lg mb-1 sm:mb-2">{cred.title}</h4>
-                <p className="text-white/60 text-xs sm:text-sm md:text-base leading-relaxed">{cred.subtitle}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Qualifications Dropdown */}
         <motion.div
@@ -448,35 +400,6 @@ export default function AboutSection() {
           </motion.div>
         </motion.div>
 
-        {/* Bottom Section: Expertise & Media */}
-        <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-32">
-          {/* Expertise Areas */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#e7007d] mb-6 sm:mb-8 md:mb-10">Core Expertise</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5 max-w-4xl mx-auto">
-              {expertise.map((item, index) => (
-                <motion.span
-                  key={item}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-xs sm:text-sm md:text-base hover:bg-white/15 transition-colors"
-                >
-                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-sage" />
-                  {item}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
-
-        </div>
       </div>
     </section>
   )
