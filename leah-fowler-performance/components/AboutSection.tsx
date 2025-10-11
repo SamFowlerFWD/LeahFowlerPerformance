@@ -249,17 +249,13 @@ export default function AboutSection() {
               My Goal for you
             </h2>
 
-            <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-8 sm:mb-10 md:mb-12">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6">
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
                 I work with busy parents, parents with high pressure jobs, people who are juggling family life and responsibilities around their busy schedules.
               </p>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
                 My coaching is centred around building a body that enables you to live your life to the fullest.
-              </p>
-
-              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-[#e7007d] leading-relaxed font-semibold">
-                You&apos;ll be amazed at what your body can do.
               </p>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
@@ -273,37 +269,26 @@ export default function AboutSection() {
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
                 I can help you to build strength and confidence that will help you to feel like you again.
               </p>
+
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
+                This is more than just future proofing your body. I want you to enjoy life right now.
+              </p>
+
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
+                Whether you want to get better at a sport or hobby, try something new or go back to something you enjoyed when you were younger, I can help you achieve that, and hopefully you&apos;ll be able to have fun along the way too. Life is for living, this is your opportunity to grab it.
+              </p>
+
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
+                All you need to do to get started is make a plan, that can start with a chat.
+              </p>
+
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 leading-relaxed">
+                If you&apos;re ready to invest in yourself, for your future self and the person you want to be right now, let&apos;s arrange a call.
+              </p>
             </div>
 
           </motion.div>
         </div>
-
-        {/* My Story - Full Width Single Column */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 mb-12 sm:mb-16 md:mb-20"
-        >
-          <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
-            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-              This is more than just future proofing your body. I want you to enjoy life right now.
-            </p>
-
-            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-              Whether you want to get better at a sport or hobby, try something new or go back to something you enjoyed when you were younger, I can help you achieve that, and hopefully you&apos;ll be able to have fun along the way too. Life is for living, this is your opportunity to grab it.
-            </p>
-
-            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-              All you need to do to get started is make a plan, that can start with a chat.
-            </p>
-
-            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-              If you&apos;re ready to invest in yourself, for your future self and the person you want to be right now, let&apos;s arrange a call.
-            </p>
-          </div>
-        </motion.div>
 
 
       </div>
