@@ -11,6 +11,7 @@ import AphroditePricingTiers from '@/components/AphroditePricingTiers'
 import PremiumTestimonialsSection from '@/components/PremiumTestimonialsSection'
 import AboutSection from '@/components/AboutSection'
 import ContactSection from '@/components/ContactSection'
+import NewsletterSection from '@/components/NewsletterSection'
 import Footer from '@/components/Footer'
 // import HeroStatsSection from '@/components/HeroStatsSection' - Removed per request
 import OnlinePackageShowcase from '@/components/OnlinePackageShowcase'
@@ -64,12 +65,12 @@ export default function Home() {
           <AphroditePricingTiers />
         </SectionErrorBoundary>
 
-        {/* FAQ Section */}
+        {/* FAQ Section - Common questions and concerns */}
         <SectionErrorBoundary sectionName="FAQSection">
           <FAQSection />
         </SectionErrorBoundary>
 
-        {/* Location & Why Choose Section */}
+        {/* Location Section - Barrett's Fitness info only */}
         <SectionErrorBoundary sectionName="LocationAndWhySection">
           <LocationAndWhySection />
         </SectionErrorBoundary>
@@ -77,6 +78,11 @@ export default function Home() {
         {/* Contact Section */}
         <SectionErrorBoundary sectionName="ContactSection">
           <ContactSection />
+        </SectionErrorBoundary>
+
+        {/* Newsletter Signup Section */}
+        <SectionErrorBoundary sectionName="NewsletterSection">
+          <NewsletterSection />
         </SectionErrorBoundary>
       </main>
 

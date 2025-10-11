@@ -8,52 +8,24 @@ import Script from 'next/script'
 
 const faqData = [
   {
-    question: "I haven't exercised since having children - is this programme suitable for me?",
-    answer: "Absolutely! Most of my clients in Norfolk are mums returning to fitness after years away. We start exactly where you are now, even if that's struggling with a single press-up. As a mum of three myself, I understand the physical changes after pregnancy and create personalised programmes that rebuild your strength safely."
+    question: "I'm so unfit! I haven't exercised in such a long time and I've put on so much weight.",
+    answer: "I understand you may feel nervous, but please be reassured that I will work with you from the level you are at now. We will spend time putting together a profile based on your strengths and areas to improve and together we will work on a plan to achieve realistic goals."
   },
   {
-    question: "How much time do I need to commit each week?",
-    answer: "We work around YOUR schedule, not the other way round. Most mums train 2-3 times per week for 45-60 minutes, with sessions available from 6am before school runs or during nursery hours. Online coaching means you can also train from home when the kids are asleep - whatever works for your family life in Norfolk."
+    question: "I've tried so many times to get in shape. No diet plans ever work.",
+    answer: "We will spend time going through all of this, what's worked in the past and what hasn't. Then we can think about why. My approach to diet and weight loss is to look at your current lifestyle and make small changes. There's no food off limits, no shakes, sins or strict regimes to abide by and no weekly weigh ins!"
   },
   {
-    question: "Do you offer sessions in Dereham or do I need to travel to Norwich?",
-    answer: "I'm based right here in Dereham! Face-to-face sessions happen at my private studio near Neatherd Moor, or we can arrange outdoor sessions at Dereham Memorial Hall recreation ground. I also offer online coaching for busy Norfolk mums who prefer training at home or can't make the journey."
+    question: "I've tried doing workouts and I can't keep up, I find some of the moves really hard.",
+    answer: "Me too! It can feel overwhelming at first. However, my sessions follow a pattern that allows people to progress at their own pace. That is, there are enough variations of exercises that something will suit any level."
   },
   {
-    question: "What if I can't arrange childcare?",
-    answer: "This is exactly why I offer flexible online coaching - you can train while your little ones nap or play nearby. Many Dereham mums train early morning (5:30am) before their partners leave for work, or in the evening once bedtime is done. I'll help you find pockets of time you didn't know existed."
+    question: "What will I need to bring to my session?",
+    answer: "You do not need to bring anything more than yourself! Sensible clothes that you are comfortable to exercise in, be aware you may get hot so layers are ideal. Sports trainers and a well-fitting sports bra. Bring a drink (a water bottle, there is a refill point in the gym)."
   },
   {
-    question: "How quickly will I see results?",
-    answer: "Most mums feel stronger and more energised within 2-3 weeks. You'll likely achieve your first full press-up within 4-6 weeks, and see visible changes within 8-12 weeks. My Norfolk clients consistently report feeling more confident at soft play and keeping up with their kids without getting breathless."
-  },
-  {
-    question: "What makes your approach different from other personal trainers in Norfolk?",
-    answer: "I'm a mum who truly gets it - the exhaustion, the guilt, the 'touched out' feeling. I've gone from struggling postnatally to completing Ultra endurance races, proving what consistency achieves. Unlike generic fitness programmes, everything is designed specifically for mothers' bodies and real-life schedules in Norfolk."
-  },
-  {
-    question: "How much does personal training cost?",
-    answer: "Online coaching starts from £97/month, making professional support accessible for Norfolk families. Face-to-face sessions in Dereham begin at £150/month for weekly training. Consider it an investment in being the energetic, strong mum your family deserves - most clients say it's the best money they've spent on themselves."
-  },
-  {
-    question: "Do I need any equipment to get started?",
-    answer: "Not at all! We start with bodyweight exercises you can do in your living room. As you progress, I might suggest resistance bands (£10-15) but even these are optional. My Dereham studio has everything needed for face-to-face sessions, so you just need to show up in comfortable clothes."
-  },
-  {
-    question: "What if I have injuries or physical limitations?",
-    answer: "I specialise in working with postnatal bodies, including diastasis recti, pelvic floor issues, and back problems common after pregnancy. Every programme is personalised to work around your limitations whilst building strength safely. I'll also refer you to specialists in Norfolk when needed."
-  },
-  {
-    question: "Can I really get strong enough to do obstacle races like you?",
-    answer: "If that's your goal, absolutely! But most mums simply want to feel strong carrying their children, confident in their bodies, and energised for family life. Whether your goal is your first 5K parkrun at Dereham Neatherd or an endurance race, we'll get you there at your pace."
-  },
-  {
-    question: "How do I know if online coaching will work for me?",
-    answer: "Over 200 Norfolk mums have transformed their fitness through my online programmes. You'll get weekly check-ins, personalised workouts, WhatsApp support, and accountability that keeps you consistent. Most clients say they achieve more with online coaching than they ever did with gym memberships."
-  },
-  {
-    question: "What's the first step to getting started?",
-    answer: "Book a free 15-minute chat where we'll discuss your goals, challenges, and what's held you back before. There's no pressure to sign up - it's just two Norfolk mums talking about how to fit fitness into real life. You can start with a trial week to see if my approach works for your family."
+    question: "I loved doing the session but now I ache!! What did I do wrong?!",
+    answer: "You've not done anything wrong, do not worry! DOMs - Delayed Onset Muscle Soreness can occur after you start a new exercise or you increase your exercise. It is your body adapting, growing stronger. It is likely to last a few days but each time you take part the effects will reduce."
   }
 ]
 
@@ -116,13 +88,12 @@ export default function FAQSection() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-6">
               Got Questions?
               <span className="block mt-2 bg-gradient-to-r from-[#e7007d] via-gold-light to-[#e7007d] bg-clip-text text-transparent">
-                Real Answers from a Real Mum
+                Your Common Concerns Answered
               </span>
             </h2>
 
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Everything Norfolk mums want to know about getting strong again after children.
-              No judgement, just honest answers from someone who's been there.
+              Whether you're new to training or returning after time away, find answers to the questions most frequently asked by clients starting their fitness journey.
             </p>
           </motion.div>
 
@@ -198,7 +169,7 @@ export default function FAQSection() {
             className="mt-12 md:mt-16 text-center"
           >
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Still have questions? Let's chat about your specific situation
+              Still have questions? Get in touch to discuss your specific goals and concerns
             </p>
             <a
               href="/apply"
@@ -208,7 +179,7 @@ export default function FAQSection() {
                 color: '#000000'
               }}
             >
-              Book Your Free Chat
+              Start Your Journey
               <ChevronDown className="h-5 w-5 rotate-[-90deg]" />
             </a>
           </motion.div>
