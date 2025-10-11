@@ -71,7 +71,7 @@ export default function FAQSection() {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-sage/5 via-transparent to-transparent rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -116,24 +116,24 @@ export default function FAQSection() {
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between text-left hover:bg-gray-50 dark:hover:bg-navy/50 transition-colors"
+                  className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 flex items-center justify-between gap-2 sm:gap-3 text-left hover:bg-gray-50 dark:hover:bg-navy/50 transition-colors"
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <div className="flex items-start gap-4 pr-4">
-                    <div className="mt-1 p-2 bg-gradient-to-br from-[#e7007d]/20 to-amber-100/20 rounded-lg flex-shrink-0">
-                      <MessageCircle className="h-5 w-5 text-[#e7007d]-dark" />
+                  <div className="flex items-start gap-2 sm:gap-3 flex-1 min-w-0">
+                    <div className="mt-1 p-1.5 sm:p-2 bg-gradient-to-br from-[#e7007d]/20 to-amber-100/20 rounded-lg flex-shrink-0">
+                      <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#e7007d]-dark" />
                     </div>
-                    <h3 className="text-base md:text-lg font-semibold text-navy dark:text-white">
+                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-navy dark:text-white break-words">
                       {item.question}
                     </h3>
                   </div>
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex-shrink-0"
+                    className="flex-shrink-0 ml-2"
                   >
-                    <ChevronDown className="h-5 w-5 text-[#e7007d]" />
+                    <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-[#e7007d]" />
                   </motion.div>
                 </button>
 
@@ -146,9 +146,9 @@ export default function FAQSection() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                     >
-                      <div className="px-6 md:px-8 pb-6 pt-2">
-                        <div className="pl-11 md:pl-14">
-                          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 pt-2">
+                        <div className="pl-0 sm:pl-11 md:pl-14">
+                          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                             {item.answer}
                           </p>
                         </div>
@@ -175,8 +175,8 @@ export default function FAQSection() {
               href="/apply"
               className="inline-flex items-center gap-2 px-8 py-4 font-semibold rounded-full hover:shadow-xl hover:scale-105 hover:brightness-110 transition-all duration-300"
               style={{
-                backgroundColor: '#d4a574',
-                color: '#000000'
+                backgroundColor: '#e7007d',
+                color: '#ffffff'
               }}
             >
               Start Your Journey

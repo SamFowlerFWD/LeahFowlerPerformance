@@ -117,9 +117,6 @@ export default function OnlinePackageShowcase() {
                   £100
                   <span className="text-lg md:text-xl text-gray-600 dark:text-gray-300">/month</span>
                 </p>
-                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-2">
-                  3-month minimum commitment
-                </p>
               </div>
             </div>
           </div>
@@ -160,98 +157,6 @@ export default function OnlinePackageShowcase() {
               </p>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* App Mockup Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-gradient-to-r from-navy via-navy-dark to-navy rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 mb-10 sm:mb-12 md:mb-16 lg:mb-20 relative overflow-hidden"
-        >
-          <div className="absolute inset-0">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#e7007d]/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-sage/20 rounded-full blur-3xl" />
-          </div>
-
-          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Everything in One App
-              </h3>
-              <p className="text-base md:text-lg text-white/80 mb-6">
-                Track your workouts, log your nutrition, monitor progress, and stay connected
-                with your coach - all from your phone.
-              </p>
-
-              <div className="space-y-4">
-                {['Workout Videos & Instructions', 'Nutrition Logging & Guidance', 'Progress Photos & Measurements', 'Direct Coach Messaging'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle className="h-6 w-6 text-[#e7007d]" />
-                    <span className="text-white">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] mx-auto">
-                <Image
-                  src="/images/trainerize-app.png"
-                  alt="Aphrodite Fitness App Interface"
-                  width={800}
-                  height={1200}
-                  className="w-full h-auto drop-shadow-2xl"
-                />
-              </div>
-              <motion.div
-                animate={{
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  repeatType: "reverse"
-                }}
-                className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 md:-top-4 md:-right-4"
-              >
-                <Image
-                  src="/images/af-full-logo.avif"
-                  alt="Aphrodite Fitness"
-                  width={100}
-                  height={50}
-                  className="h-auto w-12 sm:w-16 md:w-20 lg:w-24 drop-shadow-2xl"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Benefits List */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-gradient-to-r from-[#e7007d]/10 to-[#e7007d]/10 dark:from-[#e7007d]/20 dark:to-[#e7007d]/20 rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 mb-6 md:mb-8 lg:mb-10"
-        >
-          <h3 className="text-xl md:text-2xl font-bold text-navy dark:text-white mb-6 text-center">
-            What's Included in Your Package
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
-                className="flex items-center gap-4"
-              >
-                <CheckCircle className="h-6 w-6 text-[#e7007d] flex-shrink-0" />
-                <span className="text-lg text-gray-700 dark:text-gray-200">{benefit}</span>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
 
         {/* Transformation Timeline */}

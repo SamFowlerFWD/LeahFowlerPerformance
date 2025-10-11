@@ -298,15 +298,6 @@ export default function AphroditePricingTiers() {
                 filteredPackages.length === 1 ? 'w-full max-w-md' : ''
               }`}
             >
-              {/* Badge */}
-              {pkg.badge && (
-                <div className="absolute -top-4 left-0 right-0 flex justify-center z-10">
-                  <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#e7007d] to-[#e7007d]-light text-navy text-xs font-bold shadow-lg">
-                    {pkg.badge}
-                  </span>
-                </div>
-              )}
-
               <div
                 className={`relative h-full p-8 rounded-2xl transition-all duration-500 hover:scale-105 ${
                   pkg.popular
@@ -450,63 +441,6 @@ export default function AphroditePricingTiers() {
             </motion.div>
           )}
         </motion.div>
-
-
-        {/* Comparison Table Toggle */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="text-center mb-12"
-        >
-          <Button
-            onClick={() => setShowComparison(!showComparison)}
-            variant="outline"
-            className="px-8 py-6 rounded-xl font-semibold text-base border-2 border-[#e7007d] text-[#e7007d] hover:bg-[#e7007d] hover:text-white dark:border-[#e7007d] dark:text-[#e7007d] dark:hover:bg-[#e7007d] dark:hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            <BarChart className="mr-2 h-5 w-5" />
-            {showComparison ? 'Hide' : 'Show'} Package Comparison
-          </Button>
-        </motion.div>
-
-        {/* Comparison Table */}
-        {showComparison && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-16 overflow-x-auto"
-          >
-            <table className="w-full border-collapse rounded-xl overflow-hidden shadow-xl">
-              <thead className="bg-navy text-white">
-                <tr>
-                  <th className="p-4 text-left">Feature</th>
-                  <th className="p-4 text-center">Online Package</th>
-                  <th className="p-4 text-center">Small Group</th>
-                  <th className="p-4 text-center">Semi-Private</th>
-                  <th className="p-4 text-center">Silver</th>
-                  <th className="p-4 text-center">Gold</th>
-                  <th className="p-4 text-center">Pathway</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white dark:bg-navy-dark">
-                {packageComparison.features.map((feature, idx) => (
-                  <tr key={idx} className="border-t border-gray-200 dark:border-navy/30">
-                    <td className="p-4 font-medium text-navy dark:text-white">{feature.name}</td>
-                    <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.onlinePackage}</td>
-                    <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.smallGroup}</td>
-                    <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.semiPrivate}</td>
-                    <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.silver}</td>
-                    <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.gold}</td>
-                    <td className="p-4 text-center text-gray-600 dark:text-gray-300">{feature.pathway}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
-        )}
 
       </div>
     </section>

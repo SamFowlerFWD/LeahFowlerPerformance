@@ -246,7 +246,7 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
 <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-normal text-white mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              My Goal for you
+              Why
             </h2>
 
             <div className="space-y-4 sm:space-y-5 md:space-y-6">
