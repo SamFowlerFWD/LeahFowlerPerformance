@@ -106,7 +106,7 @@ export default function OnlinePackageShowcase() {
           </h2>
 
           <p className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-6xl mx-auto leading-tight mb-3">
-            Online coaching delivers you a fully supported programme through an app you can have on your phone. You&apos;ll receive expert guidance as each detail is programmed specifically for you, tailored to your individual needs and factoring in your lifestyle. Monthly goal setting and programme review as well as a weekly check in mean that you&apos;ll remain accountable and get the very best out of your workouts.
+            Online coaching delivers you a fully supported programme through an app you can have on your phone. You&apos;ll receive guidance as each detail is programmed specifically for you, tailored to your individual needs and factoring in your lifestyle. Monthly goal setting and programme review as well as a weekly check in mean that you&apos;ll remain accountable and get the very best out of your workouts.
           </p>
 
           {/* Price Highlight */}
