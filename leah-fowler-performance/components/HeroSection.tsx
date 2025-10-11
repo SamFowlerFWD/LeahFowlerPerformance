@@ -128,20 +128,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl text-white/90 mb-12 md:mb-16 max-w-4xl mx-auto font-light leading-relaxed"
+            className="text-2xl sm:text-3xl md:text-4xl text-white/90 mb-16 md:mb-20 max-w-4xl mx-auto font-light leading-relaxed"
           >
             Transform your fitness excellence with evidence-based strategies
             for sustainable high achievement
-          </motion.p>
-
-          {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="text-xl sm:text-2xl md:text-3xl text-gold mb-16 md:mb-20 max-w-4xl mx-auto font-semibold leading-relaxed"
-          >
-            You&apos;ll be amazed at what your body can do.
           </motion.p>
 
           {/* CTA Buttons */}
