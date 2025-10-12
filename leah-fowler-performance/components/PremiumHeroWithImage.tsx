@@ -173,7 +173,7 @@ const PremiumHeroWithImage: React.FC = () => {
                 className="space-y-3 sm:space-y-4"
               >
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
-                  I can help you feeling like yourself again - in fact, my aim is to get you feeling better than ever before.
+                  I can help you begin feeling like yourself again - in fact, my aim is to get you feeling better than ever before.
                 </p>
 
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
