@@ -34,7 +34,7 @@ import {
 } from '@/content/seo/aphrodite-pricing-content'
 
 export default function AphroditePricingTiers() {
-  const [selectedCategory, setSelectedCategory] = React.useState<'all' | 'group' | 'personal' | 'online'>('online')
+  const [selectedCategory, setSelectedCategory] = React.useState<'all' | 'group' | 'personal' | 'online'>('all')
   const [showComparison, setShowComparison] = React.useState(true)
   const [isAnimating, setIsAnimating] = React.useState(false)
 
@@ -146,128 +146,6 @@ export default function AphroditePricingTiers() {
   return (
     <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-b from-white via-gray-50 to-white dark:from-navy-dark dark:via-navy dark:to-navy-dark">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 lg:mb-16"
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e7007d]/10 border border-[#e7007d]/20 text-[#e7007d] font-medium text-sm mb-6">
-            <TrendingUp className="h-4 w-4" />
-            Transform Your Strength • Transform Your Life
-          </span>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-6">
-            Choose Your
-            <span className="block text-gradient-gold mt-2">Training Journey</span>
-          </h2>
-
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Evidence-based strength training for busy parents and professionals.
-            Reclaim your strength, energy and confidence with personalised coaching.
-          </p>
-
-          {/* Social Proof Bar */}
-          <div className="flex flex-wrap justify-center gap-6 mb-10">
-            <div className="flex items-center gap-2">
-              <Users className="h-5 w-5 text-[#e7007d]" />
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                {urgencyContent.social.totalClients}
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Trophy className="h-5 w-5 text-[#e7007d]" />
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                {urgencyContent.social.retention}
-              </span>
-            </div>
-          </div>
-
-          {/* Category Filter */}
-          <div
-            role="tablist"
-            aria-label="Filter training packages"
-            className="flex items-center justify-center w-full px-2 sm:inline-flex sm:w-auto sm:px-0"
-          >
-            <div className="inline-flex items-center p-0.5 sm:p-1 rounded-full bg-gray-100 dark:bg-navy-dark/50 border border-gray-200 dark:border-[#e7007d]/20 w-full sm:w-auto">
-              <button
-                type="button"
-                onClick={() => {
-                  setIsAnimating(true)
-                  setSelectedCategory('all')
-                  setTimeout(() => setIsAnimating(false), 300)
-                }}
-                role="tab"
-                aria-selected={selectedCategory === 'all'}
-                aria-controls="pricing-panel"
-                className={`px-2 sm:px-4 md:px-6 py-1 sm:py-2.5 rounded-full font-medium text-[10px] sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none ${
-                  selectedCategory === 'all'
-                    ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-                }`}
-              >
-                All
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setIsAnimating(true)
-                  setSelectedCategory('group')
-                  setTimeout(() => setIsAnimating(false), 300)
-                }}
-                role="tab"
-                aria-selected={selectedCategory === 'group'}
-                aria-controls="pricing-panel"
-                className={`px-2 sm:px-4 md:px-6 py-1 sm:py-2.5 rounded-full font-medium text-[10px] sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none ${
-                  selectedCategory === 'group'
-                    ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-                }`}
-              >
-                Group
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setIsAnimating(true)
-                  setSelectedCategory('personal')
-                  setTimeout(() => setIsAnimating(false), 300)
-                }}
-                role="tab"
-                aria-selected={selectedCategory === 'personal'}
-                aria-controls="pricing-panel"
-                className={`px-2 sm:px-4 md:px-6 py-1 sm:py-2.5 rounded-full font-medium text-[10px] sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none ${
-                  selectedCategory === 'personal'
-                    ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-                }`}
-              >
-                Personal
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setIsAnimating(true)
-                  setSelectedCategory('online')
-                  setTimeout(() => setIsAnimating(false), 300)
-                }}
-                role="tab"
-                aria-selected={selectedCategory === 'online'}
-                aria-controls="pricing-panel"
-                className={`px-2 sm:px-4 md:px-6 py-1 sm:py-2.5 rounded-full font-medium text-[10px] sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none ${
-                  selectedCategory === 'online'
-                    ? 'bg-white dark:bg-[#e7007d] text-navy shadow-md'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white'
-                }`}
-              >
-                Online
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Pricing Cards */}
         <motion.div
           id="pricing-panel"

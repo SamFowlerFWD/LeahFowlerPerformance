@@ -201,6 +201,46 @@ export default function OnlinePackageShowcase() {
           </div>
         </motion.div>
 
+        {/* In-Person Coaching Package */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 1.1 }}
+          className="mt-16 sm:mt-20 md:mt-24 lg:mt-32"
+        >
+          <div className="bg-gradient-to-br from-white via-gray-50 to-white dark:from-navy-dark dark:via-navy dark:to-navy-dark rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 shadow-2xl border border-gray-200 dark:border-navy/30">
+            {/* Header */}
+            <div className="text-center mb-8 md:mb-10">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-navy dark:text-white mb-4">
+                In Person Coaching Package
+              </h3>
+
+              {/* Location Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e7007d]/10 border border-[#e7007d]/20 text-[#e7007d] font-medium text-sm mb-6">
+                <Shield className="h-4 w-4" />
+                Sessions take place at Barrett&apos;s gym in Dereham
+              </div>
+            </div>
+
+            {/* Description */}
+            <div className="max-w-4xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                Weekly sessions to guide you through a progressive strength training programme that is designed to meet you where you&apos;re at right now and get to reach your goals. This package is ideal for those who want to work on form, try new exercises and those who want to build confidence in the gym environment. The sessions will support any activity you are already doing throughout the week - from park runs or group exercise to daily life such as gardening or running around after the kids. You&apos;ll build on all the tools you need for optimal performance and injury prevention.
+              </p>
+
+              {/* Price */}
+              <div className="text-center">
+                <div className="inline-block bg-gradient-to-r from-[#e7007d]/10 to-[#e7007d]/20 dark:from-[#e7007d]/20 dark:to-[#e7007d]/30 rounded-3xl p-6 border-2 border-[#e7007d]/30">
+                  <p className="text-2xl md:text-3xl font-bold text-navy dark:text-white">
+                    £150
+                    <span className="text-lg md:text-xl text-gray-600 dark:text-gray-300">/month</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Final CTA section removed - too pushy and repetitive */}
       </div>
     </section>
