@@ -241,6 +241,69 @@ export default function OnlinePackageShowcase() {
           </div>
         </motion.div>
 
+        {/* Nutritional Guidance Package */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="mt-8 sm:mt-10 md:mt-12 lg:mt-16"
+        >
+          <div className="bg-gradient-to-br from-white via-sage/5 to-white dark:from-navy-dark dark:via-sage/10 dark:to-navy-dark rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 shadow-2xl border border-sage/20 dark:border-sage/30">
+            {/* Header */}
+            <div className="text-center mb-8 md:mb-10">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-navy dark:text-white mb-4">
+                Nutritional Guidance for Weight Management or Sport
+              </h3>
+            </div>
+
+            {/* Description */}
+            <div className="max-w-4xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                Built around your current dietary preferences. I can offer lifestyle and mindset coaching alongside your exercise programme. It is not like a diet plan, I help you to create an all round, holistic approach to wellness.
+              </p>
+
+              {/* Price Options */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+                <div className="bg-gradient-to-r from-sage/10 to-sage/20 dark:from-sage/20 dark:to-sage/30 rounded-3xl p-6 border-2 border-sage/30">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Standalone</p>
+                  <p className="text-2xl md:text-3xl font-bold text-navy dark:text-white">
+                    £100
+                    <span className="text-lg md:text-xl text-gray-600 dark:text-gray-300">/month</span>
+                  </p>
+                </div>
+                <div className="text-gray-400 dark:text-gray-500 font-bold">or</div>
+                <div className="bg-gradient-to-r from-[#e7007d]/10 to-[#e7007d]/20 dark:from-[#e7007d]/20 dark:to-[#e7007d]/30 rounded-3xl p-6 border-2 border-[#e7007d]/30">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">As an add-on</p>
+                  <p className="text-2xl md:text-3xl font-bold text-navy dark:text-white">
+                    £80
+                    <span className="text-lg md:text-xl text-gray-600 dark:text-gray-300">/month</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <div className="text-center">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-block"
+                >
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-sage to-[#e7007d] hover:from-sage/90 hover:to-[#e7007d]/90 text-white font-bold px-12 py-6 rounded-2xl shadow-xl transition-all duration-300 text-lg"
+                    asChild
+                  >
+                    <Link href="/apply" className="flex items-center gap-2">
+                      Apply Here
+                      <ArrowRight className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Final CTA section removed - too pushy and repetitive */}
       </div>
     </section>
