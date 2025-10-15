@@ -6,7 +6,7 @@ import AnnouncementBar from '@/components/AnnouncementBar'
 import ModernHeader from '@/components/ModernHeader'
 import PremiumHeroWithImage from '@/components/PremiumHeroWithImage'
 import BrandTransitionNotice, { HiddenSEOContent } from '@/components/BrandTransitionNotice'
-import AphroditePricingTiers from '@/components/AphroditePricingTiers'
+// import AphroditePricingTiers from '@/components/AphroditePricingTiers' - Removed pricing section
 // import MobileDock from '@/components/MobileDock' - Removed for cleaner mobile UI
 import PremiumTestimonialsSection from '@/components/PremiumTestimonialsSection'
 import AboutSection from '@/components/AboutSection'
@@ -60,10 +60,10 @@ export default function Home() {
           <OnlinePackageShowcase />
         </SectionErrorBoundary>
 
-        {/* Aphrodite Fitness Packages - Complete Training Options */}
-        <SectionErrorBoundary sectionName="AphroditePricingTiers">
+        {/* Aphrodite Fitness Packages - Complete Training Options - REMOVED */}
+        {/* <SectionErrorBoundary sectionName="AphroditePricingTiers">
           <AphroditePricingTiers />
-        </SectionErrorBoundary>
+        </SectionErrorBoundary> */}
 
         {/* FAQ Section - Common questions and concerns */}
         <SectionErrorBoundary sectionName="FAQSection">
