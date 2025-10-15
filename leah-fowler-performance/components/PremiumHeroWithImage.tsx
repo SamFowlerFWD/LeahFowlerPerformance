@@ -113,7 +113,7 @@ const PremiumHeroWithImage: React.FC = () => {
 
         {/* Image Container - Top on mobile, split on desktop */}
         <motion.div
-          className="relative h-[60vh] md:w-2/5 md:h-[80vh] overflow-hidden md:order-2"
+          className="relative w-full h-[60vh] md:w-2/5 md:h-[80vh] overflow-hidden md:order-2"
           style={{ scale: imageScale, y: imageY }}
         >
           {/* Image with art direction */}
