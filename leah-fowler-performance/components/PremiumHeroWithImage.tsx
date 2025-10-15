@@ -108,12 +108,12 @@ const PremiumHeroWithImage: React.FC = () => {
         background: 'linear-gradient(to bottom right, var(--hero-background), var(--background))'
       }}
     >
-      {/* Desktop: Split Layout / Mobile: Full Screen Overlay */}
-      <div className="relative min-h-[100vh] md:min-h-[80vh] md:flex md:flex-row">
+      {/* Desktop: Split Layout / Mobile: Stacked Layout */}
+      <div className="flex flex-col min-h-[100vh] md:min-h-[80vh] md:flex-row">
 
-        {/* Image Container - Full screen on mobile, split on desktop */}
+        {/* Image Container - Top on mobile, split on desktop */}
         <motion.div
-          className="absolute inset-0 md:relative md:w-2/5 md:h-[80vh] overflow-visible md:order-2"
+          className="relative h-[60vh] md:w-2/5 md:h-[80vh] overflow-hidden md:order-2"
           style={{ scale: imageScale, y: imageY }}
         >
           {/* Image with art direction */}
@@ -126,12 +126,7 @@ const PremiumHeroWithImage: React.FC = () => {
             />
           </div>
 
-          {/* Strong gradient overlay for mobile text readability */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent lg:hidden"
-            style={{ opacity: overlayOpacity }}
-          />
-          {/* Desktop gradient */}
+          {/* Desktop gradient only */}
           <motion.div
             className="absolute inset-0 hidden lg:block"
             style={{
@@ -145,13 +140,11 @@ const PremiumHeroWithImage: React.FC = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#e7007d]/20 via-transparent to-transparent blur-2xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#e7007d]/20 via-transparent to-transparent blur-2xl" />
           </div>
-
-          {/* Removed floating particles that were creating visual artifacts */}
         </motion.div>
 
-        {/* Content Container - Overlay on mobile, split on tablet/desktop */}
+        {/* Content Container - Below image on mobile, split on tablet/desktop */}
         <motion.div
-          className="absolute inset-0 flex items-end pb-20 px-4 sm:px-6 md:relative md:w-3/5 md:flex md:flex-col md:justify-start md:items-start md:order-1 md:px-8 lg:px-16 md:py-8 lg:py-12 md:pt-16 lg:pt-20 md:pb-8 lg:pb-12 md:h-full"
+          className="relative flex-1 flex flex-col justify-center items-center px-4 py-8 sm:px-6 md:w-3/5 md:flex md:flex-col md:justify-start md:items-start md:order-1 md:px-8 lg:px-16 md:py-8 lg:py-12 md:pt-16 lg:pt-20 md:pb-8 lg:pb-12"
           style={{ y: contentY }}
         >
           {/* Background effects for tablet/desktop content side only */}
@@ -172,7 +165,7 @@ const PremiumHeroWithImage: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="space-y-3 sm:space-y-4"
               >
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-foreground">
                   I will help you grow in strength and rediscover your potential. Find joy in movement as you perform better, for longer.
                 </p>
 
