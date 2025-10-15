@@ -172,7 +172,11 @@ const PremiumHeroWithImage: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="space-y-3 sm:space-y-4"
               >
-                <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold leading-relaxed text-gold">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
+                  I will help you grow in strength and rediscover your potential. Find joy in movement as you perform better, for longer.
+                </p>
+
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold leading-relaxed text-gold mt-6 sm:mt-8">
                   You&apos;ll be amazed at what your body can do.
                 </p>
               </motion.div>
