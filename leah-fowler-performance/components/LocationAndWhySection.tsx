@@ -3,20 +3,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import {
-  MapPin,
-  Check
+  MapPin
 } from 'lucide-react'
 
 const locationInfo = {
   venue: "Barrett's Health & Fitness",
   address: "Dereham, Norfolk",
-  what3words: "///factually.tapes.thrusters",
-  facilities: [
-    "State-of-the-art gym",
-    "Outdoor training space",
-    "Free parking",
-    "Shower facilities"
-  ]
+  what3words: "///factually.tapes.thrusters"
 }
 
 export default function LocationAndWhySection() {
@@ -42,17 +35,6 @@ export default function LocationAndWhySection() {
                 <h4 className="font-semibold text-[#e7007d] mb-2">{locationInfo.venue}</h4>
                 <p className="text-white/80">{locationInfo.address}</p>
                 <p className="text-white/60 text-sm mt-1">{locationInfo.what3words}</p>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-3">Facilities</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {locationInfo.facilities.map((facility, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-[#e7007d]" />
-                      <span className="text-sm text-white/80">{facility}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
