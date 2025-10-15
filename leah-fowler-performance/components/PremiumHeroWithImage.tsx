@@ -175,18 +175,6 @@ const PremiumHeroWithImage: React.FC = () => {
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
                   I can help you begin feeling like yourself again - in fact, my aim is to get you feeling better than ever before.
                 </p>
-
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
-                  I want to raise your expectations, help you see what life has to offer and what you&apos;re capable of.
-                </p>
-
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white md:text-foreground">
-                  I will help you grow in strength and rediscover your potential. Find joy in movement as you perform better, for longer.
-                </p>
-
-                <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold leading-relaxed text-gold mt-6 sm:mt-8">
-                  You&apos;ll be amazed at what your body can do.
-                </p>
               </motion.div>
 
             </div>

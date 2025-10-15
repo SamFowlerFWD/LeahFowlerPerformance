@@ -98,6 +98,9 @@ export default function PremiumTestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto px-2 sm:px-0 mb-8 sm:mb-10 leading-relaxed">
+            I want to raise your expectations, help you see what life has to offer and what you&apos;re capable of.
+          </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy dark:text-white mb-4 sm:mb-6">
             Real Results from{' '}
             <span className="bg-gradient-to-r from-[#e7007d] to-[#e7007d] bg-clip-text text-transparent">
